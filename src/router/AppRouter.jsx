@@ -11,11 +11,11 @@ const AppRouter = ({ universities }) => {
     <BrowserRouter>
     <Navbar/>
       <Routes>
-        {/* <Route path="/" element={<Home universities={universities} />} /> */}
-        {/* <Route path="/account" element={<Account />} /> */}
+        <Route path="/" element={<Home universities={universities} />} />
+        <Route path="/account" element={<Account />} />
         <Route
-          // path="/universities/:id"
-          // element={<Detail universities={universities} />}
+          path="/universities/:id"
+          element={<Detail universities={universities} />}
         />
       </Routes>
       <Footer/>

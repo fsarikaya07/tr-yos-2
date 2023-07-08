@@ -1,0 +1,10 @@
+.dashed {
+  border-right-style: dashed;
+  border-right-color: rgba(0, 255, 0, 0.274);
+}
+
+@media screen and (max-width: 768px) {
+  #left-container {
+    width: 100%;
+  }
+}
