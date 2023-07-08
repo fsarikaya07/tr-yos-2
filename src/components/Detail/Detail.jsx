@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../Style/Detail.css";
 import { useParams } from "react-router";
+import Slider from "./Carousel_Detail";
 
 const Detail = ({universities}) => {
   const [isDetail, setIsDetail] = useState(false);
@@ -12,8 +13,10 @@ const Detail = ({universities}) => {
   
   return (
     <div className="bg-light">
-      
-      {/* <---------------------DETAİL START ---------------------> */}
+      {/* <---------------------SLIDER START HAKAN BILGI ---------------------> */}
+      <Slider/>
+      {/* <---------------------SLIDER END HAKAN BILGI---------------------> */}
+
       <div className="container  pt-4 ">
         <div className="row">
           {/* <---------------------LEFT-CONTAİNER START ---------------------> */}

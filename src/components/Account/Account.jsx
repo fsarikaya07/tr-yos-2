@@ -76,12 +76,116 @@ const Account = () => {
         </div>
 
         {/* <----------------------Profil Area End-----------------------> */}
-        {/* <----------------------Form Area Start-----------------------> */}
+        
+        {/* <----------------------Form Area Start Hakan Bilgi-----------------------> */}
         <div className="col-7">
-          <button className="">{person.tel}</button>
-          <button className="">info@tryos.com</button>
+          <form className="row g-4 ">
+            <h3 className="text-start">MY Account</h3>
+            <div className="col-md-6 ">
+              <label htmlFor="inputText" className="form-label">
+                Your Name
+              </label>
+              <input type="inputText" className="form-control" id="inputText" />
+            </div>
+            <div className="col-md-6">
+              <label htmlFor="inputEmail" className="form-label">
+                Email
+              </label>
+              <input type="email" className="form-control" id="inputEmail" />
+            </div>
+            <div className="col-md-6">
+              <label htmlFor="inputContry" className="form-label">
+                Country
+              </label>
+              <select id="inputCountry" className="form-select">
+                <option selected="">Select Country</option>
+                <option>Rusia</option>
+                <option>USA</option>
+                <option>Turkiye</option>
+                <option>Germany</option>
+              </select>
+            </div>
+            <div className="col-md-6">
+              <label htmlFor="inputCity" className="form-label">
+                City
+              </label>
+              <input type="text" className="form-control" id="inputCity" />
+            </div>
+            <div className="col-md-6">
+              <label htmlFor="phone" className="form-label">
+                Phone
+              </label>
+              <input type="text" className="form-control" id="phone" />
+            </div>
+            <div className="mb-3">
+              <label for="aboutTextarea" class="form-label">
+                About
+              </label>
+              <textarea
+                class="form-control"
+                id="aboutTextarea"
+                rows="5"></textarea>
+            </div>
+
+            <h3 className="text-start">Social Accounts</h3>
+
+            <div className="col-md-6">
+              <label htmlFor="facebook" className="form-label">
+                Facebook
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="facebook"
+                placeholder=" https://facebook.com/"
+              />
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="twitter" className="form-label">
+                Twitter
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="twitter"
+                placeholder=" https://twitter.com/"
+              />
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="googleplus" className="form-label">
+                Google Plus
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="googleplus"
+                placeholder=" https://googleplus.com/"
+              />
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="linkedin" className="form-label">
+                LinkedIn
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="linkedin"
+                placeholder=" https://linkedin.com/"
+              />
+            </div>
+
+            <div className="col-12">
+              <button type="submit" className="btn btn-primary p-3">
+                Save Changes
+              </button>
+            </div>
+          </form>
         </div>
-        {/* <----------------------Form Area End-----------------------> */}
+
+        {/* <----------------------Form Area End Hakan Bilgi----------------------> */}
       </div>
     </div>
   );
