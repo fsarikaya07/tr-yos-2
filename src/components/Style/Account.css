@@ -152,3 +152,40 @@
         width: 100% !important;
     }
 }
+
+/* FORM  CSS START HAKAN BILGI */
+
+.col-7 {
+  margin: 0 auto; 
+}
+
+@media (max-width: 576px) {
+  .form-control,
+  .form-select,
+  .form-label {
+    width: 100%;
+  }
+}
+
+.form-control,
+.form-select {
+  border: 1px solid #e0ecf5; 
+  padding: 6px 12px; 
+  font-size: 14px;
+  line-height: 21px;
+  text-decoration: none solid rgb(33, 37, 41);
+  word-spacing: 0px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  transform: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: #e0ecf5 dashed 1px;
+  box-sizing: border-box;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px; 
+}
+/* FORM  CSS END HAKAN BILGI */

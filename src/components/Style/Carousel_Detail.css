@@ -1,0 +1,101 @@
+      /* <---------------------SLIDER CSS START HAAKN BILGI---------------------> */
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.slide-image {
+  height: 60vh;
+
+  background-size: contain;
+  background-color: white;
+}
+
+@media (min-width: 1200px) {
+  .slide-image {
+    height: 55vh;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .slide-image {
+    height: 45vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .slide-image {
+    height: 35vh;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .slide-image {
+    height: 25vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .slide-image {
+    height: 20vh;
+  }
+}
+
+.icon-container i {
+  color: navy !important;
+}
+
+.icon-container:hover i {
+  color: white !important;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+.icon-container:hover {
+  background-color: blue;
+}
+
+.icon-container:hover i {
+  color: blue;
+}
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: navy;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.icon-wrapper:hover {
+  background-color: white;
+  border-color: blue;
+}
+.icon-container i {
+  color: white;
+}
+
+.icon-container:hover i {
+  color: blue;
+}
+      /* <---------------------SLIDER CSS END HAKAN BILGI ---------------------> */
