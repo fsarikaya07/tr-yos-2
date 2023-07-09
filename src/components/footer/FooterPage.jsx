@@ -8,7 +8,7 @@ const FooterPage = () => {
         <Row>
         
           <Col md={3} className="p-4 d-flex flex-column justify-content-center align-items-center ">
-            <div className="card-body w-100 text-start">
+            <div className="card-body w-100 text-start ">
             <h5>Adres</h5>
             <p className="card-text">Phone: +1 123-456-7890</p>
             <p className="card-text">Email: info@example.com</p>
