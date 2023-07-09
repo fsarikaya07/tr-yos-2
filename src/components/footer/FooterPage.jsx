@@ -8,7 +8,7 @@ const FooterPage = () => {
         <Row>
         
           <Col md={3} className="p-4 d-flex flex-column justify-content-center align-items-center ">
-            <div className="card-body w-100 text-start">
+            <div className="card-body w-100 text-start ">
             <h5>Adres</h5>
             <p className="card-text">Phone: +1 123-456-7890</p>
             <p className="card-text">Email: info@example.com</p>
@@ -16,7 +16,8 @@ const FooterPage = () => {
             </div>
         
           </Col>
-          <Col md={3}>
+          <Col md={3} className="p-4 d-flex flex-column justify-content-center align-items-center ">
+            <div className="card-body w-100 text-start">
             <h5>Navigations</h5>
             <ul className="list-unstyled">
               <li>
@@ -35,8 +36,10 @@ const FooterPage = () => {
                 <a href="#blog">Blog</a>
               </li>
             </ul>
+            </div>
           </Col>
-          <Col md={6}>
+          <Col md={6} className="p-4 d-flex flex-column justify-content-center align-items-center ">
+            <div className="card-body w-100 text-start">
             <h5>My Account</h5>
             <ul  className="list-unstyled">
 
@@ -51,6 +54,7 @@ const FooterPage = () => {
                 <a href="#favorites">Favorites</a>
               </li>
         </ul>
+        </div>
           </Col>
         </Row>
       </Container>
