@@ -1,8 +1,9 @@
 import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import Select from 'react-select';
-
- import '../Style/Departmants.css'
+import {data} from "../../helper/data";
+import DepertmentsCard from './DepertmentsCard';
+import '../Style/Departmants.css'
 const Departments = () => {
   const cities = [
     {
@@ -158,6 +159,19 @@ Submit Search
 </Col>
 {/* ********************form end****************** */}
 {/* *****************card start************************* */}
+<Col xs={12} sm={12} md={12} lg={8} xl={9}>
+<Container className=" rounded-4 mt-2 p-4 " >
+<Row className="">
+{data.map((item)=>{
+return(
+<Col sm={12} md={6} lg={6}>
+<DepertmentsCard {...item}/>
+</Col>
+)
+})}
+</Row>
+</Container>
+</Col>
 
 {/* ****************card end******************** */}
 </div></Row>
