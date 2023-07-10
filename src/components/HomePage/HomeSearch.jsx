@@ -1,9 +1,9 @@
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Form,  } from "react-bootstrap";
 // import background from "../assets/graduate.jpg";
 
 import Select from "react-select";
 
-import "./HomeSearch.css";
+import "../Style/HomeSearch.css";
 
 function HomeSearch() {
   const cities = [
