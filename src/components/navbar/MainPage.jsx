@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink, Button, Container, Nav } from "react-bootstrap";
+import {  Button, Container, Nav } from "react-bootstrap";
+import {  NavLink } from "react-router-dom";
 
 const MainPage = () => {
   return (
@@ -22,9 +23,17 @@ const MainPage = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link " href="#">
-                Departments
-              </a>
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive && "red",
+                })}
+                to="/departmants"
+                className="nav-link active"
+                href="#"
+                aria-current="page"
+              >
+                Departmants
+              </NavLink>
             </li>
           </ul>
         </div>
