@@ -7,8 +7,6 @@ import { Link, NavLink } from 'react-router-dom';
 import React from "react";
 
 
-
-
 const MainPage = () =>  {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
