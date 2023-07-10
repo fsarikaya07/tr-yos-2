@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 import { Button, Col, Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, NavLink } from 'react-router-dom';
-=======
 import React from "react";
-import {  Button, Container, Nav } from "react-bootstrap";
-import {  NavLink } from "react-router-dom";
->>>>>>> 4d425b7710ea8093674fc53b30ac596afaf36892
+
 
 const MainPage = () =>  {
   return (
