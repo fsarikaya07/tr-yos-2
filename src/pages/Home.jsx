@@ -9,7 +9,7 @@ const Home = ({ universities }) => {
   
   return (
     <div>
-      <h1>Üniversiteler</h1>
+
       <nav>
       <Link to="/account">Account</Link>
         <ul>
