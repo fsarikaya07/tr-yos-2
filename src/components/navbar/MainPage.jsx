@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink, Button, Container, Nav } from "react-bootstrap";
+import {  Button, Container, Nav } from "react-bootstrap";
+import {  NavLink } from "react-router-dom";
 
 const MainPage = () => {
   return (
