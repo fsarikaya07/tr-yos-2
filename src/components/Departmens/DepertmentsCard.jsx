@@ -18,6 +18,7 @@ const DepertmentsCard = ({ image, title, desc, cities, years }) => {
           style={{ position: "absolute", top: "190px", right: "10px" }}
         >
           <i
+          
             className="fa-solid fa-rotate-right fa-spin fa-md p-1 "
             style={{ color: "blue" }}
           ></i>
