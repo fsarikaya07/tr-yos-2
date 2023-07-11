@@ -1,0 +1,10 @@
+.desc{
+  font-size:x-small;
+}
+@media  (min-width: 1024px) {
+     .desc{
+      font-size:x-small !important;
+     }
+
+     
+}

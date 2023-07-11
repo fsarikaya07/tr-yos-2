@@ -1,5 +1,5 @@
 import React from "react";
-import "./EmailSearch.css";
+import "../Style/EmailSearch.css";
 const EmailSearch = () => {
   return (
     

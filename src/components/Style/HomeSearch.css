@@ -1,0 +1,65 @@
+.title{
+  font-weight: 600;
+  margin-top: 250px !important;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .select {
+   font-size: small;
+ 
+  }
+.mySelect{
+ height: 60% !important;
+  width: 100% !important;
+}
+}
+
+@media  (min-width: 768px) and (max-width: 1023.98px){
+  .mySelect{
+      height: 50% !important;
+       width: 90% !important;
+    }
+    .main{
+      height: 75% !important;
+    }
+    .select {
+      font-size: small;
+      margin-bottom: 15px !important;
+    
+     }
+}
+
+@media  (min-width: 1024px) {
+ .mySelect{
+      height: 50% !important;
+      width: 85% !important;
+    }
+    .main{
+      height: 100% !important;
+    }
+    .select {
+      font-size: small;
+      margin-bottom: 15px !important;
+    
+     }
+
+    
+}
+@media  (min-width: 1441px) {
+  .mySelect{
+       height: 50% !important;
+       width: 60% !important;
+     }
+     .main{
+       height: 100% !important;
+     }
+     .select {
+       font-size: small;
+       margin-bottom: 15px !important;
+     
+      }
+ 
+     
+ }
