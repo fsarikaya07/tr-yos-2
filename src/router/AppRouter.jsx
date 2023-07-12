@@ -7,6 +7,8 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Departments from "../components/Departmens/Departments";
 
+
+
 const AppRouter = ({ universities }) => {
   return (
     <BrowserRouter>
