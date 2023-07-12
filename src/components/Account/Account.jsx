@@ -14,9 +14,9 @@ const Account = () => {
     google: "https://plus.google.com/johndoe",
   };
   return (
-    <div className=" ">
+    <div className="">
       <h1 className="text-center">MY Account</h1>
-      <div className="account_container p-2 d-flex justify-content-around ">
+      <div className="account_container p-2 d-flex justify-content-around  ">
         {/* <----------------------Profi Area Start-----------------------> */}
         <div className=" card w-25 bg-white border-0 shadow-lg p-3 mb-5  rounded" style={{ width: "18rem" }}>
           <img
@@ -78,27 +78,27 @@ const Account = () => {
         {/* <----------------------Profil Area End-----------------------> */}
         
         {/* <----------------------Form Area Start Hakan Bilgi-----------------------> */}
-        <div className="col-7">
-          <form className="row g-4 ">
+        <div className="card w-75 bg-white border-0 shadow-lg p-3 mb-5 rounded mx-1" style={{ width: "18rem" }}>
+          <form className="row g-4">
             <h3 className="text-start">MY Account</h3>
             <div className="col-md-6 ">
               <label htmlFor="inputText" className="form-label">
                 Your Name
               </label>
-              <input type="inputText" className="form-control" id="inputText" />
+              <input type="inputText" className="form-control p-3" id="inputText" required />
             </div>
             <div className="col-md-6">
               <label htmlFor="inputEmail" className="form-label">
                 Email
               </label>
-              <input type="email" className="form-control" id="inputEmail" />
+              <input type="email" className="form-control p-3" id="inputEmail" required />
             </div>
             <div className="col-md-6">
-              <label htmlFor="inputContry" className="form-label">
+              <label htmlFor="inputContry" className="form-label"   >
                 Country
               </label>
-              <select id="inputCountry" className="form-select">
-                <option selected="">Select Country</option>
+              <select id="inputCountry" className="form-select p-3" required >
+                <option selected disabled value="">Select Country</option>
                 <option>Rusia</option>
                 <option>USA</option>
                 <option>Turkiye</option>
@@ -109,13 +109,13 @@ const Account = () => {
               <label htmlFor="inputCity" className="form-label">
                 City
               </label>
-              <input type="text" className="form-control" id="inputCity" />
+              <input type="text" className="form-control p-3" id="inputCity" required />
             </div>
             <div className="col-md-6">
               <label htmlFor="phone" className="form-label">
                 Phone
               </label>
-              <input type="text" className="form-control" id="phone" />
+              <input type="text" className="form-control p-3" id="phone" />
             </div>
             <div className="mb-3">
               <label for="aboutTextarea" class="form-label">
@@ -135,7 +135,7 @@ const Account = () => {
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control p-3"
                 id="facebook"
                 placeholder=" https://facebook.com/"
               />
@@ -147,7 +147,7 @@ const Account = () => {
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control p-3"
                 id="twitter"
                 placeholder=" https://twitter.com/"
               />
@@ -159,7 +159,7 @@ const Account = () => {
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control p-3"
                 id="googleplus"
                 placeholder=" https://googleplus.com/"
               />
@@ -171,7 +171,7 @@ const Account = () => {
               </label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control p-3"
                 id="linkedin"
                 placeholder=" https://linkedin.com/"
               />
