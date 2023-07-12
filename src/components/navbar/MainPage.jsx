@@ -4,13 +4,39 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, NavLink } from 'react-router-dom';
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 
 const MainPage = () =>  {
+ 
+  const [openScroll, setOpenScroll] = useState(false)
+
+  useEffect(() => {
+    const onlockScroll = () => {
+      if (window.scrollY > 0) {
+        setOpenScroll(true);
+      } else {
+        setOpenScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", onlockScroll);
+    return () => {
+      window.removeEventListener("scroll", onlockScroll);
+    };
+  }, []);
+
+
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container className="d-flex flex-wrap align-items-center opacity-75 justify-content-around justify-content-lg-start">
+    <Navbar 
+    bg={openScroll ? "black" : "transparent"}
+      fixed="top"
+      expand="md"
+      className={`bg-body-tertiary py-3 shadow-lg ${
+        openScroll ? "border-b border-[#e9ecef] animate-wiggle" : ""
+      }`} >
+      <Container className="d-flex flex-wrap align-items-center flex-wrap opacity-75 justify-content-around justify-content-lg-start">
         {/* <Navbar.Brand href="#home">TR-YöS</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -66,12 +92,12 @@ const MainPage = () =>  {
           
         <div className="navbarCollapse">
           <Link to="/login">
-            <Button className="btn btn-outline-light my-2 py-2 m-1 " type="submit">
+            <Button className="btn btn-outline-light my-2 py-2 m-1 flex-wrap" type="submit">
               Sing In
             </Button>
           </Link>
           <Link to="/logout">
-            <Button className="btn btn-outline-light my-2 py-2 m-1" type="submit">
+            <Button className="btn btn-outline-light my-2 py-2 m-1 flex-wrap" type="submit">
               Sing Up
             </Button>
           </Link>
