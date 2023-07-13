@@ -1,0 +1,83 @@
+.homeNavbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+  Button {
+    display: flex;
+    border-radius: 18%;
+   
+    
+    transition: 0.3s;
+    outline: 0;
+    width: 6vw;
+    opacity: 100%;
+    border-radius: 5px;
+    height: 50px;
+    background-color: blue !important ;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+   .Button:active {
+    transform: scale(0.85);
+  }
+
+  .SearchBox-icon {
+    margin: auto;
+    color: #fff;
+  }
+
+
+  
+  @media screen and (min-width: 400px) {
+    .SearchBox:hover .SearchBox-input {
+      width: 500px;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .account_container{
+        display: block !important;
+    }
+    .card{
+        width: 100% !important;
+    }
+}
+
+button {
+    border: none;
+    background: none;
+    outline: 0;
+    
+  }
+  button {
+    cursor: pointer;
+  }
+  
+   
+  
+ 
+  
+  
+  @media screen and (max-width: 768px){
+    .Container{
+        display: block !important;
+        flex-wrap:wrap !important
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    /* styles for screens that are 600px wide or less */
+  }
+
+  @media screen and (max-width: 600px), print {
+    /* styles for screens that are 600px wide or less, or for printers */
+  }

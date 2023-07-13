@@ -1,10 +1,12 @@
 import React from 'react'
-import MainPage from './MainPage'
+import ScrollNavbar from './ScrollNavbar'
+// import MainPage from './MainPage'
 
 const Navbar = () => {
   return (
     <>
-    <MainPage/>
+    {/* <MainPage/> */}
+<ScrollNavbar/>
     </>
   )
 }
