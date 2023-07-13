@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 const FooterPage = () => {
   return (
@@ -7,11 +7,12 @@ const FooterPage = () => {
       <Container className="p-4">
         <Row>
         
-          <Col md={3} className="p-4 d-flex flex-column justify-content-center align-items-center ">
+        <Col md={3} className="p-4 d-flex flex-column justify-content-center align-items-center ">
             <div className="card-body w-100 text-start ">
-            <h5>Adres</h5>
-            <p className="card-text">Phone: +1 123-456-7890</p>
-            <p className="card-text">Email: info@example.com</p>
+            <h5 className="mx-2">Adres</h5>
+            <Button className="m-2 rounded-pill" ><p className="card-text">Phone: +1 123-456-7890</p></Button>
+            <Button className="m-2 rounded-pill" ><p className="card-text">Email: info@example.com</p></Button>
+            
           
             </div>
         
