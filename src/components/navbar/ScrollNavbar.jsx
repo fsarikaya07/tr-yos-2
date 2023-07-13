@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Container, Nav, Row, Col, Button } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import "./HomePage.css";
+import "../navbar/logo/OIG.jpeg";
 
 const ScrollNavbar = () => {
   const location = useLocation();
@@ -92,7 +92,7 @@ const ScrollNavbar = () => {
                     <Button
                       className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
                       type="submit"
-                      variant="info"
+                      variant="primary"
                     >
                       Sing In
                     </Button>
