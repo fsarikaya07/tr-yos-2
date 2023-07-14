@@ -1,9 +1,14 @@
 import React from "react";
-import { data } from "../../helper/data";
+
 import HomeCard from "./HomeCard";
 import { Col, Container, Row } from "react-bootstrap";
+import { useYosContext } from "../../context/Context";
 
 const HomeDepartmens = () => {
+   const { card} = useYosContext();
+   const shuffledCards = card.sort(() => 0.5 - Math.random());
+   const random12Cards = shuffledCards.slice(0, 12);
+ 
   return (
     // <div>
     //   {data.map((item)=> <HomeCard{...item}/>)}
@@ -20,10 +25,10 @@ const HomeDepartmens = () => {
       </h6>
 
       <Row className="g-3 d-flex flex-wrap">
-        {data.map((item) => {
+        {random12Cards?.map((item,index) => {
           return (
-            <Col sm={6} md={6} lg={4}>
-              <HomeCard {...item} />
+            <Col sm={6} md={6} lg={4} key={item.id}>
+              <HomeCard item={item} />
             </Col>
           );
         })}

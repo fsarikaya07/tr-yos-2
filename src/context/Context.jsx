@@ -11,6 +11,7 @@ export function YosProvider({ children }) {
   const [cities, setCities] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [departments, setDepartments] = useState([]);
+  const [card, setCard] = useState([]);
   
 
   useEffect(() => {
@@ -37,7 +38,16 @@ export function YosProvider({ children }) {
         console.log(error);
       });
 
-      
+      axios
+      .get(
+          "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
+      )
+      .then((response) => {
+        setCard(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
  
 
     axios
@@ -56,6 +66,7 @@ export function YosProvider({ children }) {
     cities,
     universities,
     departments,
+    card,
    
   };
 
