@@ -1,85 +1,46 @@
-import { Button, Form,  } from "react-bootstrap";
-// import background from "../assets/graduate.jpg";
-
+import { Button, Form } from "react-bootstrap";
 import Select from "react-select";
-
+import { useYosContext } from "../../context/Context";
 import "../Style/HomeSearch.css";
-
+import { useNavigate } from "react-router";
+import { useState } from "react";
 function HomeSearch() {
-  const cities = [
-    {
-      value: "Ankara",
-      label: "Ankara",
-    },
-    {
-      value: "İstanbul",
-      label: "İstanbul",
-    },
-    {
-      value: "Bursa",
-      label: "Bursa",
-    },
-    {
-      value: "Balıkesir",
-      label: "Balıkesir",
-    },
-    {
-      value: "Bolu",
-      label: "Bolu",
-    },
-  ];
 
-  const universities = [
-    {
-      value: "Abant İzzet Baysal",
-      label: "Abant İzzet Baysal",
-    },
-    {
-      value: "Abdullah Gül University",
-      label: "Abdullah Gül University",
-    },
-    {
-      value: "Ethnology University",
-      label: "Acıbadem University",
-    },
-    {
-      value: "Alpaslan Türkeş Bilim ve Teknoloji",
-      label: "Alpaslan Türkeş Bilim ve Teknoloji",
-    },
-    {
-      value: "Uludağ University",
-      label: "Uludağ University",
-    },
-  ];
-  const departmants = [
-    {
-      value: "Turkish Folklore",
-      label: "Turkish Folklore",
-    },
-    {
-      value: "Archaeology",
-      label: "Archaeology",
-    },
-    {
-      value: "Ethnology",
-      label: "Ethnology",
-    },
-    {
-      value: "Biology",
-      label: "Biology",
-    },
-    {
-      value: "Dentist",
-      label: "Dentist",
-    },
-  ];
+  const { cities, universities, departments } = useYosContext();
+  const navigate = useNavigate();
+  const [selectedCities, setSelectedCities] = useState([]);
+  const [filteredUniversities, setFilteredUniversities] = useState([]);
+
+  const [selectedUniversities, setSelectedUniversities] = useState([]);
+  const [filteredDepartments, setFilteredDepartments] = useState([]);
+
+  const handleCityChange = (selectedOptions) => {
+    setSelectedCities(selectedOptions);
+    const selectedCityIds = selectedOptions.map((option) => option.value);
+    const filteredUnis = universities.filter((university) =>
+      selectedCityIds.includes(university.city)
+    );
+    setFilteredUniversities(filteredUnis);
+  };
+
+
+  const handleUniversityChange = (selectedOptionss) => {
+    setSelectedUniversities(selectedOptionss);
+    const selectedUniversityIds = selectedOptionss.map((optionn) => optionn.value.en);
+    const filteredDeps = departments.filter((department) =>
+    selectedUniversityIds.includes(department.university)
+    );
+    
+    setFilteredDepartments(filteredDeps);
+  };
+console.log(departments)
 
   return (
     <div
-      className="main bg-image text-center
-       p-3 shadow-1-strong   "
+      className="main bg-image text-center p-3 shadow-1-strong"
       style={{
-        backgroundImage: `url(https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
+        backgroundImage:
+          "url(https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
@@ -87,38 +48,53 @@ function HomeSearch() {
       }}
     >
       <h1 className="title text-white m-5 text-center">Education</h1>
-
-      <Form className="mySelect row p-2 bg-body rounded-3 text-start align-items-center  d-inline-flex shadow">
+      <Form className="mySelect row p-2 bg-body rounded-3 text-start align-items-center d-inline-flex shadow">
         <div className="select col-md-12 g-2 col-lg-3 my-2">
           <Select
             placeholder="Select City"
-            className=" w-sm-100 w-lg-25 "
+            onChange={handleCityChange}
+            options={cities.map((city) => ({
+              value: city.id,
+              label: city.en,
+              key: city.id,
+            }))}
             isMulti
-            options={cities}
+            value={selectedCities}
           />
         </div>
-        <div className="select col-md-12 g-2 col-lg-3 my-2 ">
+        <div className="select col-md-12 g-2 col-lg-3 my-2">
           <Select
-            placeholder="Select University"
+            placeholder="Üniversite Seçin"
+            onChange={handleUniversityChange}
+            options={filteredUniversities.map((university) => ({
+              value: university.id,
+              label: university.en,
+              key: university.id,
+            }))}
+            isMulti
+            value={selectedUniversities}
+          />
+        </div>
+        <div className="select col-md-12 g-2 col-lg-3 my-2">
+          <Select
+            placeholder="Select Department"
             className="w-sm-100 w-lg-25"
+            
+           
+            options={filteredDepartments.map((department) => ({
+              value: department.id,
+              label: department.en,
+              key: department.id,
+              
+            }))}
             isMulti
-            options={universities}
           />
         </div>
-
-        <div className="select  col-md-12 g-2 col-lg-3 my-2 ">
-          <Select
-            placeholder="Select Departmant"
-            className=" w-sm-100 w-lg-25 "
-            isMulti
-            options={departmants}
-          />
-        </div>
-
         <Button
           variant="primary"
           type="submit"
-          className="button col-md-12 g-2 p-3 col-lg-3 my-2  "
+          className="button col-md-12 g-2 p-3 col-lg-3 my-2"
+          onClick={() => navigate("/departmants")}
         >
           Search
         </Button>

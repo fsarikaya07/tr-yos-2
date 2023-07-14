@@ -1,12 +1,15 @@
 import React from 'react'
-import MainPage from './MainPage'
-import MobileMenu from './dropdown/MobileMenu'
+import ScrollNavbar from './Calisanlar/ScrollNavbar'
+// import ScrollNavbar from './ScrollNavbar'
+// import MainPage from './MainPage'
 
 const Navbar = () => {
   return (
     <>
-    <MainPage/>
-    <MobileMenu/>
+    {/* <MainPage/> */}
+{/* <ScrollNavbar/> */}
+<ScrollNavbar/>
+
     </>
   )
 }
