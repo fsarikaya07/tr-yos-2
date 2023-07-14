@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeSearch from "../components/HomePage/HomeSearch";
+import Departments from "../components/Departmens/Departments";
 
 
 const Home = ({ universities }) => {
@@ -23,6 +24,7 @@ const Home = ({ universities }) => {
         </ul>
       </nav>
       <HomeSearch/>
+     
      
     </div>
   );
