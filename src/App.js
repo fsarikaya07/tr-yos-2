@@ -1,4 +1,5 @@
 import "./App.css";
+import {  YosProvider } from "./context/Context";
 
 import AppRouter from "./router/AppRouter";
 
@@ -55,7 +56,9 @@ function App() {
   ];
   return (
     <div className="App">
+      <YosProvider>
       <AppRouter universities={universities} />
+      </YosProvider>
     </div>
   );
 }
