@@ -10,17 +10,17 @@ import LogIn from "../components/Login/Logİn";
 import SignUp from "../components/Login/Signup";
 
 
-const AppRouter = ({ universities }) => {
+const AppRouter = () => {
   return (
     <BrowserRouter>
       <Navbar className="" />
 
       <Routes>
-        <Route path="/" element={<Home universities={universities} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/account" element={<Account />} />
         <Route
           path="/universities/:id"
-          element={<Detail universities={universities} />}
+          element={<Detail  />}
         />
         <Route path="/departmants" element={<Departments />} />
         <Route path="/login" element={<LogIn/>}/>

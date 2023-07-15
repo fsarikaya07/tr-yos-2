@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 
 const HomeCard = ({item}) => {
-// console.log(item)
+
 
 // const firstImage = item.images[0];
   return (
