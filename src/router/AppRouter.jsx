@@ -6,6 +6,9 @@ import Account from "../components/Account/Account";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Departments from "../components/Departmens/Departments";
+import LogIn from "../components/Login/Logİn";
+import SignUp from "../components/Login/Signup";
+
 
 const AppRouter = ({ universities }) => {
   return (
@@ -20,6 +23,8 @@ const AppRouter = ({ universities }) => {
           element={<Detail universities={universities} />}
         />
         <Route path="/departmants" element={<Departments />} />
+        <Route path="/login" element={<LogIn/>}/>
+        <Route path="/logout" element={<SignUp/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
