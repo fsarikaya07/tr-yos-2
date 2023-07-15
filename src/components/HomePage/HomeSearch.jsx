@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Select from 'react-select';
-import { useYosContext } from '../contexts/Context';
+import { useYosContext } from '../../context/Context';
 import '../Style/HomeSearch.css';
 import { useNavigate } from 'react-router';
 import { useState } from 'react';

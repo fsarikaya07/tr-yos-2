@@ -17,15 +17,15 @@ const Home = () => {
 
       <nav>
       <Link to="/account">Account</Link>
-        <ul>
+        {/* <ul>
           {card.map((university) => (
-            <li key={university.id}>
+            <li key={university}>
               <Link to={`/universities/${university.id}`}>
                 {university.tr}
               </Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </nav>
       <HomeSearch/>
       <HomeDepartmens/>
