@@ -8,6 +8,7 @@ import Select from 'react-select';
 import '../Style/Departmants.css';
 import { useYosContext } from '../../context/Context';
 import { useLocation } from 'react-router';
+import DepertmentsCard from './DepertmentsCard';
 
 const Departments = () => {
   const location = useLocation();
