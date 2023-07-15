@@ -7,17 +7,17 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Departments from "../components/Departmens/Departments";
 
-const AppRouter = ({ universities }) => {
+const AppRouter = () => {
   return (
     <BrowserRouter>
       <Navbar className="" />
 
       <Routes>
-        <Route path="/" element={<Home universities={universities} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/account" element={<Account />} />
         <Route
           path="/universities/:id"
-          element={<Detail universities={universities} />}
+          element={<Detail  />}
         />
         <Route path="/departmants" element={<Departments />} />
       </Routes>

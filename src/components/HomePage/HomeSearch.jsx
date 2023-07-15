@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 function HomeSearch() {
 
-  const { cities, universities, departments } = useYosContext();
+  const { card,cities, universities, departments } = useYosContext();
   const navigate = useNavigate();
   const [selectedCities, setSelectedCities] = useState([]);
   const [filteredUniversities, setFilteredUniversities] = useState([]);
@@ -24,6 +24,19 @@ function HomeSearch() {
   };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
   const handleUniversityChange = (selectedOptionss) => {
     setSelectedUniversities(selectedOptionss);
     const selectedUniversityIds = selectedOptionss.map((optionn) => optionn.value.en);
@@ -33,7 +46,7 @@ function HomeSearch() {
     
     setFilteredDepartments(filteredDeps);
   };
-console.log(departments)
+
 
   return (
     <div

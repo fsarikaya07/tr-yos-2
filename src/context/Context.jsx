@@ -15,6 +15,7 @@ export function YosProvider({ children }) {
   
 
   useEffect(() => {
+    
     axios
       .get(
         "https://tr-yös.com/api/v1/location/allcities.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
