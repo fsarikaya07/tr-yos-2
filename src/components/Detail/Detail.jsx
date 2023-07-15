@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../Style/Detail.css";
 import { useParams } from "react-router";
-import Slider from "./Carousel_Detail";
+import Slider from "./Slider";
 import { useYosContext } from "../../context/Context";
 
 const Detail = () => {

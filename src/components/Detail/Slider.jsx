@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import "../Style/Carousel_Detail.css";
+import "../Style/Slider.css";
 
 const Slider = ({ images }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    if (images.length > 0) {
+      setIsLoaded(true);
+    }
+  }, [images]);
+
+  if (!isLoaded) {
+    return <div>Loading...</div>; 
+  }
+
   return (
     <Slide
       infinite={true}
