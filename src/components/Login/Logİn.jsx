@@ -1,11 +1,12 @@
 import React from "react";
-import "./Style/Login.css";
+import "../Style/Login.css";
 // import React, { useContext, useState } from "react";
 // import { Link } from "react-router-dom";
-import GoogleIcon from "../assets/icons/GoogleIcon";
+// import GoogleIcon from "../../assets/icons/GoogleIcon";
+import { Link } from "react-router-dom";
 // import { AuthContext } from "../context/AuthContext";
 
-const Login = () => {
+const LogIn = () => {
   //   const [email, setEmail] = useState("");
 //   const [password, setPassword] = useState("");
 //   const { signIn, signUpProvider, forgotPassword } = useContext(AuthContext);
@@ -71,12 +72,16 @@ const Login = () => {
             // onClick={() => signUpProvider()}
           >
             Continue with Google
-            <GoogleIcon color="currentColor" />
+            {/* <GoogleIcon color="currentColor" /> */}
           </button></div>
        
       </form>
+      <nav>
+        <Link to="/account">Account</Link>
+        
+      </nav>
     </div>
   );
 };
 
-export default Login;
+export default LogIn;

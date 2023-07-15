@@ -4,13 +4,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Detail.css";
 import { useParams } from "react-router";
 import Slider from "./Carousel_Detail";
+import { useYosContext } from "../../context/Context";
 
-const Detail = ({universities}) => {
+const Detail = () => {
   const [isDetail, setIsDetail] = useState(false);
   const [isButton, setIsButton] = useState(true);
   const { id } = useParams();
-  const university = universities.find((u) => u.id === parseInt(id));
+  const{card,departments,universities,cities}=useYosContext()
+console.log(id);
+  //universiteye ve departman ilişkisi   
+
+  const cardApi = card.find((u) => u.id === id);
+  const uniApi= universities.find((uni) => uni.tr === cardApi?.university.tr)
+  const detaiUni= departments.find((a) => a.facultyCode === cardApi?.faculty.code)
+  const cityApi= cities.find((city) => city.id === cardApi?.city.code)
   
+  console.log(uniApi?.logo);
   return (
     <div className="bg-light">
       {/* <---------------------SLIDER START HAKAN BILGI ---------------------> */}
@@ -24,15 +33,15 @@ const Detail = ({universities}) => {
             <div className="d-flex justify-content-between mt-4 p-2 bg-white">
               <div className="w-75">
                 <h4 className="text-start">
-                  Biomedical Engineering 20% Scholarship 
+                {cardApi?.faculty.tr}
                 </h4>
-                <p>{university.deparments}</p>
+                <p></p>
                 <p>
-                  <i class="fa-solid fa-location-dot fa-sm"></i> {university.address}
+                  <i class="fa-solid fa-location-dot fa-sm"></i> {cardApi?.data?.adress}
                 </p>
               </div>
               <div>
-                <p className="fs-3 text-primary font-weight-bold">${university.tuitionFee}</p>
+                <p className="fs-3 text-primary font-weight-bold">${cardApi?.price}</p>
                 <p className="year text-center ">Year</p>
               </div>
             </div>
@@ -50,7 +59,7 @@ const Detail = ({universities}) => {
                 </div>
                 <div className="dashed text-center w-25">
                   <p>Quota</p>
-                  <p className="fs-2 text-success "> {university.quota}</p>
+                  {/* <p className="fs-2 text-success "> {cardApi.quota}</p> */}
                 </div>
                 <div className="w-25 text-center">
                   <p>Internships</p>
@@ -62,7 +71,7 @@ const Detail = ({universities}) => {
             <div className="bg-white rounded mt-4 p-2">
               <h6 className="text-start font-weight-bold">About Department</h6>
               <p className="text-muted text-start fs-7 font-weight-light">
-              {university.history}
+              {/* {cardApi.history} */}
               </p>
             </div>
 
@@ -227,15 +236,15 @@ const Detail = ({universities}) => {
                     <img
                       style={{ width: 75, height: 75 }}
                       className="border rounded-circle p-2 "
-                      src="https://upload.wikimedia.org/wikipedia/tr/thumb/2/2a/AcibademUniLogoOrjinal.png/200px-AcibademUniLogoOrjinal.png"
+                      src={uniApi?.logo}
                       alt="logo"
                     />
                     <div className="text-start ps-4">
                       <h4 className="">
-                      {university.name}
+                      {cardApi?.university.tr}
                       </h4>
                       <p className="fs-7">
-                        <i class="fa-solid fa-location-dot fa-sm"></i> {university.address}
+                        <i class="fa-solid fa-location-dot fa-sm"></i>{cityApi?.tr}
                       </p>
                     </div>
                   </div>
@@ -251,9 +260,10 @@ const Detail = ({universities}) => {
                         <p>
                           <a
                             className="text-decoration-none"
-                            href={university.contact.phone}
+                            href={cardApi?.data?.phone}
+                            
                           >
-                            {university.contact.phone}
+                            {cardApi?.data?.phone}
                           </a>
                         </p>
                       </div>
@@ -269,7 +279,7 @@ const Detail = ({universities}) => {
                             className="text-decoration-none"
                             href="mailto:info@acibadem.edu.tr"
                           >
-                            {university.contact.email}
+                            {cardApi?.data?.email}
                           </a>
                         </p>
                       </div>
@@ -283,10 +293,10 @@ const Detail = ({universities}) => {
                         <p>
                           <a
                             className="text-decoration-none"
-                            href="https://www.acibadem.edu.tr"
+                            href={cardApi?.data?.web}
                             target="_blank"
                           >
-                            https://www.acibadem.edu.tr
+                            {cardApi?.data?.web}
                           </a>
                         </p>
                       </div>
