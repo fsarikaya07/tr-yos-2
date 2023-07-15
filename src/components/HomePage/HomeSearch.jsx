@@ -20,9 +20,9 @@ function HomeSearch() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const selectedCityIds = selectedCities.map((option) => option.value);
-    const selectedUniversityIds = selectedUniversities.map((option) => option.value);
-    const selectedDepartmentIds = selectedDepartments.map((option) => option.value);
+    const selectedCityIds = selectedCities?.map((option) => option.value);
+    const selectedUniversityIds = selectedUniversities?.map((option) => option.value);
+    const selectedDepartmentIds = selectedDepartments?.map((option) => option.value);
 
     navigate('/departmants', {
       state: {
@@ -35,14 +35,14 @@ function HomeSearch() {
 
   const handleCityChange = (selectedOptions) => {
     setSelectedCities(selectedOptions);
-    const selectedCityIds = selectedOptions.map((option) => option.value);
+    const selectedCityIds = selectedOptions?.map((option) => option.value);
     const filteredUnis = universities.filter((university) => selectedCityIds.includes(university.city));
     setFilteredUniversities(filteredUnis);
   };
 
   const handleUniversityChange = (selectedOptions) => {
     setSelectedUniversities(selectedOptions);
-    const selectedUniversityIds = selectedOptions.map((option) => option.value.en);
+    const selectedUniversityIds = selectedOptions?.map((option) => option.value.en);
     const filteredDeps = departments.filter((department) => selectedUniversityIds.includes(department.university));
     setFilteredDepartments(filteredDeps);
   };
@@ -69,7 +69,7 @@ function HomeSearch() {
           <Select
             placeholder="Select City"
             onChange={handleCityChange}
-            options={cities.map((city) => ({
+            options={cities?.map((city) => ({
               value: city.id,
               label: city.en,
               key: city.id,
@@ -82,7 +82,7 @@ function HomeSearch() {
           <Select
             placeholder="Select University"
             onChange={handleUniversityChange}
-            options={filteredUniversities.map((university) => ({
+            options={filteredUniversities?.map((university) => ({
               value: university.id,
               label: university.en,
               key: university.id,
@@ -95,7 +95,7 @@ function HomeSearch() {
           <Select
             placeholder="Select Department"
             className="w-sm-100 w-lg-25"
-            options={filteredDepartments.map((department) => ({
+            options={filteredDepartments?.map((department) => ({
               value: department.id,
               label: department.en,
               key: department.id,

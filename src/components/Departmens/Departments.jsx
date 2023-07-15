@@ -8,6 +8,7 @@ import Select from 'react-select';
 import '../Style/Departmants.css';
 import { useYosContext } from '../../context/Context';
 import { useLocation } from 'react-router';
+import DepertmentsCard from './DepertmentsCard';
 
 const Departments = () => {
   const location = useLocation();
@@ -138,7 +139,19 @@ const Departments = () => {
                 </Button>
               </Form>
             </Col>
-           
+            <Col xs={12} sm={12} md={12} lg={8} xl={9}>
+              <Container className="rounded-4 mt-2 p-4">
+                <Row className="g-3 d-flex flex-wrap">
+                  {random12Cards?.map((item) => {
+                    return (
+                      <Col sm={6} md={6} lg={6} key={item.id}>
+                        <DepertmentsCard item={item} />
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </Container>
+            </Col>
           </div>
         </Row>
       </Container>
