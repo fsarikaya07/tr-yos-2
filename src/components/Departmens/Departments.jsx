@@ -142,7 +142,7 @@ const Departments = () => {
             <Col xs={12} sm={12} md={12} lg={8} xl={9}>
               <Container className="rounded-4 mt-2 p-4">
                 <Row className="g-3 d-flex flex-wrap">
-                  {random12Cards?.map((item, index) => {
+                  {random12Cards?.map((item) => {
                     return (
                       <Col sm={6} md={6} lg={6} key={item.id}>
                         <DepertmentsCard item={item} />
