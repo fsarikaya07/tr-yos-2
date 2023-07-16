@@ -3,19 +3,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../Style/Detail.css";
 import { useParams } from "react-router";
-import Slider from "./Carousel_Detail";
+import Slider from "./Slider";
 import { useYosContext } from "../../context/Context";
 
 const Detail = () => {
   const [isDetail, setIsDetail] = useState(false);
   const [isButton, setIsButton] = useState(true);
   const { id } = useParams();
-  const{card,departments,universities,cities}=useYosContext()
+  const{card,departments,universities,cities,}=useYosContext()
 console.log(id);
   //universiteye ve departman ilişkisi   
 
   const cardApi = card.find((u) => u.id === id);
   const uniApi= universities.find((uni) => uni.tr === cardApi?.university.tr)
+  const images = uniApi?.images || []; // Resimleri al
   const detaiUni= departments.find((a) => a.facultyCode === cardApi?.faculty.code)
   const cityApi= cities.find((city) => city.id === cardApi?.city.code)
   
@@ -23,7 +24,7 @@ console.log(id);
   return (
     <div className="bg-light">
       {/* <---------------------SLIDER START HAKAN BILGI ---------------------> */}
-      <Slider/>
+     <Slider images={images} />
       {/* <---------------------SLIDER END HAKAN BILGI---------------------> */}
 
       <div className="container  pt-4 ">
