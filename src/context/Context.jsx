@@ -12,6 +12,7 @@ export function YosProvider({ children }) {
   const [universities, setUniversities] = useState([]);
   const [departments, setDepartments] = useState([]);
   const [card, setCard] = useState([]);
+  const [sliderImages, setSliderImages] = useState([]);
   
 
   useEffect(() => {
@@ -34,6 +35,8 @@ export function YosProvider({ children }) {
       )
       .then((response) => {
         setUniversities(response.data);
+        const images = response.data.map((university) => university.images);
+        setSliderImages(images);
       })
       .catch((error) => {
         console.log(error);
@@ -68,6 +71,7 @@ export function YosProvider({ children }) {
     universities,
     departments,
     card,
+    sliderImages,
    
   };
 
