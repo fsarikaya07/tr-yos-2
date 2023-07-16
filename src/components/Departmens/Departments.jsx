@@ -12,24 +12,24 @@ import DepertmentsCard from './DepertmentsCard';
 
 const Departments = () => {
   const location = useLocation();
-  const { selectedCityIds, selectedUniversityIds, selectedDepartmentIds } = location.state;
+  const { selectedCityIds, selectedUniversityIds, selectedDepartmentIds } = location.state || {};
 
   const { card, cities, universities, departments } = useYosContext();
 
   const shuffledCards = card.sort(() => 0.5 - Math.random());
   const random12Cards = shuffledCards.slice(0, 12);
 
-  const citiesOptions = cities.map((city) => ({
+  const citiesOptions = cities?.map((city) => ({
     value: city.id,
     label: city.en,
     key: city.id,
   }));
-  const universitiesOptions = universities.map((university) => ({
+  const universitiesOptions = universities?.map((university) => ({
     value: university.id,
     label: university.en,
     key: university.id,
   }));
-  const departmentsOptions = departments.map((department) => ({
+  const departmentsOptions = departments?.map((department) => ({
     value: department.id,
     label: department.en,
     key: department.id,
@@ -38,15 +38,15 @@ const Departments = () => {
   const [filteredDepartments, setFilteredDepartments] = useState([]);
 
   const [selectedCities, setSelectedCities] = useState(
-        selectedCityIds.map((cityId) => citiesOptions.find((option) => option.value === cityId))
+        selectedCityIds?.map((cityId) => citiesOptions.find((option) => option.value === cityId))
       );
       const [selectedUniversities, setSelectedUniversities] = useState(
-        selectedUniversityIds.map((universityId) =>
+        selectedUniversityIds?.map((universityId) =>
           universitiesOptions.find((option) => option.value === universityId)
         )
       );
       const [selectedDepartments, setSelectedDepartments] = useState(
-        selectedDepartmentIds.map((departmentId) =>
+        selectedDepartmentIds?.map((departmentId) =>
           departmentsOptions.find((option) => option.value === departmentId)
         )
       );
@@ -54,14 +54,14 @@ const Departments = () => {
 
   const handleCityChange = (selectedOptions) => {
     setSelectedCities(selectedOptions);
-    const selectedCityIds = selectedOptions.map((option) => option.value);
+    const selectedCityIds = selectedOptions?.map((option) => option.value);
     const filteredUnis = universities.filter((university) => selectedCityIds.includes(university.city));
     setFilteredUniversities(filteredUnis);
   };
 
   const handleUniversityChange = (selectedOptions) => {
     setSelectedUniversities(selectedOptions);
-    const selectedUniversityIds = selectedOptions.map((option) => option.value.en);
+    const selectedUniversityIds = selectedOptions?.map((option) => option.value.en);
     const filteredDeps = departments.filter((department) => selectedUniversityIds.includes(department.university));
     setFilteredDepartments(filteredDeps);
   };
@@ -84,7 +84,7 @@ const Departments = () => {
                   <Select
                     placeholder="Select City"
                     onChange={handleCityChange}
-                    options={cities.map((city) => ({
+                    options={cities?.map((city) => ({
                       value: city.id,
                       label: city.en,
                       key: city.id,
@@ -98,7 +98,7 @@ const Departments = () => {
                     placeholder="Select University"
                     className="w-100"
                     onChange={handleUniversityChange}
-                    options={filteredUniversities.map((university) => ({
+                    options={filteredUniversities?.map((university) => ({
                       value: university.id,
                       label: university.en,
                       key: university.id,
@@ -111,7 +111,7 @@ const Departments = () => {
                   <Select
                     placeholder="Select Department"
                     className="w-100"
-                    options={filteredDepartments.map((department) => ({
+                    options={filteredDepartments?.map((department) => ({
                       value: department.id,
                       label: department.en,
                       key: department.id,

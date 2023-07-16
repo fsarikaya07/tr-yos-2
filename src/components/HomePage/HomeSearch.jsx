@@ -24,7 +24,7 @@ function HomeSearch() {
     const selectedUniversityIds = selectedUniversities?.map((option) => option.value);
     const selectedDepartmentIds = selectedDepartments?.map((option) => option.value);
 
-    navigate('/departmants', {
+    navigate('/departmants',{
       state: {
         selectedCityIds,
         selectedUniversityIds,

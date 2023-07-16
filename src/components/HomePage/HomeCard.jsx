@@ -44,6 +44,17 @@ const HomeCard = ({item}) => {
                 rel="noopener noreferrer"
                 className="text-decoration-none"
               >
+               {item.department.en}
+              </Link>
+            </Card.Title>
+            <Card.Title className="text-start text-primary fs-6">
+              <Link
+              key={item.id}
+              to="#"
+              onClick={() => window.scrollTo(0, 0)}
+                rel="noopener noreferrer"
+                className="text-decoration-none"
+              >
                {item.faculty.en}
               </Link>
             </Card.Title>
