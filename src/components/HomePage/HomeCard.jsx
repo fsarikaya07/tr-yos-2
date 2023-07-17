@@ -3,15 +3,20 @@ import { Button, Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import uniDefault from "../../assets/uni.jpg";
-import uniDefault from '../../assets/uni.jpg'
+// import uniDefault from '../../assets/uni.jpg'
 import CardSlider from "./CardSlider"
 import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
+
+
+
+
+
 const HomeCard = ({ item }) => {
   // const firstImage = item.images[0];
 
 
-const HomeCard = ({item}) => {
+// const HomeCard = ({item}) => {
 
 
 
@@ -48,7 +53,8 @@ const HomeCard = ({item}) => {
         <CardSlider />
        </div>
 
-        <button
+       <Link to="/login">
+         <button
           className=" h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap bg-light"
           style={{ position: "absolute", top: "190px", right: "10px" }}
         >
@@ -56,6 +62,8 @@ const HomeCard = ({item}) => {
           <span className="mx-1"></span>
           Compare
         </button>
+       </Link>
+       
 
         <Card.Body
           className="d-flex justify-content-between w-100 "
