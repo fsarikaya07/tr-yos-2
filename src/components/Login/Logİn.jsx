@@ -1,21 +1,8 @@
 import React from "react";
 import "../Style/Login.css";
-// import React, { useContext, useState } from "react";
-// import { Link } from "react-router-dom";
-// import GoogleIcon from "../../assets/icons/GoogleIcon";
 import { Link } from "react-router-dom";
-// import { AuthContext } from "../context/AuthContext";
 
 const LogIn = () => {
-  //   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const { signIn, signUpProvider, forgotPassword } = useContext(AuthContext);
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     signIn(email, password); // AuthContexte yazdığımız signIn metodunu çağırdık.
-//   };
-
 
   return (
     <div className="container  d-flex flex-column align-items-center mt-5   col-4 h-75  login-container">

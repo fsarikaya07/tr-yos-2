@@ -1,18 +1,14 @@
 import React from "react";
-import {  Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import uniDefault from '../../assets/uni.jpg'
-
+import uniDefault from "../../assets/uni.jpg";
 
 import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
 
-
-const HomeCard = ({item}) => {
-
-
-// const firstImage = item.images[0];
+const HomeCard = ({ item }) => {
+  // const firstImage = item.images[0];
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
       <Card style={{ width: "100%", height: "25rem" }}>
@@ -23,14 +19,21 @@ const HomeCard = ({item}) => {
           src={uniDefault}
           className="relative"
         />
-        <button
-          className=" h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap bg-light"
-          style={{ position: "absolute", top: "190px", right: "10px" }}
-        >
-          <i className="fa-solid p-1 fa-rotate-right fa-md" style={{ color: "blue" }}></i>
-          <span className="mx-1"></span>
-          Compare
-        </button>
+        <Link to="/login">
+          <Button
+            variant="light"
+            size="lg"
+            className="h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
+            style={{ position: "absolute", top: "190px", right: "10px" }}
+          >
+            <i
+              className="fa-solid p-1 fa-rotate-right fa-md"
+              style={{ color: "blue" }}
+            ></i>
+            <span className="mx-1"></span>
+            Compare
+          </Button>
+        </Link>
         <Card.Body
           className="d-flex justify-content-between w-100 "
           style={{ height: "30%" }}
@@ -38,19 +41,24 @@ const HomeCard = ({item}) => {
           <div className="left ">
             <Card.Title className="text-start text-primary fs-6">
               <Link
-              key={item.id}
+                key={item.id}
                 to={`/universities/${item.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-decoration-none"
               >
-               {item.faculty.en}
+                {item.faculty.en}
               </Link>
             </Card.Title>
-            <Card.Text   className="desc text-start  text-muted"> {item.university.en}</Card.Text>
+            <Card.Text className="desc text-start  text-muted">
+              {" "}
+              {item.university.en}
+            </Card.Text>
           </div>
           <div className=" h-25  d-flex align-items-center justify-content-center p-2">
-            <i class="bi bi-heart-fill" style={{ color: "blue" }}></i>
+            <Link to="/login">
+              <i class="bi bi-heart-fill" style={{ color: "blue" }}></i>
+            </Link>
           </div>
         </Card.Body>
         <ListGroup className="list-group-flush w-100">
@@ -69,7 +77,6 @@ const HomeCard = ({item}) => {
             </div>
           </ListGroup.Item>
         </ListGroup>
-
       </Card>
     </Container>
   );
