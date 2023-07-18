@@ -4,6 +4,7 @@ import { useYosContext } from "../../context/Context";
 import "../Style/HomeSearch.css";
 import { useNavigate } from "react-router";
 import { useState } from "react";
+import HomeSlider from "../HomePage/HomeSlider";
 function HomeSearch() {
 
   const { card,cities, universities, departments } = useYosContext();
@@ -24,19 +25,6 @@ function HomeSearch() {
   };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   const handleUniversityChange = (selectedOptionss) => {
     setSelectedUniversities(selectedOptionss);
     const selectedUniversityIds = selectedOptionss.map((optionn) => optionn.value.en);
@@ -49,17 +37,10 @@ function HomeSearch() {
 
 
   return (
-    <div
-      className="main bg-image text-center p-3 shadow-1-strong"
-      style={{
-        backgroundImage:
-          "url(https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="main  bg-image text-center p-3  shadow-1-strong">
+      <div className="Sliderdiv" >
+        <HomeSlider/>
+      </div>
       <h1 className="title text-white m-5 text-center">Education</h1>
       <Form className="mySelect row p-2 bg-body rounded-3 text-start align-items-center d-inline-flex shadow">
         <div className="select col-md-12 g-2 col-lg-3 my-2">
