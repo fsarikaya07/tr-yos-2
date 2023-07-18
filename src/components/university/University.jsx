@@ -6,28 +6,25 @@ const University = ({name, faculties, departments, image, location, address, pho
     <>
     {/* <------------------ Univercity Title ---------------> */}
     
-    <div className="  p-1 bg-primary text-white ">
-      <div className="title">
+    <div className="  infoDiv mt-5 p-5 bg-primary text-white ">
         <h2 className="page-title fw-bold mx-5">Universites</h2>
     <span className="fw-small mx-5">
       Tüm Üniversiteleri Kontrol Edebilirsiniz
     </span>
       </div>
-    
-  </div>
   {/* <------------------ Univercity cards ---------------> */}
-     <div className="card container mb-3">
+     <div className="card container my-4">
            <div className="d-flex justfiy-content-center align-items-center ">
-             <div className="">
+             <div className="logo">
                <div className="image p-3 ">
                  <img
                    className=" border border-3 light-subtle rounded "
                    src={image}
-                   alt="logo"
+                   alt="uni-logo"
                  />
                </div>
              </div>
-             <div className="">
+           
                <div className="">
                  <div className="info d-flex p-2 gap-2">
                    <span className="uni-faculties rounded-1">
@@ -57,7 +54,7 @@ const University = ({name, faculties, departments, image, location, address, pho
                </div>
              </div>
            </div>
-         </div>
+         
          </>
    );
  };
