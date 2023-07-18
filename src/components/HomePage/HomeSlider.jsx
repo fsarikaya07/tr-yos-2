@@ -1,28 +1,11 @@
+import { Zoom } from "react-slideshow-image";
+
 const HomeSlider = () => {
     return (
    
   <Zoom
     indicators
-   
-  
-    scale={1.4}
-    prevArrow={
-      <div className="icon-wrapper">
-        <div className="icon-container">
-          <i className="icon fas fa-chevron-left"></i>
-        </div>
-      </div>
-    }
-    nextArrow={
-      <div className="icon-wrapper">
-        <div className="icon-container">
-          <i className="icon fas fa-chevron-right"></i>
-        </div>
-      </div>
-        
-     
-    }
-    
+   scale={1.4}
   >
     
         <div
