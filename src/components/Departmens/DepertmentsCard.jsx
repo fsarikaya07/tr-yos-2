@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container, Modal } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import "../Style/Departmants.css";
+import LogIn from "../Login/Logİn";
 
 const DepertmentsCard = ({ image, title, desc, cities, years }) => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
