@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Style/Login.css";
-import { Link } from "react-router-dom";
+// import React, { useContext, useState } from "react";
+// import { Link } from "react-router-dom";
+// import GoogleIcon from "../../assets/icons/GoogleIcon";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+// import { AuthContext } from "../../context/AuthContext";
+
+
 
 const LogIn = () => {
+  // const { user, setUser } = AuthContext()
+//   const { signIn, signUpProvider, forgotPassword } = useContext(AuthContext);
+
+
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+
+
+  const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
+
+
+const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // signIn(email, password); // LoginContexte yazdığımız signIn metodunu çağırdık.
+    navigate('/Account');
+  };
+
 
   return (
     <div className="container  d-flex flex-column align-items-center mt-5   col-4 h-75  login-container">
       <h2 className="mt-4" >Sing In</h2>              
-      <form className=" py-5  px-3 w-100 h-100 position-relative ">
+      <form className=" py-5  px-3 w-100 h-100 position-relative " onSubmit={(e) => handleSubmit(e)}>
         <div className="form-group w-100">
           <input
             type="text"
@@ -15,7 +40,8 @@ const LogIn = () => {
             id="Username"
             aria-describedby="emailHelp"
             placeholder="Username"
-            //   onChange={(e) => setEmail(e.target.value)}
+            // value={user?.email}
+            // onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </div>
         <div className="form-group w-100 mt-3">
@@ -24,7 +50,8 @@ const LogIn = () => {
             className="form-control"
             id="exampleInputPassword1"
             placeholder="Password"
-              //   onChange={(e) => setPassword(e.target.value)}
+            // value={user?.password}
+            // onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
         <button type="submit" className="btn btn-primary w-100 mt-5">
@@ -42,15 +69,30 @@ const LogIn = () => {
               Save Password
             </label>
           </div>
-          <p   //   onClick={() => forgotPassword(email)}
-            >Forget Password</p>
+          <Link style={{ textDecoration: 'none' }} //   onClick={() => forgotPassword(email)}
+            >Forget Password</Link>
         </div>
 
         <div className=" h-100 text-center mt-5">
           <hr />
           <p>
             Don't have an account yet?
-               <span >Sign Up</span>
+            {/* <Link to="/Register" className="text-primary" style={{ textDecoration: 'none' }}> Sign Up</Link> */}
+            <Button
+                      className="btn btn-outline-light my-4 py-1 px-1 m-1 flex-wrap"
+                      type="submit"
+                      variant="info"
+                      // className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+                      // type="submit"
+                      // variant="info"
+                      // variant="primary"
+                      // className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+                      onClick={toggleShowSignUpModal}
+                    >
+                      {/* Add icon component here */}
+                      {/* <FaUserPlus />  */}
+                      Sing Up
+                    </Button>
           </p>
         </div>
         <div className="d-flex justify-content-center align-items-center"> <button
@@ -63,10 +105,7 @@ const LogIn = () => {
           </button></div>
        
       </form>
-      <nav>
-        <Link to="/account">Account</Link>
-        
-      </nav>
+      
     </div>
   );
 };

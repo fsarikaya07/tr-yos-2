@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { Navbar, Container, Nav, Row, Col, Button } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
-import "../navbar/logo/OIG.jpeg";
+
+
+// State değeri ve toggle fonksiyonu tanımlanıyor
+import React, { useState } from "react";
+import { Navbar, Container, Nav, Row, Col, Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import LogIn from "../Login/Logİn";
+import Register from "../Login/Register";
 
 const ScrollNavbar = () => {
-  const location = useLocation();
-  const [scrollBackground, setScrollBackground] = useState(false);
+  // State değerleri ve toggle fonksiyonları tanımlanıyor
+  const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 100) {
-        setScrollBackground(true);
-      } else {
-        setScrollBackground(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const toggleShowSignInModal = () => setShowSignInModal(!showSignInModal);
+  const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
 
   return (
     <Navbar
-      bg={scrollBackground ? "light" : "dark"} // Scroll yapıldığında background rengini değiştiriyoruz
-      variant={scrollBackground ? "light" : "dark"}
       expand="lg"
       fixed="top"
       className="homeNavbar text-dark"
@@ -45,41 +35,10 @@ const ScrollNavbar = () => {
                   <li className="nav-item ">
                     <Link
                       to="/"
-                      className={`nav-link ${
-                        location.pathname === "/" ? "text-danger" : "" // Eğer sayfa adresi "/" ise, Link bileşenine text-warning sınıfını ekle
-                      }`}
                       href="/"
                       aria-current="page"
                     >
                       HomePage
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      to="/universites"
-                      className={`nav-link ${
-                        location.pathname === "/universites"
-                          ? "text-danger"
-                          : "" // Eğer sayfa adresi "/universites" ise, Link bileşenine text-red-500 sınıfını ekle
-                      }`}
-                      href="/universites"
-                      aria-current="page"
-                    >
-                      Universites
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      to="/departmants"
-                      className={`nav-link ${
-                        location.pathname === "/departmants"
-                          ? "text-danger"
-                          : "" // Eğer sayfa adresi "/departmants" ise, Link bileşenine text-red-500 sınıfını ekle
-                      }`}
-                      href="/departmants"
-                      aria-current="page"
-                    >
-                      Departmants
                     </Link>
                   </li>
                 </ul>
@@ -87,33 +46,62 @@ const ScrollNavbar = () => {
             </Row>
             <Row fluid id="navbarCollapse">
               <Col fluid>
-                <div className="navbarCollapse">
-                  <Link to="/login">
-                    <Button
-                      className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-                      type="submit"
-                      variant="primary"
-                    >
-                      Sing In
-                    </Button>
-                  </Link>
-                  <Link to="/logout">
-                    <Button
-                      className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-                      type="submit"
-                      variant="primary"
-                    >
-                      Sing Up
-                    </Button>
-                  </Link>
+              <div className="navbarCollapse">           
+                  {/* Butonlara onClick propu olarak toggle fonksiyonları veriliyor */}
+                  <Button
+                    variant="primary"  className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+                    type="submit"
+                    onClick={toggleShowSignInModal}
+                  >
+                    Sing In
+                  </Button>      
+                  <Button
+                    variant="primary"  className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+                    type="submit"
+                    onClick={toggleShowSignUpModal}
+                  >
+                    Sing up
+                  </Button>            
                 </div>
               </Col>
             </Row>
           </Nav>
         </Navbar.Collapse>
       </Container>
+
+      {/* Modal componentleri tanımlanıyor */}
+      <Modal show={showSignInModal} onHide={toggleShowSignInModal} centered>
+        {/* LogIn componenti modalin içine yerleştiriliyor */}
+        <LogIn />
+      </Modal>
+
+      <Modal show={showSignUpModal} onHide={toggleShowSignUpModal} centered>
+        {/* Register componenti modalin içine yerleştiriliyor */}
+        <Register />
+      </Modal>
+
     </Navbar>
   );
 };
-
 export default ScrollNavbar;
+
+
+
+const [showModal, setShowModal] = useState(false);
+  const toggleShowModal = () => setShowModal(!showModal);
+
+  
+    <Navbar
+      expand="lg"
+      fixed="top"
+      className="homeNavbar text-dark"
+    >
+      
+      {/* Modal componenti tanımlanıyor */}
+      <Modal show={showModal} onHide={toggleShowModal} centered>
+        {/* LogIn componenti modalin içine yerleştiriliyor */}
+        <LogIn />
+      </Modal>
+
+    </Navbar>
+

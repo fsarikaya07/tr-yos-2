@@ -17,7 +17,7 @@ const Slider = () => {
       <Slide
         // infinite={true}
         canSwipe={false}
-        autoplay={false}
+        autoplay={true}
         slidesToShow={1}
         slidesToScroll={1}
         prevArrow={
