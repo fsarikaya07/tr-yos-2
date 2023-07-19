@@ -6,8 +6,7 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import HomeSlider from "../HomePage/HomeSlider";
 function HomeSearch() {
-
-  const { card,cities, universities, departments } = useYosContext();
+  const { card, cities, universities, departments } = useYosContext();
   const navigate = useNavigate();
   const [selectedCities, setSelectedCities] = useState([]);
   const [filteredUniversities, setFilteredUniversities] = useState([]);
@@ -24,22 +23,22 @@ function HomeSearch() {
     setFilteredUniversities(filteredUnis);
   };
 
-
   const handleUniversityChange = (selectedOptionss) => {
     setSelectedUniversities(selectedOptionss);
-    const selectedUniversityIds = selectedOptionss.map((optionn) => optionn.value.en);
-    const filteredDeps = departments.filter((department) =>
-    selectedUniversityIds.includes(department.university)
+    const selectedUniversityIds = selectedOptionss.map(
+      (optionn) => optionn.value.en
     );
-    
+    const filteredDeps = departments.filter((department) =>
+      selectedUniversityIds.includes(department.university)
+    );
+
     setFilteredDepartments(filteredDeps);
   };
 
-
   return (
     <div className="main  bg-image text-center p-3  shadow-1-strong">
-      <div className="Sliderdiv" >
-        <HomeSlider/>
+      <div className="Sliderdiv">
+        <HomeSlider />
       </div>
       <h1 className="title text-white m-5 text-center">Education</h1>
       <Form className="mySelect row p-2 bg-body rounded-3 text-start align-items-center d-inline-flex shadow">
@@ -73,13 +72,10 @@ function HomeSearch() {
           <Select
             placeholder="Select Department"
             className="w-sm-100 w-lg-25"
-            
-           
             options={filteredDepartments.map((department) => ({
               value: department.id,
               label: department.en,
               key: department.id,
-              
             }))}
             isMulti
           />
