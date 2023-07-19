@@ -1,17 +1,15 @@
-import React from 'react'
-import ScrollNavbar from './Calisanlar/ScrollNavbar'
-// import ScrollNavbar from './ScrollNavbar'
+import React from "react";
+import ScrollNavbar from "./SideBarScrollNavbar";
+// import ScrollNavbar from "./ScrollNavbar";
 // import MainPage from './MainPage'
 
 const Navbar = () => {
   return (
     <>
-    {/* <MainPage/> */}
-{/* <ScrollNavbar/> */}
-<ScrollNavbar/>
-
+      {/* <MainPage/> */}
+      <ScrollNavbar />
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
