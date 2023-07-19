@@ -1,69 +1,58 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import { Button, Container, Modal } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import uniDefault from "../../assets/uni.jpg";
-// import uniDefault from '../../assets/uni.jpg'
-import CardSlider from "./CardSlider"
+
 import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
 
-
-
-
+import { useState } from "react";
+import LogIn from "../Login/Logİn";
 
 const HomeCard = ({ item }) => {
+  // State değerleri ve toggle fonksiyonları tanımlanıyor
+  const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
+
+  const toggleShowSignInCompareModal = () =>
+    setShowSignInCompareModal(!showSignInCompareModal);
+  const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
+
+  const toggleShowSignInHeartModal = () =>
+    setShowSignInHeartModal(!showSignInHeartModal);
+
   // const firstImage = item.images[0];
-
-
-// const HomeCard = ({item}) => {
-
-
-
-
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
       <Card style={{ width: "100%", height: "25rem" }}>
-        {/* <Card.Img
+        <Card.Img
           variant="top"
           style={{ width: "100%", height: "60%" }}
           // src={firstImage}
           src={uniDefault}
           className="relative"
-
         />
-        <Link to="/login">
-          <Button
-            variant="light"
-            size="lg"
-            className="h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
-            style={{ position: "absolute", top: "190px", right: "10px" }}
-          >
-            <i
-              className="fa-solid p-1 fa-rotate-right fa-md"
-              style={{ color: "blue" }}
-            ></i>
-            <span className="mx-1"></span>
-            Compare
-          </Button>
-        </Link>
 
-        /> */}
-<div style={{ width: "100%", height: "60%" }}    >
-        <CardSlider />
-       </div>
-
-       <Link to="/login">
-         <button
-          className=" h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap bg-light"
+        <Button
+          variant="light"
+          size="lg"
+          className="h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
           style={{ position: "absolute", top: "190px", right: "10px" }}
+          // className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+          type="submit"
+          // variant="info"
+          // variant="primary"
+          // className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+          onClick={toggleShowSignInCompareModal}
         >
-          <i className="fa-solid p-1 fa-rotate-right fa-md" style={{ color: "blue" }}></i>
+          <i
+            className="fa-solid p-1 fa-rotate-right fa-md"
+            style={{ color: "blue" }}
+          ></i>
           <span className="mx-1"></span>
-          Compare
-        </button>
-       </Link>
-       
+          Compare {/* Add icon component here */}
+          {/* <FaSignInAlt /> Sing In */}
+        </Button>
 
         <Card.Body
           className="d-flex justify-content-between w-100 "
@@ -87,9 +76,20 @@ const HomeCard = ({ item }) => {
             </Card.Text>
           </div>
           <div className=" h-25  d-flex align-items-center justify-content-center p-2">
-            <Link to="/login">
+            <Button
+              variant="light"
+              size="lg"
+              // className="h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
+              style={{ position: "absolute", top: "190px", right: "10px" }}
+              className="btn btn-outline-light my-5 py-1 px-1 m-1 rounded-1 border-0 d-flex flex-nowrap"
+              type="submit"
+              // variant="info"
+              // variant="primary"
+              // className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+              onClick={toggleShowSignInHeartModal}
+            >
               <i class="bi bi-heart-fill" style={{ color: "blue" }}></i>
-            </Link>
+            </Button>
           </div>
         </Card.Body>
         <ListGroup className="list-group-flush w-100">
@@ -109,6 +109,25 @@ const HomeCard = ({ item }) => {
           </ListGroup.Item>
         </ListGroup>
       </Card>
+
+      {/* Modal componentleri tanımlanıyor */}
+      <Modal
+        show={showSignInCompareModal}
+        onHide={toggleShowSignInCompareModal}
+        centered
+      >
+        {/* LogIn componenti modalin içine yerleştiriliyor */}
+        <LogIn />
+      </Modal>
+      {/* Modal componentleri tanımlanıyor */}
+      <Modal
+        show={showSignInHeartModal}
+        onHide={toggleShowSignInHeartModal}
+        centered
+      >
+        {/* LogIn componenti modalin içine yerleştiriliyor */}
+        <LogIn />
+      </Modal>
     </Container>
   );
 };
