@@ -243,7 +243,7 @@ const ScrollNavbar = () => {
         </Navbar.Collapse>
 
         {/* Modal componentleri tanımlanıyor */}
-        <Modal show={showSignInModal} onHide={toggleShowSignInModal} centered>
+        <Modal show={showSignInModal} onHide={toggleShowSignInModal} centered contentClassName="modal-content">
           {/* LogIn componenti modalin içine yerleştiriliyor */}
           <LogIn />
         </Modal>

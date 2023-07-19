@@ -1,9 +1,28 @@
 import React, { useState } from "react";
+import { Button, Container, Modal } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
+import "../Style/Departmants.css";
+import LogIn from "../Login/Logİn";
+
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import "../Style/Departmants.css";
 import { useParams } from "react-router";
+
+const DepertmentsCard = ({ image, title, desc, cities, years }) => {
+  // State değerleri ve toggle fonksiyonları tanımlanıyor
+  const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
+
+  const toggleShowSignInCompareModal = () =>
+    setShowSignInCompareModal(!showSignInCompareModal);
+  const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
+
+  const toggleShowSignInHeartModal = () =>
+    setShowSignInHeartModal(!showSignInHeartModal);
+
+
 
 const DepertmentsCard = ({universities,cities,departments,selectedCities, selectedUniversities, selectedDepartments }) => {
 
@@ -81,13 +100,26 @@ const DepertmentsCard = ({universities,cities,departments,selectedCities, select
         <button
           className=" h-20 p-1 px-2 bg-light  rounded-3 border-0 d-flex flex-nowrap"
           style={{ position: "absolute", top: "190px", right: "10px" }}
+          variant="light"
+          size="lg"
+      
+          // style={{ position: "absolute", top: "190px", right: "10px" }}
+          // className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+          type="submit"
+          // variant="info"
+          // variant="primary"
+          // className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+          onClick={toggleShowSignInCompareModal}
         >
           <i
+
+//             className="fa-solid p-1 fa-rotate-right fa-md"
             className="fa-solid fa-rotate-right  fa-md p-1 "
             style={{ color: "blue" }}
           ></i>
           <span className="mx-1"></span>
-          Compare
+          Compare {/* Add icon component here */}
+          {/* <FaSignInAlt /> Sing In */}
         </button>
         <Card.Body className="d-flex w-100 justify-content-between">
           <div className="left ">
@@ -116,7 +148,23 @@ const DepertmentsCard = ({universities,cities,departments,selectedCities, select
             <Card.Text className="desc text-start text-muted">{}</Card.Text>
           </div>
           <div className="h-25 d-inline-flex align-items-center justify-content-center p-2">
-            <i class="bi bi-heart-fill" style={{ color: "blue" }}></i>
+
+            <Button
+              variant="light"
+              size="lg"
+              // className="h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
+              style={{ position: "absolute", top: "190px", right: "10px" }}
+              className="btn btn-outline-light my-5 py-1 px-1 m-1 rounded-1 border-0 d-flex flex-nowrap"
+              type="submit"
+              // variant="info"
+              // variant="primary"
+              // className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+              onClick={toggleShowSignInHeartModal}
+            >
+              <i class="bi bi-heart-fill" style={{ color: "blue" }}></i>
+            </Button>
+         
+
           </div>
         </Card.Body>
         <ListGroup className="list-group-flush w-100 ">
@@ -137,6 +185,24 @@ const DepertmentsCard = ({universities,cities,departments,selectedCities, select
           </ListGroup.Item>
         </ListGroup>
       </Card>
+            {/* Modal componentleri tanımlanıyor */}
+            <Modal
+        show={showSignInCompareModal}
+        onHide={toggleShowSignInCompareModal}
+        centered
+      >
+        {/* LogIn componenti modalin içine yerleştiriliyor */}
+        <LogIn />
+      </Modal>
+      {/* Modal componentleri tanımlanıyor */}
+      <Modal
+        show={showSignInHeartModal}
+        onHide={toggleShowSignInHeartModal}
+        centered
+      >
+        {/* LogIn componenti modalin içine yerleştiriliyor */}
+        <LogIn />
+      </Modal>
     </Container>
   );
 } else {

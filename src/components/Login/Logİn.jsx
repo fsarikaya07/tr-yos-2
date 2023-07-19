@@ -30,7 +30,7 @@ const navigate = useNavigate()
 
 
   return (
-    <div className="container  d-flex flex-column align-items-center mt-5   col-4 h-75  login-container">
+    <div className="container  d-flex flex-column align-items-center mt-5   col-4 h-75  login-container center">
       <h2 className="mt-4" >Sing In</h2>              
       <form className=" py-5  px-3 w-100 h-100 position-relative " onSubmit={(e) => handleSubmit(e)}>
         <div className="form-group w-100">
