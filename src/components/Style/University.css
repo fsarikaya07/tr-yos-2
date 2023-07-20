@@ -1,70 +1,80 @@
 
 .page-title{
-    font-size: 50px;
+  font-size: 50px;
 }
 .card{
-    width: 80vw;
-    align-items: start;
-    background-color: white;
+  width: 80%;
+  height: 222px;
+  align-items: start;
+  background-color: white;
+}
+.üni-info-caption{
+height: 200px;
+width: 400px;
 }
 .university-title {
-  color: rgb(20, 20, 94);
-  font-weight: 700;
-  font-size: 18px ;
-  margin-top: 5px;
-  &:hover {
-    color: #017efa;
-  }
+color: rgb(20, 20, 94);
+font-weight: 700;
+font-size: 18px ;
+margin-top: 5px;
+&:hover {
+  color: #017efa;
+}
 }
 .uni-faculties {
-  color: #e55151 ;
-  background-color: rgba(229,81,81,0.1);
-  padding: 5px;
-  font-size: x-small;
-  
+color: #e55151 ;
+background-color: rgba(229,81,81,0.1);
+padding: 5px;
+font-size: x-small;
+
 }
 .uni-departments {
-  color: #00be82 ;
-  padding: 5px;
-  font-size: x-small;
-  
-  background-color: rgba(0, 190, 130,0.12);
+color: #00be82 ;
+padding: 5px;
+font-size: x-small;
+
+background-color: rgba(0, 190, 130,0.12);
 }
 .uni-contact {
-  color: #ffac45 ;
+color: #ffac45 ;
 
-  &:hover {
-    color: white ;
-    background-color: #ffac45;
-  }
+&:hover {
+  color: white ;
+  background-color: #ffac45;
+}
 }
 .fa-location-dot{
-    color: #4f5e64;
-    font-size: x-small;
+  color: #4f5e64;
+  font-size: x-small;
 }
 .fa-phone{
-    font-size: small;
+  font-size: small;
 }
 .university-address {
-  font-size: 11px;
-  color: #4f5e64;
-  margin: 10px;
+font-size: 11px;
+color: #4f5e64;
+margin: 10px;
 }
 
 .location-name {
-  font-size: 11px;
-  color: #4f5e64;
-  margin: 5px;
+font-size: 11px;
+color: #4f5e64;
+margin: 5px;
 }
 .uni-contact{
-    background-color:rgba(255, 172, 69,0.1) ;
+  background-color:rgba(255, 172, 69,0.1) ;
+}
+.logo{
+height: 156px;
+width: 156px;
 }
 
 
- @media screen and (max-width: 375px){
-    .container{
-        display: block !important;
-        flex-wrap:wrap !important
-    }
+
+@media screen and (max-width: 375px){
+  .container{
+      display: block !important;
+      flex-wrap:wrap !important
   }
+}
 
