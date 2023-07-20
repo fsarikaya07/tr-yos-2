@@ -31,7 +31,7 @@ const HomeCard = ({ item , universityImage}) => {
     };
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
-      <Card style={{ width: "100%", height: "25rem" }}>
+      <Card  style={{ width: "100%", height: "25rem" }}>
 
       {departmentImages.length > 0 ?(  <div style={{ width: "100%", height: "60%" }}    >
         <CardSlider images={departmentImages} />
