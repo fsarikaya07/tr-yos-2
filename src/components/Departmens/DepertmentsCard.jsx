@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import "../Style/Departmants.css"
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Carousel stillerini import edin
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import defaultImg from "../../assets/uni.jpg"
 import { Carousel } from "react-responsive-carousel";
 
@@ -59,7 +59,7 @@ const DepertmentsCard = ({
 
     const universityImagesMap = universities.reduce((map, university) => {
       if (university && university.images && university.images.length > 0) {
-        map[university.en] = university.images[0,5];
+        map[university.en] = university.images[0,12];
       }
       return map;
     }, {});
