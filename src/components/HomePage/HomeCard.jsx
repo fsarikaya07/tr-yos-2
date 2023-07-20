@@ -3,14 +3,14 @@ import { Button, Container, Modal } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import uniDefault from "../../assets/uni.jpg";
-
+import CardSlider from "./CardSlider"
 import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import LogIn from "../Login/Logİn";
 
-const HomeCard = ({ item }) => {
+const HomeCard = ({ item , universityImage}) => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
   const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
 
@@ -20,18 +20,30 @@ const HomeCard = ({ item }) => {
 
   const toggleShowSignInHeartModal = () =>
     setShowSignInHeartModal(!showSignInHeartModal);
+    const departmentName = item?.university?.tr;
+    const departmentImages = universityImage[departmentName] || [];
 
-  // const firstImage = item.images[0];
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
       <Card style={{ width: "100%", height: "25rem" }}>
-        <Card.Img
-          variant="top"
-          style={{ width: "100%", height: "60%" }}
-          // src={firstImage}
-          src={uniDefault}
-          className="relative"
-        />
+
+      {departmentImages.length > 0 ?(  <div style={{ width: "100%", height: "60%" }}    >
+        <CardSlider images={departmentImages} />
+       </div>):
+       (<Card.Img
+        variant="top"
+        style={{ width: "100%", height: "60%" }}
+        src={uniDefault}
+
+   
+        className="relative"
+      />)}
 
         <Button
           variant="light"
@@ -59,6 +71,18 @@ const HomeCard = ({ item }) => {
           style={{ height: "30%" }}
         >
           <div className="left ">
+          <Card.Title className="text-start text-primary fs-6">
+              <Link
+              // key={item?.id}
+                to={"#"}
+                
+                rel="noopener noreferrer"
+                className="text-decoration-none"
+                onClick={scrollToTop}
+              >
+                   {item?.department?.en}
+              </Link>
+            </Card.Title>
             <Card.Title className="text-start text-primary fs-6">
               <Link
                 key={item.id}
@@ -67,12 +91,12 @@ const HomeCard = ({ item }) => {
                 rel="noopener noreferrer"
                 className="text-decoration-none"
               >
-                {item.faculty.en}
+                {item?.faculty?.en}
               </Link>
             </Card.Title>
             <Card.Text className="desc text-start  text-muted">
               {" "}
-              {item.university.en}
+              {item?.university?.en}
             </Card.Text>
           </div>
           <div className=" h-25  d-flex align-items-center justify-content-center p-2">
@@ -98,7 +122,7 @@ const HomeCard = ({ item }) => {
               <div className="left d-flex flex-nowrap ">
                 <i class="bi bi-geo-alt-fill "></i>
                 <span className="mx-1"></span>
-                {item.city.en}
+                {item?.city?.en}
               </div>
               <div className="right d-flex flex-nowrap">
                 <i class="bi bi-cash"></i>
