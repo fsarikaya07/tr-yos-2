@@ -7,16 +7,18 @@ import Select from 'react-select';
 
 import '../../components/Style/Departmants.css'
 import { useYosContext } from '../../context/Context';
+
 import { useLocation, useParams } from 'react-router';
 import DepertmentsCard from "../Departmens/DepertmentsCard";
+
+
 const Departments = () => {
   const location = useLocation();
-  const { id } = useParams();
-  const { selectedCityIds, 
-    selectedUniversityIds, 
-    selectedDepartmentIds } = location.state || {};
+  const { selectedCityIds, selectedUniversityIds, selectedDepartmentIds } = location.state || {};
 
-  const { cities, universities, departments } = useYosContext();
+
+  const { card, cities, universities, departments } = useYosContext();
+
 
 
 
@@ -70,6 +72,7 @@ const Departments = () => {
   const handleDepartmentChange = (selectedOptions) => {
     setSelectedDepartments(selectedOptions);
   };
+
   const cardCombinations = [];
   selectedCities.forEach((city) => {
     selectedUniversities.forEach((university) => {
@@ -85,6 +88,7 @@ const Departments = () => {
       }
     });
   });
+
 
   return (
     <div>
@@ -155,6 +159,7 @@ const Departments = () => {
                 </Button>
               </Form>
             </Col>
+
             <Col xs={12} sm={12} md={12} lg={8} xl={9}>
               <Container className="rounded-4 mt-2 p-4">
                 <Row className="g-3 d-flex flex-wrap">
@@ -174,6 +179,7 @@ const Departments = () => {
                 </Row>
               </Container>
             </Col>
+
           </div>
         </Row>
       </Container>
