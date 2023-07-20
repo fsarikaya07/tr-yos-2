@@ -59,7 +59,7 @@ const DepertmentsCard = ({
 
     const universityImagesMap = universities.reduce((map, university) => {
       if (university && university.images && university.images.length > 0) {
-        map[university.en] = university.images[0,5];
+        map[university.en] = university.images[0,12];
       }
       return map;
     }, {});

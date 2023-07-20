@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import Select from 'react-select';
 
-import '../Style/Departmants.css';
+import '../../components/Style/Departmants.css'
 import { useYosContext } from '../../context/Context';
 import { useLocation, useParams } from 'react-router';
 import DepertmentsCard from "../Departmens/DepertmentsCard";
@@ -16,7 +16,7 @@ const Departments = () => {
     selectedUniversityIds, 
     selectedDepartmentIds } = location.state || {};
 
-  const { card, cities, universities, departments } = useYosContext();
+  const { cities, universities, departments } = useYosContext();
 
 
 
