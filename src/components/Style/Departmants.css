@@ -7,3 +7,23 @@ form{
 .info-div{
     width: 100vw !important;
 }
+
+
+  
+  @media  (min-width: 1024px) {
+       .desc{
+        font-size:small !important;
+       }
+       .img{
+        max-height: 28vh !important;
+       }
+  }
+
+  @media  (min-width: 2560px) {
+    .desc{
+     font-size:small !important;
+    }
+    .img{
+     max-height: 28vh !important;
+    }
+}
