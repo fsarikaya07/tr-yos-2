@@ -9,3 +9,74 @@
 
 
 }
+
+/* 
+.center {
+    padding: 70px 0;
+    border: 3px solid green;
+    text-align: center !important;
+  }
+  
+
+/* Form elementi için CSS sınıfı tanımlanıyor */
+/* .form { */
+    /* Form elementinin konumunu ortalamak için */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    /* Form elementinin boyutunu belirlemek için */
+    width: 90%;
+    height: 90%;
+  
+    /* Form elementinin dolgusunu vermek için */
+    padding: 5px;
+  /* } */
+   
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal içeriği için CSS sınıfı tanımlanıyor */
+/* .modal-content {
+    /* Modal içeriğinin konumunu ortalamak için */
+    /* position: absolute; */
+    /* top: ;
+    left: ;
+    transform: translate(-50%, -50%); */
+  
+    /* Modal içeriğinin boyutunu belirlemek için */
+    /* width: 400px; */
+    /* height: 300px; */
+  
+    /* Modal içeriğinin dolgusunu vermek için */
+    /* padding: 5px; */
+  /* }  */
+  
+
+
+  /* Modal içeriği için CSS sınıfı tanımlanıyor */
+/* .modal-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+} */
+  /* .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  
+  /* .child {
+    width: 100px;
+    height: 100px;
+  } */
