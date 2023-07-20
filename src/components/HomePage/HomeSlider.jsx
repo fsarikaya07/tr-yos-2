@@ -5,7 +5,7 @@ const HomeSlider = () => {
    
   <Zoom
     indicators
-   scale={0}
+   scale={1}
   >
     
         <div
