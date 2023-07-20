@@ -7,11 +7,22 @@ import Select from 'react-select';
 
 import '../Style/Departmants.css';
 import { useYosContext } from '../../context/Context';
+
+import { useLocation, useParams } from 'react-router';
+import DepertmentsCard from "../Departmens/DepertmentsCard";
+const Departments = () => {
+  const location = useLocation();
+  const { id } = useParams();
+  const { selectedCityIds, 
+    selectedUniversityIds, 
+    selectedDepartmentIds } = location.state || {};
+
 import { useLocation } from 'react-router';
 
 const Departments = () => {
   const location = useLocation();
   const { selectedCityIds, selectedUniversityIds, selectedDepartmentIds } = location.state || {};
+
 
   const { card, cities, universities, departments } = useYosContext();
 
@@ -67,6 +78,23 @@ const Departments = () => {
   const handleDepartmentChange = (selectedOptions) => {
     setSelectedDepartments(selectedOptions);
   };
+
+  const cardCombinations = [];
+  selectedCities.forEach((city) => {
+    selectedUniversities.forEach((university) => {
+      // Seçilen üniversitenin ait olduğu şehrin tr değeriyle seçilen şehrin tr değerini karşılaştıralım
+      if (university.city === city.tr) {
+        selectedDepartments.forEach((department) => {
+          cardCombinations.push({
+            city,
+            university,
+            department,
+          });
+        });
+      }
+    });
+  });
+
 
   return (
     <div>
@@ -137,7 +165,27 @@ const Departments = () => {
                 </Button>
               </Form>
             </Col>
-           
+
+            <Col xs={12} sm={12} md={12} lg={8} xl={9}>
+              <Container className="rounded-4 mt-2 p-4">
+                <Row className="g-3 d-flex flex-wrap">
+                  {cardCombinations.map(({ city, university, department }) => (
+                    <Col sm={6} md={6} lg={6} key={department}>
+                      <DepertmentsCard
+                        item={department}
+                        cities={cities}
+                        universities={universities}
+                        departments={departments}
+                        selectedCities={[city]}
+                        selectedUniversities={[university]}
+                        selectedDepartments={[department]}
+                      />
+                    </Col>
+                  ))}
+                </Row>
+              </Container>
+            </Col>
+
           </div>
         </Row>
       </Container>
