@@ -10,6 +10,7 @@ import { useYosContext } from '../../context/Context';
 
 import { useLocation, useParams } from 'react-router';
 import DepertmentsCard from "../Departmens/DepertmentsCard";
+import HomeCard from '../HomePage/HomeCard';
 
 
 const Departments = () => {
@@ -17,10 +18,17 @@ const Departments = () => {
   const { selectedCityIds, selectedUniversityIds, selectedDepartmentIds } = location.state || {};
 
 
-  const {  cities, universities, departments } = useYosContext();
+  const { card, cities, universities, departments } = useYosContext();
 
 
-
+  const shuffledCards = card.sort(() => 0.5 - Math.random());
+  const random12Cards = shuffledCards.slice(0, 12);
+  const universityImages = universities.reduce((map, university) => {
+    if (university && university.images && university.images.length > 0) {
+      map[university.tr] = university.images;
+    }
+    return map;
+  }, {});
 
   const citiesOptions = cities?.map((city) => ({
     value: city.id,
@@ -41,7 +49,7 @@ const Departments = () => {
   const [filteredDepartments, setFilteredDepartments] = useState([]);
 
   const [selectedCities, setSelectedCities] = useState(
-        selectedCityIds?.map((cityId) => citiesOptions.find((option) => option.value === cityId))
+        selectedCityIds?.map((cityId) => citiesOptions?.find((option) => option.value === cityId))
       );
       const [selectedUniversities, setSelectedUniversities] = useState(
         selectedUniversityIds?.map((universityId) =>
@@ -50,7 +58,7 @@ const Departments = () => {
       );
       const [selectedDepartments, setSelectedDepartments] = useState(
         selectedDepartmentIds?.map((departmentId) =>
-          departmentsOptions.find((option) => option.value === departmentId)
+          departmentsOptions?.find((option) => option.value === departmentId)
         )
       );
 
@@ -58,14 +66,14 @@ const Departments = () => {
   const handleCityChange = (selectedOptions) => {
     setSelectedCities(selectedOptions);
     const selectedCityIds = selectedOptions?.map((option) => option.value);
-    const filteredUnis = universities.filter((university) => selectedCityIds.includes(university.city));
+    const filteredUnis = universities?.filter((university) => selectedCityIds?.includes(university.city));
     setFilteredUniversities(filteredUnis);
   };
 
   const handleUniversityChange = (selectedOptions) => {
     setSelectedUniversities(selectedOptions);
-    const selectedUniversityIds = selectedOptions?.map((option) => option.value.en);
-    const filteredDeps = departments.filter((department) => selectedUniversityIds.includes(department?.university?.code));
+    const selectedUniversityIds = selectedOptions?.map((option) => option.value);
+    const filteredDeps = departments?.filter((department) => selectedUniversityIds?.includes(department?.university?.code));
     setFilteredDepartments(filteredDeps);
   };
 
@@ -163,7 +171,7 @@ const Departments = () => {
             <Col xs={12} sm={12} md={12} lg={8} xl={9}>
               <Container className="rounded-4 mt-2 p-4">
                 <Row className="g-3 d-flex flex-wrap">
-                  {cardCombinations.map(({ city, university, department }) => (
+                  {/* {cardCombinations.map(({ city, university, department }) => (
                     <Col sm={6} md={6} lg={6} key={department}>
                       <DepertmentsCard
                         item={department}
@@ -175,7 +183,27 @@ const Departments = () => {
                         selectedDepartments={[department]}
                       />
                     </Col>
-                  ))}
+                  ))} */}
+
+{cardCombinations.length > 0
+                  ? cardCombinations?.map(({ city, university, department }) => (
+                      <Col sm={6} md={6} lg={6} key={department}>
+                        <DepertmentsCard
+                          item={department}
+                          cities={cities}
+                          universities={universities}
+                          departments={departments}
+                          selectedCities={[city]}
+                          selectedUniversities={[university]}
+                          selectedDepartments={[department]}
+                        />
+                      </Col>
+                    ))
+                  : random12Cards?.map((item) => (
+                      <Col sm={6} md={6} lg={6} key={item.id}>
+                        <HomeCard item={item} universityImage={universityImages}/>
+                      </Col>
+                    ))}
                 </Row>
               </Container>
             </Col>
