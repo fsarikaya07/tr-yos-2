@@ -8,8 +8,7 @@ import Footer from "../components/footer/Footer";
 import Departments from "../components/Departmens/Departments";
 // import LogIn from "../components/Login/Logİn";
 // import SignUp from "../components/Login/Signup";
-import University from "../components/university/University";
-
+// import University from "../components/university/";
 
 const AppRouter = () => {
   return (
@@ -24,7 +23,7 @@ const AppRouter = () => {
           element={<Detail  />}
         />
         <Route path="/departmants" element={<Departments />} />
-        <Route path="universites" element={<University />} />
+        {/* <Route path="universites" element={<University />} /> */}
         {/* <Route path="/login" element={<LogIn/>}/> */}
         {/* <Route path="/logout" element={<SignUp/>}/> */}
       </Routes>

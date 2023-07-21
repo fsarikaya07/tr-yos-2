@@ -5,16 +5,22 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useYosContext } from "../../context/Context";
 
 const HomeDepartmens = () => {
-   const { card} = useYosContext();
+   const {universities, card} = useYosContext();
    const shuffledCards = card.sort(() => 0.5 - Math.random());
    const random12Cards = shuffledCards.slice(0, 12);
- 
+
+   const universityImages = universities.reduce((map, university) => {
+    if (university && university.images && university.images.length > 0) {
+      map[university.tr] = university.images;
+    }
+    return map;
+  }, {});
   return (
     // <div>
     //   {data.map((item)=> <HomeCard{...item}/>)}
     // </div>
 
-    <Container className="rounded-4 mt-4 p-4 ">
+    <Container className="rounded-4 mt-4  ">
       <h1 className="my-2 text-center" style={{ color: "#16193B" }}>
         {" "}
         <strong> Our Departments</strong>
@@ -24,11 +30,11 @@ const HomeDepartmens = () => {
         Our Departments Our Departments Our Departments
       </h6>
 
-      <Row className="g-3 d-flex flex-wrap">
+      <Row className="g-1 d-flex flex-wrap">
         {random12Cards?.map((item,index) => {
           return (
-            <Col sm={6} md={6} lg={4} key={item.id}>
-              <HomeCard item={item} />
+            <Col xs={12} md={6} lg={4} xl={3} key={item.id}>
+              <HomeCard item={item} universityImage={universityImages} />
             </Col>
           );
         })}
