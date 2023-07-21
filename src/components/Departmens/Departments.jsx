@@ -74,11 +74,11 @@ const Departments = () => {
   };
 
   const cardCombinations = [];
-  selectedCities.forEach((city) => {
-    selectedUniversities.forEach((university) => {
+  selectedCities?.forEach((city) => {
+    selectedUniversities?.forEach((university) => {
       // Seçilen üniversitenin ait olduğu şehrin tr değeriyle seçilen şehrin tr değerini karşılaştıralım
       if (university.city === city.tr) {
-        selectedDepartments.forEach((department) => {
+        selectedDepartments?.forEach((department) => {
           cardCombinations.push({
             city,
             university,
