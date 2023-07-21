@@ -3,14 +3,14 @@ import { Button, Form } from "react-bootstrap";
 import Select from "react-select";
 import { useYosContext } from "../../context/Context";
 import "../Style/HomeSearch.css";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useState } from "react";
 import HomeSlider from "../HomePage/HomeSlider";
 
 function HomeSearch() {
   const { cities, universities, departments } = useYosContext();
   const navigate = useNavigate();
-
+  const { id } = useParams();
   const [selectedCities, setSelectedCities] = useState([]);
   const [filteredUniversities, setFilteredUniversities] = useState([]);
 
@@ -50,13 +50,15 @@ function HomeSearch() {
   const handleUniversityChange = (selectedOptions) => {
     setSelectedUniversities(selectedOptions);
     const selectedUniversityIds = selectedOptions?.map(
-      (option) => option.value.en
+      (option) => option.value
     );
     const filteredDeps = departments.filter((department) =>
-      selectedUniversityIds.includes(department.university)
+      selectedUniversityIds.includes(department?.university?.code)// Doğru üniversite idsine göre departmanları filtreliyoruz
     );
     setFilteredDepartments(filteredDeps);
   };
+  console.log(filteredUniversities)
+  console.log(filteredDepartments)
 
   const handleDepartmentChange = (selectedOptions) => {
     setSelectedDepartments(selectedOptions);
@@ -89,7 +91,7 @@ function HomeSearch() {
               placeholder="Select University"
               onChange={handleUniversityChange}
               options={filteredUniversities?.map((university) => ({
-                value: university.id,
+                value: university.code,
                 label: university.en,
                 key: university.id,
               }))}
@@ -102,8 +104,8 @@ function HomeSearch() {
               placeholder="Select Department"
               className="w-sm-100 w-lg-25"
               options={filteredDepartments?.map((department) => ({
-                value: department.id,
-                label: department.en,
+                value: department.department.code,
+                label: department.department.en,
                 key: department.id,
               }))}
               isMulti

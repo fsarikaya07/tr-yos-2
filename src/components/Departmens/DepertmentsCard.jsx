@@ -45,18 +45,18 @@ const DepertmentsCard = ({
 
     // Şehirleri filtreleyelim ve şehir adlarıyla eşleşen üniversiteleri bulalım
     const filteredCities = cities.filter((city) => selectedCityIds.includes(city.id));
-    const filteredUniversities = universities.filter((university) => selectedUniversityIds.includes(university.id));
+    const filteredUniversities = universities.filter((university) => selectedUniversityIds.includes(university.code));
 
     // Eşleşen şehir ve üniversite bilgilerini dizi olarak alalım
     const matchedItems = [];
-    filteredCities.forEach((city) => {
+    filteredCities?.forEach((city) => {
       const universitiesInCity = filterUniversitiesByCity(city.id);
-      const universitiesInCityAndUniversity = universitiesInCity.filter((university) => selectedUniversityIds.includes(university.id));
+      const universitiesInCityAndUniversity = universitiesInCity.filter((university) => selectedUniversityIds.includes(university.code));
       universitiesInCityAndUniversity.forEach((university) => {
         matchedItems.push({ city, university });
       });
     });
-
+//
     const universityImagesMap = universities.reduce((map, university) => {
       if (university && university.images && university.images.length > 0) {
         map[university.en] = university.images[0,12];
@@ -64,7 +64,7 @@ const DepertmentsCard = ({
       return map;
     }, {});
    
-console.log(universityImagesMap )
+// console.log(universityImagesMap )
 
     return (
       <Container className="p-1 rounded-2" >

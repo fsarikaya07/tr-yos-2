@@ -17,7 +17,7 @@ const Departments = () => {
   const { selectedCityIds, selectedUniversityIds, selectedDepartmentIds } = location.state || {};
 
 
-  const { card, cities, universities, departments } = useYosContext();
+  const {  cities, universities, departments } = useYosContext();
 
 
 
@@ -28,13 +28,13 @@ const Departments = () => {
     key: city.id,
   }));
   const universitiesOptions = universities?.map((university) => ({
-    value: university.id,
-    label: university.en,
-    key: university.id,
+    value: university.code,
+   label: university.en,
+  key: university.id,
   }));
   const departmentsOptions = departments?.map((department) => ({
-    value: department.id,
-    label: department.en,
+    value: department.department.code,
+    label: department.department.en,
     key: department.id,
   }));
   const [filteredUniversities, setFilteredUniversities] = useState([]);
@@ -65,7 +65,7 @@ const Departments = () => {
   const handleUniversityChange = (selectedOptions) => {
     setSelectedUniversities(selectedOptions);
     const selectedUniversityIds = selectedOptions?.map((option) => option.value.en);
-    const filteredDeps = departments.filter((department) => selectedUniversityIds.includes(department.university));
+    const filteredDeps = departments.filter((department) => selectedUniversityIds.includes(department?.university?.code));
     setFilteredDepartments(filteredDeps);
   };
 
@@ -76,8 +76,8 @@ const Departments = () => {
   const cardCombinations = [];
   selectedCities?.forEach((city) => {
     selectedUniversities?.forEach((university) => {
-      // Seçilen üniversitenin ait olduğu şehrin tr değeriyle seçilen şehrin tr değerini karşılaştıralım
-      if (university.city === city.tr) {
+      // Seçilen üniversitenin ait olduğu şehrin en değeriyle seçilen şehrin en değerini karşılaştıralım
+      if (university.city === city.en) {
         selectedDepartments?.forEach((department) => {
           cardCombinations.push({
             city,
@@ -119,7 +119,7 @@ const Departments = () => {
                     className="w-100"
                     onChange={handleUniversityChange}
                     options={filteredUniversities?.map((university) => ({
-                      value: university.id,
+                      value: university.code,
                       label: university.en,
                       key: university.id,
                     }))}
@@ -132,8 +132,8 @@ const Departments = () => {
                     placeholder="Select Department"
                     className="w-100"
                     options={filteredDepartments?.map((department) => ({
-                      value: department.id,
-                      label: department.en,
+                      value: department.department.code,
+                      label: department.department.tr,
                       key: department.id,
                     }))}
                     isMulti
