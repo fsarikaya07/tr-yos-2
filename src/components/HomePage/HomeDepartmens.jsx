@@ -33,7 +33,7 @@ const HomeDepartmens = () => {
       <Row className="g-1 d-flex flex-wrap">
         {random12Cards?.map((item,index) => {
           return (
-            <Col xs={12} md={6} lg={4} xl={3} key={item.id}>
+            <Col xs={12} md={6} lg={4} xl={4} key={item.id}>
               <HomeCard item={item} universityImage={universityImages} />
             </Col>
           );
