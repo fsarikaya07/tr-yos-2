@@ -16,22 +16,16 @@ const Detail = () => {
   //universiteye ve departman ilişkisi
 
   const cardApi = card.find((u) => u.id === id);
-  const uniApi = universities.find((uni) => uni.tr === cardApi?.university.tr);
-  const images = uniApi?.images || []; // Resimleri al
-  const detaiUni = departments.find(
-    (a) => a.facultyCode === cardApi?.faculty.code
-  );
-  const cityApi = cities.find((city) => city.id === cardApi?.city.code);
 
-  // console.log(uniApi?.logo);
-
-  // useEffect(() => {
-  //   try {
-  //     axios.get(
-  //       `https://tr-yös.com/api/v1/record/department.php?id=${id}&token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a`
-  //     ).then(res=>console.log("copmare",res.data))
-  //   } catch (error) {}
-  // }, []);
+  
+  
+  
+  const uniApi= universities.find((uni) => uni.tr === cardApi?.university.tr)
+  const images = uniApi?.images || [];
+  const detaiUni= departments.find((a) => a.facultyCode === cardApi?.faculty.code)
+  const cityApi= cities.find((city) => city.id === cardApi?.city.code)
+  
+  console.log(uniApi?.logo);
 
   return (
     <div className="bg-light">

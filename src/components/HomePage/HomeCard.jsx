@@ -39,25 +39,29 @@ const HomeCard = ({ item, universityImage, onCardClick }) => {
   // // console.log(departmentImages);
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
-      <Card style={{ width: "100%", height: "25rem" }}>
-        {departmentImages.length > 0 ? (
-          <div style={{ width: "100%", height: "60%" }}>
-            <CardSlider images={departmentImages} />
-          </div>
-        ) : (
-          <Card.Img
-            variant="top"
-            style={{ width: "100%", height: "60%" }}
-            src={uniDefault}
-            className="relative"
-          />
-        )}
+
+
+
+      <Card className="rounded-2" style={{ width: "100%", height: "25rem" }}>
+
+      {departmentImages.length > 0 ?(  <div style={{ width: "100%", height: "60%" }}    >
+        <CardSlider images={departmentImages} />
+       </div>):
+       (<Card.Img
+        variant="top"
+        style={{ width: "100%", height: "60%" , borderRadius: "5px"  }}
+        src={uniDefault}
+
+   
+        className="relative defaultimg"
+      />)}
+
 
         <Button
           variant="light"
           size="lg"
           className="h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
-          style={{ position: "absolute", top: "190px", right: "10px" }}
+          style={{ position: "absolute", top: "175px", right: "10px" }}
           // className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
           type="submit"
           // variant="info"

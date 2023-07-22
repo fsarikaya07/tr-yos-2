@@ -10,7 +10,7 @@ import Departments from "../components/Departmens/Departments";
 import Compare1 from "../components/Account/Compare1";
 // import LogIn from "../components/Login/Logİn";
 // import SignUp from "../components/Login/Signup";
-// import University from "../components/university/";
+// import UniversityCard from "../components/universityCard/";
 
 const AppRouter = () => {
   return (
@@ -27,7 +27,7 @@ const AppRouter = () => {
         />
         {/* <Route path="/compare" element={<Compare/>}/> */}
         <Route path="/departmants" element={<Departments />} />
-        {/* <Route path="universites" element={<University />} /> */}
+        {/* <Route path="universites" element={<UniversityCard />} /> */}
         {/* <Route path="/login" element={<LogIn/>}/> */}
         {/* <Route path="/logout" element={<SignUp/>}/> */}
       </Routes>

@@ -13,6 +13,7 @@ export function YosProvider({ children }) {
   const [departments, setDepartments] = useState([]);
   const [card, setCard] = useState([]);
   const [sliderImages, setSliderImages] = useState([]);
+
   const [compare, setCompare] = useState([]);
   const [user, setUser] = useState();
   const [compareId, setCompareId] = useState();
@@ -25,23 +26,11 @@ export function YosProvider({ children }) {
 
   console.log("object", compare);
 
-  // const config = {
-  //   headers: {
-  //     header1: compare?.forEach((item) => item.id),
-  //     header2: token,
-  //   },
-  // };
-
-  // for (let i in compare["id"]) {
-  // axios
-  //   .get(
-  //     `https://tr-yös.com/api/v1/users/allcompares.php?id=${i}&token=${token}`
-  //   )
-  //   .then((res) => setfirst(res.data))
-  //   .catch((err) => console.log(err));
-  // }
 
   const ids = compare.map((item) => item.id);
+=======
+  const [countries, setCountries] = useState([]);
+
 
   useEffect(() => {
     axios
@@ -109,6 +98,7 @@ export function YosProvider({ children }) {
         console.log(error);
       });
 
+
     //Compare
 
     axios
@@ -122,6 +112,18 @@ export function YosProvider({ children }) {
       .then((res) => setCompareId(res.data))
       .catch((err) => console.log(err));
       
+
+    axios
+      .get(
+        "https://tr-yös.com/api/v1/location/allcountries.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
+      )
+      .then((response) => {
+        setCountries(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
   }, []);
 
   const contextValue = {
@@ -130,11 +132,15 @@ export function YosProvider({ children }) {
     departments,
     card,
     sliderImages,
+
     compare,
     setCompare,
     user,
     setCompareId,
     compareId,
+
+    countries,
+
   };
 
   return (
