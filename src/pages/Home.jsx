@@ -16,7 +16,7 @@ const Home = () => {
     <div>
 
       <nav>
-      <Link to="/account">Account</Link>
+      {/* <Link to="/account">Account</Link> */}
         {/* <ul>
           {card.map((university) => (
             <li key={university.id}>

@@ -4,8 +4,12 @@ form{
 .desc{
     font-size:x-small;
 }
-.info-div{
-    width: 100vw !important;
+.infoDiv{
+    width: 100vw !important; 
+    height: 15rem;
+}
+.page-title{
+    margin-top: 6rem;
 }
 
 

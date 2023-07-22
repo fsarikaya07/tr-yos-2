@@ -100,7 +100,9 @@ const Departments = () => {
 
   return (
     <div>
-      <div className="infoDiv mt-5 p-5 mb-2 bg-primary text-white">
+      <div
+      className="infoDiv p-5 mb-2 bg-primary text-white"
+      >
         <h2 className=" page-title fw-bold mx-5">Departmants</h2>
       </div>
       <Container>
