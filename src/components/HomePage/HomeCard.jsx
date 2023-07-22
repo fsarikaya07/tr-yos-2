@@ -23,22 +23,22 @@ const HomeCard = ({ item , universityImage}) => {
     const departmentName = item?.university?.tr;
     const departmentImages = universityImage[departmentName] || [];
 
-    const scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    };
+    // const scrollToTop = () => {
+    //   window.scrollTo({
+    //     top: 0,
+    //     behavior: "smooth",
+    //   });
+    // };
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
-      <Card  style={{ width: "100%", height: "25rem" }}>
+      <Card className="rounded-2" style={{ width: "100%", height: "25rem" }}>
 
       {departmentImages.length > 0 ?(  <div style={{ width: "100%", height: "60%" }}    >
         <CardSlider images={departmentImages} />
        </div>):
        (<Card.Img
         variant="top"
-        style={{ width: "100%", height: "60%" }}
+        style={{ width: "100%", height: "60%" , borderRadius: "5px"  }}
         src={uniDefault}
 
    
@@ -73,12 +73,12 @@ const HomeCard = ({ item , universityImage}) => {
           <div className="left ">
           <Card.Title className="text-start text-primary fs-6">
               <Link
-              // key={item?.id}
-                to={"#"}
+              key={item?.id}
+              to={`/universities/${item.id}`}
                 
                 rel="noopener noreferrer"
                 className="text-decoration-none"
-                onClick={scrollToTop}
+                // onClick={scrollToTop}
               >
                    {item?.department?.en}
               </Link>
