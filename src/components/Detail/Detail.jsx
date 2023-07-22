@@ -16,7 +16,7 @@ console.log(id);
 
   const cardApi = card.find((u) => u.id === id);
   const uniApi= universities.find((uni) => uni.tr === cardApi?.university.tr)
-  const images = uniApi?.images || []; // Resimleri al
+  const images = uniApi?.images || [];
   const detaiUni= departments.find((a) => a.facultyCode === cardApi?.faculty.code)
   const cityApi= cities.find((city) => city.id === cardApi?.city.code)
   
