@@ -1,4 +1,5 @@
 import "../components/Style/University.css";
+import { useContext } from "react";
 import { useYosContext } from "../context/Context";
 import UniversityCard from "../components/university/UniversityCard";
 
