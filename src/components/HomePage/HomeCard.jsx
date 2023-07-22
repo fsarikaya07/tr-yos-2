@@ -42,14 +42,14 @@ const HomeCard = ({ item , universityImage}) => {
         src={uniDefault}
 
    
-        className="relative"
+        className="relative defaultimg"
       />)}
 
         <Button
           variant="light"
           size="lg"
           className="h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
-          style={{ position: "absolute", top: "190px", right: "10px" }}
+          style={{ position: "absolute", top: "175px", right: "10px" }}
           // className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
           type="submit"
           // variant="info"
