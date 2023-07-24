@@ -58,6 +58,10 @@ function HomeSearch() {
     setFilteredDepartments(filteredDeps);
   };
 
+  // console.log(filteredUniversities)
+  // console.log(filteredDepartments)
+
+
 
   const handleDepartmentChange = (selectedOptions) => {
     setSelectedDepartments(selectedOptions);
