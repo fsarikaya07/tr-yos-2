@@ -166,7 +166,77 @@ export function YosProvider({ children }) {
       }
     };
 
+
     fetchData();
+
+    // axios
+    //   .get(
+    //     "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
+    //   )
+    //   .then((response) => {
+    //     setCard(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    // axios
+    //   .get(
+    //     "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
+    //   )
+    //   .then((response) => {
+    //     setDepartments(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log("errere", error);
+    //   });
+
+    // //User
+
+    // axios
+    //   .post(
+    //     "https://tr-yös.com/api/v1/users/login.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
+    //     loginData,
+    //     {
+    //       headers: {
+    //         "Content-Type": "multipart/form-data",
+    //       },
+    //     }
+    //   )
+    //   .then((response) => {
+    //     setUser(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+
+    // //Compare
+
+    // axios
+    //   .get(`https://tr-yös.com/api/v1/users/allcompares.php`, {
+    //     params: {
+    //       id: ids.join(","), 
+    //       token:
+    //         "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
+    //     },
+    //   })
+    //   .then((res) => setCompareId(res.data))
+    //   .catch((err) => console.log(err));
+      
+
+    // axios
+    //   .get(
+    //     "https://tr-yös.com/api/v1/location/allcountries.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
+    //   )
+    //   .then((response) => {
+    //     setCountries(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+
   }, []);
   console.log(compareId);
   const contextValue = {

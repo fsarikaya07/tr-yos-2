@@ -94,15 +94,18 @@ const Account = () => {
               <input type="email" className="form-control p-3" id="inputEmail" required />
             </div>
             <div className="col-md-6">
-              <label htmlFor="inputContry" className="form-label"   >
+              <label htmlFor="inputContry" className="form-label">
                 Country
               </label>
-              <select id="inputCountry" className="form-select p-3" required >
-                <option selected disabled value="">Select Country</option>
-                <option>Rusia</option>
-                <option>USA</option>
-                <option>Turkiye</option>
-                <option>Germany</option>
+              <select id="inputCountry" className="form-select p-3" required>
+                <option selected disabled value="">
+                  Select Country
+                </option>
+                {countries.map((country) => (
+                  <option key={country.id} value={country.en}>
+                    {country.en}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="col-md-6">

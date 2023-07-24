@@ -35,16 +35,16 @@ const UniversityCard = ({logo,city,tr,data}) => {
                   <i class="fa-solid fa-location-dot"></i>
                     <span className="location-name">Afyonkarahisar</span>
                   </div>
-                  
+                
                   
                   <p className="university-address">
                  Afyon Kocatepe Üniversitesi Rektörlüğü ANS Kampusü Gazlıgöl
                     Yolu Üzeri AFYONKARAHİSAR
                   </p>
   
-                    <div className="contact">
+              <div className="contact">
                     <div className="uni-contact  p-2  border border-warning-subtle rounded-1 w-50 ">
-                    <i class="fa-solid fa-phone"></i>
+                  <i class="fa-solid fa-phone"></i>
                     <span > (272) 218-1195</span>
                     
                   </div>
@@ -53,13 +53,13 @@ const UniversityCard = ({logo,city,tr,data}) => {
                   </div>
                 </div>
               </div>
-              </div>
+            </div>
               
             </div>
           </div>
         </div> 
-    </div>
+      </div>
   )
 }
-
+    
 export default UniversityCard
