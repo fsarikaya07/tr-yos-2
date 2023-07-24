@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import Select from 'react-select';
 import '../Style/Departmants.css';
-import { useYosContext } from '../../context/Context';
+
 import { useLocation } from 'react-router';
 import DepertmentsCard from "../Departmens/DepertmentsCard"
-import '../Style/Departmants.css';
+
 import { useYosContext } from '../../context/Context';
-import { useLocation } from 'react-router';
+
 import HomeCard from '../HomePage/HomeCard';
 
 
