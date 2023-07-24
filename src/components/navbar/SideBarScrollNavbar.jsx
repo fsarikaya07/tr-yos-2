@@ -9,7 +9,7 @@ import {
   Modal,
 } from "react-bootstrap";
 import { Link, NavLink, 
-  useLocation 
+  // useLocation 
 } from "react-router-dom";
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa"; // import icons you want
 import LogIn from "../Login/Logİn";
@@ -24,7 +24,7 @@ const ScrollNavbar = () => {
   const toggleShowSignInModal = () => setShowSignInModal(!showSignInModal);
   const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
 
-  const location = useLocation();
+  // const location = useLocation();
   const [scrollBackground, setScrollBackground] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false); // state variable for sidebar visibility
 
