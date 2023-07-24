@@ -1,27 +1,106 @@
+// import "../components/Style/University.css";
+// import { useContext } from "react";
+// import { useYosContext } from "../context/Context";
+// import UniversityCard from "../components/university/UniversityCard";
+
+// const University = () => {
+//   const { universities } = useYosContext();
+//   return (
+//     <div className="page-title">
+//       <div className="p-5 mb-2 bg-primary text-white">
+//         <h2 className="p-title fw-bold mx-5">Universites</h2>
+//         <span className="fw-small mx-5">
+//         You Can Check All Universities
+//         </span>
+//       </div>
+
+//       {/* Univercity cards */}
+//       <div>
+//         {universities.map((item) => (
+//           <UniversityCard {...item} key={item.id} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default University;
+
+
 import "../components/Style/University.css";
-import { useContext } from "react";
+import { useState } from "react";
 import { useYosContext } from "../context/Context";
 import UniversityCard from "../components/university/UniversityCard";
 
 const University = () => {
   const { universities } = useYosContext();
+  const itemsPerPage = 10; // Her sayfada gösterilecek üniversite sayısı
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Aktif sayfada gösterilecek üniversiteleri hesaplayan fonksiyon
+  const getVisibleUniversities = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return universities.slice(startIndex, endIndex);
+  };
+
+  // Toplam sayfa sayısını hesaplayan fonksiyon
+  const totalPages = Math.ceil(universities.length / itemsPerPage);
+
+  // Sayfa değiştirme işlevi
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
+  // Sayfa numaralarının listesi
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
   return (
     <div className="page-title">
       <div className="p-5 mb-2 bg-primary text-white">
         <h2 className="p-title fw-bold mx-5">Universites</h2>
         <span className="fw-small mx-5">
-          Tüm Üniversiteleri Kontrol Edebilirsiniz eN
+          You Can Check All Universities
         </span>
       </div>
 
-      {/* Univercity cards */}
-      <div>
-        {universities.map((item) => (
+      {/* Üniversite kartları */}
+      <div >
+        {getVisibleUniversities().map((item) => (
           <UniversityCard {...item} key={item.id} />
         ))}
+      </div>
+
+      {/* Sayfa numaralarının butonları */}
+      <div className="pagination">
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Geri
+        </button>
+        {pageNumbers.map((number) => (
+          <button
+            key={number}
+            onClick={() => handlePageChange(number)}
+            className={currentPage === number ? "active" : ""}
+          >
+            {number}
+          </button>
+        ))}
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          İleri
+        </button>
       </div>
     </div>
   );
 };
 
 export default University;
+
