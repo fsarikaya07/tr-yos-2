@@ -28,7 +28,7 @@ export function YosProvider({ children }) {
 
 
   const ids = compare.map((item) => item.id);
-=======
+
   const [countries, setCountries] = useState([]);
 
 
