@@ -5,16 +5,24 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useYosContext } from "../../context/Context";
 
 const HomeDepartmens = () => {
-   const {universities, card} = useYosContext();
-   const shuffledCards = card.sort(() => 0.5 - Math.random());
-   const random12Cards = shuffledCards.slice(0, 12);
+  const { universities, card, setCompare, compare, user } = useYosContext();
+  const shuffledCards = card.sort(() => 0.5 - Math.random());
+  const random12Cards = shuffledCards.slice(0, 12);
 
-   const universityImages = universities.reduce((map, university) => {
+  const universityImages = universities.reduce((map, university) => {
     if (university && university.images && university.images.length > 0) {
       map[university.tr] = university.images;
     }
     return map;
   }, {});
+
+  // Tıklanan kartın verilerini işleyecek işlev
+  const handleCardClick = (clickedCardData) => {
+
+   
+    return  setCompare((prevCompare) => [...prevCompare, clickedCardData]);
+  };
+
   return (
     // <div>
     //   {data.map((item)=> <HomeCard{...item}/>)}
@@ -31,10 +39,14 @@ const HomeDepartmens = () => {
       </h6>
 
       <Row className="g-1 d-flex flex-wrap">
-        {random12Cards?.map((item,index) => {
+        {random12Cards?.map((item, index) => {
           return (
             <Col xs={12} md={6} lg={4} xl={4} key={item.id}>
-              <HomeCard item={item} universityImage={universityImages} />
+              <HomeCard
+                item={item}
+                universityImage={universityImages}
+                onCardClick={handleCardClick}
+              />
             </Col>
           );
         })}

@@ -15,14 +15,19 @@ form{
 }
 .page-title{
     margin-top: 6rem;
-}
 
+<<<<<<< HEAD
 
 
   
   
+=======
+    align-items: center; 
+    height: 100vh; 
+  }
+>>>>>>> 8fb216fdbaabfa850bd51e37ae0ccf8726d5952e
   
-  /* H2 elementinin stilini belirt */
+
   h2 {
     color: rgb(220, 219, 219);
     font-size: 50px;

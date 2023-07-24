@@ -1,30 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../Style/Detail.css";
 import { useParams } from "react-router";
 import Slider from "./Slider";
 import { useYosContext } from "../../context/Context";
+import axios from "axios";
 
 const Detail = () => {
   const [isDetail, setIsDetail] = useState(false);
   const [isButton, setIsButton] = useState(true);
   const { id } = useParams();
-  const{card,departments,universities,cities,}=useYosContext()
-console.log(id);
-  //universiteye ve departman ilişkisi   
+  const { card, departments, universities, cities } = useYosContext();
+  // console.log(id);
+  //universiteye ve departman ilişkisi
 
   const cardApi = card.find((u) => u.id === id);
+
+  
+  
+  
   const uniApi= universities.find((uni) => uni.tr === cardApi?.university.tr)
   const images = uniApi?.images || [];
   const detaiUni= departments.find((a) => a.facultyCode === cardApi?.faculty.code)
   const cityApi= cities.find((city) => city.id === cardApi?.city.code)
   
   console.log(uniApi?.logo);
+
   return (
     <div className="bg-light">
       {/* <---------------------SLIDER START HAKAN BILGI ---------------------> */}
-     <Slider images={images} />
+      <Slider images={images} />
       {/* <---------------------SLIDER END HAKAN BILGI---------------------> */}
 
       <div className="container  pt-4 ">
@@ -33,16 +39,17 @@ console.log(id);
           <div id="left-container" className="col-8 ">
             <div className="d-flex justify-content-between mt-4 p-2 bg-white">
               <div className="w-75">
-                <h4 className="text-start">
-                {cardApi?.faculty.tr}
-                </h4>
+                <h4 className="text-start">{cardApi?.faculty.tr}</h4>
                 <p></p>
                 <p>
-                  <i class="fa-solid fa-location-dot fa-sm"></i> {cardApi?.data?.adress}
+                  <i class="fa-solid fa-location-dot fa-sm"></i>{" "}
+                  {cardApi?.data?.adress}
                 </p>
               </div>
               <div>
-                <p className="fs-3 text-primary font-weight-bold">${cardApi?.price}</p>
+                <p className="fs-3 text-primary font-weight-bold">
+                  ${cardApi?.price}
+                </p>
                 <p className="year text-center ">Year</p>
               </div>
             </div>
@@ -72,7 +79,7 @@ console.log(id);
             <div className="bg-white rounded mt-4 p-2">
               <h6 className="text-start font-weight-bold">About Department</h6>
               <p className="text-muted text-start fs-7 font-weight-light">
-              {/* {cardApi.history} */}
+                {/* {cardApi.history} */}
               </p>
             </div>
 
@@ -132,7 +139,9 @@ console.log(id);
             <div className="bg-white mt-4 mb-4 p-4 ">
               <div className="text-start ">
                 <form className="">
-                  <h5 className="text-start  font-weight-bold">Submit Review</h5>
+                  <h5 className="text-start  font-weight-bold">
+                    Submit Review
+                  </h5>
                   <div className="row ">
                     <div className="col-lg-6 col-md-6 col-sm-12 p-2">
                       <div className="form-group">
@@ -241,11 +250,10 @@ console.log(id);
                       alt="logo"
                     />
                     <div className="text-start ps-4">
-                      <h4 className="">
-                      {cardApi?.university.tr}
-                      </h4>
+                      <h4 className="">{cardApi?.university.tr}</h4>
                       <p className="fs-7">
-                        <i class="fa-solid fa-location-dot fa-sm"></i>{cityApi?.tr}
+                        <i class="fa-solid fa-location-dot fa-sm"></i>
+                        {cityApi?.tr}
                       </p>
                     </div>
                   </div>
@@ -262,7 +270,6 @@ console.log(id);
                           <a
                             className="text-decoration-none"
                             href={cardApi?.data?.phone}
-                            
                           >
                             {cardApi?.data?.phone}
                           </a>
