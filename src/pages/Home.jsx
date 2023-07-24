@@ -13,24 +13,9 @@ const Home = () => {
 
   const {card}=useYosContext()
   return (
-    <div>
-
-      <nav>
-      {/* <Link to="/account">Account</Link> */}
-        {/* <ul>
-          {card.map((university) => (
-            <li key={university.id}>
-              <Link to={`/universities/${university.id}`}>
-                {university.tr}
-              </Link>
-            </li>
-          ))}
-        </ul> */}
-      </nav>
+    <div>      
       <HomeSearch/>
       <HomeDepartmens/>
-     
-     
     </div>
   );
 };

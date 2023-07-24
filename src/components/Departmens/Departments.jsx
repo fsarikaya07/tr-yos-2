@@ -103,6 +103,7 @@ const Departments = () => {
 
 
   return (
+    
     <div>
 
       <div className="infoDiv mt-5 p-5 mb-2  text-white  " style={{backgroundImage:'url(https://images.pexels.com/photos/4544549/pexels-photo-4544549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
@@ -225,6 +226,7 @@ const Departments = () => {
           </div>
         </Row>
       </Container>
+    </div>
     </div>
   );
 };
