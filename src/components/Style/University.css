@@ -1,3 +1,15 @@
+/* .page-title{
+  padding: 10rem 0 5rem;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-size: cover !important;
+} */
+
+.header{
+  height: 100vh;
+}
 .card {
   align-items: start;
   background-color: white;
@@ -52,9 +64,25 @@
   height: 156px;
   width: 156px;
 }
-/* .logo {
-  
-} */
+.pagination{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px;
+}
+.back, .next{
+  background-color: #0000FF;
+  border-radius: 5px;
+  color: white;
+  margin: 5px;
+  height: 35px;
+}
+.pagination .active {
+  background-color: #0000FF;
+  border-radius: 5px;
+  color: white;
+  margin: 5px;
+}
 
 @media (max-width: 375px) {
  
