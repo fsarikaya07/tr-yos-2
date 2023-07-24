@@ -8,16 +8,24 @@ form{
 
     width: 100vw !important;
     display: flex;
-
+  align-items: center; /* Dikeyde ortala */
+    height: 100vh; /* İçeriğin dikeyde ortalanması için container'a bir yükseklik verilmeli */
     width: 100vw !important; 
     height: 15rem;
 }
 .page-title{
     margin-top: 6rem;
 
+<<<<<<< HEAD
+
+
+  
+  
+=======
     align-items: center; 
     height: 100vh; 
   }
+>>>>>>> 8fb216fdbaabfa850bd51e37ae0ccf8726d5952e
   
 
   h2 {
