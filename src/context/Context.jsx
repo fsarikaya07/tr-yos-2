@@ -13,6 +13,7 @@ export function YosProvider({ children }) {
   const [departments, setDepartments] = useState([]);
   const [card, setCard] = useState([]);
   const [sliderImages, setSliderImages] = useState([]);
+
   const [compare, setCompare] = useState([]);
 
   const [user, setUser] = useState();
@@ -28,89 +29,7 @@ export function YosProvider({ children }) {
 
   const ids = compare.map((item) => item.id);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       "https://tr-yös.com/api/v1/location/allcities.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
-  //     )
-  //     .then((response) => {
-  //       setCities(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-
-  //   axios
-  //     .get(
-  //       "https://tr-yös.com/api/v1/education/alluniversities.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
-  //     )
-  //     .then((response) => {
-  //       setUniversities(response.data);
-  //       const images = response.data.map((university) => university.images);
-  //       setSliderImages(images);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-
-  //   axios
-  //     .get(
-  //       "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
-  //     )
-  //     .then((response) => {
-  //       setCard(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-
-  //   axios
-  //     .get(
-  //       "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
-  //     )
-  //     .then((response) => {
-  //       setDepartments(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log("errere", error);
-  //     });
-
-  //   //User
-
-  //   axios
-  //     .post(
-  //       "https://tr-yös.com/api/v1/users/login.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
-  //       loginData,
-  //       {
-  //         headers: {
-  //           "Content-Type": "multipart/form-data",
-  //         },
-  //       }
-  //     )
-  //     .then((response) => {
-  //       setUser(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-
-  //   //Compare
-
-  //   axios
-  //     .get(`https://tr-yös.com/api/v1/users/allcompares.php`, {
-  //       params: {
-  //         id: ids.join(","),
-  //         token:
-  //           "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
-  //       },
-  //     })
-  //     .then((res) => setCompareId(res.data))
-  //     .catch((err) => console.log(err));
-
-  // }, []);
-
   useEffect(() => {
-    // Define an async function to wrap the axios calls
     const fetchData = async () => {
       try {
         const responseCities = await axios.get(
@@ -166,77 +85,7 @@ export function YosProvider({ children }) {
       }
     };
 
-
     fetchData();
-
-    // axios
-    //   .get(
-    //     "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
-    //   )
-    //   .then((response) => {
-    //     setCard(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
-    // axios
-    //   .get(
-    //     "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
-    //   )
-    //   .then((response) => {
-    //     setDepartments(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log("errere", error);
-    //   });
-
-    // //User
-
-    // axios
-    //   .post(
-    //     "https://tr-yös.com/api/v1/users/login.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
-    //     loginData,
-    //     {
-    //       headers: {
-    //         "Content-Type": "multipart/form-data",
-    //       },
-    //     }
-    //   )
-    //   .then((response) => {
-    //     setUser(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
-
-    // //Compare
-
-    // axios
-    //   .get(`https://tr-yös.com/api/v1/users/allcompares.php`, {
-    //     params: {
-    //       id: ids.join(","), 
-    //       token:
-    //         "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
-    //     },
-    //   })
-    //   .then((res) => setCompareId(res.data))
-    //   .catch((err) => console.log(err));
-      
-
-    // axios
-    //   .get(
-    //     "https://tr-yös.com/api/v1/location/allcountries.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
-    //   )
-    //   .then((response) => {
-    //     setCountries(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
-
   }, []);
   console.log(compareId);
   const contextValue = {
@@ -245,11 +94,14 @@ export function YosProvider({ children }) {
     departments,
     card,
     sliderImages,
+
     compare,
     setCompare,
     user,
     setCompareId,
     compareId,
+
+    countries,
   };
 
   return (

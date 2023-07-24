@@ -1,8 +1,13 @@
 import React from "react";
 // import { Card, Button } from "react-bootstrap";
+
+import { useYosContext } from "../../context/Context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Account.css";
 const Account = () => {
+  const yosContext = useYosContext(); 
+  const countries = yosContext.countries; 
+
   const person = {
     name: "John Doe",
     tel: "+90 555 123 45 67",
