@@ -72,6 +72,146 @@ const Departments = () => {
     setSelectedDepartments(selectedOptions);
   };
 
+
+  const cards = [];
+  selectedCities?.forEach((city) => {
+    selectedUniversities?.forEach((university) => {
+      selectedDepartments?.forEach((department) => {
+        cards.push({
+          city,
+          university,
+          department,
+        });
+      });
+    });
+  });
+  if (cards.length === 0) {
+    return null;
+  }
+
+  return (
+    <div>
+      <div
+        className="infoDiv mt-5 p-5 mb-2  text-white  "
+        style={{
+          backgroundImage:
+            "url(https://images.pexels.com/photos/4544549/pexels-photo-4544549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          height: "200px",
+        }}
+      >
+        <h2 className="page-title m-5  fw-bold">Departmants</h2>
+        {/* <h4>All Departments</h4> */}
+
+        <div className="infoDiv p-5 mb-2 bg-primary text-white">
+          <h2 className=" page-title fw-bold mx-5">Departmants</h2>
+        </div>
+        <Container>
+          <Row className="d-flex ">
+            <div className="d-flex ">
+              <Col xs={0} md={0} lg={4} xl={3}>
+                <Form className="d-none d-lg-block row w-100 mt-5 p-3 text-start  bg-body rounded-4  align-items-center border d-inline-flex">
+                  <div className="select col-12  mb-3 ">
+                    <Select
+                      placeholder="Select City"
+                      onChange={handleCityChange}
+                      options={cities?.map((city) => ({
+                        value: city.id,
+                        label: city.en,
+                        key: city.id,
+                      }))}
+                      isMulti
+                      value={selectedCities}
+                    />
+                  </div>
+                  <div className="select col-12 mb-3 ">
+                    <Select
+                      placeholder="Select University"
+                      className="w-100"
+                      onChange={handleUniversityChange}
+                      options={filteredUniversities?.map((university) => ({
+                        value: university.code,
+                        label: university.en,
+                        key: university.id,
+                      }))}
+                      isMulti
+                      value={selectedUniversities}
+                    />
+                  </div>
+                  <div className="select col-12 mb-3 ">
+                    <Select
+                      placeholder="Select Department"
+                      className="w-100"
+                      options={filteredDepartments?.map((department) => ({
+                        value: department.department.code,
+                        label: department.department.tr,
+                        key: department.id,
+                      }))}
+                      isMulti
+                      value={selectedDepartments}
+                      onChange={handleDepartmentChange}
+                    />
+                  </div>
+                  <div className="d-flex align-items-center">
+                    <Form.Group className="flex-grow-1">
+                      <Form.Control
+                        type="text"
+                        placeholder="Min Price"
+                        className="p-3"
+                      />
+                    </Form.Group>
+                    <span className="mx-2"></span>
+                    <Form.Group className="flex-grow-1">
+                      <Form.Control
+                        type="text"
+                        placeholder="Max Price"
+                        className="p-3"
+                      />
+                    </Form.Group>
+                  </div>
+
+                  <div className="d-flex justify-content-between mt-2"></div>
+                  <Button variant="primary" type="submit" className="p-3 mt-4">
+                    Submit Search
+                  </Button>
+                </Form>
+              </Col>
+
+              <Col xs={12} sm={12} md={12} lg={8} xl={9}>
+                <Container className="rounded-4 mt-2 p-4">
+                  <Row className="g-3 d-flex flex-wrap">
+                    {cards.length > 0
+                      ? cards?.map(({ city, university, department }) => (
+                          <Col sm={6} md={6} lg={6} key={department}>
+                            <DepertmentsCard
+                              item={department}
+                              cities={cities}
+                              universities={universities}
+                              departments={departments}
+                              selectedCities={[city]}
+                              selectedUniversities={[university]}
+                              selectedDepartments={[department]}
+                            />
+                          </Col>
+                        ))
+                      : random12Cards?.map((item) => (
+                          <Col sm={6} md={6} lg={6} key={item.id}>
+                            <HomeCard
+                              item={item}
+                              universityImage={universityImages}
+                            />
+                          </Col>
+                        ))}
+                  </Row>
+                </Container>
+              </Col>
+            </div>
+          </Row>
+        </Container>
+      </div>
+
   const cardsData= [];
   selectedCities?.forEach((city) => {
     selectedUniversities?.forEach((university) => {
@@ -186,6 +326,7 @@ const Departments = () => {
           </div>
         </Row>
       </Container>
+
     </div>
   );
 };
