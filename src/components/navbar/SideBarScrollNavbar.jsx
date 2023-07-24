@@ -14,6 +14,7 @@ import { FaSignInAlt, FaUserPlus } from "react-icons/fa"; // import icons you wa
 // import "../HomePage.css"
 import LogIn from "../Login/Logİn";
 import Register from "../Login/Register";
+import "./HomePage.css";
 
 const ScrollNavbar = () => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
@@ -69,7 +70,7 @@ const ScrollNavbar = () => {
         show={sidebarOpen} // show prop controls visibility
         onHide={toggleSidebar} // onHide prop calls toggle function
         placement="start" // placement prop sets position
-        className="homeNavbar text-dark"
+        className=" text-dark"
       >
         <Offcanvas.Header closeButton className="">
           {/* Add logo or title here */}
@@ -77,7 +78,7 @@ const ScrollNavbar = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           {/* Add list of links here */}
-          <Nav className="d-flex flex-column align-items-start fw-bold fs-6">
+          <Nav className="homeNavbar d-flex flex-column align-items-start fw-bold fs-6">
             <Link
               to="/"
               className={`nav-link ${
@@ -240,10 +241,16 @@ const ScrollNavbar = () => {
               </Col>
             </Row>
           </Nav>
+          <div className="boxNavbar"></div>
         </Navbar.Collapse>
 
         {/* Modal componentleri tanımlanıyor */}
-        <Modal show={showSignInModal} onHide={toggleShowSignInModal} centered contentClassName="modal-content">
+        <Modal
+          show={showSignInModal}
+          onHide={toggleShowSignInModal}
+          centered
+          contentClassName="modal-content"
+        >
           {/* LogIn componenti modalin içine yerleştiriliyor */}
           <LogIn />
         </Modal>

@@ -1,22 +1,38 @@
-.homeNavbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100vw;
-    opacity: 80%;
-}
-.nav-bg {
-  background-color: rgba(0,0,0,0.5); /* adjust the color and alpha as you like */
+.boxNavbar{
+height: px !important;
+
 }
 
-.navbar{
+.homeNavbar {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+    align-items: center;
+    width: 100vw;
+    height: 6rem;
+    opacity: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+/* .nav-bg { */
+  /* background-color: rgba(0,0,0,0.5); adjust the color and alpha as you like */
+/* } */
+
+/* .navbar{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
  
-.Button {
+/* .Button {
     display: flex;
     border-radius: 18%;
     transition: 0.3s;
@@ -24,28 +40,28 @@
     width: 7rem;
     opacity: 100%;
     border-radius: 5px;
-    height: 50px;
+    height: 0px;
     background-color: blue !important ;
     transition: 0.3s;
     cursor: pointer;
   }
    .Button:active {
-    transform: scale(0.85);
-  }
-  .navbarCollapse{
+    transform: scale(0.85); 
+  }*/
+  /* .navbarCollapse{
     background-color: blueviolet;
   }
 
   .SearchBox-icon {
     margin: auto;
     color: #fff;
-  }
+  } */
 
-  .logo:hover {
+  /* .logo:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* adjust the color and size as you like */
-  }
+  /* }  */
 
-
+/* 
 button {
     border: none;
     background: none;
@@ -56,9 +72,9 @@ button {
     cursor: pointer;
   }
   
-   
+    */
   
-
+/* 
   @media screen and (max-width: 768px){
     .account_container{
         display: block !important;
@@ -67,19 +83,19 @@ button {
         width: 100% !important;
     }
 }
- 
-  
+  */
+/*   
   @media screen and (max-width: 768px){
     .Container{
         display: block !important;
         flex-wrap:wrap !important
     }
-  }
+  } */
 
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) { */
     /* styles for screens that are 600px wide or less */
-  }
+  /* } */
 
-  @media screen and (max-width: 600px), print {
+  /* @media screen and (max-width: 600px), print { */
     /* styles for screens that are 600px wide or less, or for printers */
-  }
+  /* } */
