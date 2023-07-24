@@ -3,34 +3,45 @@ import { Button, Container, Modal } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import uniDefault from "../../assets/uni.jpg";
-import CardSlider from "./CardSlider"
+import CardSlider from "./CardSlider";
 import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import LogIn from "../Login/Logİn";
 
-const HomeCard = ({ item , universityImage}) => {
+const HomeCard = ({ item, universityImage, onCardClick }) => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
   const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
 
-  const toggleShowSignInCompareModal = () =>
-    setShowSignInCompareModal(!showSignInCompareModal);
+
+  const toggleShowSignInCompareModal = async () => {
+    await setShowSignInCompareModal(!showSignInCompareModal);
+    // setcardPost(()=>[...cardPost,{ imga:departmentImages, dep:item?.department?.en, fac:item?.faculty?.en ,uni:item?.university?.en,city:item?.city?.en}])
+    
+    // Tıklanan kartın verilerini işlev prop'u aracılığıyla geri gönderin
+    return onCardClick({ id: item?.id });
+  };
+
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
 
   const toggleShowSignInHeartModal = () =>
     setShowSignInHeartModal(!showSignInHeartModal);
-    const departmentName = item?.university?.tr;
-    const departmentImages = universityImage[departmentName] || [];
+  const departmentName = item?.university?.tr;
+  const departmentImages = universityImage[departmentName] || [];
 
-    // const scrollToTop = () => {
-    //   window.scrollTo({
-    //     top: 0,
-    //     behavior: "smooth",
-    //   });
-    // };
+  // const scrollToTop = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // };
+  // // console.log(departmentImages);
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
+
+
+
       <Card className="rounded-2" style={{ width: "100%", height: "25rem" }}>
 
       {departmentImages.length > 0 ?(  <div style={{ width: "100%", height: "60%" }}    >
@@ -44,6 +55,7 @@ const HomeCard = ({ item , universityImage}) => {
    
         className="relative defaultimg"
       />)}
+
 
         <Button
           variant="light"
@@ -71,16 +83,15 @@ const HomeCard = ({ item , universityImage}) => {
           style={{ height: "30%" }}
         >
           <div className="left ">
-          <Card.Title className="text-start text-primary fs-6">
+            <Card.Title className="text-start text-primary fs-6">
               <Link
-              key={item?.id}
-              to={`/universities/${item.id}`}
-                
+                key={item?.id}
+                to={`/universities/${item.id}`}
                 rel="noopener noreferrer"
                 className="text-decoration-none"
                 // onClick={scrollToTop}
               >
-                   {item?.department?.en}
+                {item?.department?.en}
               </Link>
             </Card.Title>
             <Card.Title className="text-start text-primary fs-6">

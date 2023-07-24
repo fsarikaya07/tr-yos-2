@@ -5,6 +5,10 @@ form{
     font-size:x-small;
 }
 .infoDiv{
+
+    width: 100vw !important;
+    display: flex;
+
     width: 100vw !important; 
     height: 15rem;
 }
@@ -13,6 +17,17 @@ form{
 }
 
 
+
+    align-items: center; /* Dikeyde ortala */
+    height: 100vh; /* İçeriğin dikeyde ortalanması için container'a bir yükseklik verilmeli */
+  }
+  
+  /* H2 elementinin stilini belirt */
+  h2 {
+    color: rgb(220, 219, 219);
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
   
   @media  (min-width: 1024px) {
        .desc{
