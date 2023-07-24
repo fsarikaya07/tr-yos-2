@@ -72,11 +72,11 @@ const Departments = () => {
     setSelectedDepartments(selectedOptions);
   };
 
-  const cards= [];
+  const cardsData= [];
   selectedCities?.forEach((city) => {
     selectedUniversities?.forEach((university) => {
       selectedDepartments?.forEach((department) => {  
-          cards.push({
+          cardsData.push({
             city,
             university,
             department,
@@ -85,9 +85,7 @@ const Departments = () => {
       });
     });
   });
-  if (cards.length === 0) {
-    return null;
-  }
+
  
   return (
     <div>
@@ -162,8 +160,8 @@ const Departments = () => {
               <Container className="rounded-4 mt-2 p-4">
               
 <Row className="g-3 d-flex flex-wrap">
-{cards.length > 0
-                  ? cards?.map(({ city, university, department }) => (
+{cardsData?.length > 0
+                  ? cardsData?.map(({ city, university, department }) => (
                       <Col sm={6} md={6} lg={6} key={department}>
                         <DepertmentsCard
                           item={department}
