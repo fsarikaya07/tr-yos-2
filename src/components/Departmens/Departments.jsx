@@ -104,8 +104,13 @@ const Departments = () => {
 
   return (
     <div>
-      <div className="infoDiv mt-5 p-5 mb-2 bg-primary text-white">
-        <h2 className=" page-title fw-bold mx-5">Departmants</h2>
+      <div className="infoDiv mt-5 p-5 mb-2  text-white  " style={{backgroundImage:'url(https://images.pexels.com/photos/4544549/pexels-photo-4544549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+       backgroundSize: "cover",
+       backgroundRepeat: "no-repeat",
+       backgroundPosition: "center center",
+       height: '200px' }}>
+        <h2 className="page-title m-5  fw-bold">Departmants</h2>
+        {/* <h4>All Departments</h4> */}
       </div>
       <Container>
         <Row className="d-flex ">
