@@ -8,10 +8,10 @@ import {
   Row,
   Modal,
 } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
-import { IconContext } from "react-icons"; // import IconContext component
+import { Link, NavLink, 
+  // useLocation 
+} from "react-router-dom";
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa"; // import icons you want
-// import "../HomePage.css"
 import LogIn from "../Login/Logİn";
 import Register from "../Login/Register";
 import "./HomePage.css";
@@ -24,7 +24,7 @@ const ScrollNavbar = () => {
   const toggleShowSignInModal = () => setShowSignInModal(!showSignInModal);
   const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
 
-  const location = useLocation();
+  // const location = useLocation();
   const [scrollBackground, setScrollBackground] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false); // state variable for sidebar visibility
 
@@ -79,41 +79,53 @@ const ScrollNavbar = () => {
         <Offcanvas.Body>
           {/* Add list of links here */}
           <Nav className="homeNavbar d-flex flex-column align-items-start fw-bold fs-6">
-            <Link
-              to="/"
-              className={`nav-link ${
-                location.pathname === "/" ? "text-danger" : ""
-              }`}
-              href="/"
-              aria-current="page"
-            >
-              HomePage
-            </Link>
-            <Link
-              to="/universites"
-              className={`nav-link ${
-                location.pathname === "/universites" ? "text-danger" : ""
-              }`}
-              href="/universites"
-              aria-current="page"
-            >
-              Universites
-            </Link>
-            <Link
-              to="/departmants"
-              className={`nav-link ${
-                location.pathname === "/departmants" ? "text-danger" : ""
-              }`}
-              href="/departmants"
-              aria-current="page"
-            >
-              Departmants
-            </Link>
-
-            <Row fluid id="navbarCollapse">
+          <div className="" id="navbarCollapse">
+          <ul className="navbar-nav ">
+            <li className="nav-item ">
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive && "red",
+                })}
+                to="/"
+                className="nav-link active"
+                href="#"
+                aria-current="page"
+              >
+                HomePage
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive && "red",
+                })}
+                to="/universites"
+                className="nav-link active"
+                href="#"
+                aria-current="page"
+              >
+                Universites
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive && "red",
+                })}
+                to="/departmants"
+                className="nav-link active"
+                href="#"
+                aria-current="page"
+              >
+                Departmants
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+              <Row fluid id="navbarCollapse">
               <Col fluid>
                 {/* Add IconContext.Provider component here */}
-                <IconContext.Provider value={{ size: "1.5em", color: "white" }}>
+               
                   {/* set size and color for icons */}
                   <div className="navbarCollapse">
                     <Link
@@ -134,7 +146,7 @@ const ScrollNavbar = () => {
                       </Button>{" "}
                     </Link>
                   </div>
-                </IconContext.Provider>
+           
               </Col>
             </Row>
           </Nav>
@@ -170,36 +182,49 @@ const ScrollNavbar = () => {
             <Row fluid id="navbarCollapse">
               <Col fluid>
                 <div className="navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
-                  <Link
-                    to="/"
-                    className={`nav-link ${
-                      location.pathname === "/" ? "text-danger" : ""
-                    }`}
-                    href="/"
-                    aria-current="page"
-                  >
-                    HomePage
-                  </Link>
-                  <Link
-                    to="/universites"
-                    className={`nav-link ${
-                      location.pathname === "/universites" ? "text-danger" : ""
-                    }`}
-                    href="/universites"
-                    aria-current="page"
-                  >
-                    Universites
-                  </Link>
-                  <Link
-                    to="/departmants"
-                    className={`nav-link ${
-                      location.pathname === "/departmants" ? "text-danger" : ""
-                    }`}
-                    href="/departmants"
-                    aria-current="page"
-                  >
-                    Departmants
-                  </Link>
+                <div className="" id="navbarCollapse">
+          <ul className="navbar-nav ">
+            <li className="nav-item ">
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive && "red",
+                })}
+                to="/"
+                className="nav-link active"
+                href="#"
+                aria-current="page"
+              >
+                HomePage
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive && "red",
+                })}
+                to="/universites"
+                className="nav-link active"
+                href="#"
+                aria-current="page"
+              >
+                Universites
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive && "red",
+                })}
+                to="/departmants"
+                className="nav-link active"
+                href="#"
+                aria-current="page"
+              >
+                Departmants
+              </NavLink>
+            </li>
+          </ul>
+        </div>
                 </div>
               </Col>
             </Row>
@@ -207,7 +232,7 @@ const ScrollNavbar = () => {
             <Row fluid id="navbarCollapse">
               <Col fluid>
                 {/* Add IconContext.Provider component here */}
-                <IconContext.Provider value={{ size: "1.5em", color: "white" }}>
+                
                   {/* set size and color for icons */}
                   <div className="navbarCollapse">
                     <Button
@@ -237,7 +262,7 @@ const ScrollNavbar = () => {
                       <FaUserPlus /> Sing Up
                     </Button>
                   </div>
-                </IconContext.Provider>
+                
               </Col>
             </Row>
           </Nav>

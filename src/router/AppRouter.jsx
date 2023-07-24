@@ -9,9 +9,14 @@ import Departments from "../components/Departmens/Departments";
 
 
 
+
 import Compare1 from "../components/Account/Compare1";
 
+// import Compare1 from "../components/Account/Compare1";
+
+
 import University from "../pages/University";
+// import Compare from "../components/Account/Compare";
 
 
 const AppRouter = () => {
@@ -32,6 +37,8 @@ const AppRouter = () => {
       </Routes>
       <Footer />
       {/* <Compare1 /> */}
+
+      {/* <Compare/> */}
     </BrowserRouter>
   );
 };
