@@ -1,12 +1,7 @@
-
-
-
-
-
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import Select from 'react-select';
-
+import DepertmentsCard from "../Departmens/DepertmentsCard"
 import '../Style/Departmants.css';
 import { useYosContext } from '../../context/Context';
 import { useLocation } from 'react-router';
@@ -77,6 +72,19 @@ const Departments = () => {
     setSelectedDepartments(selectedOptions);
   };
 
+  const cardsData= [];
+  selectedCities?.forEach((city) => {
+    selectedUniversities?.forEach((university) => {
+      selectedDepartments?.forEach((department) => {  
+          cardsData.push({
+            city,
+            university,
+            department,
+          });
+  
+      });
+    });
+  });
 
  
   return (
@@ -152,7 +160,25 @@ const Departments = () => {
               <Container className="rounded-4 mt-2 p-4">
               
 <Row className="g-3 d-flex flex-wrap">
-            
+{cardsData?.length > 0
+                  ? cardsData?.map(({ city, university, department }) => (
+                      <Col sm={6} md={6} lg={6} key={department}>
+                        <DepertmentsCard
+                          item={department}
+                          cities={cities}
+                          universities={universities}
+                          departments={departments}
+                          selectedCities={[city]}
+                          selectedUniversities={[university]}
+                          selectedDepartments={[department]}
+                        />
+                      </Col>
+                    ))
+                  : random12Cards?.map((item) => (
+                      <Col sm={6} md={6} lg={6} key={item.id}>
+                        <HomeCard item={item} universityImage={universityImages}/>
+                      </Col>
+                    ))}
                 </Row>
 
               </Container>
