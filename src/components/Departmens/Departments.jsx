@@ -2,11 +2,15 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import Select from 'react-select';
+import '../Style/Departmants.css';
+import { useYosContext } from '../../context/Context';
+import { useLocation } from 'react-router';
 import DepertmentsCard from "../Departmens/DepertmentsCard"
 import '../Style/Departmants.css';
 import { useYosContext } from '../../context/Context';
 import { useLocation } from 'react-router';
 import HomeCard from '../HomePage/HomeCard';
+
 
 const Departments = () => {
   const location = useLocation();
@@ -72,7 +76,6 @@ const Departments = () => {
   const handleDepartmentChange = (selectedOptions) => {
     setSelectedDepartments(selectedOptions);
   };
-
 
   const cardsData= [];
   selectedCities?.forEach((city) => {
@@ -162,6 +165,7 @@ const Departments = () => {
               <Container className="rounded-4 mt-2 p-4">
               
 <Row className="g-3 d-flex flex-wrap">
+
 {cardsData?.length > 0
                   ? cardsData?.map(({ city, university, department }) => (
                       <Col sm={6} md={6} lg={6} key={department}>
@@ -181,6 +185,7 @@ const Departments = () => {
                         <HomeCard item={item} universityImage={universityImages}/>
                       </Col>
                     ))}
+
                 </Row>
 
               </Container>
@@ -194,4 +199,3 @@ const Departments = () => {
 };
 
 export default Departments;
-
