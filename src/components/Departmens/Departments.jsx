@@ -194,5 +194,4 @@ const Departments = () => {
 };
 
 export default Departments;
-=======
->>>>>>> 299f9a175c4f950e9c47514b9edf63300d487c62
+
