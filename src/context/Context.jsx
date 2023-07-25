@@ -34,13 +34,22 @@ export function YosProvider({ children }) {
 
 
   useEffect(() => {
+
+
     const fetchData = async () => {
       try {
+        //Countries -HB-
+        const responseCountries = await axios.get(
+          "https://tr-yös.com/api/v1/location/allcountries.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
+        );
+        setCountries(responseCountries.data);
+
         const responseCities = await axios.get(
           "https://tr-yös.com/api/v1/location/allcities.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
         );
         setCities(responseCities.data);
-
+        
+          //SliderImages -HB-
         const responseUniversities = await axios.get(
           "https://tr-yös.com/api/v1/education/alluniversities.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
         );
@@ -91,6 +100,7 @@ export function YosProvider({ children }) {
 
     fetchData();
   }, []);
+
   console.log(compareId);
   const contextValue = {
     cities,
