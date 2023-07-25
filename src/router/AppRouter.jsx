@@ -7,28 +7,28 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Departments from "../components/Departmens/Departments";
 
+
+
+
+import Compare1 from "../components/Account/Compare1";
+
 // import Compare1 from "../components/Account/Compare1";
+
 
 import University from "../pages/University";
 // import Compare from "../components/Account/Compare";
 
-// import LogIn from "../components/Login/Logİn";
-// import SignUp from "../components/Login/Signup";
-// import UniversityCard from "../components/universityCard/";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Navbar className="" />
-     
+
       <Routes>
         <Route path="/" element={<Home />} />
-        
-        <Route path="/account" element={<Account />} />
-        <Route
-          path="/universities/:id"
-          element={<Detail  />}
-        />
+
+        {/* <Route path="/account" element={<Account />} /> */}
+        <Route path="/universities/:id" element={<Detail />} />
         {/* <Route path="/compare" element={<Compare/>}/> */}
         <Route path="/departmants" element={<Departments />} />
         <Route path="universites" element={<University />} />
@@ -36,6 +36,8 @@ const AppRouter = () => {
         {/* <Route path="/logout" element={<SignUp/>}/> */}
       </Routes>
       <Footer />
+      {/* <Compare1 /> */}
+
       {/* <Compare/> */}
     </BrowserRouter>
   );
