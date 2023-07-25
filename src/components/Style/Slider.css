@@ -51,12 +51,23 @@
   }
 }
 
-.icon-container i {
-  color: navy !important;
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(2, 2, 87, 0.514); 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.icon-container:hover i {
-  color: white !important;
+.icon-wrapper:hover {
+  background-color: rgba(70, 131, 180, 0.541) !important; 
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .icon-container {
@@ -67,35 +78,21 @@
   border-radius: 50%;
   width: 25px;
   height: 25px;
+  transition: background-color 0.3s;
 }
 
-.icon-container:hover {
-  background-color: blue;
-}
-
-.icon-container:hover i {
-  color: blue;
-}
-.icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: navy;
-  border: 1px solid white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
-
-.icon-wrapper:hover {
-  background-color: white;
-  border-color: blue;
-}
 .icon-container i {
-  color: white;
+  color: rgba(0, 0, 128, 0.685);
+  transition: color 0.3s;
 }
 
-.icon-container:hover i {
-  color: blue;
+.icon-wrapper:hover .icon-container {
+  background-color: rgba(0, 0, 128, 0.596) !important; 
 }
+
+.icon-wrapper:hover .icon-container i {
+  color: white !important;
+}
+
+
       /* <---------------------SLIDER CSS END HAKAN BILGI ---------------------> */
