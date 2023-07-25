@@ -20,8 +20,14 @@ const Account = () => {
   };
   return (
     <div className="">
-      <h1 className="text-center">MY Account</h1>
-      <div className="account_container p-2 d-flex justify-content-around  ">
+      <div className="infoDiv mt-5 p-5 mb- bg-primary text-white">
+        <h2 className=" fw-bold mx-5 pt-5">MyAccount</h2>
+      </div>
+      <div className="">
+        <h1 className="text-center p-5">MY Account</h1>
+      </div>
+          
+        <div className="account_container p-2 d-flex justify-content-around  ">
         {/* <----------------------Profi Area Start-----------------------> */}
         <div className=" card w-25 bg-white border-0 shadow-lg p-3 mb-5  rounded" style={{ width: "18rem" }}>
           <img
