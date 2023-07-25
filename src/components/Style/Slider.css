@@ -1,4 +1,4 @@
-      /* <---------------------SLIDER CSS START HAAKN BILGI---------------------> */
+/* <---------------------SLIDER CSS START HAAKN BILGI---------------------> */
 
 .each-slide-effect > div {
   display: flex;
@@ -16,7 +16,6 @@
 
 .slide-image {
   height: 60vh;
-
   background-size: contain;
   background-color: white;
 }
@@ -51,12 +50,11 @@
   }
 }
 
-
 .icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(2, 2, 87, 0.514); 
+  background-color: rgba(2, 2, 87, 0.514);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -65,7 +63,7 @@
 }
 
 .icon-wrapper:hover {
-  background-color: rgba(70, 131, 180, 0.541) !important; 
+  background-color: rgba(70, 131, 180, 0.541) !important;
   transform: scale(1.1);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
 }
@@ -74,7 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: rgb(198, 205, 243) !important;
   border-radius: 50%;
   width: 25px;
   height: 25px;
@@ -87,12 +85,47 @@
 }
 
 .icon-wrapper:hover .icon-container {
-  background-color: rgba(0, 0, 128, 0.596) !important; 
+  background-color: rgba(0, 0, 128, 0.596) !important;
 }
 
 .icon-wrapper:hover .icon-container i {
   color: white !important;
 }
 
+@media (max-width: 992px) {
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
 
-      /* <---------------------SLIDER CSS END HAKAN BILGI ---------------------> */
+  .icon-container {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .icon-wrapper {
+    width: 35px;
+    height: 35px;
+  }
+
+  .icon-container {
+    width: 17.5px;
+    height: 17.5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .icon-wrapper {
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon-container {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* <---------------------SLIDER CSS END HAKAN BILGI ---------------------> */
