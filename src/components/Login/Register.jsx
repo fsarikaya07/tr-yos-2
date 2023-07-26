@@ -105,9 +105,9 @@ const Register = () => {
           <div className="">
             <p>
               Already have an account?{" "}
-              <Link to="/Login" className="text-primary" style={{ textDecoration: "none" }}>
+              <a href="/Login" className="text-primary mx-2" style={{ textDecoration: "none" }}>
                 Sign In
-              </Link>
+              </a>
             </p>
           </div>
         </div>

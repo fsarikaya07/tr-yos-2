@@ -47,24 +47,27 @@ const LogIn = () => {
   // const location =useLocation()
 
   return (
-    <div className="container box d-flex flex-column align-items-center mt-5   col-4 h-75  login-container center">
-      <h2 className="mt-4">Sing In</h2>
+    <div className="container box d-flex flex-column align-items-center mt-3   col-4 h-75  login-container center">
+      
       <form
-        className=" py-5  px-3 w-100 h-100 login-form "
+        className="   px-3 w-100 h-100 login-form "
         onSubmit={(e) => handleSubmit(e)}
       >
-        <div className="form-group w-100 mt-3">
+        <h2 className="mt-1 ">Sing In</h2>
+        <div className="form-group w-100 mt-3 inputBox">
           <input
             type="text"
             className="form-control"
             id="UserEmail"
             aria-describedby="emailHelp"
             placeholder="User Email"
+
             value={email}
             onChange={(e) => setEmail(e.target.value)} // Input alanı değiştiğinde eposta değerini güncelliyoruz.
           />
+          
         </div>
-        <div className="form-group w-100 mt-3">
+        <div className="form-group w-100 mt-3 inputBox">
           <input
             type="password"
             className="form-control"
@@ -73,6 +76,7 @@ const LogIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)} // Input alanı değiştiğinde şifre değerini güncelliyoruz.
           />
+         
         </div>
         <button type="submit" className="btn btn-primary w-100 mt-5">
           Log In
@@ -98,16 +102,16 @@ const LogIn = () => {
 
         <div className=" h-100 text-center mt-5">
           <hr />
+         
           <p>
             Don't have an account yet?
-            <Link
-              to="/Register"
-              className="text-primary"
+            <a href="/register"
+              className="text-primary mx-2"
               style={{ textDecoration: "none" }}
             >
               {" "}
               Sign Up
-            </Link>
+            </a>
             {/* <Button
               className="btn btn-outline-light my-4 py-1 px-1 m-1 flex-wrap"
               type="submit"
