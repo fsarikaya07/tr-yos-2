@@ -5,6 +5,13 @@ form{
   background-color: #FFFFFF;
   /* background-color:red ; */
 }
+.infoDiv {
+  margin-top: 0;
+  background-image: url(https://www.tr-yös.com/test/6984215678913/breadcrumb/2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .dep{
   color: #022F5D;
  flex-wrap: wrap;
