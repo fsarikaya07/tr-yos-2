@@ -15,6 +15,17 @@ height: px !important;
 
 
 
+.signIn{
+  background-color: #017EFA;
+  border: 5px solid#017EFA;
+}
+
+
+.signUp{
+  background-color: #555555;
+  border: 5px solid#555555;
+ 
+}
 
 
 

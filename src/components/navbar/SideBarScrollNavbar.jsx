@@ -236,7 +236,7 @@ const ScrollNavbar = () => {
                   {/* set size and color for icons */}
                   <div className="navbarCollapse">
                     <Button
-                      className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+                     className="signIn btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
                       type="submit"
                       variant="info"
                       // variant="primary"
@@ -244,11 +244,12 @@ const ScrollNavbar = () => {
                       onClick={toggleShowSignInModal}
                     >
                       {/* Add icon component here */}
-                      <FaSignInAlt /> Sing In
+                      < i className="fas fa-sign-in-alt me-2"></i>
+                      Sing In
                     </Button>
 
                     <Button
-                      className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+                     className="signUp btn btn-outline-light my-4 py-2 px-4 m-4  flex-wrap"
                       type="submit"
                       variant="primary"
                       // className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
@@ -259,7 +260,9 @@ const ScrollNavbar = () => {
                       onClick={toggleShowSignUpModal}
                     >
                       {/* Add icon component here */}
-                      <FaUserPlus /> Sing Up
+                      <i className="fas fa-user-alt me-2"></i>
+                      {/* <FaUserPlus />  */}
+                      Sing Up
                     </Button>
                   </div>
                 

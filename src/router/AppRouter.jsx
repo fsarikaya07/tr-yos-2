@@ -34,6 +34,7 @@ const AppRouter = () => {
         <Route path="universites" element={<University />} />
         {/* <Route path="/login" element={<LogIn/>}/> */}
         {/* <Route path="/logout" element={<SignUp/>}/> */}
+        
       </Routes>
       <Footer />
       {/* <Compare1 /> */}
