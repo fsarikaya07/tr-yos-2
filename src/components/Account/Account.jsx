@@ -1,15 +1,53 @@
-import React from "react";
-import { useYosContext } from "../../context/Context";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Account.css";
 
 const Account = () => {
-  const { countries, setSelectedCountryId, cities } = useYosContext();
+  const [accountCities, setAccountCities] = useState([]);
+  const [countries, setCountries] = useState([]);
+  const [selectedCountryId, setSelectedCountryId] = useState(null);
+
+  const YOUR_TOKEN = 'SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a';
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const responseCountries = await axios.get(`https://tr-yös.com/api/v1/location/allcountries.php?token=${YOUR_TOKEN}`);
+        setCountries(responseCountries.data);
+        const turkey = responseCountries.data.find(country => country.en.toLowerCase() === "turkey");
+        setSelectedCountryId(turkey.id);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (selectedCountryId) {
+      const fetchCitiesByCountry = async () => {
+        try {
+          const responseCities = await axios.get(
+            `https://tr-yös.com/api/v1/location/citiesbycountry.php?country_id=${selectedCountryId}&token=${YOUR_TOKEN}`
+          );
+          setAccountCities(responseCities.data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      fetchCitiesByCountry();
+    }
+  }, [selectedCountryId]);
 
   const handleCountryChange = (event) => {
     const selectedCountryId = event.target.value;
     setSelectedCountryId(selectedCountryId);
   };
+
+ 
   const person = {
     name: "John Doe",
     tel: "+90 555 123 45 67",
@@ -20,6 +58,7 @@ const Account = () => {
     linkedin: "https://www.linkedin.com/in/johndoe",
     google: "https://plus.google.com/johndoe",
   };
+
   return (
     <div className="">
       <div className="infoDiv mt-5 p-5 mb- bg-primary text-white">
@@ -133,7 +172,11 @@ const Account = () => {
                   Select Country
                 </option>
                 {countries.map((country) => (
-                  <option key={country.id} value={country.id}>
+                  <option
+                    key={country.id}
+                    value={country.id}
+                    selected={country.en.toLowerCase() === "turkey"} // Check if the country is Turkey
+                  >
                     {country.en}
                   </option>
                 ))}
@@ -147,7 +190,7 @@ const Account = () => {
                 <option selected disabled value="">
                   Select City
                 </option>
-                {cities.map((city) => (
+                {accountCities.map((city) => ( // Use accountCities here
                   <option key={city.id} value={city.en}>
                     {city.en}
                   </option>

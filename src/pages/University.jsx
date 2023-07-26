@@ -46,7 +46,7 @@ const University = () => {
       </div>
 
       {/* Sayfa numaralarının butonları */}
-      <div className="pagination">
+      <div className="pagination p-4">
         <button
           className="back"
           onClick={() => handlePageChange(currentPage - 1)}
