@@ -2,12 +2,25 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   width: 100vw;
   height: 50vh;
+  background-color: #065EB5;
+  margin-top: 50px;
 }
 h1 {
   font-weight: 700;
+  padding:15px;
+  color:#FFFFFF;
+}
+p{
+  padding: auto;
+  
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 input,
 button {
@@ -21,24 +34,24 @@ button {
 }
 .SearchBox-input::placeholder {
   /* No es un seudoelemento estandar */
-  color: white;
+  color: rgb(18, 17, 17);
   opacity: 0.6;
 }
 /* Chrome, Opera ySafari */
 .SearchBox-input::-webkit-input-placeholder {
-  color: white;
+color: rgb(18, 17, 17);
 }
 /* Firefox 19+ */
 .SearchBox-input::-moz-placeholder {
-  color: white;
+color: rgb(18, 17, 17);
 }
 /* IE 10+ y Edge */
 .SearchBox-input:-ms-input-placeholder {
-  color: white;
+color: rgb(18, 17, 17);
 }
 /* Firefox 18- */
 #formGroupExampleInput:-moz-placeholder {
-  color: white;
+color: rgb(18, 17, 17);
 }
 
 .SearchBox {
@@ -46,7 +59,7 @@ button {
   display: flex;
 
   border-radius: 5px;
-  background-color: rgb(255, 0, 76);
+  background-color: #FFFFFF;
   height: 50px;
 }
 .SearchBox:hover .SearchBox-input {
@@ -57,14 +70,14 @@ button {
 .SearchBox-input {
   width: 0;
   font-size: 1.2em;
-  color: #fff;
+  color: #111111;
   transition: 0.45s;
 }
 .SearchBox-button {
   display: flex;
   border-radius: 5px;
   height: 50px;
-  background-color: blue;
+  background-color:#003364 ;
   transition: 0.3s;
 }
 .SearchBox-button:active {

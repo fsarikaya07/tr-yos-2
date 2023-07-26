@@ -123,12 +123,16 @@ const ScrollNavbar = () => {
                   >
                     <div className="navbarCollapse">
                       <Button
-                        className="btn btn-outline-light my-1 m-3 flex-wrap"
+                        className="signIn btn btn-outline-light my-1 m-3 flex-wrap"
                         type="submit"
                         variant="info"
                         onClick={toggleShowSignInModal}
                       >
-                        <FaSignInAlt /> Sing In
+                           < i className="fas fa-sign-in-alt me-2"></i>
+                          {/* <FaSignInAlt /> */}
+                          {/* <span className="mx-1"></span> */}
+                          
+                           Sing In
                       </Button>{" "}
                     </div>
                   </IconContext.Provider>
@@ -200,21 +204,28 @@ const ScrollNavbar = () => {
                     {!currentUser ? (
                       <>
                         <Button
-                          className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+                          className="signIn btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
                           type="submit"
                           variant="info"
                           onClick={toggleShowSignInModal}
                         >
-                          <FaSignInAlt /> Sing In
+                           < i className="fas fa-sign-in-alt me-2"></i>
+                          {/* <FaSignInAlt /> */}
+                          {/* <span className="mx-1"></span> */}
+                          
+                           Sing In
                         </Button>
                         <Button
-                          className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+                          className="signUp btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
                           type="submit"
                           variant="primary"
                           onClick={toggleShowSignUpModal}
                         >
-                          <FaUserPlus /> Sing Up
-                        </Button>
+                           <i className="fas fa-user-alt me-2"></i>
+                          {/* <FaUserPlus className="" />  */}
+                          {/* <span className="mx-1"></span> */}
+                          Sing Up
+                          </Button>
                       </>
                     ) : (
 
