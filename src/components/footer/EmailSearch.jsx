@@ -3,14 +3,16 @@ import "../Style/EmailSearch.css";
 const EmailSearch = () => {
   return (
     
-      <main className="bg-yellow">
+      <main className="cont">
 
       <div className="d-flex align-items-center justify-content-center flex-column">
     
          
          
               <h1>Are You Already Working With Us?</h1>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias</p>
+              <p className="m-5 d-block">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                <span className="m-2 d-block"></span> 
+                quos dolores et quas molestias</p>
      
         </div>
 
