@@ -6,6 +6,7 @@ import { Navbar, Container, Nav, Row, Col, Button, Modal } from "react-bootstrap
 import { Link } from "react-router-dom";
 import LogIn from "../Login/Logİn";
 import Register from "../Login/Register";
+// import "./HomePage.css";
 
 const ScrollNavbar = () => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
@@ -49,16 +50,18 @@ const ScrollNavbar = () => {
               <div className="navbarCollapse">           
                   {/* Butonlara onClick propu olarak toggle fonksiyonları veriliyor */}
                   <Button
-                    variant="primary"  className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+                    variant="primary"  className="signIn btn btn-outline-light my-2 py-2 m-1 flex-wrap"
                     type="submit"
                     onClick={toggleShowSignInModal}
+                    
                   >
                     Sing In
                   </Button>      
                   <Button
-                    variant="primary"  className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
+                    variant="primary"  className="signUp btn btn-outline-light my-2 py-2 m-1 flex-wrap"
                     type="submit"
                     onClick={toggleShowSignUpModal}
+                    
                   >
                     Sing up
                   </Button>            
