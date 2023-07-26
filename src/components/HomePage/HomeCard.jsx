@@ -135,8 +135,9 @@ const HomeCard = ({ item , universityImage}) => {
                 {item?.faculty?.en}
               </Link>
             </Card.Title>
-            <Card.Text className="uni text-start  text-muted">
-              {" "}
+            
+            <Card.Text className="uni text-start text-muted">
+        
               {item?.university?.en}
             </Card.Text>
           </div>

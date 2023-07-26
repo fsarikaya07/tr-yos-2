@@ -99,7 +99,7 @@ const Departments = () => {
   return (
     <div>
       <div className="infoDiv mt-5 p-5 mb-2 bg-primary text-white" >
-        <h2 className=" page-title fw-bold mx-5"></h2>
+        <h3 className=" page-title fw-bold mx-5"></h3>
       </div>
       <Container>
         <Row className="d-flex ">

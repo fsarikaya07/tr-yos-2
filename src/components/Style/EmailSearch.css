@@ -5,14 +5,15 @@ main {
   text-align: center;
   align-items: center;
   width: 100vw;
-  height: 50vh;
-  background-color: #065EB5;
+  /* height: 50vh; */
+  /* background-color: #065EB5; */
   margin-top: 50px;
+  margin-bottom:50px;
 }
 h1 {
   font-weight: 700;
   padding:15px;
-  color:#FFFFFF;
+  color:#003364;
 }
 p{
   padding: auto;
@@ -34,24 +35,24 @@ button {
 }
 .SearchBox-input::placeholder {
   /* No es un seudoelemento estandar */
-  color: rgb(18, 17, 17);
+  color: #FFFFFF;
   opacity: 0.6;
 }
 /* Chrome, Opera ySafari */
 .SearchBox-input::-webkit-input-placeholder {
-color: rgb(18, 17, 17);
+color: #FFFFFF;
 }
 /* Firefox 19+ */
 .SearchBox-input::-moz-placeholder {
-color: rgb(18, 17, 17);
+color: #FFFFFF;
 }
 /* IE 10+ y Edge */
 .SearchBox-input:-ms-input-placeholder {
-color: rgb(18, 17, 17);
+color: #FFFFFF;
 }
 /* Firefox 18- */
 #formGroupExampleInput:-moz-placeholder {
-color: rgb(18, 17, 17);
+color: #FFFFFF;
 }
 
 .SearchBox {
@@ -59,7 +60,7 @@ color: rgb(18, 17, 17);
   display: flex;
 
   border-radius: 5px;
-  background-color: #FFFFFF;
+  background-color:#34b3b3;
   height: 50px;
 }
 .SearchBox:hover .SearchBox-input {
