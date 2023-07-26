@@ -78,7 +78,7 @@ const ScrollNavbar = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           {/* Add list of links here */}
-          <Nav className="homeNavbar d-flex flex-column align-items-start fw-bold fs-6">
+          <Nav className="homeNavbar d-block p-3 flex-column align-items-start fw-bold fs-6">
           <div className="" id="navbarCollapse">
           <ul className="navbar-nav ">
             <li className="nav-item ">
@@ -134,7 +134,7 @@ const ScrollNavbar = () => {
                       style={{ textDecoration: "none" }}
                     >
                       <Button
-                        className="btn btn-outline-light my-1 m-3 flex-wrap"
+                        className="signIn btn btn-outline-light my-1 flex-wrap"
                         type="submit"
                         variant="info"
                         // variant="primary"
@@ -142,7 +142,9 @@ const ScrollNavbar = () => {
                         onClick={toggleShowSignInModal}
                       >
                         {/* Add icon component here */}
-                        <FaSignInAlt /> Sing In
+                        < i className="fas fa-sign-in-alt me-2"></i>
+                        {/* <FaSignInAlt />  */}
+                        Sing In
                       </Button>{" "}
                     </Link>
                   </div>
