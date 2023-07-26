@@ -1,58 +1,88 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import "../Style/Footer.css"
 
 const FooterPage = () => {
   return (
-    <footer className="bg-dark text-light  ">
+    <footer className=" text-light  "
+    style={{backgroundColor:"#172832"}}>
       <Container className="p-4">
         <Row>
         
-        <Col md={3} className="p-4 d-flex flex-column justify-content-center align-items-center ">
+        <Col md={4} className="p-4 d-flex flex-column justify-content-center align-items-center ">
             <div className="card-body w-100 text-start ">
             <h5 className="mx-2">Adres</h5>
-            <Button className="m-2 rounded-pill" ><p className="card-text">Phone: +1 123-456-7890</p></Button>
-            <Button className="m-2 rounded-pill" ><p className="card-text">Email: info@example.com</p></Button>
+            <Button className="contact m-2 rounded-pill d-block " style={{backgroundColor:"#003364"}} >
+              <p className="card-text">
+              <i className="fa-solid fa-phone"></i>
+              <span className="mx-1"></span> 
+                 +1 123-456-7890</p></Button>
+            <Button className="contact m-2  rounded-pill " style={{backgroundColor:"#003364"}} >
+              <p className="card-text">
+              <i className="bi bi-envelope-fill"></i>
+              <span className="mx-1"></span>
+              info@example.com</p></Button>
             
           
             </div>
         
           </Col>
-          <Col md={3} className="p-4 d-flex flex-column justify-content-center align-items-center ">
+          <Col md={4} className="p-4 d-flex flex-column justify-content-center align-items-center ">
             <div className="card-body w-100 text-start">
-            <h5>Navigations</h5>
-            <ul className="list-unstyled">
+            <h5  className="mx-2 ">Navigations</h5>
+            <ul className="list-unstyled mx-2" 
+            
+            >
               <li>
-                <a href="#abaut us">About Us</a>
+                <a href="#abaut us"
+                className="text-decoration-none"
+                style={{color:"#b5c9dd" }} >About Us</a>
               </li>
               <li>
-                <a href="#faqs page">FAQs Page</a>
+                <a href="#faqs page" 
+                className="text-decoration-none"
+                 
+                 
+                 style={{color:"#b5c9dd"}}>FAQs Page</a>
               </li>
               <li>
-                <a href="#services">Checkout</a>
+                <a href="#services" 
+                className="text-decoration-none"
+                style={{color:"#b5c9dd"}}>Checkout</a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact"  
+                className="text-decoration-none"
+                style={{color:"#b5c9dd"}}>Contact</a>
               </li>
               <li>
-                <a href="#blog">Blog</a>
+                <a href="#blog" 
+                className="text-decoration-none"
+                style={{color:"#b5c9dd"}}>Blog</a>
               </li>
             </ul>
             </div>
           </Col>
-          <Col md={6} className="p-4 d-flex flex-column justify-content-center align-items-center ">
-            <div className="card-body w-100 text-start">
-            <h5>My Account</h5>
-            <ul  className="list-unstyled">
+          <Col md={4} className="p-4 d-flex flex-column justify-content-center align-items-center ">
+            <div className="card-body w-100 text-start  ">
+            <h5 className="mx-2">My Account</h5>
+            <ul  className="list-unstyled mx-2" >
 
             
             <li>
-                <a href="#myprofile">My Profile</a>
+                <a href="#myprofile"  
+                className="text-decoration-none"
+                style={{color:"#b5c9dd"}}>My Profile</a>
               </li>
               <li>
-                <a href="#myaccount">My Account</a>
+                <a href="#myaccount" 
+                className="text-decoration-none"
+                style={{color:"#b5c9dd" }}>My Account</a>
               </li>
               <li>
-                <a href="#favorites">Favorites</a>
+                <a href="#favorites" 
+                className="text-decoration-none"
+                style={{color:"#b5c9dd"}}>Favorites</a>
               </li>
         </ul>
         </div>
