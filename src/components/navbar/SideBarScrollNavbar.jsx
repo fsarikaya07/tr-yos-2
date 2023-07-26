@@ -105,7 +105,7 @@ const ScrollNavbar = () => {
                 >
                   Universites
                 </Link>
-                <Link
+                {/* <Link
                   to="/compare"
                   className={`nav-link ${
                     location.pathname === "/compare" ? "text-danger" : ""
@@ -114,7 +114,7 @@ const ScrollNavbar = () => {
                   aria-current="page"
                 >
                   Compare
-                </Link>
+                </Link> */}
                 <Link
                   to="/departmants"
                   className={`nav-link ${
@@ -194,7 +194,7 @@ const ScrollNavbar = () => {
                   >
                     Universites
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/compare"
                     className={`nav-link ${
                       location.pathname === "/compare" ? "text-danger" : ""
@@ -203,7 +203,7 @@ const ScrollNavbar = () => {
                     aria-current="page"
                   >
                     Compare
-                  </Link>
+                  </Link> */}
                   <Link
                     to="/departmants"
                     className={`nav-link ${

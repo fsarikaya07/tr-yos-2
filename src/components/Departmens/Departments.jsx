@@ -98,8 +98,8 @@ const Departments = () => {
 
   return (
     <div>
-      <div className="infoDiv mt-5 p-5 mb-2 bg-primary text-white" >
-        <h3 className=" page-title fw-bold mx-5"></h3>
+      <div className="infoDiv p-5 mb-2 bg-primary text-white" >
+        <h3 className="mt-5 page-title fw-bold mx-5">Departmants</h3>
       </div>
       <Container>
         <Row className="d-flex ">

@@ -11,6 +11,11 @@ form{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  
+}
+h3{
+  padding-left: 184px;
+  padding-top: 30px;
 }
 .dep{
   color: #022F5D;
