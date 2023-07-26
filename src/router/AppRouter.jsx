@@ -10,7 +10,7 @@ import Departments from "../components/Departmens/Departments";
 
 
 
-import Compare1 from "../components/Account/Compare1";
+// import Compare1 from "../components/Account/Compare1";
 
 // import Compare1 from "../components/Account/Compare1";
 
