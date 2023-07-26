@@ -3,12 +3,78 @@
     width: 400px!important;
     border-radius: 10px;
     font-size: 13px;
-    /* margin-bottom: 50px  */
+    margin-bottom: 50px;
     
-    margin-top: 12rem !important;
-
-
+    /* margin-top: 12rem !important; */
+    
+    position: relative !important;
+    width: 380px !important;
+    height: 420px !important;
+    /* background: #1C1C1C; */
+    border-radius: 8px !important;
+    overflow: hidden;
 }
+
+.login-container::before
+{
+   content: '';
+   position: absolute;
+   top: -50%;
+   left: -50%;
+   width: 380px !important;
+    height: 420px !important;
+    background: linear-gradient(0deg, transparent, #45F3FF, #45F3FF) ;
+    transform-origin:bottom right ;
+    animation: animate 6s linear infinite;
+}
+.login-container::after
+{
+   content: '' !important;
+   position: absolute !important;
+   top: -50% !important;
+   left: -50% !important;
+   width: 380px !important;
+    height: 420px !important;
+    background: linear-gradient(0deg, transparent, #45F3FF, #45F3FF) !important;
+    transform-origin:bottom right !important;
+    animation: animate 6s linear infinite !important;
+    animation-delay: -3s !important;
+}
+
+@keyframes animate {
+  0%
+  {
+      transform: rotate(0deg) !important;
+  }
+  100%
+  {
+      transform: rotate(360deg) !important;
+  }
+}
+
+.login-form{
+  position: absolute !important;
+  inset: 2px !important;
+  border-radius: 8px !important;
+  /* background:#28292d !important; */
+  z-index: 10 !important;
+  padding: 50px 40px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 
 .center {
@@ -21,17 +87,17 @@
 /* Form elementi için CSS sınıfı tanımlanıyor */
 /* .form { */
     /* Form elementinin konumunu ortalamak için */
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
   
     /* Form elementinin boyutunu belirlemek için */
-    width: 90%;
-    height: 90%;
+    /* width: 90%;
+    height: 90%; */
   
     /* Form elementinin dolgusunu vermek için */
-    padding: 5px;
+    /* padding: 5px; */
   /* } */
    
 
