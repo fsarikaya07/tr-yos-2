@@ -1,9 +1,12 @@
-import "./App.css";
-import {  YosProvider } from "./context/Context";
-
 import AppRouter from "./router/AppRouter";
+import "./App.css";
+import { AuthProvider } from "./context/AuthContext";
+import { YosProvider } from "./context/Context";
+import { BrowserRouter } from "react-router-dom";
+
 
 function App() {
+
   let universities = [
     {
       id: 1,
@@ -54,13 +57,29 @@ function App() {
     },
     // Diğer üniversiteler...
   ];
+
   return (
-    <div className="App">
-      <YosProvider>
-      <AppRouter universities={universities} />
-      </YosProvider>
-    </div>
+   <BrowserRouter>
+    <AuthProvider>
+        <YosProvider>
+          <AppRouter universities={universities} />
+        </YosProvider>
+      </AuthProvider>
+   </BrowserRouter>
+      
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
