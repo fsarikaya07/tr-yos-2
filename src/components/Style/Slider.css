@@ -13,16 +13,14 @@
   background: #efefef;
   text-align: center;
 }
-
-.slide-image {
-  height: 60vh !important;
-  background-size: cover !important;
-  background-color: white;
+.slide-image{
+height: 60vh;
+background-size: cover;
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .slide-image {
-    height: 55vh !important;
+    height: 60vh !important;
   }
 }
 
@@ -48,7 +46,7 @@
   .slide-image {
     height: 20vh !important;
   }
-}
+} */
 
 .icon-wrapper {
   display: flex;
