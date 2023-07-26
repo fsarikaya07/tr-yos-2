@@ -1,25 +1,60 @@
 form{
     font-size:small;
 }
-.desc{
-    font-size:x-small;
+.cardBody{
+  background-color: #FFFFFF;
+  /* background-color:red ; */
 }
-.infoDiv{
-
-    width: 100vw !important;
-    display: flex;
-  align-items: center; /* Dikeyde ortala */
-    height: 100vh; /* İçeriğin dikeyde ortalanması için container'a bir yükseklik verilmeli */
-    width: 100vw !important; 
-    height: 15rem;
+.dep{
+  color: #022F5D;
+ flex-wrap: wrap;
 }
-.page-title{
-    margin-top: 6rem;
- align-items: center; 
-    height: 100vh; 
-  }
+.dep:hover {
+  color: #017EFA;
+}
+.uni{
+  font-size:small;
+  color:#4F5E64
+}
+.cardFot{
+  color: #617896;
+}
+.heart{
+  color:#017EFA;
+}
+.btn{
+  border: 1px solid #E6EBF1
+}
+.comp{
+  font-size:small;
+}
+.defaultimg{
+  border-radius: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: block;
+  min-height:229.609px;
+  width: auto;
+}
 
-  
+.img {
+  border-radius: 5px; 
+  background-size: cover;
+
+
+  background-repeat: no-repeat;
+  position: relative;
+  display: block;
+  height:229.609px;
+  width: auto;
+}
+
+
+
+.btn{
+  border: 1px solid #E6EBF1
+}
 
   h2 {
     color: rgb(220, 219, 219);
@@ -28,19 +63,17 @@ form{
   }
   
   @media  (min-width: 1024px) {
-       .desc{
+       .facul{
         font-size:small !important;
        }
-       .img{
-        max-height: 28vh !important;
+       .uni{
+        font-size:small !important;
        }
   }
 
   @media  (min-width: 2560px) {
-    .desc{
+    .facul{
      font-size:small !important;
     }
-    .img{
-     max-height: 28vh !important;
-    }
+  
 }
