@@ -148,8 +148,12 @@ export function YosProvider({ children }) {
   const [universities, setUniversities] = useState([]);
   const [departments, setDepartments] = useState([]);
   const [card, setCard] = useState([]);
+
   const [sliderImages, setSliderImages] = useState([]);
   const [countries, setCountries] = useState([]);
+
+
+
 
   useEffect(() => {
     axios
@@ -163,18 +167,48 @@ export function YosProvider({ children }) {
         console.log(error);
       });
 
+
+
+
     axios
       .get(
         "https://tr-yös.com/api/v1/education/alluniversities.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
       )
       .then((response) => {
         setUniversities(response.data);
+
         const images = response.data.map((university) => university.images);
         setSliderImages(images);
+
       })
       .catch((error) => {
         console.log(error);
       });
+
+    axios
+      .get(
+        "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
+      )
+      .then((response) => {
+        setCard(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+
+    axios
+      .get(
+        "https://tr-yös.com/api/v1/record/alldepartments.php?token=SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a"
+      )
+      .then((response) => {
+        setDepartments(response.data);
+
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
 
     axios
       .get(
@@ -208,6 +242,8 @@ export function YosProvider({ children }) {
       .catch((error) => {
         console.log(error);
       });
+
+
   }, []);
 
   const contextValue = {
@@ -215,8 +251,10 @@ export function YosProvider({ children }) {
     universities,
     departments,
     card,
+
     sliderImages,
     countries,
+
   };
 
   return (
