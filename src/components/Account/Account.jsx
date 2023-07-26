@@ -1,13 +1,15 @@
 import React from "react";
-// import { Card, Button } from "react-bootstrap";
-
 import { useYosContext } from "../../context/Context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Account.css";
-const Account = () => {
-  const yosContext = useYosContext(); 
-  const countries = yosContext.countries; 
 
+const Account = () => {
+  const { countries, setSelectedCountryId, cities } = useYosContext();
+
+  const handleCountryChange = (event) => {
+    const selectedCountryId = event.target.value;
+    setSelectedCountryId(selectedCountryId);
+  };
   const person = {
     name: "John Doe",
     tel: "+90 555 123 45 67",
@@ -20,10 +22,18 @@ const Account = () => {
   };
   return (
     <div className="">
-      <h1 className="text-center">MY Account</h1>
+      <div className="infoDiv mt-5 p-5 mb- bg-primary text-white">
+        <h2 className=" fw-bold mx-5 pt-5">MyAccount</h2>
+      </div>
+      <div className="">
+        <h1 className="text-center p-5">MY Account</h1>
+      </div>
+
       <div className="account_container p-2 d-flex justify-content-around  ">
         {/* <----------------------Profi Area Start-----------------------> */}
-        <div className=" card w-25 bg-white border-0 shadow-lg p-3 mb-5  rounded" style={{ width: "18rem" }}>
+        <div
+          className=" card w-25 bg-white border-0 shadow-lg p-3 mb-5  rounded"
+          style={{ width: "18rem" }}>
           <img
             src={person.img}
             className="card-img-top card__image"
@@ -58,56 +68,72 @@ const Account = () => {
               <button class="btn_primary p-3 w-100 mt-2" type="button">
                 {person.tel}
               </button>
-              
+
               <button class="btn_success  p-3 w-100 mt-2" type="button">
-              {person.email}
+                {person.email}
               </button>
             </div>
           </div>
           <div className="mt-1 p-3 ">
             <button className="button-24 " role="button">
-            <i class="fa-solid fa-gauge-high"></i> Dashboard <span></span>
+              <i class="fa-solid fa-gauge-high"></i> Dashboard <span></span>
             </button>
             <button className="button-24" role="button">
-            <i class="fa-regular fa-user"></i> My Profile
+              <i class="fa-regular fa-user"></i> My Profile
             </button>
             <button className="button-24" role="button">
-            <i class="fa-solid fa-envelope"></i> Message <span></span>
+              <i class="fa-solid fa-envelope"></i> Message <span></span>
             </button>
             <button className="button-24" role="button">
-            <i class="fa-solid fa-unlock"></i> Change Password
+              <i class="fa-solid fa-unlock"></i> Change Password
             </button>
           </div>
         </div>
 
         {/* <----------------------Profil Area End-----------------------> */}
-        
+
         {/* <----------------------Form Area Start Hakan Bilgi-----------------------> */}
-        <div className="card w-75 bg-white border-0 shadow-lg p-3 mb-5 rounded mx-1" style={{ width: "18rem" }}>
+        <div
+          className="card w-75 bg-white border-0 shadow-lg p-3 mb-5 rounded mx-1"
+          style={{ width: "18rem" }}>
           <form className="row g-4">
             <h3 className="text-start">MY Account</h3>
             <div className="col-md-6 ">
               <label htmlFor="inputText" className="form-label">
                 Your Name
               </label>
-              <input type="inputText" className="form-control p-3" id="inputText" required />
+              <input
+                type="inputText"
+                className="form-control p-3"
+                id="inputText"
+                required
+              />
             </div>
             <div className="col-md-6">
               <label htmlFor="inputEmail" className="form-label">
                 Email
               </label>
-              <input type="email" className="form-control p-3" id="inputEmail" required />
+              <input
+                type="email"
+                className="form-control p-3"
+                id="inputEmail"
+                required
+              />
             </div>
             <div className="col-md-6">
-              <label htmlFor="inputContry" className="form-label">
+              <label htmlFor="inputCountry" className="form-label">
                 Country
               </label>
-              <select id="inputCountry" className="form-select p-3" required>
+              <select
+                id="inputCountry"
+                className="form-select p-3"
+                required
+                onChange={handleCountryChange}>
                 <option selected disabled value="">
                   Select Country
                 </option>
                 {countries.map((country) => (
-                  <option key={country.id} value={country.en}>
+                  <option key={country.id} value={country.id}>
                     {country.en}
                   </option>
                 ))}
@@ -117,7 +143,16 @@ const Account = () => {
               <label htmlFor="inputCity" className="form-label">
                 City
               </label>
-              <input type="text" className="form-control p-3" id="inputCity" required />
+              <select id="inputCity" className="form-select p-3" required>
+                <option selected disabled value="">
+                  Select City
+                </option>
+                {cities.map((city) => (
+                  <option key={city.id} value={city.en}>
+                    {city.en}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="col-md-6">
               <label htmlFor="phone" className="form-label">

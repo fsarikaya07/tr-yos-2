@@ -4,8 +4,10 @@ const HomeSlider = () => {
     return (
    
   <Zoom
-    indicators
-   scale={1}
+  indicators
+   scale={0.7}
+   arrows={false}
+   
   >
     
         <div

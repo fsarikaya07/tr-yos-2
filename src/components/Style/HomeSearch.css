@@ -4,6 +4,9 @@
 
 
 }
+.button{
+background-color: #017EFA;
+}
 .Sliderdiv{
   position: absolute;
   
@@ -20,8 +23,9 @@
 
 
 .title{
-  font-weight: 600;
+  font-weight: 800;
   margin-top: 250px !important;
+  font-size:46px ;
 }
 
 

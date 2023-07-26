@@ -58,10 +58,6 @@ function HomeSearch() {
     setFilteredDepartments(filteredDeps);
   };
 
-  // console.log(filteredUniversities)
-  // console.log(filteredDepartments)
-
-
 
   const handleDepartmentChange = (selectedOptions) => {
     setSelectedDepartments(selectedOptions);
@@ -116,8 +112,9 @@ function HomeSearch() {
               onChange={handleDepartmentChange}
             />
           </div>
+         
           <Button
-            variant="primary"
+           
             type="submit"
             className="button col-md-12 g-2 p-3 col-lg-3 my-2"
             onClick={handleSubmit}

@@ -1,32 +1,3 @@
-// import "../components/Style/University.css";
-// import { useContext } from "react";
-// import { useYosContext } from "../context/Context";
-// import UniversityCard from "../components/university/UniversityCard";
-
-// const University = () => {
-//   const { universities } = useYosContext();
-//   return (
-//     <div className="page-title">
-//       <div className="p-5 mb-2 bg-primary text-white">
-//         <h2 className="p-title fw-bold mx-5">Universites</h2>
-//         <span className="fw-small mx-5">
-//         You Can Check All Universities
-//         </span>
-//       </div>
-
-//       {/* Univercity cards */}
-//       <div>
-//         {universities.map((item) => (
-//           <UniversityCard {...item} key={item.id} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default University;
-
-
 import "../components/Style/University.css";
 import { useState } from "react";
 import { useYosContext } from "../context/Context";
@@ -75,19 +46,17 @@ const University = () => {
       </div>
 
       {/* Sayfa numaralarının butonları */}
-     
-        <div className="pagination">
+      <div className="pagination">
         <button
-        className="back"
+          className="back"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
-          <i class="bi bi-caret-left-fill"></i>
+          <i className="bi bi-caret-left-fill"></i>
           back
         </button>
         {pageNumbers.map((number) => (
           <button
-        
             key={number}
             onClick={() => handlePageChange(number)}
             className={currentPage === number ? "active" : ""}
@@ -96,19 +65,16 @@ const University = () => {
           </button>
         ))}
         <button
-        className="next"
+          className="next"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           next
-          <i class="bi bi-caret-right-fill"></i>
+          <i className="bi bi-caret-right-fill"></i>
         </button>
       </div>
-    
-      
     </div>
   );
 };
 
 export default University;
-

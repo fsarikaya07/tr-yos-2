@@ -5,7 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { useAuthContext } from "../../context/AuthContext";
 
 const MyAccount = () => {
-  const { logout } = useAuthContext();
+  const { currentUser, logout } = useAuthContext();
   const [open, setOpen] = useState(false);
 
   const handleMouseEnter = () => {

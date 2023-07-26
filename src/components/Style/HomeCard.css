@@ -1,15 +1,41 @@
-.desc{
-  font-size:x-small;
+.cardBody{
+  background-color: #FFFFFF;
+  /* background-color:red ; */
 }
-@media  (min-width: 1024px) {
-     .desc{
-      font-size:x-small !important;
-     }
-
-     
+.dep{
+  color: #022F5D;
+ flex-wrap: wrap;
+}
+.dep:hover {
+  color: #017EFA;
+}
+.uni{
+  font-size:small;
+  color:#4F5E64
+}
+.cardFot{
+  color: #617896;
+}
+.heart{
+  color:#017EFA;
+}
+.btn{
+  border: 1px solid #E6EBF1
+}
+.comp{
+  font-size:small;
 }
 .defaultimg{
-  width: 100%;
-  height: 25vh !important;
-
+  border-radius: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: block;
+  min-height:229.609px;
+  width: auto;
+}
+@media  (min-width: 1024px) {
+     .uni{
+      font-size:small !important;
+     }
 }
