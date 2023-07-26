@@ -7,9 +7,10 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Departments from "../components/Departmens/Departments";
 import MyAccount from "../components/Dropdown/MyAccount";
+import UniversityCard from "../components/university/UniversityCard";
 // import LogIn from "../components/Login/Logİn";
 // import SignUp from "../components/Login/Signup";
-import UniversityCard from "../components/university/UniversityCard";
+
 
 const AppRouter = () => {
   return (
