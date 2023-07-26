@@ -61,7 +61,7 @@ const Account = () => {
 
   return (
     <div className="">
-      <div className="infoDiv mt-5 p-5 mb- bg-primary text-white">
+      <div className="infoDiv  p-5 mb- bg-primary text-white">
         <h2 className=" fw-bold mx-5 pt-5">MyAccount</h2>
       </div>
       <div className="">

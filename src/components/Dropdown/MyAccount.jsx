@@ -37,7 +37,7 @@ const MyAccount = () => {
 
       <Dropdown.Menu>
         <NavLink
-          to="/user-dashboard"
+          to="/account"
           activeClassName="text-danger"
           className=" tit btn  border-none my-2 py-2 m-1 flex-wrap "
           onClick={() => setOpen(false)}
@@ -55,7 +55,7 @@ const MyAccount = () => {
           Favorite Department
         </NavLink>
         <NavLink
-          to="/compare-department"
+          to="/compare"
           activeClassName="text-danger"
           className="tit btn  my-2 py-2 m-1 flex-wrap "
           onClick={() => setOpen(false)}
