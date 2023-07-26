@@ -16,8 +16,8 @@ const UniversityCard = ({ logo, city, tr, data }) => {
               />
             </div>
           </div>
-          <div className="üni-info-caption">
-            <div className="üni-info">
+          <div className="uni-info-caption">
+            <div className="uni-info">
               <div className="">
                 <div className="info d-flex p-2 gap-2">
                   <span className="uni-faculties rounded-1">1 Faculties</span>
