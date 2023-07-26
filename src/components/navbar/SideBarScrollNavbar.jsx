@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from "react";
-import {
-  Navbar,
-  Offcanvas,
-  Nav,
-  Col,
-  Button,
-  Row,
-  Modal,
-} from "react-bootstrap";
-import { Link, NavLink, 
-  // useLocation 
-} from "react-router-dom";
-import { FaSignInAlt, FaUserPlus } from "react-icons/fa"; // import icons you want
+// HomePage.js
+import React, { useContext, useEffect, useState } from "react";
+import { Navbar, Offcanvas, Nav, Col, Button, Row, Modal, Dropdown } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
+import { IconContext } from "react-icons";
+import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import LogIn from "../Login/Logİn";
 import Register from "../Login/Register";
 import "./HomePage.css";
+import { useAuthContext } from "../../context/AuthContext"; // AuthContext'u kullanmak için import edin.
+import MyAccount from "../Dropdown/MyAccount";
 
 const ScrollNavbar = () => {
-  // State değerleri ve toggle fonksiyonları tanımlanıyor
+
+  const {  currentUser,logout, login,register} = useAuthContext();
+
+
+
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
 
   const toggleShowSignInModal = () => setShowSignInModal(!showSignInModal);
   const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
 
-  // const location = useLocation();
+  const location = useLocation();
   const [scrollBackground, setScrollBackground] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false); // state variable for sidebar visibility
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +44,6 @@ const ScrollNavbar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      // close sidebar if screen width is larger than 768px
       if (window.innerWidth > 768) {
         setSidebarOpen(false);
       }
@@ -59,103 +56,92 @@ const ScrollNavbar = () => {
   }, []);
 
   const toggleSidebar = () => {
-    // toggle sidebar state
     setSidebarOpen((prev) => !prev);
+  };
+// AuthContext'ten user bilgisini alın.
+  const handleLogout = () => {
+    logout(); // Logout işlemlerini gerçekleştirin ve kullanıcıyı state'ten çıkarın.
   };
 
   return (
     <>
-      {/* Sidebar component */}
       <Offcanvas
-        show={sidebarOpen} // show prop controls visibility
-        onHide={toggleSidebar} // onHide prop calls toggle function
-        placement="start" // placement prop sets position
-        className=" text-dark"
+        show={sidebarOpen}
+        onHide={toggleSidebar}
+        placement="start"
+        className="text-dark"
       >
         <Offcanvas.Header closeButton className="">
           {/* Add logo or title here */}
           {/* <Offcanvas.Title>TR-YöS</Offcanvas.Title> */}
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {/* Add list of links here */}
-          <Nav className="homeNavbar d-block p-3 flex-column align-items-start fw-bold fs-6">
-          <div className="" id="navbarCollapse">
-          <ul className="navbar-nav ">
-            <li className="nav-item ">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/"
-                className="nav-link active"
-                href="#"
-                aria-current="page"
-              >
-                HomePage
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/universites"
-                className="nav-link active"
-                href="#"
-                aria-current="page"
-              >
-                Universites
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/departmants"
-                className="nav-link active"
-                href="#"
-                aria-current="page"
-              >
-                Departmants
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+          <Nav className="homeNavbar d-flex flex-column align-items-start fw-bold fs-6">
+
+          <Row fluid id="navbarCollapse">
+                <Col fluid>
+                  <Link
+              to="/"
+              className={`nav-link ${
+                location.pathname === "/" ? "text-danger" : ""
+              }`}
+              href="/"
+              aria-current="page"
+            >
+              HomePage
+            </Link>
+            <Link
+              to="/universites"
+              className={`nav-link ${
+                location.pathname === "/universites" ? "text-danger" : ""
+              }`}
+              href="/universites"
+              aria-current="page"
+            >
+              Universites
+            </Link>
+            <Link
+              to="/departmants"
+              className={`nav-link ${
+                location.pathname === "/departmants" ? "text-danger" : ""
+              }`}
+              href="/departmants"
+              aria-current="page"
+            >
+              Departmants
+            </Link>
+          
+            {currentUser ? (
+              <>
+               <MyAccount/>
+              </>
+            ) : (
               <Row fluid id="navbarCollapse">
-              <Col fluid>
-                {/* Add IconContext.Provider component here */}
-               
-                  {/* set size and color for icons */}
-                  <div className="navbarCollapse">
-                    <Link
-                      to="/Register"
-                      className="text-primary"
-                      style={{ textDecoration: "none" }}
-                    >
+                <Col fluid>
+                  <IconContext.Provider
+                    value={{ size: "1.5em", color: "white" }}
+                  >
+                    <div className="navbarCollapse">
                       <Button
-                        className="signIn btn btn-outline-light my-1 flex-wrap"
+                        className="btn btn-outline-light my-1 m-3 flex-wrap"
                         type="submit"
                         variant="info"
-                        // variant="primary"
-                        // className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
                         onClick={toggleShowSignInModal}
                       >
-                        {/* Add icon component here */}
-                        < i className="fas fa-sign-in-alt me-2"></i>
-                        {/* <FaSignInAlt />  */}
-                        Sing In
+                        <FaSignInAlt /> Sing In
                       </Button>{" "}
-                    </Link>
-                  </div>
-           
-              </Col>
-            </Row>
+                    </div>
+                  </IconContext.Provider>
+                </Col>
+              </Row>
+            )}
+
+                  </Col>
+              </Row>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
 
-      {/* Navbar component */}
       <Navbar
         bg={scrollBackground ? "light" : "dark"}
         variant={scrollBackground ? "light" : "dark"}
@@ -163,133 +149,98 @@ const ScrollNavbar = () => {
         fixed="top"
         className="homeNavbar text-dark fs-5"
       >
-        {/* Add Navbar.Brand component here */}
-        {/* <Navbar.Brand href="#home"> */}
-        {/* Add img element here */}
-        {/* <img
-      src="../logo/OIG.jpeg" // change this to your image source
-      alt="Logo" // change this to your alternative text
-      width="30" // change this to your desired size
-      className="logo" // add a class name for styling
-    /> */}
-        {/* </Navbar.Brand>  */}
-        {/* <Navbar.Brand href="#home">TR-YöS</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleSidebar}>
-          {/* Add toggle button here */}
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          {/* Hide navbar links on small screens */}
           <Nav className="d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around style={{opacity: 0.5}} nav-bg ">
             <Row fluid id="navbarCollapse">
               <Col fluid>
                 <div className="navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
-                <div className="" id="navbarCollapse">
-          <ul className="navbar-nav ">
-            <li className="nav-item ">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/"
-                className="nav-link active"
-                href="#"
-                aria-current="page"
-              >
-                HomePage
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/universites"
-                className="nav-link active"
-                href="#"
-                aria-current="page"
-              >
-                Universites
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive && "red",
-                })}
-                to="/departmants"
-                className="nav-link active"
-                href="#"
-                aria-current="page"
-              >
-                Departmants
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+                  <Link
+                    to="/"
+                    className={`nav-link ${
+                      location.pathname === "/" ? "text-danger" : ""
+                    }`}
+                    href="/"
+                    aria-current="page"
+                  >
+                    HomePage
+                  </Link>
+                  <Link
+                    to="/universites"
+                    className={`nav-link ${
+                      location.pathname === "/universites" ? "text-danger" : ""
+                    }`}
+                    href="/universites"
+                    aria-current="page"
+                  >
+                    Universites
+                  </Link>
+                  <Link
+                    to="/departmants"
+                    className={`nav-link ${
+                      location.pathname === "/departmants" ? "text-danger" : ""
+                    }`}
+                    href="/departmants"
+                    aria-current="page"
+                  >
+                    Departmants
+                  </Link>
                 </div>
               </Col>
             </Row>
 
             <Row fluid id="navbarCollapse">
               <Col fluid>
-                {/* Add IconContext.Provider component here */}
-                
-                  {/* set size and color for icons */}
+                <IconContext.Provider
+                  value={{ size: "1.5em", color: "white" }}
+                >
                   <div className="navbarCollapse">
-                    <Button
-                     className="signIn btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
-                      type="submit"
-                      variant="info"
-                      // variant="primary"
-                      // className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-                      onClick={toggleShowSignInModal}
-                    >
-                      {/* Add icon component here */}
-                      < i className="fas fa-sign-in-alt me-2"></i>
-                      Sing In
-                    </Button>
+                    {!currentUser ? (
+                      <>
+                        <Button
+                          className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+                          type="submit"
+                          variant="info"
+                          onClick={toggleShowSignInModal}
+                        >
+                          <FaSignInAlt /> Sing In
+                        </Button>
+                        <Button
+                          className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
+                          type="submit"
+                          variant="primary"
+                          onClick={toggleShowSignUpModal}
+                        >
+                          <FaUserPlus /> Sing Up
+                        </Button>
+                      </>
+                    ) : (
 
-                    <Button
-                     className="signUp btn btn-outline-light my-4 py-2 px-4 m-4  flex-wrap"
-                      type="submit"
-                      variant="primary"
-                      // className="btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
-                      // type="submit"
-                      // variant="info"
-                      // variant="primary"
-                      // className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-                      onClick={toggleShowSignUpModal}
-                    >
-                      {/* Add icon component here */}
-                      <i className="fas fa-user-alt me-2"></i>
-                      {/* <FaUserPlus />  */}
-                      Sing Up
-                    </Button>
+                  <MyAccount />
+                    )}
                   </div>
-                
+                </IconContext.Provider>
               </Col>
             </Row>
           </Nav>
           <div className="boxNavbar"></div>
         </Navbar.Collapse>
-
-        {/* Modal componentleri tanımlanıyor */}
-        <Modal
-          show={showSignInModal}
-          onHide={toggleShowSignInModal}
-          centered
-          contentClassName="modal-content"
-        >
-          {/* LogIn componenti modalin içine yerleştiriliyor */}
-          <LogIn />
-        </Modal>
-
-        <Modal show={showSignUpModal} onHide={toggleShowSignUpModal} centered>
-          {/* Register componenti modalin içine yerleştiriliyor */}
-          <Register />
-        </Modal>
       </Navbar>
+
+      <Modal
+        show={showSignInModal}
+        onHide={toggleShowSignInModal}
+        centered
+        contentClassName="modal-content"
+      >
+        <LogIn />
+      </Modal>
+
+      <Modal show={showSignUpModal} onHide={toggleShowSignUpModal} centered>
+        <Register />
+      </Modal>
     </>
   );
 };
