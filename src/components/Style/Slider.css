@@ -15,38 +15,38 @@
 }
 
 .slide-image {
-  height: 60vh;
-  background-size: contain;
+  height: 60vh !important;
+  background-size: cover !important;
   background-color: white;
 }
 
 @media (min-width: 1200px) {
   .slide-image {
-    height: 55vh;
+    height: 55vh !important;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .slide-image {
-    height: 45vh;
+    height: 45vh !important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
   .slide-image {
-    height: 35vh;
+    height: 35vh !important;
   }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
   .slide-image {
-    height: 25vh;
+    height: 25vh !important;
   }
 }
 
 @media (max-width: 576px) {
   .slide-image {
-    height: 20vh;
+    height: 20vh !important;
   }
 }
 
