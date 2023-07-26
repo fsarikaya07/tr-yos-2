@@ -8,6 +8,7 @@ import Footer from "../components/footer/Footer";
 import Departments from "../components/Departmens/Departments";
 import MyAccount from "../components/Dropdown/MyAccount";
 import UniversityCard from "../components/university/UniversityCard";
+import Compare from "../components/Account/Compare";
 // import LogIn from "../components/Login/Logİn";
 // import SignUp from "../components/Login/Signup";
 
@@ -26,6 +27,7 @@ const AppRouter = () => {
         />
         <Route path="/departmants" element={<Departments />} />
         <Route path="universites" element={<UniversityCard />} />
+        <Route path="/compare" element={<Compare />}/>
         {/* <Route path="/login" element={<LogIn/>}/>
         <Route path="/logout" element={<SignUp/>}/> */}
 
