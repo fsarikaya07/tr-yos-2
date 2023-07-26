@@ -8,22 +8,73 @@ import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import LogIn from "../Login/Logİn";
+import axios from "axios";
+import { useYosContext } from "../../context/Context";
 const HomeCard = ({ item , universityImage}) => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
   const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
-  const toggleShowSignInCompareModal = () =>
+  const { compareId, setCompareId, user } = useYosContext();
+  const [isBoolen, setIsBoolen] = useState(true)
+
+
+
+  const toggleShowSignInCompareModal = async () =>{
     setShowSignInCompareModal(!showSignInCompareModal);
+    
+    //Compare Fetch and Delete
+
+    try {
+      if (isBoolen) {
+        const responseCompare = await axios.get(
+          `https://tr-yös.com/api/v1/users/addcompare.php`,
+          {
+            params: {
+              id: item.id,
+              user_id: "16900415273259",
+              token:
+                "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
+            },
+          }
+        );
+        if (!compareId.includes(responseCompare.data)) {
+          setCompareId((prevIds) => [...prevIds, responseCompare.data]);
+          setIsBoolen(!isBoolen);
+        }
+      } else if (!isBoolen) {
+        const responseCompareDelete = await axios.get(
+          `https://tr-yös.com/api/v1/users/deletecompare.php`,
+          {
+            params: {
+              id: item.id,
+              // user_id: user?.userID,
+              user_id: "16900415273259",
+              token:
+                "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
+            },
+          }
+        );
+        console.log("deletye", responseCompareDelete);
+        if (compareId.includes(item.id)) {
+          setCompareId((prevIds) =>
+            prevIds.filter((id) => id !== responseCompareDelete.data)
+          );
+          
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+    // setCompareId(responseCompare.data);
+    console.log("mnd", item.id);
+
+  }
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
   const toggleShowSignInHeartModal = () =>
     setShowSignInHeartModal(!showSignInHeartModal);
     const departmentName = item?.university?.tr;
     const departmentImages = universityImage[departmentName] || [];
-    // const scrollToTop = () => {
-    //   window.scrollTo({
-    //     top: 0,
-    //     behavior: "smooth",
-    //   });
-    // };
+  
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
       <Card className="cardBody rounded-2 " style={{ width: "100%", height: "25rem" }}>

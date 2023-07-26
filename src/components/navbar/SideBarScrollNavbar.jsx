@@ -1,6 +1,15 @@
 // HomePage.js
 import React, { useContext, useEffect, useState } from "react";
-import { Navbar, Offcanvas, Nav, Col, Button, Row, Modal, Dropdown } from "react-bootstrap";
+import {
+  Navbar,
+  Offcanvas,
+  Nav,
+  Col,
+  Button,
+  Row,
+  Modal,
+  Dropdown,
+} from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
@@ -11,10 +20,7 @@ import { useAuthContext } from "../../context/AuthContext"; // AuthContext'u kul
 import MyAccount from "../Dropdown/MyAccount";
 
 const ScrollNavbar = () => {
-
-  const {  currentUser,logout, login,register} = useAuthContext();
-
-
+  const { currentUser, logout, login, register } = useAuthContext();
 
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
@@ -58,7 +64,7 @@ const ScrollNavbar = () => {
   const toggleSidebar = () => {
     setSidebarOpen((prev) => !prev);
   };
-// AuthContext'ten user bilgisini alın.
+  // AuthContext'ten user bilgisini alın.
   const handleLogout = () => {
     logout(); // Logout işlemlerini gerçekleştirin ve kullanıcıyı state'ten çıkarın.
   };
@@ -77,71 +83,78 @@ const ScrollNavbar = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="homeNavbar d-flex flex-column align-items-start fw-bold fs-6">
+            <Row fluid id="navbarCollapse">
+              <Col fluid>
+                <Link
+                  to="/"
+                  className={`nav-link ${
+                    location.pathname === "/" ? "text-danger" : ""
+                  }`}
+                  href="/"
+                  aria-current="page"
+                >
+                  HomePage
+                </Link>
+                <Link
+                  to="/universites"
+                  className={`nav-link ${
+                    location.pathname === "/universites" ? "text-danger" : ""
+                  }`}
+                  href="/universites"
+                  aria-current="page"
+                >
+                  Universites
+                </Link>
+                <Link
+                  to="/compare"
+                  className={`nav-link ${
+                    location.pathname === "/compare" ? "text-danger" : ""
+                  }`}
+                  href="/compare"
+                  aria-current="page"
+                >
+                  Compare
+                </Link>
+                <Link
+                  to="/departmants"
+                  className={`nav-link ${
+                    location.pathname === "/departmants" ? "text-danger" : ""
+                  }`}
+                  href="/departmants"
+                  aria-current="page"
+                >
+                  Departmants
+                </Link>
 
-          <Row fluid id="navbarCollapse">
-                <Col fluid>
-                  <Link
-              to="/"
-              className={`nav-link ${
-                location.pathname === "/" ? "text-danger" : ""
-              }`}
-              href="/"
-              aria-current="page"
-            >
-              HomePage
-            </Link>
-            <Link
-              to="/universites"
-              className={`nav-link ${
-                location.pathname === "/universites" ? "text-danger" : ""
-              }`}
-              href="/universites"
-              aria-current="page"
-            >
-              Universites
-            </Link>
-            <Link
-              to="/departmants"
-              className={`nav-link ${
-                location.pathname === "/departmants" ? "text-danger" : ""
-              }`}
-              href="/departmants"
-              aria-current="page"
-            >
-              Departmants
-            </Link>
-          
-            {currentUser ? (
-              <>
-               <MyAccount/>
-              </>
-            ) : (
-              <Row fluid id="navbarCollapse">
-                <Col fluid>
-                  <IconContext.Provider
-                    value={{ size: "1.5em", color: "white" }}
-                  >
-                    <div className="navbarCollapse">
-                      <Button
-                        className="signIn btn btn-outline-light my-1 m-3 flex-wrap"
-                        type="submit"
-                        variant="info"
-                        onClick={toggleShowSignInModal}
+                {currentUser ? (
+                  <>
+                    <MyAccount />
+                  </>
+                ) : (
+                  <Row fluid id="navbarCollapse">
+                    <Col fluid>
+                      <IconContext.Provider
+                        value={{ size: "1.5em", color: "white" }}
                       >
-                           < i className="fas fa-sign-in-alt me-2"></i>
-                          {/* <FaSignInAlt /> */}
-                          {/* <span className="mx-1"></span> */}
-                          
-                           Sing In
-                      </Button>{" "}
-                    </div>
-                  </IconContext.Provider>
-                </Col>
-              </Row>
-            )}
-
-                  </Col>
-              </Row>
+                        <div className="navbarCollapse">
+                          <Button
+                            className="signIn btn btn-outline-light my-1 m-3 flex-wrap"
+                            type="submit"
+                            variant="info"
+                            onClick={toggleShowSignInModal}
+                          >
+                            <i className="fas fa-sign-in-alt me-2"></i>
+                            {/* <FaSignInAlt /> */}
+                            {/* <span className="mx-1"></span> */}
+                            Sing In
+                          </Button>{" "}
+                        </div>
+                      </IconContext.Provider>
+                    </Col>
+                  </Row>
+                )}
+              </Col>
+            </Row>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
@@ -182,6 +195,16 @@ const ScrollNavbar = () => {
                     Universites
                   </Link>
                   <Link
+                    to="/compare"
+                    className={`nav-link ${
+                      location.pathname === "/compare" ? "text-danger" : ""
+                    }`}
+                    href="/compare"
+                    aria-current="page"
+                  >
+                    Compare
+                  </Link>
+                  <Link
                     to="/departmants"
                     className={`nav-link ${
                       location.pathname === "/departmants" ? "text-danger" : ""
@@ -197,9 +220,7 @@ const ScrollNavbar = () => {
 
             <Row fluid id="navbarCollapse">
               <Col fluid>
-                <IconContext.Provider
-                  value={{ size: "1.5em", color: "white" }}
-                >
+                <IconContext.Provider value={{ size: "1.5em", color: "white" }}>
                   <div className="navbarCollapse">
                     {!currentUser ? (
                       <>
@@ -209,11 +230,10 @@ const ScrollNavbar = () => {
                           variant="info"
                           onClick={toggleShowSignInModal}
                         >
-                           < i className="fas fa-sign-in-alt me-2"></i>
+                          <i className="fas fa-sign-in-alt me-2"></i>
                           {/* <FaSignInAlt /> */}
                           {/* <span className="mx-1"></span> */}
-                          
-                           Sing In
+                          Sing In
                         </Button>
                         <Button
                           className="signUp btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
@@ -221,15 +241,14 @@ const ScrollNavbar = () => {
                           variant="primary"
                           onClick={toggleShowSignUpModal}
                         >
-                           <i className="fas fa-user-alt me-2"></i>
+                          <i className="fas fa-user-alt me-2"></i>
                           {/* <FaUserPlus className="" />  */}
                           {/* <span className="mx-1"></span> */}
                           Sing Up
-                          </Button>
+                        </Button>
                       </>
                     ) : (
-
-                  <MyAccount />
+                      <MyAccount />
                     )}
                   </div>
                 </IconContext.Provider>
