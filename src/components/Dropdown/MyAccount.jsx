@@ -3,7 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { useAuthContext } from "../../context/AuthContext";
-
+import "./MyAccount.css"
 const MyAccount = () => {
   const { logout } = useAuthContext();
   const [open, setOpen] = useState(false);
@@ -39,7 +39,7 @@ const MyAccount = () => {
         <NavLink
           to="/user-dashboard"
           activeClassName="text-danger"
-          className="btn  border-none my-2 py-2 m-1 flex-wrap "
+          className=" tit btn  border-none my-2 py-2 m-1 flex-wrap "
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
         >
@@ -48,7 +48,7 @@ const MyAccount = () => {
         <NavLink
           to="/favorite-department"
           activeClassName="text-danger"
-          className="btn  my-2 py-2 m-1 flex-wrap "
+          className="tit btn  my-1 py-2 m-1 flex-wrap "
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
         >
@@ -57,7 +57,7 @@ const MyAccount = () => {
         <NavLink
           to="/compare-department"
           activeClassName="text-danger"
-          className="btn  my-2 py-2 m-1 flex-wrap "
+          className="tit btn  my-2 py-2 m-1 flex-wrap "
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
         >
@@ -67,10 +67,10 @@ const MyAccount = () => {
         <NavLink
           to="/"
           activeClassName="text-danger"
-          className="btn btn-outline-light m-4 text-center  w-75 "
+          className="titbtn btn btn-outline-light m-4 text-center  w-75 "
           style={{ backgroundColor:" #34b3b3" , width:"80px"}}
         >
-          <div className="py-1 text-center" onClick={handleLogout}>
+          <div className="titbtn py-1 text-center" onClick={handleLogout}>
             Logout
           </div>
         </NavLink>
