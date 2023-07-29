@@ -56,11 +56,7 @@ const Account = () => {
     name: "John Doe",
     tel: "+90 555 123 45 67",
     email: "johndoe@example.com",
-    facebook: "https://www.facebook.com/johndoe",
     img: "https://cdn.create.vista.com/api/media/small/3971976/stock-photo-young-child",
-    twitter: "https://www.twitter.com/johndoe",
-    linkedin: "https://www.linkedin.com/in/johndoe",
-    google: "https://plus.google.com/johndoe",
   };
 
   return (
@@ -85,28 +81,6 @@ const Account = () => {
           <div className="card-body text-center w-100">
             <h5 className="card-title">{person.name}</h5>
             <p className="card-text">{person.email}</p>
-            <ul className="social-icons">
-              <li>
-                <a href={person.facebook}>
-                  <i className="fa fa-instagram" />
-                </a>
-              </li>
-              <li>
-                <a href={person.twitter}>
-                  <i className="fa fa-twitter" />
-                </a>
-              </li>
-              <li>
-                <a href={person.linkedin}>
-                  <i className="fa fa-linkedin" />
-                </a>
-              </li>
-              <li>
-                <a href={person.google}>
-                  <i className="fa fa-codepen" />
-                </a>
-              </li>
-            </ul>
             <div class="">
               <button class="btn_primary p-3 w-100 mt-2" type="button">
                 {person.tel}
