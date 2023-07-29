@@ -9,6 +9,7 @@ import Departments from "../components/Departmens/Departments";
 import MyAccount from "../components/Dropdown/MyAccount";
 import UniversityCard from "../components/university/UniversityCard";
 import Compare from "../components/Account/Compare";
+import Favori from "../components/Account/Favori";
 // import LogIn from "../components/Login/Logİn";
 // import SignUp from "../components/Login/Signup";
 
@@ -17,7 +18,7 @@ const AppRouter = () => {
   return (
    <>
           <Navbar className="" />
-
+        
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/account" element={<Account />} />
@@ -25,6 +26,7 @@ const AppRouter = () => {
           path="/universities/:id"
           element={<Detail  />}
         />
+        <Route path="/favorite-department" element={<Favori/>}/>
         <Route path="/departmants" element={<Departments />} />
         <Route path="universites" element={<UniversityCard />} />
         <Route path="/compare" element={<Compare />}/>
