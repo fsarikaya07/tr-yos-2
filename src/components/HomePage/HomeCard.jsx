@@ -13,7 +13,15 @@ import { useYosContext } from "../../context/Context";
 const HomeCard = ({ item , universityImage}) => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
   const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
-  const { compareId, setCompareId, user } = useYosContext();
+  const {
+    compareId,
+    setCompareId,
+    user,
+    favoriId,
+    setFavoriId,
+    favori,
+    setFavori,
+  } = useYosContext();
   const [isBoolen, setIsBoolen] = useState(true)
 
 
@@ -70,8 +78,56 @@ const HomeCard = ({ item , universityImage}) => {
 
   }
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
-  const toggleShowSignInHeartModal = () =>
-    setShowSignInHeartModal(!showSignInHeartModal);
+///<-----------------------------------FAVORİ START---------------------------------------------->
+const toggleShowSignInHeartModal = async () => {
+  //https://tr-yös.com/api/v1/users/addfavorite.php
+  setShowSignInHeartModal(!showSignInHeartModal);
+
+  try {
+    if (isBoolen) {
+      const responseFavori = await axios.get(
+        `https://tr-yös.com/api/v1/users/addfavorite.php`,
+        {
+          params: {
+            id: item.id,
+            user_id: "16900415273259",
+            token:
+              "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
+          },
+        }
+      );
+      if (!favoriId.includes(responseFavori.data)) {
+        setFavoriId((prevIds) => [...prevIds, responseFavori.data]);
+        setIsBoolen(!isBoolen);
+      }
+    } else if (!isBoolen) {
+      const responseFavoriDelete = await axios.get(
+        `https://tr-yös.com/api/v1/users/deletefavorite.php`,
+        {
+          params: {
+            id: item.id,
+            // user_id: user?.userID,
+            user_id: "16900415273259",
+            token:
+              "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
+          },
+        }
+      );
+      console.log("Favorideletye", responseFavoriDelete.data);
+      if (favoriId.includes(item.id)) {
+        setFavoriId((prevIds) =>
+          prevIds.filter((id) => id !== responseFavoriDelete.data)
+        );
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+
+  // setCompareId(responseCompare.data);
+  console.log("mnd", item.id);
+};
+///<-----------------------------------FAVORİ END---------------------------------------------->
     const departmentName = item?.university?.tr;
     const departmentImages = universityImage[departmentName] || [];
   
