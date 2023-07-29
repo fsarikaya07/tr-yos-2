@@ -8,14 +8,19 @@ const Account = () => {
   const [countries, setCountries] = useState([]);
   const [selectedCountryId, setSelectedCountryId] = useState(null);
 
-  const YOUR_TOKEN = 'SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a';
+  const YOUR_TOKEN =
+    "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseCountries = await axios.get(`https://tr-yös.com/api/v1/location/allcountries.php?token=${YOUR_TOKEN}`);
+        const responseCountries = await axios.get(
+          `https://tr-yös.com/api/v1/location/allcountries.php?token=${YOUR_TOKEN}`
+        );
         setCountries(responseCountries.data);
-        const turkey = responseCountries.data.find(country => country.en.toLowerCase() === "turkey");
+        const turkey = responseCountries.data.find(
+          (country) => country.en.toLowerCase() === "turkey"
+        );
         setSelectedCountryId(turkey.id);
       } catch (error) {
         console.error(error);
@@ -47,7 +52,6 @@ const Account = () => {
     setSelectedCountryId(selectedCountryId);
   };
 
- 
   const person = {
     name: "John Doe",
     tel: "+90 555 123 45 67",
@@ -190,11 +194,15 @@ const Account = () => {
                 <option selected disabled value="">
                   Select City
                 </option>
-                {accountCities.map((city) => ( // Use accountCities here
-                  <option key={city.id} value={city.en}>
-                    {city.en}
-                  </option>
-                ))}
+                {accountCities.map(
+                  (
+                    city // Use accountCities here
+                  ) => (
+                    <option key={city.id} value={city.en}>
+                      {city.en}
+                    </option>
+                  )
+                )}
               </select>
             </div>
             <div className="col-md-6">
@@ -211,56 +219,6 @@ const Account = () => {
                 class="form-control"
                 id="aboutTextarea"
                 rows="5"></textarea>
-            </div>
-
-            <h3 className="text-start">Social Accounts</h3>
-
-            <div className="col-md-6">
-              <label htmlFor="facebook" className="form-label">
-                Facebook
-              </label>
-              <input
-                type="text"
-                className="form-control p-3"
-                id="facebook"
-                placeholder=" https://facebook.com/"
-              />
-            </div>
-
-            <div className="col-md-6">
-              <label htmlFor="twitter" className="form-label">
-                Twitter
-              </label>
-              <input
-                type="text"
-                className="form-control p-3"
-                id="twitter"
-                placeholder=" https://twitter.com/"
-              />
-            </div>
-
-            <div className="col-md-6">
-              <label htmlFor="googleplus" className="form-label">
-                Google Plus
-              </label>
-              <input
-                type="text"
-                className="form-control p-3"
-                id="googleplus"
-                placeholder=" https://googleplus.com/"
-              />
-            </div>
-
-            <div className="col-md-6">
-              <label htmlFor="linkedin" className="form-label">
-                LinkedIn
-              </label>
-              <input
-                type="text"
-                className="form-control p-3"
-                id="linkedin"
-                placeholder=" https://linkedin.com/"
-              />
             </div>
 
             <div className="col-12">
