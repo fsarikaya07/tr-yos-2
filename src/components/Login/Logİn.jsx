@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "../Style/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Modal } from "react-bootstrap"; // Modal bileşenini import edelim
+import { Modal } from "react-bootstrap"; // Modal bileşenini import edelim
 import { useAuthContext } from "../../context/AuthContext";
 
 const LogIn = () => {
-  const { login } = useAuthContext();
+  const { loginPerson } = useAuthContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,7 +13,7 @@ const LogIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isLogined = await login({
+    const isLogined = await loginPerson({
       email: email,
       password: password,
     });
@@ -27,17 +27,6 @@ const LogIn = () => {
     }
   };
 
-  // const isMessage = await message({
-  //   name: name,
-  //   email: email,
-
-  // });
-  // const isSuccess = await success({
-  //   name: name,
-  //   email: email,
-
-  // });
-
   // Kayıt başarılıysa yönlendir
 
   const [showSignInModal, setShowSignInModal] = useState(false);
@@ -48,7 +37,6 @@ const LogIn = () => {
 
   return (
     <div className="container box d-flex flex-column align-items-center mt-3   col-4 h-75  login-container center">
-      
       <form
         className="   px-3 w-100 h-100 login-form "
         onSubmit={(e) => handleSubmit(e)}
@@ -61,11 +49,9 @@ const LogIn = () => {
             id="UserEmail"
             aria-describedby="emailHelp"
             placeholder="User Email"
-
             value={email}
             onChange={(e) => setEmail(e.target.value)} // Input alanı değiştiğinde eposta değerini güncelliyoruz.
           />
-          
         </div>
         <div className="form-group w-100 mt-3 inputBox">
           <input
@@ -76,7 +62,6 @@ const LogIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)} // Input alanı değiştiğinde şifre değerini güncelliyoruz.
           />
-         
         </div>
         <button type="submit" className="btn btn-primary w-100 mt-5">
           Log In
@@ -102,10 +87,11 @@ const LogIn = () => {
 
         <div className=" h-100 text-center mt-5">
           <hr />
-         
+
           <p>
             Don't have an account yet?
-            <a href="/register"
+            <a
+              href="/register"
               className="text-primary mx-2"
               style={{ textDecoration: "none" }}
             >

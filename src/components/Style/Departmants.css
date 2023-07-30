@@ -1,91 +1,86 @@
 form{
-    font-size:small;
+  font-size:small;
 }
 .cardBody{
-  background-color: #FFFFFF;
-  /* background-color:red ; */
+background-color: #FFFFFF;
+/* background-color:red ; */
 }
 .infoDiv {
-  margin-top: 0;
-  background-image: url(https://www.tr-yös.com/test/6984215678913/breadcrumb/2.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  
-}
-h3{
-  padding-left: 184px;
-  padding-top: 30px;
+margin-top: 0;
+background-image: url(https://www.tr-yös.com/test/6984215678913/breadcrumb/2.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
 }
 .dep{
-  color: #022F5D;
- flex-wrap: wrap;
+color: #022F5D;
+flex-wrap: wrap;
 }
 .dep:hover {
-  color: #017EFA;
+color: #017EFA;
 }
 .uni{
-  font-size:small;
-  color:#4F5E64
+font-size:small;
+color:#4F5E64
 }
 .cardFot{
-  color: #617896;
+color: #617896;
 }
 .heart{
-  color:#017EFA;
+color:#017EFA;
 }
 .btn{
-  border: 1px solid #E6EBF1
+border: 1px solid #E6EBF1
 }
 .comp{
-  font-size:small;
+font-size:small;
 }
 .defaultimg{
-  border-radius: 5px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  display: block;
-  min-height:229.609px;
-  width: auto;
+border-radius: 5px;
+background-size: cover;
+background-repeat: no-repeat;
+position: relative;
+display: block;
+min-height:229.609px;
+width: auto;
 }
 
 .img {
-  border-radius: 5px; 
-  background-size: cover;
+border-radius: 5px; 
+background-size: cover;
 
 
-  background-repeat: no-repeat;
-  position: relative;
-  display: block;
-  height:229.609px;
-  width: auto;
+background-repeat: no-repeat;
+position: relative;
+display: block;
+height:229.609px;
+width: auto;
 }
 
 
 
 .btn{
-  border: 1px solid #E6EBF1
+border: 1px solid #E6EBF1
 }
 
-  h2 {
-    color: rgb(220, 219, 219);
-    font-size: 50px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  
-  @media  (min-width: 1024px) {
-       .facul{
-        font-size:small !important;
-       }
-       .uni{
-        font-size:small !important;
-       }
+h2 {
+  color: rgb(220, 219, 219);
+  font-size: 50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media  (min-width: 1024px) {
+     .facul{
+      font-size:small !important;
+     }
+     .uni{
+      font-size:small !important;
+     }
+}
+
+@media  (min-width: 2560px) {
+  .facul{
+   font-size:small !important;
   }
 
-  @media  (min-width: 2560px) {
-    .facul{
-     font-size:small !important;
-    }
-  
 }

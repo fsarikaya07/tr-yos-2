@@ -18,8 +18,9 @@ import Register from "../Login/Register";
 import "./HomePage.css";
 import { useAuthContext } from "../../context/AuthContext"; // AuthContext'u kullanmak için import edin.
 import MyAccount from "../Dropdown/MyAccount";
+import LanguageSelector from "../Languages/LanguageSelector";
 
-const ScrollNavbar = () => {
+const SideBarScrollNavbar = () => {
   const { currentUser } = useAuthContext();
 
   const [showSignInModal, setShowSignInModal] = useState(false);
@@ -253,8 +254,16 @@ const ScrollNavbar = () => {
            
               </Col>
             </Row>
+            
+            <Row fluid id="navbarCollapse">
+              <Col fluid>
+                <div className="languageDropdown">
+                <LanguageSelector />
+                </div>
+              </Col>
+            </Row>
           </Nav>
-          <div className="boxNavbar"></div>
+      
         </Navbar.Collapse>
       </Navbar>
 
@@ -274,4 +283,4 @@ const ScrollNavbar = () => {
   );
 };
 
-export default ScrollNavbar;
+export default SideBarScrollNavbar;
