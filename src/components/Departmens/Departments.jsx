@@ -4,10 +4,10 @@ import Select from "react-select";
 import "../Style/Departmants.css";
 
 import { useLocation } from "react-router";
-import DepertmentsCard from "../Departmens/DepertmentsCard";
 
 import { useYosContext } from "../../context/Context";
 
+import DepartmentsCard from "../Departmens/DepertmentsCard";
 import HomeCard from "../HomePage/HomeCard";
 
 const Departments = () => {
@@ -21,23 +21,23 @@ const Departments = () => {
   const random12Cards = shuffledCards.slice(0, 12);
   const universityImages = universities.reduce((map, university) => {
     if (university && university.images && university.images.length > 0) {
-      map[university.tr] = university.images;
+      map[university.en] = university.images;
     }
     return map;
   }, {});
   const citiesOptions = cities?.map((city) => ({
     value: city.id,
-    label: city.tr,
+    label: city.en,
     key: city.id,
   }));
   const universitiesOptions = universities?.map((university) => ({
     value: university.code,
-    label: university.tr,
+    label: university.en,
     key: university.id,
   }));
   const departmentsOptions = departments?.map((department) => ({
     value: department.department.code,
-    label: department.department.tr,
+    label: department.department.en,
     key: department.id,
   }));
   const [filteredUniversities, setFilteredUniversities] = useState([]);
@@ -83,23 +83,10 @@ const Departments = () => {
     setSelectedDepartments(selectedOptions);
   };
 
-  const cardsData = [];
-  selectedCities?.forEach((city) => {
-    selectedUniversities?.forEach((university) => {
-      selectedDepartments?.forEach((department) => {
-        cardsData.push({
-          city,
-          university,
-          department,
-        });
-      });
-    });
-  });
-
   return (
     <div>
-      <div className="infoDiv p-5 mb-2 bg-primary text-white" >
-        <h3 className="mt-5 page-title fw-bold mx-5">Departmants</h3>
+      <div className="infoDiv mt-5 p-5 mb-2 bg-primary text-white">
+        <h3 className=" page-title fw-bold mx-5">departments</h3>
       </div>
       <Container>
         <Row className="d-flex ">
@@ -112,7 +99,7 @@ const Departments = () => {
                     onChange={handleCityChange}
                     options={cities?.map((city) => ({
                       value: city.id,
-                      label: city.tr,
+                      label: city.en,
                       key: city.id,
                     }))}
                     isMulti
@@ -126,7 +113,7 @@ const Departments = () => {
                     onChange={handleUniversityChange}
                     options={filteredUniversities?.map((university) => ({
                       value: university.code,
-                      label: university.tr,
+                      label: university.en,
                       key: university.id,
                     }))}
                     isMulti
@@ -139,7 +126,7 @@ const Departments = () => {
                     className="w-100"
                     options={filteredDepartments?.map((department) => ({
                       value: department.department.code,
-                      label: department.department.tr,
+                      label: department.department.en,
                       key: department.id,
                     }))}
                     isMulti
@@ -174,28 +161,27 @@ const Departments = () => {
             <Col xs={12} sm={12} md={12} lg={8} xl={9}>
               <Container className="rounded-4 mt-2 p-4">
                 <Row className="g-3 d-flex flex-wrap">
-                  {cardsData?.length > 0
-                    ? cardsData?.map(({ city, university, department }) => (
-                        <Col sm={6} md={6} lg={6} key={department}>
-                          <DepertmentsCard
-                            item={department}
-                            cities={cities}
-                            universities={universities}
-                            departments={departments}
-                            selectedCities={[city]}
-                            selectedUniversities={[university]}
-                            selectedDepartments={[department]}
-                          />
-                        </Col>
-                      ))
-                    : random12Cards?.map((item) => (
-                        <Col sm={6} md={6} lg={6} key={item.id}>
-                          <HomeCard
-                            item={item}
-                            universityImage={universityImages}
-                          />
-                        </Col>
-                      ))}
+                  {selectedCityIds &&
+                    selectedDepartmentIds &&
+                    selectedUniversityIds &&
+                    selectedCities &&
+                    selectedUniversities &&
+                    selectedDepartments && (
+                      <Col sm={6} md={6} lg={6}>
+                        <DepartmentsCard
+                          handleCityChange={handleCityChange}
+                          handleUniversityChange={handleUniversityChange}
+                          handleDepartmentChange={handleDepartmentChange}
+                          selectedCityIds={selectedCityIds}
+                          selectedDepartmentIds={selectedDepartmentIds}
+                          selectedUniversityIds={selectedUniversityIds}
+                          selectedCities={selectedCities}
+                          selectedUniversities={selectedUniversities}
+                          selectedDepartments={selectedDepartments}
+                          universityImage={universityImages}
+                        />
+                      </Col>
+                    )}
                 </Row>
               </Container>
             </Col>

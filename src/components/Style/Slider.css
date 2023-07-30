@@ -18,7 +18,7 @@ height: 60vh;
 background-size: cover;
 }
 
-/* @media (min-width: 1200px) {
+ @media (min-width: 1200px) {
   .slide-image {
     height: 60vh !important;
   }
@@ -46,7 +46,7 @@ background-size: cover;
   .slide-image {
     height: 20vh !important;
   }
-} */
+} 
 
 .icon-wrapper {
   display: flex;
