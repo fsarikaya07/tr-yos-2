@@ -1,5 +1,5 @@
 // HomePage.js
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   Offcanvas,
@@ -8,19 +8,20 @@ import {
   Button,
   Row,
   Modal,
-  Dropdown,
+  // Dropdown,
 } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
-import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
+// import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import LogIn from "../Login/Logİn";
 import Register from "../Login/Register";
 import "./HomePage.css";
 import { useAuthContext } from "../../context/AuthContext"; // AuthContext'u kullanmak için import edin.
 import MyAccount from "../Dropdown/MyAccount";
+import LanguageSelector from "../Languages/LanguageSelector";
 
-const ScrollNavbar = () => {
-  const { currentUser, logout, login, register } = useAuthContext();
+const SideBarScrollNavbar = () => {
+  const { currentUser } = useAuthContext();
 
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
@@ -65,9 +66,9 @@ const ScrollNavbar = () => {
     setSidebarOpen((prev) => !prev);
   };
   // AuthContext'ten user bilgisini alın.
-  const handleLogout = () => {
-    logout(); // Logout işlemlerini gerçekleştirin ve kullanıcıyı state'ten çıkarın.
-  };
+  // const handleLogout = () => {
+    // logout(); // Logout işlemlerini gerçekleştirin ve kullanıcıyı state'ten çıkarın.
+  // };
 
   return (
     <>
@@ -220,8 +221,7 @@ const ScrollNavbar = () => {
 
             <Row fluid id="navbarCollapse">
               <Col fluid>
-                <IconContext.Provider value={{ size: "1.5em", color: "white" }}>
-                  <div className="navbarCollapse">
+              <div className="navbarCollapse">
                     {!currentUser ? (
                       <>
                         <Button
@@ -242,7 +242,7 @@ const ScrollNavbar = () => {
                           onClick={toggleShowSignUpModal}
                         >
                           <i className="fas fa-user-alt me-2"></i>
-                          {/* <FaUserPlus className="" />  */}
+                          {/* <FaUserPlus className="me-2" />  */}
                           {/* <span className="mx-1"></span> */}
                           Sing Up
                         </Button>
@@ -251,11 +251,19 @@ const ScrollNavbar = () => {
                       <MyAccount />
                     )}
                   </div>
-                </IconContext.Provider>
+           
+              </Col>
+            </Row>
+            
+            <Row fluid id="navbarCollapse">
+              <Col fluid>
+                <div className="languageDropdown">
+                <LanguageSelector />
+                </div>
               </Col>
             </Row>
           </Nav>
-          <div className="boxNavbar"></div>
+      
         </Navbar.Collapse>
       </Navbar>
 
@@ -275,4 +283,4 @@ const ScrollNavbar = () => {
   );
 };
 
-export default ScrollNavbar;
+export default SideBarScrollNavbar;
