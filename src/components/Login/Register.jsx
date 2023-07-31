@@ -1,39 +1,34 @@
 import React, { useState } from "react";
 import "../Style/Signup.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import { Modal } from "react-bootstrap";
 
 const Register = () => {
-  const { register } = useAuthContext();
+  const { registerPerson } = useAuthContext();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rePassword, setRePassword] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isRegistered = await register({
+    const isRegistered = await registerPerson({
       name: name,
       email: email,
-      password: password,
-      repassword: rePassword,
-    });
-    // const isMessage = await message({
-    //   message     
-    // });
-    // const isSuccess = await success({
-    //   success     
-    // });
+      password1: password1,
+      password2: password2,
 
+    });
+  
     // Kayıt başarılıysa yönlendir
     if (isRegistered) {
       setName("");
       setEmail("");
-      setPassword("");
-      setRePassword("");
+      setPassword1("");
+      setPassword2("");
       navigate("/"); // İlgili sayfaya yönlendir
     } else {
       // Hata mesajını göster
@@ -79,8 +74,8 @@ const Register = () => {
             className="form-control"
             id="exampleInputPassword1"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={password1}
+            onChange={(e) => setPassword1(e.target.value)}
           />
         </div>
         <div className="form-group w-100 mt-3">
@@ -89,8 +84,8 @@ const Register = () => {
             className="form-control"
             id="exampleInputPassword1"
             placeholder="RePassword"
-            value={rePassword}
-            onChange={(e) => setRePassword(e.target.value)}
+            value={password2}
+            onChange={(e) => setPassword2(e.target.value)}
           />
         </div>
 
@@ -118,6 +113,9 @@ const Register = () => {
       >
         {/* Modal content here */}
       </Modal>
+
+      
+
     </div>
   );
 };

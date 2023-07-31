@@ -8,14 +8,19 @@ const Account = () => {
   const [countries, setCountries] = useState([]);
   const [selectedCountryId, setSelectedCountryId] = useState(null);
 
-  const YOUR_TOKEN = 'SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a';
+  const YOUR_TOKEN =
+    "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseCountries = await axios.get(`https://tr-yös.com/api/v1/location/allcountries.php?token=${YOUR_TOKEN}`);
+        const responseCountries = await axios.get(
+          `https://tr-yös.com/api/v1/location/allcountries.php?token=${YOUR_TOKEN}`
+        );
         setCountries(responseCountries.data);
-        const turkey = responseCountries.data.find(country => country.en.toLowerCase() === "turkey");
+        const turkey = responseCountries.data.find(
+          (country) => country.en.toLowerCase() === "turkey"
+        );
         setSelectedCountryId(turkey.id);
       } catch (error) {
         console.error(error);
@@ -47,16 +52,11 @@ const Account = () => {
     setSelectedCountryId(selectedCountryId);
   };
 
- 
   const person = {
     name: "John Doe",
     tel: "+90 555 123 45 67",
     email: "johndoe@example.com",
-    facebook: "https://www.facebook.com/johndoe",
     img: "https://cdn.create.vista.com/api/media/small/3971976/stock-photo-young-child",
-    twitter: "https://www.twitter.com/johndoe",
-    linkedin: "https://www.linkedin.com/in/johndoe",
-    google: "https://plus.google.com/johndoe",
   };
 
   return (
@@ -81,28 +81,6 @@ const Account = () => {
           <div className="card-body text-center w-100">
             <h5 className="card-title">{person.name}</h5>
             <p className="card-text">{person.email}</p>
-            <ul className="social-icons">
-              <li>
-                <a href={person.facebook}>
-                  <i className="fa fa-instagram" />
-                </a>
-              </li>
-              <li>
-                <a href={person.twitter}>
-                  <i className="fa fa-twitter" />
-                </a>
-              </li>
-              <li>
-                <a href={person.linkedin}>
-                  <i className="fa fa-linkedin" />
-                </a>
-              </li>
-              <li>
-                <a href={person.google}>
-                  <i className="fa fa-codepen" />
-                </a>
-              </li>
-            </ul>
             <div class="">
               <button class="btn_primary p-3 w-100 mt-2" type="button">
                 {person.tel}
@@ -190,11 +168,15 @@ const Account = () => {
                 <option selected disabled value="">
                   Select City
                 </option>
-                {accountCities.map((city) => ( // Use accountCities here
-                  <option key={city.id} value={city.en}>
-                    {city.en}
-                  </option>
-                ))}
+                {accountCities.map(
+                  (
+                    city // Use accountCities here
+                  ) => (
+                    <option key={city.id} value={city.en}>
+                      {city.en}
+                    </option>
+                  )
+                )}
               </select>
             </div>
             <div className="col-md-6">
@@ -211,56 +193,6 @@ const Account = () => {
                 class="form-control"
                 id="aboutTextarea"
                 rows="5"></textarea>
-            </div>
-
-            <h3 className="text-start">Social Accounts</h3>
-
-            <div className="col-md-6">
-              <label htmlFor="facebook" className="form-label">
-                Facebook
-              </label>
-              <input
-                type="text"
-                className="form-control p-3"
-                id="facebook"
-                placeholder=" https://facebook.com/"
-              />
-            </div>
-
-            <div className="col-md-6">
-              <label htmlFor="twitter" className="form-label">
-                Twitter
-              </label>
-              <input
-                type="text"
-                className="form-control p-3"
-                id="twitter"
-                placeholder=" https://twitter.com/"
-              />
-            </div>
-
-            <div className="col-md-6">
-              <label htmlFor="googleplus" className="form-label">
-                Google Plus
-              </label>
-              <input
-                type="text"
-                className="form-control p-3"
-                id="googleplus"
-                placeholder=" https://googleplus.com/"
-              />
-            </div>
-
-            <div className="col-md-6">
-              <label htmlFor="linkedin" className="form-label">
-                LinkedIn
-              </label>
-              <input
-                type="text"
-                className="form-control p-3"
-                id="linkedin"
-                placeholder=" https://linkedin.com/"
-              />
             </div>
 
             <div className="col-12">

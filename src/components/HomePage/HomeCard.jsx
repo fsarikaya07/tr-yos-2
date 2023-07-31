@@ -3,139 +3,29 @@ import { Button, Container, Modal } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import uniDefault from "../../assets/uni.jpg";
-import CardSlider from "./CardSlider"
+import HomeCardSlider from "./HomeCardSlider"
 import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import LogIn from "../Login/Logİn";
-import axios from "axios";
-import { useYosContext } from "../../context/Context";
+
+
 const HomeCard = ({ item , universityImage}) => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
   const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
-  const {
-    compareId,
-    setCompareId,
-    user,
-    favoriId,
-    setFavoriId,
-    favori,
-    setFavori,
-  } = useYosContext();
-  const [isBoolen, setIsBoolen] = useState(true)
-
-
-
-  const toggleShowSignInCompareModal = async () =>{
+  const toggleShowSignInCompareModal = () =>
     setShowSignInCompareModal(!showSignInCompareModal);
-    
-    //Compare Fetch and Delete
-
-    try {
-      if (isBoolen) {
-        const responseCompare = await axios.get(
-          `https://tr-yös.com/api/v1/users/addcompare.php`,
-          {
-            params: {
-              id: item.id,
-              user_id: "16900415273259",
-              token:
-                "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
-            },
-          }
-        );
-        if (!compareId.includes(responseCompare.data)) {
-          setCompareId((prevIds) => [...prevIds, responseCompare.data]);
-          setIsBoolen(!isBoolen);
-        }
-      } else if (!isBoolen) {
-        const responseCompareDelete = await axios.get(
-          `https://tr-yös.com/api/v1/users/deletecompare.php`,
-          {
-            params: {
-              id: item.id,
-              // user_id: user?.userID,
-              user_id: "16900415273259",
-              token:
-                "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
-            },
-          }
-        );
-        console.log("deletye", responseCompareDelete);
-        if (compareId.includes(item.id)) {
-          setCompareId((prevIds) =>
-            prevIds.filter((id) => id !== responseCompareDelete.data)
-          );
-          
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
-
-    // setCompareId(responseCompare.data);
-    console.log("mnd", item.id);
-
-  }
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
-///<-----------------------------------FAVORİ START---------------------------------------------->
-const toggleShowSignInHeartModal = async () => {
-  //https://tr-yös.com/api/v1/users/addfavorite.php
-  setShowSignInHeartModal(!showSignInHeartModal);
-
-  try {
-    if (isBoolen) {
-      const responseFavori = await axios.get(
-        `https://tr-yös.com/api/v1/users/addfavorite.php`,
-        {
-          params: {
-            id: item.id,
-            user_id: "16900415273259",
-            token:
-              "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
-          },
-        }
-      );
-      if (!favoriId.includes(responseFavori.data)) {
-        setFavoriId((prevIds) => [...prevIds, responseFavori.data]);
-        setIsBoolen(!isBoolen);
-      }
-    } else if (!isBoolen) {
-      const responseFavoriDelete = await axios.get(
-        `https://tr-yös.com/api/v1/users/deletefavorite.php`,
-        {
-          params: {
-            id: item.id,
-            // user_id: user?.userID,
-            user_id: "16900415273259",
-            token:
-              "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
-          },
-        }
-      );
-      console.log("Favorideletye", responseFavoriDelete.data);
-      if (favoriId.includes(item.id)) {
-        setFavoriId((prevIds) =>
-          prevIds.filter((id) => id !== responseFavoriDelete.data)
-        );
-      }
-    }
-  } catch (error) {
-    console.log(error);
-  }
-
-  // setCompareId(responseCompare.data);
-  console.log("mnd", item.id);
-};
-///<-----------------------------------FAVORİ END---------------------------------------------->
+  const toggleShowSignInHeartModal = () =>
+    setShowSignInHeartModal(!showSignInHeartModal);
     const departmentName = item?.university?.tr;
     const departmentImages = universityImage[departmentName] || [];
-  
+
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
       <Card className="cardBody rounded-2 " style={{ width: "100%", height: "25rem" }}>
       {departmentImages.length > 0 ?(  <div style={{ width: "100%", height: "60%" }}    >
-        <CardSlider images={departmentImages} />
+        <HomeCardSlider images={departmentImages} />
        </div>):
        (<Card.Img
         variant="top"
