@@ -90,7 +90,7 @@ const Departments = () => {
 
 //card oluşturma............
 
-const filteredUniversitiesCard = selectedUniversityIds.length
+const filteredUniversitiesCard = selectedUniversityIds?.length
 ? departments
     ?.filter((item) => selectedUniversityIds.includes(item.university.code))
     .map((item) => ({
@@ -189,23 +189,7 @@ selectedDepartmentIds?.includes(item.department.code)
             <Col xs={12} sm={12} md={12} lg={8} xl={9}>
               <Container className="rounded-4 mt-2 p-4 ">
               <Row className="g-3 d-flex flex-wrap">
-  
-  {/* {selectedCityIds && selectedDepartmentIds && selectedUniversityIds && selectedCities && selectedUniversities && selectedDepartments && (
-    <Col sm={6} md={6} lg={6}>
-      <DepartmentsCard
-        handleCityChange={handleCityChange}
-        handleUniversityChange={handleUniversityChange}
-        handleDepartmentChange={handleDepartmentChange}
-        selectedCityIds={selectedCityIds}
-        selectedDepartmentIds={selectedDepartmentIds}
-        selectedUniversityIds={selectedUniversityIds}
-        selectedCities={selectedCities}
-        selectedUniversities={selectedUniversities}
-        selectedDepartments={selectedDepartments}
-        universityImage={universityImages}
-      />
-    </Col>
-  )} */}
+
 
 
 {filteredDepartmentsCard?.length > 0
@@ -214,12 +198,7 @@ selectedDepartmentIds?.includes(item.department.code)
                           {selectedCityIds && selectedDepartmentIds && selectedUniversityIds && selectedCities && selectedUniversities && selectedDepartments && (
                           <DepartmentsCard
                             item={item}
-                            // cities={cities}
-                            // universities={universities}
-                            // departments={departments}
-                            // selectedCities={[city]}
-                            // selectedUniversities={[university]}
-                            // selectedDepartments={[department]}
+                      
                           /> )}
                         </Col>
                       ))

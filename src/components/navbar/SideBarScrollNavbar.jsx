@@ -21,6 +21,8 @@ import MyAccount from "../Dropdown/MyAccount";
 import LanguageSelector from "../Languages/LanguageSelector";
 
 const SideBarScrollNavbar = () => {
+  const [isSignInVisible, setIsSignInVisible] = useState(true);
+
   const { currentUser } = useAuthContext();
 
   const [showSignInModal, setShowSignInModal] = useState(false);
@@ -71,6 +73,18 @@ const SideBarScrollNavbar = () => {
   // };
   // const openModal = () => setShowSignInModal(true);
   // const closeModal = () => setShowSignInModal(false);
+
+  const handleSignInClick = () => {
+    setIsSignInVisible(true);
+
+
+  }
+
+
+  const handleRegisterClick = () => {
+    setIsSignInVisible(false);
+  }
+
 
   return (
     <>
@@ -269,6 +283,7 @@ const SideBarScrollNavbar = () => {
         </Navbar.Collapse>
       </Navbar>
 
+      {isSignInVisible ?   
       <Modal show={showSignInModal} 
       onHide={() => setShowSignInModal(false)} 
       centered>
@@ -276,14 +291,16 @@ const SideBarScrollNavbar = () => {
         
         </Modal.Header>
         <Modal.Body>
-          <LogIn setShowSignInModal={setShowSignInModal}  />
+          <LogIn setShowSignInModal={setShowSignInModal}
+          // handleSignInClick={handleSignInClick}
+          handleRegisterClick={handleRegisterClick}
+
+          />
         </Modal.Body>
       </Modal>
-
-
-
-
-
+      : 
+      
+      
       <Modal show={showSignUpModal} 
       onHide={() => setShowSignUpModal(false)} 
       centered>
@@ -291,9 +308,13 @@ const SideBarScrollNavbar = () => {
         
         </Modal.Header>
         <Modal.Body>
-        <Register setShowSignUpModal={setShowSignUpModal} />
+        <Register setShowSignUpModal={setShowSignUpModal} 
+        showSignUpModal={showSignUpModal}
+handleSignInClick={handleSignInClick}
+        // handleRegisterClick={handleRegisterClick}
+        />
         </Modal.Body>
-      </Modal>
+      </Modal>}
     </>
   );
 };
