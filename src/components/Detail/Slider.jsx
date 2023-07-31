@@ -27,8 +27,7 @@ const Slider = ({ images }) => {
 
   return (
     <div>
-      <div className="infoDiv mt-5 p-5 mb-0 bg-primary text-white" >
-        <h2 className=" page-title fw-bold mx-5"></h2>
+      <div className="infoDiv mt-5 p-4 mb-0 bg-primary text-white" >
       </div>
       <Slide
         infinite={true}
