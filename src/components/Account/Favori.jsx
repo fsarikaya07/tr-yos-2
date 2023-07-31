@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useYosContext } from "../../context/Context";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Favori = () => {
-  const {  favoriId,
-    setFavoriId,
-    favori,
-    setFavori, card } = useYosContext();
+  const { favoriId, setFavoriId, favori, setFavori, card } = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
 
@@ -47,14 +45,14 @@ const Favori = () => {
   };
 
   return (
-    <div>
-      <div className="p-5 mb-2 bg-primary text-white">
+    <div className="container-fluid">
+      <div className="p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
         <h2 className="p-title fw-bold mx-5">Compare</h2>
       </div>
-      <div className="d-flex items-center">
+      <div className="row gap-3">
         {cardCompare.map((item) => {
           return (
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card col-6" style={{ width: "18rem" }}>
               <button onClick={() => deleteCompare(item.id)}>
                 <strong>X sil</strong>
               </button>
@@ -67,7 +65,12 @@ const Favori = () => {
                 <h5 className="card-title">{item["university"]["tr"]}</h5>
               </div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">{item["faculty"]["tr"]}</li>
+                <li className="list-group-item">
+                  <Link key={item?.id} to={`/universities/${item.id}`}>
+                    {" "}
+                    {item["faculty"]["tr"]}
+                  </Link>{" "}
+                </li>
                 <li className="list-group-item">{item["department"]["tr"]}</li>
                 <li className="list-group-item">{item["city"]["tr"]}</li>
               </ul>
