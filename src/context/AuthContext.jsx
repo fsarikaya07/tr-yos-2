@@ -46,6 +46,10 @@ export function AuthProvider({ children }) {
     }
   };
 
+
+
+  
+
   // //! Kullanıcı girişi yapmak için asenkron bir işlev tanımlıyoruz
 
   const loginPerson = async (signUser) => {
@@ -78,6 +82,9 @@ export function AuthProvider({ children }) {
     sessionStorage.clear();
     navigate("/");
   };
+
+
+
 
   const contextValues = {
     loginPerson,

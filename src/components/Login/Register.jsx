@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "../Style/Signup.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -119,62 +120,60 @@ const Register = ( {setShowSignUpModal}) => {
 };
 
 export default Register;
+
+
+
+
+
 // import React, { useState } from "react";
 // import "../Style/Signup.css";
-// import { Link, useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import { useAuthContext } from "../../context/AuthContext";
 // import { Modal } from "react-bootstrap";
 
-// const Register = ( {setShowSignUpModal}) => {
-//   const { register } = useAuthContext();
+// const Register = () => {
+//   const { registerPerson } = useAuthContext();
 
 //   const [name, setName] = useState("");
 //   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [rePassword, setRePassword] = useState("");
+//   const [password1, setPassword1] = useState("");
+//   const [password2, setPassword2] = useState("");
 //   const navigate = useNavigate();
 
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
-//     const isRegistered = await register({
-//       name,
-//       email,
-//       password,
-//       repassword: rePassword,
-//     });
-//     // const isMessage = await message({
-//     //   message     
-//     // });
-//     // const isSuccess = await success({
-//     //   success     
-//     // });
+//     const isRegistered = await registerPerson({
+//       name: name,
+//       email: email,
+//       password1: password1,
+//       password2: password2,
 
+//     });
+  
 //     // Kayıt başarılıysa yönlendir
 //     if (isRegistered) {
 //       setName("");
 //       setEmail("");
-//       setPassword("");
-//       setRePassword("");
+//       setPassword1("");
+//       setPassword2("");
 //       navigate("/"); // İlgili sayfaya yönlendir
-//       setShowSignUpModal(false); 
 //     } else {
 //       // Hata mesajını göster
 //       console.log("Registration failed!")
 //     }
 //   };
-//   // const [showSignUpModal, setShowSignUpModal] = useState(false);
+//   const [showSignUpModal, setShowSignUpModal] = useState(false);
 
-//   // const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
+//   const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
 
 //   return (
-//     // <div className="container d-flex flex-column align-items-center mt-5 col-4 h-75 py-5 container-signup ">
-  
+//     <div className="container d-flex flex-column align-items-center mt-5 col-4 h-75 py-5 container-signup ">
+//       <h2>Sign Up</h2>
 //       <form
-//         className="  p-3  h-100 "
+//         className="border py-5 px-3 w-100 h-100 "
 //         onSubmit={handleSubmit}
 //       >
-//           <h2>Sign Up</h2>
-//         <div className="form-group w-100 mt-3 inputBox">
+//         <div className="form-group mb-3 ">
 //           <input
 //             type="text"
 //             className="form-control"
@@ -185,7 +184,7 @@ export default Register;
 //             onChange={(e) => setName(e.target.value)}
 //           />
 //         </div>
-//         <div className="form-group w-100 mt-3 inputBox">
+//         <div className="form-group w-100">
 //           <input
 //             type="email"
 //             className="form-control"
@@ -196,34 +195,34 @@ export default Register;
 //             onChange={(e) => setEmail(e.target.value)}
 //           />
 //         </div>
-//         <div className="form-group w-100 mt-3 inputBox">
+//         <div className="form-group w-100 mt-3">
 //           <input
 //             type="password"
 //             className="form-control"
 //             id="exampleInputPassword1"
 //             placeholder="Password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
+//             value={password1}
+//             onChange={(e) => setPassword1(e.target.value)}
 //           />
 //         </div>
-//         <div className="form-group w-100 mt-3 inputBox">
+//         <div className="form-group w-100 mt-3">
 //           <input
 //             type="password"
 //             className="form-control"
 //             id="exampleInputPassword1"
 //             placeholder="RePassword"
-//             value={rePassword}
-//             onChange={(e) => setRePassword(e.target.value)}
+//             value={password2}
+//             onChange={(e) => setPassword2(e.target.value)}
 //           />
 //         </div>
 
 //         <button type="submit"
           
-//          className="btn btn-primary w-100 mt-5">
+//          className="btn btn-primary w-100 mt-3">
 //           Sign Up
 //         </button>
 
-//         <div className="d-flex justify-content-around  mt-5 ">
+//         <div className="">
 //           <hr />
 //           <div className="">
 //             <p>
@@ -235,136 +234,17 @@ export default Register;
 //           </div>
 //         </div>
 //       </form>
+//       <Modal 
+//       // show={success} onHide={() => { /* Function to hide modal */ }}
+//       show={showSignUpModal} onHide={toggleShowSignUpModal}
+//       >
+//         {/* Modal content here */}
+//       </Modal>
 
+      
+
+//     </div>
 //   );
 // };
 
 // export default Register;
-
-
-
-
-
-// // import React, { useState } from "react";
-// // import "../Style/Signup.css";
-// // import { useNavigate } from "react-router-dom";
-// // import { useAuthContext } from "../../context/AuthContext";
-// // import { Modal } from "react-bootstrap";
-
-// // const Register = () => {
-// //   const { registerPerson } = useAuthContext();
-
-// //   const [name, setName] = useState("");
-// //   const [email, setEmail] = useState("");
-// //   const [password1, setPassword1] = useState("");
-// //   const [password2, setPassword2] = useState("");
-// //   const navigate = useNavigate();
-
-// //   const handleSubmit = async (e) => {
-// //     e.preventDefault();
-// //     const isRegistered = await registerPerson({
-// //       name: name,
-// //       email: email,
-// //       password1: password1,
-// //       password2: password2,
-
-// //     });
-  
-// //     // Kayıt başarılıysa yönlendir
-// //     if (isRegistered) {
-// //       setName("");
-// //       setEmail("");
-// //       setPassword1("");
-// //       setPassword2("");
-// //       navigate("/"); // İlgili sayfaya yönlendir
-// //     } else {
-// //       // Hata mesajını göster
-// //       console.log("Registration failed!")
-// //     }
-// //   };
-// //   const [showSignUpModal, setShowSignUpModal] = useState(false);
-
-// //   const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
-
-// //   return (
-// //     <div className="container d-flex flex-column align-items-center mt-5 col-4 h-75 py-5 container-signup ">
-// //       <h2>Sign Up</h2>
-// //       <form
-// //         className="border py-5 px-3 w-100 h-100 "
-// //         onSubmit={handleSubmit}
-// //       >
-// //         <div className="form-group mb-3 ">
-// //           <input
-// //             type="text"
-// //             className="form-control"
-// //             id="yourname"
-// //             aria-describedby="emailHelp"
-// //             placeholder="User Name"
-// //             value={name}
-// //             onChange={(e) => setName(e.target.value)}
-// //           />
-// //         </div>
-// //         <div className="form-group w-100">
-// //           <input
-// //             type="email"
-// //             className="form-control"
-// //             id="emial"
-// //             aria-describedby="emailHelp"
-// //             placeholder="User Email"
-// //             value={email}
-// //             onChange={(e) => setEmail(e.target.value)}
-// //           />
-// //         </div>
-// //         <div className="form-group w-100 mt-3">
-// //           <input
-// //             type="password"
-// //             className="form-control"
-// //             id="exampleInputPassword1"
-// //             placeholder="Password"
-// //             value={password1}
-// //             onChange={(e) => setPassword1(e.target.value)}
-// //           />
-// //         </div>
-// //         <div className="form-group w-100 mt-3">
-// //           <input
-// //             type="password"
-// //             className="form-control"
-// //             id="exampleInputPassword1"
-// //             placeholder="RePassword"
-// //             value={password2}
-// //             onChange={(e) => setPassword2(e.target.value)}
-// //           />
-// //         </div>
-
-// //         <button type="submit"
-          
-// //          className="btn btn-primary w-100 mt-3">
-// //           Sign Up
-// //         </button>
-
-// //         <div className="">
-// //           <hr />
-// //           <div className="">
-// //             <p>
-// //               Already have an account?{" "}
-// //               <a href="/Login" className="text-primary mx-2" style={{ textDecoration: "none" }}>
-// //                 Sign In
-// //               </a>
-// //             </p>
-// //           </div>
-// //         </div>
-// //       </form>
-// //       <Modal 
-// //       // show={success} onHide={() => { /* Function to hide modal */ }}
-// //       show={showSignUpModal} onHide={toggleShowSignUpModal}
-// //       >
-// //         {/* Modal content here */}
-// //       </Modal>
-
-      
-
-// //     </div>
-// //   );
-// // };
-
-// // export default Register;
