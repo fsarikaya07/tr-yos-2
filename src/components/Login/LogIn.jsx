@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../Style/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Modal } from "react-bootstrap"; // Modal bileşenini import edelim
 import { useAuthContext } from "../../context/AuthContext";
 
 const LogIn = ({ setShowSignInModal }) => {
@@ -21,7 +20,8 @@ const LogIn = ({ setShowSignInModal }) => {
     if (isLogined) {
       setEmail("");
       setPassword("");
-      navigate("/"); // İlgili sayfaya yönlendir
+      navigate("/"); // İlgili sayfaya 
+      setShowSignInModal(false)
     } else {
       // Hata mesajını göster
       console.log("Login failed!");
@@ -30,9 +30,9 @@ const LogIn = ({ setShowSignInModal }) => {
 
   // Kayıt başarılıysa yönlendir
 
-  const [showSignInModal, setShowSignInModal] = useState(false);
+  // const [showSignInModal, setShowSignInModal] = useState(false);
 
-  const toggleShowSignInModal = () => setShowSignInModal(!showSignInModal);
+  // const toggleShowSignInModal = () => setShowSignInModal(!showSignInModal);
 
   // const location =useLocation()
 
