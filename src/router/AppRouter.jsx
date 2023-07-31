@@ -7,9 +7,9 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Departments from "../components/Departmens/Departments";
 import MyAccount from "../components/Dropdown/MyAccount";
-import UniversityCard from "../components/university/UniversityCard";
 import Compare from "../components/Account/Compare";
 import Favori from "../components/Account/Favori";
+import University from "../pages/University";
 // import LogIn from "../components/Login/Logİn";
 // import SignUp from "../components/Login/Signup";
 
@@ -28,7 +28,7 @@ const AppRouter = () => {
         />
         <Route path="/favorite-department" element={<Favori/>}/>
         <Route path="/departmants" element={<Departments />} />
-        <Route path="universites" element={<UniversityCard />} />
+        <Route path="universites" element={<University />} />
         <Route path="/compare" element={<Compare />}/>
         {/* <Route path="/login" element={<LogIn/>}/>
         <Route path="/logout" element={<SignUp/>}/> */}
