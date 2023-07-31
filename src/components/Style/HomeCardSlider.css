@@ -19,7 +19,7 @@
         text-align: center;
       }
       
-      .slide-image {
+      .slide-images1 {
         border-radius: 5px; 
         background-size: cover;
         /* object-fit: fill; */
@@ -28,7 +28,7 @@
         background-repeat: no-repeat;
         position: relative;
         display: block;
-        height:229.609px;
+        height:229.609px !important;
         width: auto;
       }
 
