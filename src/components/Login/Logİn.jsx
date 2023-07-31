@@ -17,6 +17,7 @@ const LogIn = () => {
       email: email,
       password: password,
     });
+    
     if (isLogined) {
       setEmail("");
       setPassword("");
