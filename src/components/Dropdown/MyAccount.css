@@ -1,18 +1,18 @@
 .tit{
-font-weight: 500;
-
-
-    &:hover{
-        color: #DC3545;
+    font-weight: 500;
+    
+    
+        &:hover{
+            color: #DC3545;
+        }
+        
     }
     
-}
-
-.titbtn{
+    .titbtn{
+        
     
-
-    &:hover{
-       font-weight: 900;
-
+        &:hover{
+           font-weight: 900;
+    
+        }
     }
-}

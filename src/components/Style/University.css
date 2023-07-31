@@ -6,7 +6,13 @@
     justify-content: flex-start;
     background-size: cover !important;
 } */
-
+.info-div {
+  margin-top: 0;
+  background-image: url(https://www.tr-yös.com/test/6984215678913/breadcrumb/2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
 .header{
   height: 100vh;
 }
@@ -71,7 +77,7 @@
   margin-top: 15px;
 }
 .back, .next{
-  background-color: #0000FF;
+  background-color: #022F5D;
   border-radius: 5px;
   color: white;
   margin: 5px;
@@ -84,6 +90,7 @@
   width: 35px;
   margin: 5px;
 }
+
 
 
 @media (max-width: 375px) {

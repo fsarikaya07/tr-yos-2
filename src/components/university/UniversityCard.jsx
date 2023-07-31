@@ -36,7 +36,7 @@ const UniversityCard = ({ logo, city, tr, data }) => {
                 </p>
 
                 <div className="contact">
-                  <div className="uni-contact p-2 border border-warning-subtle rounded-1 w-50">
+                  <div className="uni-contact p-2 border border-warning-subtle rounded-1">
                     <i className="fa-solid fa-phone"></i>
                     <span>(272) 218-1195</span>
                   </div>

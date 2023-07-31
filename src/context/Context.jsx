@@ -55,6 +55,7 @@ export function YosProvider({ children }) {
         );
         setUniversities(responseUniversities.data);
 
+
         const images = responseUniversities.data.map(
           (university) => university.images
         );
