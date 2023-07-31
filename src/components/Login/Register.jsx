@@ -5,35 +5,32 @@ import { useAuthContext } from "../../context/AuthContext";
 import { Modal } from "react-bootstrap";
 
 const Register = ( {setShowSignUpModal}) => {
-  const { register } = useAuthContext();
+  const { registerPerson } = useAuthContext();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rePassword, setRePassword] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isRegistered = await register({
-      name,
-      email,
-      password,
-      repassword: rePassword,
-    });
-    // const isMessage = await message({
-    //   message     
-    // });
-    // const isSuccess = await success({
-    //   success     
-    // });
+    const isRegistered = await registerPerson({
+      name: name,
+      email: email,
+      password1: password1,
+      password2: password2,
 
+    });
+
+    
+  
     // Kayıt başarılıysa yönlendir
     if (isRegistered) {
       setName("");
       setEmail("");
-      setPassword("");
-      setRePassword("");
+      setPassword1("");
+      setPassword2("");
       navigate("/"); // İlgili sayfaya yönlendir
       setShowSignUpModal(false); 
     } else {
@@ -41,9 +38,11 @@ const Register = ( {setShowSignUpModal}) => {
       console.log("Registration failed!")
     }
   };
+  
   // const [showSignUpModal, setShowSignUpModal] = useState(false);
 
   // const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
+
 
   return (
     // <div className="container d-flex flex-column align-items-center mt-5 col-4 h-75 py-5 container-signup ">
@@ -81,8 +80,8 @@ const Register = ( {setShowSignUpModal}) => {
             className="form-control"
             id="exampleInputPassword1"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={password1}
+            onChange={(e) => setPassword1(e.target.value)}
           />
         </div>
         <div className="form-group w-100 mt-3 inputBox">
@@ -91,8 +90,8 @@ const Register = ( {setShowSignUpModal}) => {
             className="form-control"
             id="exampleInputPassword1"
             placeholder="RePassword"
-            value={rePassword}
-            onChange={(e) => setRePassword(e.target.value)}
+            value={password2}
+            onChange={(e) => setPassword2(e.target.value)}
           />
         </div>
 
@@ -119,49 +118,7 @@ const Register = ( {setShowSignUpModal}) => {
 };
 
 export default Register;
-// import React, { useState } from "react";
-// import "../Style/Signup.css";
-// import { Link, useNavigate } from "react-router-dom";
-// import { useAuthContext } from "../../context/AuthContext";
-// import { Modal } from "react-bootstrap";
 
-// const Register = ( {setShowSignUpModal}) => {
-//   const { register } = useAuthContext();
-
-//   const [name, setName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [rePassword, setRePassword] = useState("");
-//   const navigate = useNavigate();
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const isRegistered = await register({
-//       name,
-//       email,
-//       password,
-//       repassword: rePassword,
-//     });
-//     // const isMessage = await message({
-//     //   message     
-//     // });
-//     // const isSuccess = await success({
-//     //   success     
-//     // });
-
-//     // Kayıt başarılıysa yönlendir
-//     if (isRegistered) {
-//       setName("");
-//       setEmail("");
-//       setPassword("");
-//       setRePassword("");
-//       navigate("/"); // İlgili sayfaya yönlendir
-//       setShowSignUpModal(false); 
-//     } else {
-//       // Hata mesajını göster
-//       console.log("Registration failed!")
-//     }
-//   };
 //   // const [showSignUpModal, setShowSignUpModal] = useState(false);
 
 //   // const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);

@@ -18,8 +18,6 @@ export function AuthProvider({ children }) {
     JSON.parse(sessionStorage.getItem("user")) || false
   );
 
-
-
   // Sayfalar arası gezinme için `useNavigate` hook'unu kullanıyoruz
   const navigate = useNavigate();
 
@@ -81,10 +79,10 @@ export function AuthProvider({ children }) {
 
   const contextValues = {
     loginPerson,
-    currentUser,
-    setCurrentUser,
     registerPerson,
     logoutPerson,
+    currentUser,
+    setCurrentUser,
   };
 
   return (
