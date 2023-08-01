@@ -1,5 +1,5 @@
-// HomePage.js
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Navbar,
   Offcanvas,
@@ -21,6 +21,9 @@ import MyAccount from "../Dropdown/MyAccount";
 import LanguageSelector from "../Languages/LanguageSelector";
 
 const SideBarScrollNavbar = () => {
+
+  const { t } = useTranslation();
+
   const [isSignInVisible, setIsSignInVisible] = useState(true);
 
   const { currentUser } = useAuthContext();
@@ -110,7 +113,7 @@ const SideBarScrollNavbar = () => {
                   href="/"
                   aria-current="page"
                 >
-                  HomePage
+                  {t("homepage.home")}
                 </Link>
                 <Link
                   to="/universites"
@@ -120,7 +123,7 @@ const SideBarScrollNavbar = () => {
                   href="/universites"
                   aria-current="page"
                 >
-                  Universites
+                  {t("homepage.universities")}
                 </Link>
                 {/* <Link
                   to="/compare"
@@ -140,7 +143,7 @@ const SideBarScrollNavbar = () => {
                   href="/departmants"
                   aria-current="page"
                 >
-                  Departmants
+                  {t("homepage.departments")}
                 </Link>
 
                 {currentUser ? (
@@ -163,7 +166,7 @@ const SideBarScrollNavbar = () => {
                             <i className="fas fa-sign-in-alt me-2"></i>
                             {/* <FaSignInAlt /> */}
                             {/* <span className="mx-1"></span> */}
-                            Sing In
+                              {t("homepage.singIn")}
                           </Button>{" "}
                         </div>
                       </IconContext.Provider>
@@ -199,7 +202,7 @@ const SideBarScrollNavbar = () => {
                     href="/"
                     aria-current="page"
                   >
-                    HomePage
+                    {t("homepage.home")}
                   </Link>
                   <Link
                     to="/universites"
@@ -209,7 +212,7 @@ const SideBarScrollNavbar = () => {
                     href="/universites"
                     aria-current="page"
                   >
-                    Universites
+                    {t("homepage.universities")}
                   </Link>
                   {/* <Link
                     to="/compare"
@@ -229,7 +232,7 @@ const SideBarScrollNavbar = () => {
                     href="/departmants"
                     aria-current="page"
                   >
-                    Departmants
+                    {t("homepage.departments")}
                   </Link>
                 </div>
               </Col>
@@ -249,7 +252,7 @@ const SideBarScrollNavbar = () => {
                           <i className="fas fa-sign-in-alt me-2"></i>
                           {/* <FaSignInAlt /> */}
                           {/* <span className="mx-1"></span> */}
-                          Sing In
+                        {t("homepage.signIn")}
                         </Button>
                         <Button
                           className="signUp btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
@@ -260,7 +263,7 @@ const SideBarScrollNavbar = () => {
                           <i className="fas fa-user-alt me-2"></i>
                           {/* <FaUserPlus className="me-2" />  */}
                           {/* <span className="mx-1"></span> */}
-                          Sing Up
+                        {t("homepage.signUp")}
                         </Button>
                       </>
                     ) : (

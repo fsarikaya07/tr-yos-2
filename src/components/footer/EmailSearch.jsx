@@ -1,34 +1,32 @@
 import React from "react";
 import "../Style/EmailSearch.css";
+import { useTranslation } from "react-i18next";
+
 const EmailSearch = () => {
+  const { t } = useTranslation();
   return (
-    
-      <main className="cont">
-
+    <main className="cont">
       <div className="d-flex align-items-center justify-content-center flex-column">
-    
-         
-         
-              <h1>Are You Already Working With Us?</h1>
-              <p className="m-5 d-block">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
-                <span className="m-2 d-block"></span> 
-                quos dolores et quas molestias</p>
-     
-        </div>
+        <h1>{t("emailSearch.workingWithUs")}</h1>
+        <p className="m-5 d-block">
+          {t("emailSearch.message")}
+          <span className="m-2 d-block"></span>
+        </p>
+      </div>
 
-  
-        <div className="SearchBox">
-          <input
-            type="text"
-            className="SearchBox-input"
-            placeholder="Enter Your Email"
-          />
-          <button className="SearchBox-button">
-            <i className="SearchBox-icon  material-icons">Subscribe</i>
-          </button>
-        </div>
-      </main>
-   
+      <div className="SearchBox">
+        <input
+          type="text"
+          className="SearchBox-input"
+          placeholder={t("emailSearch.enterEmail")}
+        />
+        <button className="SearchBox-button">
+          <i className="SearchBox-icon  material-icons">
+            {t("emailSearch.subscribe")}
+          </i>
+        </button>
+      </div>
+    </main>
   );
 };
 
