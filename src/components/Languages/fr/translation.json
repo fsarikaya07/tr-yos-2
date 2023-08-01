@@ -60,5 +60,47 @@
     "country": "Pays",
     "city": "Ville",
     "remove": "Retirer"
+  },
+  
+  "homeDepartments": {
+    "title": "Nos départements",
+    "subTitle": "Nos départements Nos départements Nos départements"
+  },
+  "homeSearch": {
+    "title": "Éducation",
+    "selectCity": "Sélectionnez la ville",
+    "selectUniversity": "Sélectionnez l'université",
+    "selectDepartment": "Sélectionnez le département",
+    "search": "Recherche"
+  },
+  "myAccount": {
+    "myAccount": "Mon compte",
+    "userDashboard": "Tableau de bord de l'utilisateur",
+    "favoriteDepartment": "Département favori",
+    "compareDepartment": "Comparer le département",
+    "logout": "Se déconnecter"
+  },
+  "logIn": {
+    "signIn": "Se connecter",
+    "userEmail": "Email de l'utilisateur",
+    "password": "Mot de passe",
+    "logIn": "Se connecter",
+    "savePassword": "Enregistrer le mot de passe",
+    "forgetPassword": "Mot de passe oublié",
+    "signUpQuestion": "Vous n'avez pas encore de compte?",
+    "signUp": "S'inscrire",
+    "continueWithGoogle": "Continuer avec Google"
+  },
+  "register": {
+    "signUp": "S'inscrire",
+    "userName": "Nom d'utilisateur",
+    "userEmail": "Email de l'utilisateur",
+    "password": "Mot de passe",
+    "rePassword": "ReMot de passe",
+    "signInQuestion": "Vous avez déjà un compte?",
+    "signIn": "Se connecter",
+    "continueWithGoogle": "Continuer avec Google"
   }
+
+
 }

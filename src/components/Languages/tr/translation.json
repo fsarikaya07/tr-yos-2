@@ -60,5 +60,47 @@
     "country": "Ülke",
     "city": "Şehir",
     "remove": "Kaldır"
+  },
+  
+  "homeDepartments": {
+    "title": "Bölümlerimiz",
+    "subTitle": "Bölümlerimiz Bölümlerimiz Bölümlerimiz"
+  },
+  "homeSearch": {
+    "title": "Eğitim",
+    "selectCity": "Şehir Seç",
+    "selectUniversity": "Üniversite Seç",
+    "selectDepartment": "Bölüm Seç",
+    "search": "Ara"
+  },
+  "myAccount": {
+    "myAccount": "Hesabım",
+    "userDashboard": "Kullanıcı Paneli",
+    "favoriteDepartment": "Favori Bölüm",
+    "compareDepartment": "Bölüm Karşılaştır",
+    "logout": "Çıkış Yap"
+  },
+  "logIn": {
+    "signIn": "Giriş Yap",
+    "userEmail": "Kullanıcı E-posta",
+    "password": "Parola",
+    "logIn": "Giriş Yap",
+    "savePassword": "Parolayı Kaydet",
+    "forgetPassword": "Parolamı Unuttum",
+    "signUpQuestion": "Hesabınız yok mu?",
+    "signUp": "Kayıt Ol",
+    "continueWithGoogle": "Google ile Devam Et"
+  },
+  "register": {
+    "signUp": "Kayıt Ol",
+    "userName": "Kullanıcı Adı",
+    "userEmail": "Kullanıcı E-posta",
+    "password": "Parola",
+    "rePassword": "Parolayı Tekrar Gir",
+    "signInQuestion": "Zaten bir hesabınız mı var?",
+    "signIn": "Giriş Yap",
+    "continueWithGoogle": "Google ile Devam Et"
   }
+
+
 }

@@ -3,8 +3,10 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { useAuthContext } from "../../context/AuthContext";
+import { useTranslation } from 'react-i18next';
 import "./MyAccount.css"
 const MyAccount = () => {
+  const { t } = useTranslation();
   const { logout } = useAuthContext();
   const [open, setOpen] = useState(false);
 
@@ -32,7 +34,7 @@ const MyAccount = () => {
       onMouseLeave={handleMouseLeave}
     >
       <Dropdown.Toggle variant="primary" id="account-dropdown" style={{padding:"3px" ,width:"190px"}}>
-        <FaUser style={{ marginRight: "5px" }} /> My Account
+        <FaUser style={{ marginRight: "5px" }} /> {t('myAccount.myAccount')}
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
@@ -43,7 +45,7 @@ const MyAccount = () => {
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
         >
-          User Dashboard
+          {t('myAccount.userDashboard')}
         </NavLink>
         <NavLink
           to="/favorite-department"
@@ -52,7 +54,7 @@ const MyAccount = () => {
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
         >
-          Favorite Department
+          {t('myAccount.favoriteDepartment')}
         </NavLink>
         <NavLink
           to="/compare"
@@ -61,7 +63,7 @@ const MyAccount = () => {
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
         >
-          Compare Department
+          {t('myAccount.compareDepartment')}
         </NavLink>
 
         <NavLink
@@ -71,7 +73,7 @@ const MyAccount = () => {
           style={{ backgroundColor:" #34b3b3" , width:"80px"}}
         >
           <div className="titbtn py-1 text-center" onClick={handleLogout}>
-            Logout
+            {t('myAccount.logout')}
           </div>
         </NavLink>
       </Dropdown.Menu>
