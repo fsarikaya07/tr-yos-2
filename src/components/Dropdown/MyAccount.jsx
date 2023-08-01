@@ -83,115 +83,6 @@ export default MyAccount;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState,  } from "react";
-// import Dropdown from "react-bootstrap/Dropdown";
-// import { NavLink, useLocation } from "react-router-dom";
-// import { FaUser } from "react-icons/fa"; // Import the user icon from react-icons/fa
-// import { useAuthContext } from "../../context/AuthContext";
-
-// //   // ... Yukarıdaki kodları buraya yerleştirin ...
-
-// const MyAccount = () => {
-//   const [open, setOpen] = useState(false);
-//   // const { currentUser, logout } = useContext(useAuthContext);
-//   const {  logout } = useAuthContext();
-//   const location = useLocation();
-//   // const navigate = useNavigate();
-
-//   const handleMouseEnter = () => {
-//     setOpen(true);
-//   };
-
-//   const handleMouseLeave = () => {
-//     setOpen(false);
-//   };
-
-//   const handleLogout = async () => {
-//     setOpen(false);
-//     try {
-//       // Burada backend ile iletişim kurmak için bir kod ekleyebilirsiniz.
-//       // logout fonksiyonu örnek olarak backend ile iletişime geçmek yerine
-//       // sadece AuthContext'te bulunan login durumunu değiştirir.
-//       await logout();
-//       location.pathname = "/"; // Başarılı çıkıştan sonra anasayfaya yönlendirir.
-//     } catch (error) {
-//       // Hata yönetimi
-//     }
-//   };
-
-//   return (
-//     <Dropdown
-//       show={open}
-//       onMouseEnter={handleMouseEnter}
-//       onMouseLeave={handleMouseLeave}
-//     >
-//       <Dropdown.Toggle variant="primary" id="account-dropdown">
-//         <FaUser style={{ marginRight: "5px" }} /> My Account
-//       </Dropdown.Toggle>
-
-//       <Dropdown.Menu>
-//         <NavLink
-//           to="/user-dashboard"
-//           activeClassName="text-danger"
-//           className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-//           onClick={() => setOpen(false)}
-//         >
-//           User Dashboard
-//         </NavLink>
-//         <NavLink
-//           to="/favorite-department"
-//           activeClassName="text-danger"
-//           className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-//           onClick={() => setOpen(false)}
-//         >
-//           Favorite Department
-//         </NavLink>
-//         <NavLink
-//           to="/compare-department"
-//           activeClassName="text-danger"
-//           className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-//           onClick={() => setOpen(false)}
-//         >
-//           Compare Department
-//         </NavLink>
-
-//         <NavLink
-//           to="/"
-//           activeClassName="text-danger"
-//           className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-//         >
-//           <div className="py-2" onClick={handleLogout}>
-//             <NavLink
-//               to="/"
-//               activeClassName="text-danger"
-//               className="btn btn-outline-light my-2 py-2 m-1 flex-wrap"
-//               onClick={() => setOpen(false)}
-//             >
-//               Logout
-//             </NavLink>
-//           </div>
-
-//           <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
-//         </NavLink>
-//       </Dropdown.Menu>
-//     </Dropdown>
-//   );
-// };
-
-// export default MyAccount;
-
 // // MyAccount.js
 // // import React, { useContext } from "react";
 // // import { Dropdown } from "react-bootstrap";
@@ -221,9 +112,6 @@ export default MyAccount;
 // // };
 
 // // export default MyAccount;
-
-
-
 
 
 

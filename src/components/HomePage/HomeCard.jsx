@@ -7,7 +7,7 @@ import HomeCardSlider from "./HomeCardSlider"
 import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import LogIn from "../Login/Logİn";
+import LogIn from "../Login/LogIn";
 
 
 const HomeCard = ({ item , universityImage}) => {

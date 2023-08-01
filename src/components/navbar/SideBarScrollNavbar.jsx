@@ -13,14 +13,14 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
 // import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
-import LogIn from "../Login/Logİn";
+import LogIn from "../Login/LogIn";
 import Register from "../Login/Register";
 import "./HomePage.css";
 import { useAuthContext } from "../../context/AuthContext"; // AuthContext'u kullanmak için import edin.
 import MyAccount from "../Dropdown/MyAccount";
 import LanguageSelector from "../Languages/LanguageSelector";
 
-const ScrollNavbar = () => {
+const SideBarScrollNavbar = () => {
   const { currentUser } = useAuthContext();
 
   const [showSignInModal, setShowSignInModal] = useState(false);
@@ -298,7 +298,7 @@ const ScrollNavbar = () => {
   );
 };
 
-export default ScrollNavbar;
+export default SideBarScrollNavbar;
 
 
 

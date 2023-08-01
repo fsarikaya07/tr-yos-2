@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "../Style/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Modal } from "react-bootstrap"; // Modal bileşenini import edelim
 import { useAuthContext } from "../../context/AuthContext";
 
 const LogIn = ({ setShowSignInModal }) => {
-  const { login } = useAuthContext();
+
+  const { loginPerson } = useAuthContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,39 +13,26 @@ const LogIn = ({ setShowSignInModal }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isLogined = await login({
-      email,
-      password,
+    const isLogined = await loginPerson({
+      email: email,
+      password: password,
     });
     if (isLogined) {
       setEmail("");
       setPassword("");
-      navigate("/"); // İlgili sayfaya yönlendir
-      setShowSignInModal(false);  // Giriş başarılı olduğunda modalı kapatmak için showSignInModal'ı false yapalım
+      navigate("/"); // İlgili sayfaya 
+      setShowSignInModal(false)
     } else {
       // Hata mesajını göster
       console.log("Login failed!");
     }
   };
 
-  // const isMessage = await message({
-  //   name: name,
-  //   email: email,
-
-  // });
-  // const isSuccess = await success({
-  //   name: name,
-  //   email: email,
-
-  // });
-
   // Kayıt başarılıysa yönlendir
 
   // const [showSignInModal, setShowSignInModal] = useState(false);
 
   // const toggleShowSignInModal = () => setShowSignInModal(!showSignInModal);
-
-
 
   // const location =useLocation()
 
