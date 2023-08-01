@@ -85,17 +85,19 @@ const Account = () => {
     const currentUser = JSON.parse(sessionStorage.getItem("user")); // sessionStorage'dan kullanıcı bilgilerini alıyoruz
     const userId = currentUser && currentUser.userID; // Kullanıcı bilgileri varsa userId'yi alıyoruz
 
-    if (userId) { // Eğer bir userId varsa, updatePerson fonksiyonunu çalıştırıyoruz
+    if (userId) {
       const result = await updatePerson(userId, updateData);
       if (result) {
-        alert("User data successfully updated.");
+        alert(t('account.successfullyUpdated'));
       } else {
-        alert("An error occurred while updating user data.");
+        alert(t('account.errorUpdating'));
       }
     } else {
-      alert("No user is currently logged in.");
+      alert(t('account.noUserLoggedIn'));
     }
+
   };
+
 
 
   return (
@@ -133,16 +135,16 @@ const Account = () => {
           </div>
           <div className="mt-1 p-3 ">
             <button className="button-24 " role="button">
-              <i class="fa-solid fa-gauge-high"></i> Dashboard <span></span>
+              <i class="fa-solid fa-gauge-high"></i> {t('account.dashboard')} <span></span>
             </button>
             <button className="button-24" role="button">
-              <i class="fa-regular fa-user"></i> My Profile
+              <i class="fa-regular fa-user"></i>{t('account.myProfile')}
             </button>
             <button className="button-24" role="button">
-              <i class="fa-solid fa-envelope"></i> Message <span></span>
+              <i class="fa-solid fa-envelope"></i> {t('account.message')} <span></span>
             </button>
             <button className="button-24" role="button">
-              <i class="fa-solid fa-unlock"></i> Change Password
+              <i class="fa-solid fa-unlock"></i> {t('account.changePassword')}
             </button>
           </div>
         </div>
@@ -190,7 +192,7 @@ const Account = () => {
                 defaultValue={currentUser.country}
               >
                 <option selected disabled value="">
-                  Select Country
+                  {t('account.selectCountry')}
                 </option>
                 {countries.map((country) => (
                   <option key={country.id} value={country.id}>
@@ -205,7 +207,7 @@ const Account = () => {
               </label>
               <select id="inputCity" className="form-select p-3" required defaultValue={currentUser.city}>
                 <option selected disabled value="">
-                  Select City
+                  {t('account.selectCity')}
                 </option>
                 {accountCities.map((city) => (
                   <option key={city.id} value={city.en}>
