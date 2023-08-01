@@ -16,9 +16,11 @@ const LanguageSelector = () => {
   };
 
   const handleLanguageChange = (selectedLanguageCode) => {
+    const lowerCaseLanguageCode = selectedLanguageCode.toLowerCase();
     setLanguage(selectedLanguageCode);
-    i18n.changeLanguage(selectedLanguageCode); // seçilen dil kodunu kullanarak dili değiştirin
+    i18n.changeLanguage(lowerCaseLanguageCode);
   };
+
 
   return (
     <Dropdown>

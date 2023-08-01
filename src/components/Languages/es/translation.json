@@ -1,4 +1,19 @@
 {
-  "welcome": "Bienvenidos",
-  "helloWorld": "Hola Mundo"
+  "account": {
+    "myAccount": "Mi cuenta",
+    "yourName": "Tu nombre",
+    "email": "Correo electrónico",
+    "country": "País",
+    "city": "Ciudad",
+    "phone": "Teléfono",
+    "about": "Acerca de",
+    "saveChanges": "Guardar cambios"
+  },
+  "compare": {
+    "compare": "Comparar",
+    "delete": "Eliminar"
+  },
+  "favorites": {
+    "favorites": "Favoritos"
+  }
 }

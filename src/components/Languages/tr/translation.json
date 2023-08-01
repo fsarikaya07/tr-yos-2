@@ -1,4 +1,19 @@
 {
-  "welcome": "Hoşgeldiniz",
-  "helloWorld": "Merhaba Dünya"
+  "account": {
+    "myAccount": "Hesabım",
+    "yourName": "Adınız",
+    "email": "E-posta",
+    "country": "Ülke",
+    "city": "Şehir",
+    "phone": "Telefon",
+    "about": "Hakkında",
+    "saveChanges": "Değişiklikleri Kaydet"
+  },
+  "compare": {
+    "compare": "Karşılaştır",
+    "delete": "Sil"
+  },
+  "favorites": {
+    "favorites": "Favoriler"
+  }
 }
