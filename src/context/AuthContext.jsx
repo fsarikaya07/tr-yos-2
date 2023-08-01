@@ -7,6 +7,8 @@ const MY_TOKEN =
 const REGISTER_API_URL = `/api/v1/users/newuser.php?token=${MY_TOKEN}`;
 const LOGIN_API_URL = `/api/v1/users/login.php?token=${MY_TOKEN}`;
 
+const UPDATE_API_URL = `https://tr-yös.com/api/v1/users/updateuser.php`;
+
 const AuthContext = createContext();
 
 export function useAuthContext() {
@@ -83,7 +85,27 @@ export function AuthProvider({ children }) {
   };
 
 
-
+  const updatePerson = async (userId, updateData) => {
+    const createData = new FormData();
+    createData.append("name", updateData.name);
+    createData.append("country", updateData.country);
+    createData.append("city", updateData.city);
+    createData.append("phone", updateData.phone);
+    createData.append("about", updateData.about);
+    try {
+      const { data } = await axios.post(`${UPDATE_API_URL}?user_id=${userId}&token=${MY_TOKEN}`, createData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      setCurrentUser(data.user);
+      sessionStorage.setItem("user", JSON.stringify(data.user));
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  };
 
   const contextValues = {
     loginPerson,
@@ -91,8 +113,9 @@ export function AuthProvider({ children }) {
     logoutPerson,
     currentUser,
     setCurrentUser,
+    updatePerson, 
   };
-
+   
   return (
     <AuthContext.Provider value={contextValues}>
       {children}
