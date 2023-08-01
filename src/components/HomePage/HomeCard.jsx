@@ -18,7 +18,7 @@ const HomeCard = ({ item , universityImage}) => {
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
   const toggleShowSignInHeartModal = () =>
     setShowSignInHeartModal(!showSignInHeartModal);
-    const departmentName = item?.university?.tr;
+    const departmentName = item?.university?.en;
     const departmentImages = universityImage[departmentName] || [];
 
   return (

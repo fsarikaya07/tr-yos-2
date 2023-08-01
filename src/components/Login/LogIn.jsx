@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "../Style/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
+import { FaGoogle } from 'react-icons/fa';
 
-const LogIn = ({ setShowSignInModal }) => {
+const LogIn = ({ setShowSignInModal,handleRegisterClick }) => {
 
   const { loginPerson } = useAuthContext();
   const [email, setEmail] = useState("");
@@ -98,21 +99,15 @@ const LogIn = ({ setShowSignInModal }) => {
          
           <p>
             Don't have an account yet?
-            <a href="/register"
+            <button 
               className="text-primary mx-2"
               style={{ textDecoration: "none" }}
+              onClick={handleRegisterClick}
             >
-              {" "}
+            
               Sign Up
-            </a>
-            {/* <Button
-              className="btn btn-outline-light my-4 py-1 px-1 m-1 flex-wrap"
-              type="submit"
-              variant="info"
-              onClick={toggleShowSignInModal} // Modalı göstermek için fonksiyonu çağıralım
-            >
-              Sing Up
-            </Button> */}
+            </button>
+ 
           </p>
         </div>
         <div className="d-flex justify-content-center align-items-center">
@@ -122,6 +117,9 @@ const LogIn = ({ setShowSignInModal }) => {
             type="button"
             // onClick={() => signUpProvider()}
           >
+
+<FaGoogle size={20} color="red" />
+<span className="mx-1 "></span>
             Continue with Google
             {/* <GoogleIcon color="currentColor" /> */}
           </button>

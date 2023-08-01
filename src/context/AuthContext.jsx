@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 const MY_TOKEN =
   "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a";
-const REGISTER_API_URL = `https://tr-yös.com/api/v1/users/newuser.php?token=${MY_TOKEN}`;
-const LOGIN_API_URL = `https://tr-yös.com/api/v1/users/login.php?token=${MY_TOKEN}`;
+const REGISTER_API_URL = `/api/v1/users/newuser.php?token=${MY_TOKEN}`;
+const LOGIN_API_URL = `/api/v1/users/login.php?token=${MY_TOKEN}`;
+
 const UPDATE_API_URL = `https://tr-yös.com/api/v1/users/updateuser.php`;
+
 const AuthContext = createContext();
 
 export function useAuthContext() {
@@ -28,13 +30,14 @@ export function AuthProvider({ children }) {
     createData.append("password1", signUser.password1);
     createData.append("password2", signUser.password2);
 
+    
     try {
       const { data } = await axios.post(REGISTER_API_URL, createData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
       });
-
+      console.log(data)
       setCurrentUser(data.userId);
       sessionStorage.setItem("user", JSON.stringify(data.userId));
       return true;
@@ -43,6 +46,10 @@ export function AuthProvider({ children }) {
       return false;
     }
   };
+
+
+
+  
 
   // //! Kullanıcı girişi yapmak için asenkron bir işlev tanımlıyoruz
 
@@ -53,7 +60,7 @@ export function AuthProvider({ children }) {
     try {
       const { data } = await axios.post(`${LOGIN_API_URL}`, createData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
       });
 
@@ -77,6 +84,7 @@ export function AuthProvider({ children }) {
     navigate("/");
   };
 
+
   const updatePerson = async (userId, updateData) => {
     const createData = new FormData();
     createData.append("name", updateData.name);
@@ -98,7 +106,6 @@ export function AuthProvider({ children }) {
       return false;
     }
   };
-
 
   const contextValues = {
     loginPerson,
