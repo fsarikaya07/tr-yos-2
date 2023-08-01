@@ -1,4 +1,32 @@
 {
+  "homepage": {
+    "home": "Home",
+    "universities": "Universities",
+    "departments": "Departments",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "footer": {
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "navigations": "Navigations",
+    "aboutUs": "About Us",
+    "faqsPage": "FAQs Page",
+    "checkout": "Checkout",
+    "contact": "Contact",
+    "blog": "Blog",
+    "myAccount": "My Account",
+    "myProfile": "My Profile",
+    "favorites": "Favorites",
+    "allRightsReserved": "All rights reserved."
+  },
+  "emailSearch": {
+    "workingWithUs": "Are You Already Working With Us?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "Enter Your Email",
+    "subscribe": "Subscribe"
+  },
   "account": {
     "myAccount": "My Account",
     "yourName": "Your Name",
@@ -18,10 +46,19 @@
     "errorUpdating": "An error occurred while updating user data."
   },
   "compare": {
-    "compare": "Compare",
-    "delete": "Delete"
+    "title": "Compare",
+    "compareUniversities": "Compare Universities",
+    "universityName": "University Name",
+    "country": "Country",
+    "city": "City",
+    "compare": "Compare"
   },
   "favorites": {
-    "favorites": "Favorites"
+    "title": "Favorites",
+    "yourFavorites": "Your Favorites",
+    "universityName": "University Name",
+    "country": "Country",
+    "city": "City",
+    "remove": "Remove"
   }
 }

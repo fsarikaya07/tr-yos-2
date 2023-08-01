@@ -1,4 +1,32 @@
 {
+  "homepage": {
+    "home": "Ana Sayfa",
+    "universities": "Üniversiteler",
+    "departments": "Bölümler",
+    "signIn": "Giriş Yap",
+    "signUp": "Kayıt Ol"
+  },
+  "footer": {
+    "address": "Adres",
+    "phone": "Telefon",
+    "email": "Email",
+    "navigations": "Navigasyonlar",
+    "aboutUs": "Hakkımızda",
+    "faqsPage": "SSS Sayfası",
+    "checkout": "Ödeme",
+    "contact": "İletişim",
+    "blog": "Blog",
+    "myAccount": "Hesabım",
+    "myProfile": "Profilim",
+    "favorites": "Favoriler",
+    "allRightsReserved": "Tüm hakları saklıdır."
+  },
+  "emailSearch": {
+    "workingWithUs": "Zaten Bizimle Çalışıyor musunuz?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "E-postanızı girin",
+    "subscribe": "Abone ol"
+  },
   "account": {
     "myAccount": "Hesabım",
     "yourName": "İsminiz",
@@ -18,10 +46,19 @@
     "errorUpdating": "Kullanıcı bilgileri güncellenirken bir hata oluştu."
   },
   "compare": {
-    "compare": "Karşılaştır",
-    "delete": "Sil"
+    "title": "Karşılaştır",
+    "compareUniversities": "Üniversiteleri Karşılaştır",
+    "universityName": "Üniversite Adı",
+    "country": "Ülke",
+    "city": "Şehir",
+    "compare": "Karşılaştır"
   },
   "favorites": {
-    "favorites": "Favoriler"
+    "title": "Favoriler",
+    "yourFavorites": "Favorileriniz",
+    "universityName": "Üniversite Adı",
+    "country": "Ülke",
+    "city": "Şehir",
+    "remove": "Kaldır"
   }
 }

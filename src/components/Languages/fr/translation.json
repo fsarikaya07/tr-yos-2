@@ -1,4 +1,32 @@
 {
+  "homepage": {
+    "home": "Accueil",
+    "universities": "Universités",
+    "departments": "Départements",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire"
+  },
+  "footer": {
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "navigations": "Navigations",
+    "aboutUs": "À propos de nous",
+    "faqsPage": "Page FAQs",
+    "checkout": "Vérifier",
+    "contact": "Contact",
+    "blog": "Blog",
+    "myAccount": "Mon compte",
+    "myProfile": "Mon profil",
+    "favorites": "Favoris",
+    "allRightsReserved": "Tous droits réservés."
+  },
+  "emailSearch": {
+    "workingWithUs": "Travaillez-vous déjà avec nous?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "Entrez votre email",
+    "subscribe": "Souscrire"
+  },
   "account": {
     "myAccount": "Mon Compte",
     "yourName": "Votre nom",
@@ -18,10 +46,19 @@
     "errorUpdating": "Une erreur s'est produite lors de la mise à jour des données de l'utilisateur."
   },
   "compare": {
-    "compare": "Comparer",
-    "delete": "Supprimer"
+    "title": "Comparer",
+    "compareUniversities": "Comparer les universités",
+    "universityName": "Nom de l'université",
+    "country": "Pays",
+    "city": "Ville",
+    "compare": "Comparer"
   },
   "favorites": {
-    "favorites": "Favoris"
+    "title": "Favoris",
+    "yourFavorites": "Vos favoris",
+    "universityName": "Nom de l'université",
+    "country": "Pays",
+    "city": "Ville",
+    "remove": "Retirer"
   }
 }
