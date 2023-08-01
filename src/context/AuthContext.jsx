@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const MY_TOKEN =
   "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a";
-const REGISTER_API_URL = `/api/v1/users/newuser.php?token=${MY_TOKEN}`;
-const LOGIN_API_URL = `/api/v1/users/login.php?token=${MY_TOKEN}`;
+const REGISTER_API_URL = `https://tr-yös.com/api/v1/users/newuser.php?token=${MY_TOKEN}`;
+const LOGIN_API_URL = `https://tr-yös.com/api/v1/users/login.php?token=${MY_TOKEN}`;
 
 const UPDATE_API_URL = `https://tr-yös.com/api/v1/users/updateuser.php`;
 
@@ -34,12 +34,19 @@ export function AuthProvider({ children }) {
     try {
       const { data } = await axios.post(REGISTER_API_URL, createData, {
         headers: {
-          "Content-Type": "application/json",
+         // "Content-Type": "application/json",
+         "Content-Type": "multipart/form-data",
         },
       });
       console.log(data)
-      setCurrentUser(data.userId);
-      sessionStorage.setItem("user", JSON.stringify(data.userId));
+     /*
+      console.log(dataMy)
+      console.log(data.user)
+      console.log(data.user.userId) 
+      console.log(dataMy.usr)
+      */
+      setCurrentUser(data.user.userId);
+     sessionStorage.setItem("user", JSON.stringify(data.user.userId));
       return true;
     } catch (error) {
       console.error(error);
@@ -47,9 +54,6 @@ export function AuthProvider({ children }) {
     }
   };
 
-
-
-  
 
   // //! Kullanıcı girişi yapmak için asenkron bir işlev tanımlıyoruz
 
@@ -59,8 +63,12 @@ export function AuthProvider({ children }) {
     createData.append("password", signUser.password);
     try {
       const { data } = await axios.post(`${LOGIN_API_URL}`, createData, {
+        // headers: {
+        //   "Content-Type": "application/json",
+          
+        // },
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
         },
       });
 
