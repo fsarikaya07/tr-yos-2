@@ -85,17 +85,19 @@ const Account = () => {
     const currentUser = JSON.parse(sessionStorage.getItem("user")); // sessionStorage'dan kullanıcı bilgilerini alıyoruz
     const userId = currentUser && currentUser.userID; // Kullanıcı bilgileri varsa userId'yi alıyoruz
 
-    if (userId) { // Eğer bir userId varsa, updatePerson fonksiyonunu çalıştırıyoruz
+    if (userId) {
       const result = await updatePerson(userId, updateData);
       if (result) {
-        alert("User data successfully updated.");
+        alert(t('account.successfullyUpdated'));
       } else {
-        alert("An error occurred while updating user data.");
+        alert(t('account.errorUpdating'));
       }
     } else {
-      alert("No user is currently logged in.");
+      alert(t('account.noUserLoggedIn'));
     }
+
   };
+
 
 
   return (
