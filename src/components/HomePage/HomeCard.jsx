@@ -7,7 +7,7 @@ import HomeCardSlider from "./HomeCardSlider"
 import "../Style/HomeCard.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import LogIn from "../Login/Logİn";
+import LogIn from "../Login/LogIn";
 
 
 const HomeCard = ({ item , universityImage}) => {
@@ -18,7 +18,7 @@ const HomeCard = ({ item , universityImage}) => {
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
   const toggleShowSignInHeartModal = () =>
     setShowSignInHeartModal(!showSignInHeartModal);
-    const departmentName = item?.university?.tr;
+    const departmentName = item?.university?.en;
     const departmentImages = universityImage[departmentName] || [];
 
   return (

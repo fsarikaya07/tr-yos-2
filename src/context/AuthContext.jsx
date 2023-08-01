@@ -7,6 +7,8 @@ const MY_TOKEN =
 const REGISTER_API_URL = `https://tr-yös.com/api/v1/users/newuser.php?token=${MY_TOKEN}`;
 const LOGIN_API_URL = `https://tr-yös.com/api/v1/users/login.php?token=${MY_TOKEN}`;
 
+const UPDATE_API_URL = `https://tr-yös.com/api/v1/users/updateuser.php`;
+
 const AuthContext = createContext();
 
 export function useAuthContext() {
@@ -18,8 +20,6 @@ export function AuthProvider({ children }) {
     JSON.parse(sessionStorage.getItem("user")) || false
   );
 
-
-
   // Sayfalar arası gezinme için `useNavigate` hook'unu kullanıyoruz
   const navigate = useNavigate();
 
@@ -30,21 +30,30 @@ export function AuthProvider({ children }) {
     createData.append("password1", signUser.password1);
     createData.append("password2", signUser.password2);
 
+    
     try {
       const { data } = await axios.post(REGISTER_API_URL, createData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+         // "Content-Type": "application/json",
+         "Content-Type": "multipart/form-data",
         },
       });
-
-      setCurrentUser(data.userId);
-      sessionStorage.setItem("user", JSON.stringify(data.userId));
+      console.log(data)
+     /*
+      console.log(dataMy)
+      console.log(data.user)
+      console.log(data.user.userId) 
+      console.log(dataMy.usr)
+      */
+      setCurrentUser(data.user.userId);
+     sessionStorage.setItem("user", JSON.stringify(data.user.userId));
       return true;
     } catch (error) {
       console.error(error);
       return false;
     }
   };
+
 
   // //! Kullanıcı girişi yapmak için asenkron bir işlev tanımlıyoruz
 
@@ -54,6 +63,10 @@ export function AuthProvider({ children }) {
     createData.append("password", signUser.password);
     try {
       const { data } = await axios.post(`${LOGIN_API_URL}`, createData, {
+        // headers: {
+        //   "Content-Type": "application/json",
+          
+        // },
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -79,14 +92,38 @@ export function AuthProvider({ children }) {
     navigate("/");
   };
 
-  const contextValues = {
-    loginPerson,
-    currentUser,
-    setCurrentUser,
-    registerPerson,
-    logoutPerson,
+
+  const updatePerson = async (userId, updateData) => {
+    const createData = new FormData();
+    createData.append("name", updateData.name);
+    createData.append("country", updateData.country);
+    createData.append("city", updateData.city);
+    createData.append("phone", updateData.phone);
+    createData.append("about", updateData.about);
+    try {
+      const { data } = await axios.post(`${UPDATE_API_URL}?user_id=${userId}&token=${MY_TOKEN}`, createData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      setCurrentUser(data.user);
+      sessionStorage.setItem("user", JSON.stringify(data.user));
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
   };
 
+  const contextValues = {
+    loginPerson,
+    registerPerson,
+    logoutPerson,
+    currentUser,
+    setCurrentUser,
+    updatePerson, 
+  };
+   
   return (
     <AuthContext.Provider value={contextValues}>
       {children}

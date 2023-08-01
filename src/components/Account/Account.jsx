@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useAuthContext } from "../../context/AuthContext"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Account.css";
 
@@ -7,6 +8,7 @@ const Account = () => {
   const [accountCities, setAccountCities] = useState([]);
   const [countries, setCountries] = useState([]);
   const [selectedCountryId, setSelectedCountryId] = useState(null);
+  const { updatePerson, currentUser } = useAuthContext();
 
   const YOUR_TOKEN =
     "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a";
@@ -59,12 +61,47 @@ const Account = () => {
     img: "https://cdn.create.vista.com/api/media/small/3971976/stock-photo-young-child",
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const name = event.target.elements.inputText.value;
+    const email = event.target.elements.inputEmail.value;
+    const country = event.target.elements.inputCountry.value;
+    const city = event.target.elements.inputCity.value;
+    const phone = event.target.elements.phone.value;
+    const about = event.target.elements.aboutTextarea.value;
+
+    const updateData = {
+      name: name,
+      email: email,
+      country: country,
+      city: city,
+      phone: phone,
+      about: about,
+    };
+
+    const currentUser = JSON.parse(sessionStorage.getItem("user")); // sessionStorage'dan kullanıcı bilgilerini alıyoruz
+    const userId = currentUser && currentUser.userID; // Kullanıcı bilgileri varsa userId'yi alıyoruz
+
+    if (userId) { // Eğer bir userId varsa, updatePerson fonksiyonunu çalıştırıyoruz
+      const result = await updatePerson(userId, updateData);
+      if (result) {
+        alert("User data successfully updated.");
+      } else {
+        alert("An error occurred while updating user data.");
+      }
+    } else {
+      alert("No user is currently logged in.");
+    }
+  };
+
+
   return (
     <div className="">
       <div className="infoDiv  p-5 mb- bg-primary text-white">
         <h2 className=" fw-bold mx-5 pt-5">MyAccount</h2>
       </div>
-      <div className="">
+     
+           <div className="">
         <h1 className="text-center p-5">MY Account</h1>
       </div>
 
@@ -113,48 +150,47 @@ const Account = () => {
         <div
           className="card w-75 bg-white border-0 shadow-lg p-3 mb-5 rounded mx-1"
           style={{ width: "18rem" }}>
-          <form className="row g-4">
-            <h3 className="text-start">MY Account</h3>
+          <form className="row g-4" onSubmit={handleSubmit}>
             <div className="col-md-6 ">
               <label htmlFor="inputText" className="form-label">
-                Your Name
+                Your Name*
               </label>
               <input
                 type="inputText"
                 className="form-control p-3"
                 id="inputText"
                 required
+                defaultValue={currentUser.name}
               />
             </div>
             <div className="col-md-6">
               <label htmlFor="inputEmail" className="form-label">
-                Email
+                E-mail*
               </label>
               <input
                 type="email"
                 className="form-control p-3"
                 id="inputEmail"
                 required
+                defaultValue={currentUser.email}
               />
             </div>
             <div className="col-md-6">
               <label htmlFor="inputCountry" className="form-label">
-                Country
+                Country*
               </label>
               <select
                 id="inputCountry"
                 className="form-select p-3"
                 required
-                onChange={handleCountryChange}>
+                onChange={handleCountryChange}
+                defaultValue={currentUser.country}
+              >
                 <option selected disabled value="">
                   Select Country
                 </option>
                 {countries.map((country) => (
-                  <option
-                    key={country.id}
-                    value={country.id}
-                    selected={country.en.toLowerCase() === "turkey"} // Check if the country is Turkey
-                  >
+                  <option key={country.id} value={country.id}>
                     {country.en}
                   </option>
                 ))}
@@ -162,28 +198,24 @@ const Account = () => {
             </div>
             <div className="col-md-6">
               <label htmlFor="inputCity" className="form-label">
-                City
+                City*
               </label>
-              <select id="inputCity" className="form-select p-3" required>
+              <select id="inputCity" className="form-select p-3" required defaultValue={currentUser.city}>
                 <option selected disabled value="">
                   Select City
                 </option>
-                {accountCities.map(
-                  (
-                    city // Use accountCities here
-                  ) => (
-                    <option key={city.id} value={city.en}>
-                      {city.en}
-                    </option>
-                  )
-                )}
+                {accountCities.map((city) => (
+                  <option key={city.id} value={city.en}>
+                    {city.en}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="col-md-6">
               <label htmlFor="phone" className="form-label">
                 Phone
               </label>
-              <input type="text" className="form-control p-3" id="phone" />
+              <input type="text" className="form-control p-3" id="phone" defaultValue={currentUser.phone} />
             </div>
             <div className="mb-3">
               <label for="aboutTextarea" class="form-label">
@@ -192,7 +224,9 @@ const Account = () => {
               <textarea
                 class="form-control"
                 id="aboutTextarea"
-                rows="5"></textarea>
+                rows="5"
+                defaultValue={currentUser.about}
+              ></textarea>
             </div>
 
             <div className="col-12">

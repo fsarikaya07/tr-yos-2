@@ -13,14 +13,16 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
 // import { FaSignInAlt, FaUserPlus } from "react-icons/fa";
-import LogIn from "../Login/Logİn";
+import LogIn from "../Login/LogIn";
 import Register from "../Login/Register";
 import "./HomePage.css";
 import { useAuthContext } from "../../context/AuthContext"; // AuthContext'u kullanmak için import edin.
 import MyAccount from "../Dropdown/MyAccount";
 import LanguageSelector from "../Languages/LanguageSelector";
 
-const ScrollNavbar = () => {
+const SideBarScrollNavbar = () => {
+  const [isSignInVisible, setIsSignInVisible] = useState(true);
+
   const { currentUser } = useAuthContext();
 
   const [showSignInModal, setShowSignInModal] = useState(false);
@@ -71,6 +73,18 @@ const ScrollNavbar = () => {
   // };
   // const openModal = () => setShowSignInModal(true);
   // const closeModal = () => setShowSignInModal(false);
+
+  const handleSignInClick = () => {
+    setIsSignInVisible(true);
+
+
+  }
+
+
+  const handleRegisterClick = () => {
+    setIsSignInVisible(false);
+  }
+
 
   return (
     <>
@@ -269,6 +283,7 @@ const ScrollNavbar = () => {
         </Navbar.Collapse>
       </Navbar>
 
+      {isSignInVisible ?   
       <Modal show={showSignInModal} 
       onHide={() => setShowSignInModal(false)} 
       centered>
@@ -276,14 +291,16 @@ const ScrollNavbar = () => {
         
         </Modal.Header>
         <Modal.Body>
-          <LogIn setShowSignInModal={setShowSignInModal}  />
+          <LogIn setShowSignInModal={setShowSignInModal}
+          // handleSignInClick={handleSignInClick}
+          handleRegisterClick={handleRegisterClick}
+
+          />
         </Modal.Body>
       </Modal>
-
-
-
-
-
+      : 
+      
+      
       <Modal show={showSignUpModal} 
       onHide={() => setShowSignUpModal(false)} 
       centered>
@@ -291,14 +308,18 @@ const ScrollNavbar = () => {
         
         </Modal.Header>
         <Modal.Body>
-        <Register setShowSignUpModal={setShowSignUpModal} />
+        <Register setShowSignUpModal={setShowSignUpModal} 
+        showSignUpModal={showSignUpModal}
+handleSignInClick={handleSignInClick}
+        // handleRegisterClick={handleRegisterClick}
+        />
         </Modal.Body>
-      </Modal>
+      </Modal>}
     </>
   );
 };
 
-export default ScrollNavbar;
+export default SideBarScrollNavbar;
 
 
 
