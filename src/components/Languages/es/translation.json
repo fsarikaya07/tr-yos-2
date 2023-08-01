@@ -1,13 +1,21 @@
 {
   "account": {
-    "myAccount": "Mi cuenta",
+    "myAccount": "Mi Cuenta",
     "yourName": "Tu nombre",
     "email": "Correo electrónico",
     "country": "País",
-    "city": "Ciudad",
     "phone": "Teléfono",
     "about": "Acerca de",
-    "saveChanges": "Guardar cambios"
+    "saveChanges": "Guardar cambios",
+    "selectCountry": "Seleccionar país",
+    "selectCity": "Seleccionar ciudad",
+    "dashboard": "Tablero",
+    "myProfile": "Mi perfil",
+    "message": "Mensaje",
+    "changePassword": "Cambiar la contraseña",
+    "noUserLoggedIn": "No hay ningún usuario conectado actualmente.",
+    "successfullyUpdated": "Los datos del usuario se han actualizado con éxito.",
+    "errorUpdating": "Ocurrió un error al actualizar los datos del usuario."
   },
   "compare": {
     "compare": "Comparar",

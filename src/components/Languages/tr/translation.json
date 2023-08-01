@@ -1,13 +1,21 @@
 {
   "account": {
     "myAccount": "Hesabım",
-    "yourName": "Adınız",
+    "yourName": "İsminiz",
     "email": "E-posta",
     "country": "Ülke",
-    "city": "Şehir",
     "phone": "Telefon",
     "about": "Hakkında",
-    "saveChanges": "Değişiklikleri Kaydet"
+    "saveChanges": "Değişiklikleri Kaydet",
+    "selectCountry": "Ülke Seç",
+    "selectCity": "Şehir Seç",
+    "dashboard": "Kontrol Paneli",
+    "myProfile": "Profilim",
+    "message": "Mesaj",
+    "changePassword": "Şifreyi Değiştir",
+    "noUserLoggedIn": "Şu anda giriş yapmış bir kullanıcı yok.",
+    "successfullyUpdated": "Kullanıcı bilgileri başarıyla güncellendi.",
+    "errorUpdating": "Kullanıcı bilgileri güncellenirken bir hata oluştu."
   },
   "compare": {
     "compare": "Karşılaştır",

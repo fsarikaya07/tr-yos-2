@@ -4,10 +4,18 @@
     "yourName": "Your Name",
     "email": "E-mail",
     "country": "Country",
-    "city": "City",
     "phone": "Phone",
     "about": "About",
-    "saveChanges": "Save Changes"
+    "saveChanges": "Save Changes",
+    "selectCountry": "Select Country",
+    "selectCity": "Select City",
+    "dashboard": "Dashboard",
+    "myProfile": "My Profile",
+    "message": "Message",
+    "changePassword": "Change Password",
+    "noUserLoggedIn": "No user is currently logged in.",
+    "successfullyUpdated": "User data successfully updated.",
+    "errorUpdating": "An error occurred while updating user data."
   },
   "compare": {
     "compare": "Compare",
