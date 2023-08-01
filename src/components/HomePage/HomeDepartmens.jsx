@@ -1,10 +1,11 @@
 import React from "react";
-
+import { useTranslation } from 'react-i18next';
 import HomeCard from "./HomeCard";
 import { Col, Container, Row } from "react-bootstrap";
 import { useYosContext } from "../../context/Context";
 
 const HomeDepartmens = () => {
+  const { t } = useTranslation();
   const { universities, card, setCompare, compare, user } = useYosContext();
   const shuffledCards = card.sort(() => 0.5 - Math.random());
   const random12Cards = shuffledCards.slice(0, 12);
@@ -31,11 +32,11 @@ const HomeDepartmens = () => {
     <Container className="rounded-4 mt-4  ">
       <h1 className="my-2 text-center" style={{ color: "#16193B" }}>
         {" "}
-        <strong> Our Departments</strong>
+        <strong> {t('homeDepartments.title')}</strong>
       </h1>
 
       <h6 className="text-center" style={{ color: "#B2BEBF" }}>
-        Our Departments Our Departments Our Departments
+        {t('homeDepartments.subTitle')}
       </h6>
 
       <Row className="g-1 d-flex flex-wrap">
