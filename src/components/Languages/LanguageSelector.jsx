@@ -1,32 +1,33 @@
-// LanguageSelector.js
-import React, { useContext, useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
-// import { LanguageContext } from './LanguageContext';
-import "./LanguageSelector.css"
+import React, { useState } from "react";
+import { Dropdown } from "react-bootstrap";
+import "./LanguageSelector.css";
 
 const LanguageSelector = () => {
-//   const { language, setLanguage } = useContext(LanguageContext);
-const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState("EN");
 
-  const handleLanguageChange = (selectedLanguage) => {
-    setLanguage(selectedLanguage);
+  const languageMap = {
+    "EN": "English",
+    "TR": "Turkish",
+    "FR": "French",
+    "ES": "Spanish",
+    "DE": "German"
+  };
+
+  const handleLanguageChange = (selectedLanguageCode) => {
+    setLanguage(selectedLanguageCode);
   };
 
   return (
     <Dropdown>
       <Dropdown.Toggle variant="success" id="language-dropdown">
-        TR
+        {language}
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item onClick={() => handleLanguageChange('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('tr')}>Türkçe</Dropdown.Item>
-        {/* Diğer diller burada eklenebilir */}
-        <Dropdown.Item onClick={() => handleLanguageChange('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('tr')}>Türkçe</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('tr')}>Türkçe</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('tr')}>Türkçe</Dropdown.Item>
+        {Object.entries(languageMap).map(([code, name]) => (
+          <Dropdown.Item key={code} onClick={() => handleLanguageChange(code)}>
+            {name}
+          </Dropdown.Item>
+        ))}
       </Dropdown.Menu>
     </Dropdown>
   );
