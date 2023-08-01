@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Dropdown } from "react-bootstrap";
+import { useTranslation } from "react-i18next"; // hook'u içe aktarın
 import "./LanguageSelector.css";
 
 const LanguageSelector = () => {
   const [language, setLanguage] = useState("EN");
+  const { i18n } = useTranslation(); // i18n örneğini alın
 
   const languageMap = {
     "EN": "English",
@@ -15,6 +17,7 @@ const LanguageSelector = () => {
 
   const handleLanguageChange = (selectedLanguageCode) => {
     setLanguage(selectedLanguageCode);
+    i18n.changeLanguage(selectedLanguageCode); // seçilen dil kodunu kullanarak dili değiştirin
   };
 
   return (
