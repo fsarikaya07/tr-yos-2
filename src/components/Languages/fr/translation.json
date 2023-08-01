@@ -61,7 +61,7 @@
     "city": "Ville",
     "remove": "Retirer"
   },
-  
+
   "homeDepartments": {
     "title": "Nos départements",
     "subTitle": "Nos départements Nos départements Nos départements"
@@ -100,7 +100,48 @@
     "signInQuestion": "Vous avez déjà un compte?",
     "signIn": "Se connecter",
     "continueWithGoogle": "Continuer avec Google"
+  },
+
+  "universityCard": {
+    "faculties": "Facultés",
+    "departments": "Départements",
+    "location": "Emplacement",
+    "address": "Adresse",
+    "contact": "Contact"
+  },
+  "departments": {
+    "title": "Départements",
+    "selectCity": "Sélectionnez la ville",
+    "selectUniversity": "Sélectionnez l'Université",
+    "selectDepartment": "Sélectionnez le département",
+    "minPrice": "Prix Min",
+    "maxPrice": "Prix Max",
+    "submitSearch": "Soumettre la recherche",
+    "compare": "Comparer"
+  },
+  "departmentsCard": {
+    "compare": "Comparer"
+  },
+  "detail": {
+    "other": "Autre",
+    "language": "Langue",
+    "english": "Anglais",
+    "year": "An",
+    "quota": "Quota",
+    "internships": "Stages",
+    "yes": "Oui",
+    "aboutDepartment": "A propos du département",
+    "basicDetail": "Détail de base",
+    "name": "Nom",
+    "email": "Email",
+    "phoneNo": "Téléphone Non.",
+    "yourMessage": "Votre Message",
+    "submitReview": "Soumettre un avis",
+    "addFavorite": "Ajouter aux favoris",
+    "removeFavorite": "Retirer des favoris",
+    "callUs": "Appelez-nous",
+    "email": "E-Mail",
+    "website": "Site Web",
+    "sendMessage": "Envoyer le message"
   }
-
-
 }

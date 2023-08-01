@@ -61,7 +61,7 @@
     "city": "City",
     "remove": "Remove"
   },
-  
+
   "homeDepartments": {
     "title": "Our Departments",
     "subTitle": "Our Departments Our Departments Our Departments"
@@ -100,7 +100,47 @@
     "signInQuestion": "Already have an account?",
     "signIn": "Sign In",
     "continueWithGoogle": "Continue with Google"
+  },
+
+  "universityCard": {
+    "faculties": "Faculties",
+    "departments": "Departments",
+    "location": "Location",
+    "address": "Address",
+    "contact": "Contact"
+  },
+  "departments": {
+    "title": "Departments",
+    "selectCity": "Select City",
+    "selectUniversity": "Select University",
+    "selectDepartment": "Select Department",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "submitSearch": "Submit Search",
+    "compare": "Compare"
+  },
+  "departmentsCard": {
+    "compare": "Compare"
+  },
+  "detail": {
+    "other": "Other",
+    "language": "Language",
+    "english": "English",
+    "year": "Year",
+    "quota": "Quota",
+    "internships": "Internships",
+    "yes": "Yes",
+    "aboutDepartment": "About Department",
+    "basicDetail": "Basic Detail",
+    "name": "Name",
+    "email": "Email",
+    "phoneNo": "Phone No.",
+    "yourMessage": "Your Message",
+    "submitReview": "Submit Review",
+    "addFavorite": "Add Favorite",
+    "removeFavorite": "Remove Favorite",
+    "callUs": "Call Us",
+    "website": "Website",
+    "sendMessage": "Send Message"
   }
-
-
 }

@@ -61,7 +61,7 @@
     "city": "Stadt",
     "remove": "Entfernen"
   },
-  
+
   "homeDepartments": {
     "title": "Unsere Abteilungen",
     "subTitle": "Unsere Abteilungen Unsere Abteilungen Unsere Abteilungen"
@@ -100,7 +100,48 @@
     "signInQuestion": "Haben Sie schon einen Account?",
     "signIn": "Einloggen",
     "continueWithGoogle": "Weiter mit Google"
+  },
+
+  "universityCard": {
+    "faculties": "Fakultäten",
+    "departments": "Abteilungen",
+    "location": "Standort",
+    "address": "Adresse",
+    "contact": "Kontakt"
+  },
+  "departments": {
+    "title": "Abteilungen",
+    "selectCity": "Stadt Auswählen",
+    "selectUniversity": "Universität Auswählen",
+    "selectDepartment": "Abteilung Auswählen",
+    "minPrice": "Min Preis",
+    "maxPrice": "Max Preis",
+    "submitSearch": "Suche Abschicken",
+    "compare": "Vergleichen"
+  },
+  "departmentsCard": {
+    "compare": "Vergleichen"
+  },
+  "detail": {
+    "other": "Andere",
+    "language": "Sprache",
+    "english": "Englisch",
+    "year": "Jahr",
+    "quota": "Quote",
+    "internships": "Praktika",
+    "yes": "Ja",
+    "aboutDepartment": "Über die Abteilung",
+    "basicDetail": "Grundlegende Details",
+    "name": "Name",
+    "email": "Email",
+    "phoneNo": "Telefonnummer",
+    "yourMessage": "Deine Nachricht",
+    "submitReview": "Bewertung Abschicken",
+    "addFavorite": "Zu den Favoriten hinzufügen",
+    "removeFavorite": "Aus den Favoriten entfernen",
+    "callUs": "Rufen Sie uns an",
+    "email": "E-Mail",
+    "website": "Webseite",
+    "sendMessage": "Nachricht Senden"
   }
-
-
 }

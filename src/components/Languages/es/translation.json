@@ -100,7 +100,52 @@
     "signInQuestion": "¿Ya tienes una cuenta?",
     "signIn": "Iniciar Sesión",
     "continueWithGoogle": "Continuar con Google"
+  },
+  
+  "universityCard": {
+    "faculties": "Facultades",
+    "departments": "Departamentos",
+    "location": "Ubicación",
+    "address": "Dirección",
+    "contact": "Contacto"
+  },
+  "departments": {
+    "title": "Departamentos",
+    "selectCity": "Seleccionar ciudad",
+    "selectUniversity": "Seleccionar universidad",
+    "selectDepartment": "Seleccionar departamento",
+    "minPrice": "Precio mínimo",
+    "maxPrice": "Precio máximo",
+    "submitSearch": "Enviar búsqueda",
+    "compare": "Comparar"
+  },
+  "departmentsCard": {
+    "compare": "Comparar"
+  },
+  "detail": {
+    "other": "Otro",
+    "language": "Idioma",
+    "english": "Inglés",
+    "year": "Año",
+    "quota": "Cupo",
+    "internships": "Prácticas",
+    "yes": "Sí",
+    "aboutDepartment": "Sobre el departamento",
+    "basicDetail": "Detalle básico",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phoneNo": "Teléfono No.",
+    "yourMessage": "Tu mensaje",
+    "submitReview": "Enviar revisión",
+    "addFavorite": "Añadir a favoritos",
+    "removeFavorite": "Quitar de favoritos",
+    "callUs": "Llámanos",
+    "email": "Correo electrónico",
+    "website": "Sitio web",
+    "sendMessage": "Enviar mensaje"
   }
+
+
 
 
 }
