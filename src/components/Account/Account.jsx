@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useAuthContext } from "../../context/AuthContext"
+import { useAuthContext } from "../../context/AuthContext";
+import { useTranslation } from 'react-i18next';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Account.css";
 
 const Account = () => {
+  const { t } = useTranslation();
+
   const [accountCities, setAccountCities] = useState([]);
   const [countries, setCountries] = useState([]);
   const [selectedCountryId, setSelectedCountryId] = useState(null);
@@ -98,11 +101,11 @@ const Account = () => {
   return (
     <div className="">
       <div className="infoDiv  p-5 mb- bg-primary text-white">
-        <h2 className=" fw-bold mx-5 pt-5">MyAccount</h2>
+        <h2 className=" fw-bold mx-5 pt-5">{t('account.myAccount')}</h2>
       </div>
      
            <div className="">
-        <h1 className="text-center p-5">MY Account</h1>
+        <h1 className="text-center p-5">{t('account.myAccount')}</h1>
       </div>
 
       <div className="account_container p-2 d-flex justify-content-around  ">
@@ -153,7 +156,7 @@ const Account = () => {
           <form className="row g-4" onSubmit={handleSubmit}>
             <div className="col-md-6 ">
               <label htmlFor="inputText" className="form-label">
-                Your Name*
+                {t('account.yourName')}*
               </label>
               <input
                 type="inputText"
@@ -165,7 +168,7 @@ const Account = () => {
             </div>
             <div className="col-md-6">
               <label htmlFor="inputEmail" className="form-label">
-                E-mail*
+                {t('account.email')}*
               </label>
               <input
                 type="email"
@@ -177,7 +180,7 @@ const Account = () => {
             </div>
             <div className="col-md-6">
               <label htmlFor="inputCountry" className="form-label">
-                Country*
+                {t('account.country')}*
               </label>
               <select
                 id="inputCountry"
@@ -213,13 +216,13 @@ const Account = () => {
             </div>
             <div className="col-md-6">
               <label htmlFor="phone" className="form-label">
-                Phone
+                {t('account.phone')}
               </label>
               <input type="text" className="form-control p-3" id="phone" defaultValue={currentUser.phone} />
             </div>
             <div className="mb-3">
               <label for="aboutTextarea" class="form-label">
-                About
+                {t('account.about')}
               </label>
               <textarea
                 class="form-control"
@@ -231,7 +234,7 @@ const Account = () => {
 
             <div className="col-12">
               <button type="submit" className="btn btn-primary p-3">
-                Save Changes
+                {t('account.saveChanges')}
               </button>
             </div>
           </form>
