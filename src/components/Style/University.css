@@ -1,11 +1,10 @@
-/* .page-title{
-  padding: 10rem 0 5rem;
-    height: 280px;
+.page-title{
+  font-family: 'Jost', sans-serif;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-size: cover !important;
-} */
+   
+}
 .info-div {
   margin-top: 0;
   background-image: url(https://www.tr-yös.com/test/6984215678913/breadcrumb/2.png);

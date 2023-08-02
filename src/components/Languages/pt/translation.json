@@ -1,0 +1,144 @@
+{
+  "homepage": {
+    "home": "Início",
+    "universities": "Universidades",
+    "departments": "Departamentos",
+    "signIn": "Entrar",
+    "signUp": "Inscreva-se"
+  },
+  "footer": {
+    "address": "Endereço",
+    "phone": "Telefone",
+    "email": "Email",
+    "navigations": "Navegações",
+    "aboutUs": "Sobre nós",
+    "faqsPage": "Página de FAQ",
+    "checkout": "Confira",
+    "contact": "Contato",
+    "blog": "Blog",
+    "myAccount": "Minha conta",
+    "myProfile": "Meu perfil",
+    "favorites": "Favoritos",
+    "allRightsReserved": "Todos os direitos reservados."
+  },
+  "emailSearch": {
+    "workingWithUs": "Já está trabalhando conosco?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "Digite seu email",
+    "subscribe": "Inscrever-se"
+  },
+  "account": {
+    "myAccount": "Minha conta",
+    "yourName": "Seu nome",
+    "email": "Email",
+    "country": "País",
+    "phone": "Telefone",
+    "about": "Sobre",
+    "saveChanges": "Salvar alterações",
+    "selectCountry": "Selecione o país",
+    "selectCity": "Selecione a cidade",
+    "dashboard": "Painel de controle",
+    "myProfile": "Meu perfil",
+    "message": "Mensagem",
+    "changePassword": "Mudar senha",
+    "noUserLoggedIn": "Nenhum usuário está logado no momento.",
+    "successfullyUpdated": "Dados do usuário atualizados com sucesso.",
+    "errorUpdating": "Ocorreu um erro ao atualizar os dados do usuário."
+  },
+  "compare": {
+    "title": "Comparar",
+    "compareUniversities": "Comparar Universidades",
+    "universityName": "Nome da universidade",
+    "country": "País",
+    "city": "Cidade",
+    "compare": "Comparar"
+  },
+  "favorites": {
+    "title": "Favoritos",
+    "yourFavorites": "Seus favoritos",
+    "universityName": "Nome da universidade",
+    "country": "País",
+    "city": "Cidade",
+    "remove": "Remover"
+  },
+  "homeDepartments": {
+    "title": "Nossos Departamentos",
+    "subTitle": "Nossos Departamentos Nossos Departamentos Nossos Departamentos"
+  },
+  "homeSearch": {
+    "title": "Educação",
+    "selectCity": "Selecione a cidade",
+    "selectUniversity": "Selecione a Universidade",
+    "selectDepartment": "Selecione o Departamento",
+    "search": "Pesquisa"
+  },
+  "myAccount": {
+    "myAccount": "Minha conta",
+    "userDashboard": "Painel do usuário",
+    "favoriteDepartment": "Departamento favorito",
+    "compareDepartment": "Compare o Departamento",
+    "logout": "Sair"
+  },
+  "logIn": {
+    "signIn": "Entrar",
+    "userEmail": "Email do usuário",
+    "password": "Senha",
+    "logIn": "Entrar",
+    "savePassword": "Salvar senha",
+    "forgetPassword": "Esqueceu a senha",
+    "signUpQuestion": "Ainda não tem uma conta?",
+    "signUp": "Inscreva-se",
+    "continueWithGoogle": "Continue com o Google"
+  },
+  "register": {
+    "signUp": "Inscreva-se",
+    "userName": "Nome de usuário",
+    "userEmail": "Email do usuário",
+    "password": "Senha",
+    "rePassword": "RePassword",
+    "signInQuestion": "Já tem uma conta?",
+    "signIn": "Entrar",
+    "continueWithGoogle": "Continue com o Google"
+  },
+  "universityCard": {
+    "faculties": "Faculdades",
+    "departments": "Departamentos",
+    "location": "Localização",
+    "address": "Endereço",
+    "contact": "Contato"
+  },
+  "departments": {
+    "title": "Departamentos",
+    "selectCity": "Selecione a cidade",
+    "selectUniversity": "Selecione a Universidade",
+    "selectDepartment": "Selecione o Departamento",
+    "minPrice": "Preço Mínimo",
+    "maxPrice": "Preço Máximo",
+    "submitSearch": "Enviar pesquisa",
+    "compare": "Comparar"
+  },
+  "departmentsCard": {
+    "compare": "Comparar"
+  },
+  "detail": {
+    "other": "De outros",
+    "language": "Língua",
+    "english": "Inglês",
+    "year": "Ano",
+    "quota": "Quota",
+    "internships": "Estágios",
+    "yes": "Sim",
+    "aboutDepartment": "Sobre o Departamento",
+    "basicDetail": "Detalhe básico",
+    "name": "Nome",
+    "email": "Email",
+    "phoneNo": "Telefone No.",
+    "yourMessage": "Sua mensagem",
+    "submitReview": "Enviar revisão",
+    "addFavorite": "Adicionar aos favoritos",
+    "removeFavorite": "Remover dos favoritos",
+    "callUs": "Ligue para nós",
+    "website": "Local na rede Internet",
+    "sendMessage": "Enviar mensagem"
+  }
+}
