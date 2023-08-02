@@ -70,7 +70,7 @@ export function AuthProvider({ children }) {
           
         // },
       });
-
+      console.log("objectdata",data);
       // Kullanıcı bilgisini tarayıcı hafızasına (sessionStorage) kaydediyoruz
       // setCurrentUser(data);
       // sessionStorage.setItem("user", JSON.stringify(data));
