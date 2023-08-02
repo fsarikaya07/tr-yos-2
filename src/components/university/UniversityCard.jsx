@@ -2,18 +2,8 @@ import { useYosContext } from "../../context/Context";
 import "../Style/University.css";
 import { useTranslation } from "react-i18next";
 import { Container } from "react-bootstrap";
-import { useYosContext } from "../../context/Context";
-
-
 
 const UniversityCard = ({ logo, city, tr, data }) => {
-
-  const { cities } = useYosContext();
-  const citi = cities?.map((e) => {
-    if (e.id == city) {
-      return e.tr;
-    }
-  });
 
   const { t } = useTranslation();
   const { cities } = useYosContext();
@@ -22,8 +12,6 @@ const UniversityCard = ({ logo, city, tr, data }) => {
       return e.tr;
     }
   });
-
-
   console.log(data);
   return (
     <Container className="container p-2">
@@ -58,11 +46,6 @@ const UniversityCard = ({ logo, city, tr, data }) => {
                   <i className="fa-solid fa-location-dot"></i>
                   <span className="location-name">{citi} </span>
                 </div>
-
-
-                <p className="university-address ">
-                  {data?.adress}
-</p>
                 <p className="university-address">
                  {data?.adress}
                 </p>
