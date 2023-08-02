@@ -2,6 +2,7 @@ import { useYosContext } from "../../context/Context";
 import "../Style/University.css";
 import { useTranslation } from "react-i18next";
 import { Container } from "react-bootstrap";
+import { useYosContext } from "../../context/Context";
 
 
 
@@ -15,6 +16,12 @@ const UniversityCard = ({ logo, city, tr, data }) => {
   });
 
   const { t } = useTranslation();
+  const { cities } = useYosContext();
+  const citi = cities?.map((e) => {
+    if (e.id == city) {
+      return e.tr;
+    }
+  });
 
 
   console.log(data);
@@ -57,8 +64,7 @@ const UniversityCard = ({ logo, city, tr, data }) => {
                   {data?.adress}
 
                 <p className="university-address">
-                  Afyon Kocatepe Üniversitesi Rektörlüğü ANS Kampusü Gazlıgöl
-                  Yolu Üzeri AFYONKARAHİSAR
+                 {data?.adress}
                 </p>
                 <div className="contact">
                   <div className="uni-contact p-2 border border-warning-subtle rounded-1">
