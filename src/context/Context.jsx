@@ -40,7 +40,7 @@ export function YosProvider({ children }) {
 
   /// COMPARE END STATE
   console.log(compareId);
-  // console.log("user", user?.userID);
+
 
   useEffect(() => {
     const fetchData = async () => {

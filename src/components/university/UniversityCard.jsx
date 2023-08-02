@@ -3,20 +3,15 @@ import "../Style/University.css";
 import { useTranslation } from "react-i18next";
 import { Container } from "react-bootstrap";
 
-
-
 const UniversityCard = ({ logo, city, tr, data }) => {
 
+  const { t } = useTranslation();
   const { cities } = useYosContext();
   const citi = cities?.map((e) => {
     if (e.id == city) {
       return e.tr;
     }
   });
-
-  const { t } = useTranslation();
-
-
   console.log(data);
   return (
     <Container className="container p-2">
@@ -51,14 +46,8 @@ const UniversityCard = ({ logo, city, tr, data }) => {
                   <i className="fa-solid fa-location-dot"></i>
                   <span className="location-name">{citi} </span>
                 </div>
-
-
-                <p className="university-address ">
-                  {data?.adress}
-
                 <p className="university-address">
-                  Afyon Kocatepe Üniversitesi Rektörlüğü ANS Kampusü Gazlıgöl
-                  Yolu Üzeri AFYONKARAHİSAR
+                 {data?.adress}
                 </p>
                 <div className="contact">
                   <div className="uni-contact p-2 border border-warning-subtle rounded-1">

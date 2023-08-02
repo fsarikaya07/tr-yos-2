@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useYosContext } from "../../context/Context";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Compare = () => {
   const { compareId, setCompareId, card } = useYosContext();
@@ -48,7 +49,7 @@ const Compare = () => {
       <div className="p-5 mb-2 bg-primary text-white">
         <h2 className="p-title fw-bold mx-5">Compare</h2>
       </div>
-      <div className="d-flex items-center">
+      <div className="d-grid gap-3">
         {cardCompare.map((item) => {
           return (
             <div className="card" style={{ width: "18rem" }}>
@@ -65,7 +66,15 @@ const Compare = () => {
               </div>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">{item["faculty"]["tr"]}</li>
-                <li className="list-group-item">{item["department"]["tr"]}</li>
+                <li className="list-group-item">
+                  <Link
+                    key={item?.id}
+                    to={`/universities/${item.id}`}
+                  
+                  >
+                    {item["department"]["tr"]}
+                  </Link>
+                </li>
                 <li className="list-group-item">{item["city"]["tr"]}</li>
               </ul>
               <div className="card-body">
