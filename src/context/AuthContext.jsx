@@ -54,7 +54,6 @@ export function AuthProvider({ children }) {
     }
   };
 
-
   // //! Kullanıcı girişi yapmak için asenkron bir işlev tanımlıyoruz
 
   const loginPerson = async (signUser) => {
@@ -63,19 +62,23 @@ export function AuthProvider({ children }) {
     createData.append("password", signUser.password);
     try {
       const { data } = await axios.post(`${LOGIN_API_URL}`, createData, {
-        // headers: {
-        //   "Content-Type": "application/json",
-          
-        // },
         headers: {
           "Content-Type": "multipart/form-data",
         },
+         // headers: {
+        //   "Content-Type": "application/json",
+          
+        // },
       });
 
       // Kullanıcı bilgisini tarayıcı hafızasına (sessionStorage) kaydediyoruz
-      setCurrentUser(data);
-      sessionStorage.setItem("user", JSON.stringify(data));
+      // setCurrentUser(data);
+      // sessionStorage.setItem("user", JSON.stringify(data));
       // Giriş başarılı olduğunda ana sayfaya yönlendiriyoruz
+      setCurrentUser(data.userID);
+      sessionStorage.setItem("user", data.userID);
+      // sessionStorage.setItem("user", JSON.stringify(data.userID));
+
       navigate("/");
       return true;
     } catch (error) {

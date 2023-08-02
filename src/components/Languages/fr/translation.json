@@ -1,0 +1,147 @@
+{
+  "homepage": {
+    "home": "Accueil",
+    "universities": "Universités",
+    "departments": "Départements",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire"
+  },
+  "footer": {
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "navigations": "Navigations",
+    "aboutUs": "À propos de nous",
+    "faqsPage": "Page FAQs",
+    "checkout": "Vérifier",
+    "contact": "Contact",
+    "blog": "Blog",
+    "myAccount": "Mon compte",
+    "myProfile": "Mon profil",
+    "favorites": "Favoris",
+    "allRightsReserved": "Tous droits réservés."
+  },
+  "emailSearch": {
+    "workingWithUs": "Travaillez-vous déjà avec nous?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "Entrez votre email",
+    "subscribe": "Souscrire"
+  },
+  "account": {
+    "myAccount": "Mon Compte",
+    "yourName": "Votre nom",
+    "email": "E-mail",
+    "country": "Pays",
+    "phone": "Téléphone",
+    "about": "A propos",
+    "saveChanges": "Sauvegarder les modifications",
+    "selectCountry": "Choisir un pays",
+    "selectCity": "Choisir une ville",
+    "dashboard": "Tableau de bord",
+    "myProfile": "Mon profil",
+    "message": "Message",
+    "changePassword": "Changer le mot de passe",
+    "noUserLoggedIn": "Aucun utilisateur connecté actuellement.",
+    "successfullyUpdated": "Les données de l'utilisateur ont été mises à jour avec succès.",
+    "errorUpdating": "Une erreur s'est produite lors de la mise à jour des données de l'utilisateur."
+  },
+  "compare": {
+    "title": "Comparer",
+    "compareUniversities": "Comparer les universités",
+    "universityName": "Nom de l'université",
+    "country": "Pays",
+    "city": "Ville",
+    "compare": "Comparer"
+  },
+  "favorites": {
+    "title": "Favoris",
+    "yourFavorites": "Vos favoris",
+    "universityName": "Nom de l'université",
+    "country": "Pays",
+    "city": "Ville",
+    "remove": "Retirer"
+  },
+
+  "homeDepartments": {
+    "title": "Nos départements",
+    "subTitle": "Nos départements Nos départements Nos départements"
+  },
+  "homeSearch": {
+    "title": "Éducation",
+    "selectCity": "Sélectionnez la ville",
+    "selectUniversity": "Sélectionnez l'université",
+    "selectDepartment": "Sélectionnez le département",
+    "search": "Recherche"
+  },
+  "myAccount": {
+    "myAccount": "Mon compte",
+    "userDashboard": "Tableau de bord de l'utilisateur",
+    "favoriteDepartment": "Département favori",
+    "compareDepartment": "Comparer le département",
+    "logout": "Se déconnecter"
+  },
+  "logIn": {
+    "signIn": "Se connecter",
+    "userEmail": "Email de l'utilisateur",
+    "password": "Mot de passe",
+    "logIn": "Se connecter",
+    "savePassword": "Enregistrer le mot de passe",
+    "forgetPassword": "Mot de passe oublié",
+    "signUpQuestion": "Vous n'avez pas encore de compte?",
+    "signUp": "S'inscrire",
+    "continueWithGoogle": "Continuer avec Google"
+  },
+  "register": {
+    "signUp": "S'inscrire",
+    "userName": "Nom d'utilisateur",
+    "userEmail": "Email de l'utilisateur",
+    "password": "Mot de passe",
+    "rePassword": "ReMot de passe",
+    "signInQuestion": "Vous avez déjà un compte?",
+    "signIn": "Se connecter",
+    "continueWithGoogle": "Continuer avec Google"
+  },
+
+  "universityCard": {
+    "faculties": "Facultés",
+    "departments": "Départements",
+    "location": "Emplacement",
+    "address": "Adresse",
+    "contact": "Contact"
+  },
+  "departments": {
+    "title": "Départements",
+    "selectCity": "Sélectionnez la ville",
+    "selectUniversity": "Sélectionnez l'Université",
+    "selectDepartment": "Sélectionnez le département",
+    "minPrice": "Prix Min",
+    "maxPrice": "Prix Max",
+    "submitSearch": "Soumettre la recherche",
+    "compare": "Comparer"
+  },
+  "departmentsCard": {
+    "compare": "Comparer"
+  },
+  "detail": {
+    "other": "Autre",
+    "language": "Langue",
+    "english": "Anglais",
+    "year": "An",
+    "quota": "Quota",
+    "internships": "Stages",
+    "yes": "Oui",
+    "aboutDepartment": "A propos du département",
+    "basicDetail": "Détail de base",
+    "name": "Nom",
+    "email": "Email",
+    "phoneNo": "Téléphone Non.",
+    "yourMessage": "Votre Message",
+    "submitReview": "Soumettre un avis",
+    "addFavorite": "Ajouter aux favoris",
+    "removeFavorite": "Retirer des favoris",
+    "callUs": "Appelez-nous",
+    "email": "E-Mail",
+    "website": "Site Web",
+    "sendMessage": "Envoyer le message"
+  }
+}

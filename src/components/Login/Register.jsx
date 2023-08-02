@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import "../Style/Signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
+import { useTranslation } from 'react-i18next';
 import { Modal } from "react-bootstrap";
 import { FaGoogle } from 'react-icons/fa';
 
 const Register = ({setShowSignUpModal,handleSignInClick}) => {
+  const { t } = useTranslation();
   const { registerPerson } = useAuthContext();
 
   const [name, setName] = useState("");
@@ -53,14 +55,14 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
         className="  p-3  h-100 "
         onSubmit={handleSubmit}
       >
-          <h2>Sign Up</h2>
+      <h2>{t('register.signUp')}</h2>
         <div className="form-group w-100 mt-3 inputBox">
           <input
             type="text"
             className="form-control"
             id="yourname"
             aria-describedby="emailHelp"
-            placeholder="User Name"
+          placeholder={t('register.userName')}
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -71,7 +73,7 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
             className="form-control"
             id="emial"
             aria-describedby="emailHelp"
-            placeholder="User Email"
+          placeholder={t('register.userEmail')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -81,7 +83,7 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
-            placeholder="Password"
+          placeholder={t('register.password')}
             value={password1}
             onChange={(e) => setPassword1(e.target.value)}
           />
@@ -91,7 +93,7 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
-            placeholder="RePassword"
+          placeholder={t('register.rePassword')}
             value={password2}
             onChange={(e) => setPassword2(e.target.value)}
           />
@@ -100,18 +102,18 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
         <button type="submit"
           
          className="btn btn-primary w-100 mt-5">
-          Sign Up
+        {t('register.signUp')}
         </button>
 
         <div className="d-flex justify-content-around  mt-5 ">
           <hr />
           <div className="">
           <div>
-              Already have an account?{" "}
+            {t('register.signInQuestion')}{" "}
               <button
               onClick={handleSignInClick}
               className="text-primary mx-2" style={{ textDecoration: "none" }}>
-                Sign In
+              {t('register.signIn')}
                 
           </button>
              
@@ -128,7 +130,7 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
 
 <FaGoogle size={20} color="red" />
 <span className="mx-1 "></span>
-            Continue with Google
+          {t('register.continueWithGoogle')}
             
           </button>
           </div>

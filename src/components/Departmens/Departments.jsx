@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import Select from "react-select";
 import "../Style/Departmants.css";
@@ -14,6 +15,8 @@ import DepartmentsCard from "../Departmens/DepertmentsCard";
 import HomeCard from "../HomePage/HomeCard";
 
 const Departments = () => {
+  const { t } = useTranslation();
+
   const location = useLocation();
   const { selectedCityIds, selectedUniversityIds, selectedDepartmentIds } =
     location.state || {};
@@ -114,7 +117,7 @@ selectedDepartmentIds?.includes(item.department.code)
   return (
     <div>
       <div className="infoDiv mt-5 p-5 mb-2 bg-primary text-white" >
-        <h3 className=" page-title fw-bold mx-5">departments</h3>
+        <h3 className=" page-title fw-bold mx-5">{t('departments.title')}</h3>
       </div>
       <Container>
         <Row className="d-flex ">
@@ -123,7 +126,7 @@ selectedDepartmentIds?.includes(item.department.code)
               <Form className="d-none d-lg-block row w-100 mt-5 p-3 text-start  bg-body rounded-4  align-items-center border d-inline-flex">
                 <div className="select col-12  mb-3 ">
                   <Select
-                    placeholder="Select City"
+                    placeholder={t('departments.selectCity')}
                     onChange={handleCityChange}
                     options={cities?.map((city) => ({
                       value: city.id,
@@ -136,7 +139,7 @@ selectedDepartmentIds?.includes(item.department.code)
                 </div>
                 <div className="select col-12 mb-3 ">
                   <Select
-                    placeholder="Select University"
+                    placeholder={t('departments.selectUniversity')}
                     className="w-100"
                     onChange={handleUniversityChange}
                     options={filteredUniversities?.map((university) => ({
@@ -150,7 +153,7 @@ selectedDepartmentIds?.includes(item.department.code)
                 </div>
                 <div className="select col-12 mb-3 ">
                   <Select
-                    placeholder="Select Department"
+                    placeholder={t('departments.selectDepartment')}
                     className="w-100"
                     options={filteredDepartments?.map((department) => ({
                       value: department.department.code,
@@ -166,7 +169,7 @@ selectedDepartmentIds?.includes(item.department.code)
                   <Form.Group className="flex-grow-1">
                     <Form.Control
                       type="text"
-                      placeholder="Min Price"
+                      placeholder={t('departments.minPrice')}
                       className="p-3"
                     />
                   </Form.Group>
@@ -174,7 +177,7 @@ selectedDepartmentIds?.includes(item.department.code)
                   <Form.Group className="flex-grow-1">
                     <Form.Control
                       type="text"
-                      placeholder="Max Price"
+                      placeholder={t('departments.maxPrice')}
                       className="p-3"
                     />
                   </Form.Group>
@@ -182,7 +185,7 @@ selectedDepartmentIds?.includes(item.department.code)
 
                 <div className="d-flex justify-content-between mt-2"></div>
                 <Button variant="primary" type="submit" className="p-3 mt-4">
-                  Submit Search
+                  {t('departments.submitSearch')}
                 </Button>
               </Form>
             </Col>

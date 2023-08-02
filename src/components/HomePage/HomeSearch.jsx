@@ -2,12 +2,14 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 import Select from "react-select";
 import { useYosContext } from "../../context/Context";
+import { useTranslation } from 'react-i18next';
 import "../Style/HomeSearch.css";
 import { useNavigate, useParams } from "react-router";
 import { useState } from "react";
 import HomeSlider from "../HomePage/HomeSlider";
 
 function HomeSearch() {
+  const { t } = useTranslation();
   const { cities, universities, departments } = useYosContext();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -70,11 +72,11 @@ function HomeSearch() {
       </div>
       
        <div className="formDiv">
-       <h1 className="title text-white m-5 text-center">Education</h1>
+        <h1 className="title text-white m-5 text-center"> {t('homeSearch.title')}</h1>
         <Form className="mySelect row p-2 bg-body rounded-3 text-start align-items-center d-inline-flex shadow">
           <div className="select col-md-12 g-2 col-lg-3 my-2">
             <Select
-              placeholder="Select City"
+              placeholder={t('homeSearch.selectCity')}
               onChange={handleCityChange}
               options={cities?.map((city) => ({
                 value: city.id,
@@ -87,7 +89,7 @@ function HomeSearch() {
           </div>
           <div className="select col-md-12 g-2 col-lg-3 my-2">
             <Select
-              placeholder="Select University"
+              placeholder={t('homeSearch.selectUniversity')}
               onChange={handleUniversityChange}
               options={filteredUniversities?.map((university) => ({
                 value: university.code,
@@ -100,7 +102,7 @@ function HomeSearch() {
           </div>
           <div className="select col-md-12 g-2 col-lg-3 my-2">
             <Select
-              placeholder="Select Department"
+              placeholder={t('homeSearch.selectDepartment')}
               className="w-sm-100 w-lg-25"
               options={filteredDepartments?.map((department) => ({
                 value: department.department.code,
@@ -119,7 +121,7 @@ function HomeSearch() {
             className="button col-md-12 g-2 p-3 col-lg-3 my-2"
             onClick={handleSubmit}
           >
-            Search
+            {t('homeSearch.search')}
           </Button>
         </Form>
      

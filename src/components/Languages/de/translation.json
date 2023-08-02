@@ -1,0 +1,147 @@
+{
+  "homepage": {
+    "home": "Startseite",
+    "universities": "Universitäten",
+    "departments": "Abteilungen",
+    "signIn": "Anmelden",
+    "signUp": "Registrieren"
+  },
+  "footer": {
+    "address": "Adresse",
+    "phone": "Telefon",
+    "email": "Email",
+    "navigations": "Navigationen",
+    "aboutUs": "Über uns",
+    "faqsPage": "FAQs Seite",
+    "checkout": "Auschecken",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "myAccount": "Mein Konto",
+    "myProfile": "Mein Profil",
+    "favorites": "Favoriten",
+    "allRightsReserved": "Alle Rechte vorbehalten."
+  },
+  "emailSearch": {
+    "workingWithUs": "Arbeiten Sie bereits mit uns?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "Geben Sie Ihre Email ein",
+    "subscribe": "Abonnieren"
+  },
+  "account": {
+    "myAccount": "Mein Konto",
+    "yourName": "Dein Name",
+    "email": "E-Mail",
+    "country": "Land",
+    "phone": "Telefon",
+    "about": "Über",
+    "saveChanges": "Änderungen speichern",
+    "selectCountry": "Land auswählen",
+    "selectCity": "Stadt auswählen",
+    "dashboard": "Armaturenbrett",
+    "myProfile": "Mein Profil",
+    "message": "Botschaft",
+    "changePassword": "Passwort ändern",
+    "noUserLoggedIn": "Derzeit ist kein Benutzer eingeloggt.",
+    "successfullyUpdated": "Benutzerdaten wurden erfolgreich aktualisiert.",
+    "errorUpdating": "Beim Aktualisieren der Benutzerdaten ist ein Fehler aufgetreten."
+  },
+  "compare": {
+    "title": "Vergleichen",
+    "compareUniversities": "Universitäten vergleichen",
+    "universityName": "Universitätsname",
+    "country": "Land",
+    "city": "Stadt",
+    "compare": "Vergleichen"
+  },
+  "favorites": {
+    "title": "Favoriten",
+    "yourFavorites": "Deine Favoriten",
+    "universityName": "Universitätsname",
+    "country": "Land",
+    "city": "Stadt",
+    "remove": "Entfernen"
+  },
+
+  "homeDepartments": {
+    "title": "Unsere Abteilungen",
+    "subTitle": "Unsere Abteilungen Unsere Abteilungen Unsere Abteilungen"
+  },
+  "homeSearch": {
+    "title": "Bildung",
+    "selectCity": "Stadt auswählen",
+    "selectUniversity": "Universität auswählen",
+    "selectDepartment": "Abteilung auswählen",
+    "search": "Suche"
+  },
+  "myAccount": {
+    "myAccount": "Mein Konto",
+    "userDashboard": "Benutzer-Dashboard",
+    "favoriteDepartment": "Lieblingsabteilung",
+    "compareDepartment": "Abteilung vergleichen",
+    "logout": "Abmelden"
+  },
+  "logIn": {
+    "signIn": "Einloggen",
+    "userEmail": "Benutzer-Email",
+    "password": "Passwort",
+    "logIn": "Einloggen",
+    "savePassword": "Passwort speichern",
+    "forgetPassword": "Passwort vergessen",
+    "signUpQuestion": "Noch keinen Account?",
+    "signUp": "Anmelden",
+    "continueWithGoogle": "Weiter mit Google"
+  },
+  "register": {
+    "signUp": "Anmelden",
+    "userName": "Benutzername",
+    "userEmail": "Benutzer-Email",
+    "password": "Passwort",
+    "rePassword": "Passwort wiederholen",
+    "signInQuestion": "Haben Sie schon einen Account?",
+    "signIn": "Einloggen",
+    "continueWithGoogle": "Weiter mit Google"
+  },
+
+  "universityCard": {
+    "faculties": "Fakultäten",
+    "departments": "Abteilungen",
+    "location": "Standort",
+    "address": "Adresse",
+    "contact": "Kontakt"
+  },
+  "departments": {
+    "title": "Abteilungen",
+    "selectCity": "Stadt Auswählen",
+    "selectUniversity": "Universität Auswählen",
+    "selectDepartment": "Abteilung Auswählen",
+    "minPrice": "Min Preis",
+    "maxPrice": "Max Preis",
+    "submitSearch": "Suche Abschicken",
+    "compare": "Vergleichen"
+  },
+  "departmentsCard": {
+    "compare": "Vergleichen"
+  },
+  "detail": {
+    "other": "Andere",
+    "language": "Sprache",
+    "english": "Englisch",
+    "year": "Jahr",
+    "quota": "Quote",
+    "internships": "Praktika",
+    "yes": "Ja",
+    "aboutDepartment": "Über die Abteilung",
+    "basicDetail": "Grundlegende Details",
+    "name": "Name",
+    "email": "Email",
+    "phoneNo": "Telefonnummer",
+    "yourMessage": "Deine Nachricht",
+    "submitReview": "Bewertung Abschicken",
+    "addFavorite": "Zu den Favoriten hinzufügen",
+    "removeFavorite": "Aus den Favoriten entfernen",
+    "callUs": "Rufen Sie uns an",
+    "email": "E-Mail",
+    "website": "Webseite",
+    "sendMessage": "Nachricht Senden"
+  }
+}

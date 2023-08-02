@@ -1,0 +1,146 @@
+{
+  "homepage": {
+    "home": "Home",
+    "universities": "Universities",
+    "departments": "Departments",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "footer": {
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "navigations": "Navigations",
+    "aboutUs": "About Us",
+    "faqsPage": "FAQs Page",
+    "checkout": "Checkout",
+    "contact": "Contact",
+    "blog": "Blog",
+    "myAccount": "My Account",
+    "myProfile": "My Profile",
+    "favorites": "Favorites",
+    "allRightsReserved": "All rights reserved."
+  },
+  "emailSearch": {
+    "workingWithUs": "Are You Already Working With Us?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "Enter Your Email",
+    "subscribe": "Subscribe"
+  },
+  "account": {
+    "myAccount": "My Account",
+    "yourName": "Your Name",
+    "email": "E-mail",
+    "country": "Country",
+    "phone": "Phone",
+    "about": "About",
+    "saveChanges": "Save Changes",
+    "selectCountry": "Select Country",
+    "selectCity": "Select City",
+    "dashboard": "Dashboard",
+    "myProfile": "My Profile",
+    "message": "Message",
+    "changePassword": "Change Password",
+    "noUserLoggedIn": "No user is currently logged in.",
+    "successfullyUpdated": "User data successfully updated.",
+    "errorUpdating": "An error occurred while updating user data."
+  },
+  "compare": {
+    "title": "Compare",
+    "compareUniversities": "Compare Universities",
+    "universityName": "University Name",
+    "country": "Country",
+    "city": "City",
+    "compare": "Compare"
+  },
+  "favorites": {
+    "title": "Favorites",
+    "yourFavorites": "Your Favorites",
+    "universityName": "University Name",
+    "country": "Country",
+    "city": "City",
+    "remove": "Remove"
+  },
+
+  "homeDepartments": {
+    "title": "Our Departments",
+    "subTitle": "Our Departments Our Departments Our Departments"
+  },
+  "homeSearch": {
+    "title": "Education",
+    "selectCity": "Select City",
+    "selectUniversity": "Select University",
+    "selectDepartment": "Select Department",
+    "search": "Search"
+  },
+  "myAccount": {
+    "myAccount": "My Account",
+    "userDashboard": "User Dashboard",
+    "favoriteDepartment": "Favorite Department",
+    "compareDepartment": "Compare Department",
+    "logout": "Logout"
+  },
+  "logIn": {
+    "signIn": "Sign In",
+    "userEmail": "User Email",
+    "password": "Password",
+    "logIn": "Log In",
+    "savePassword": "Save Password",
+    "forgetPassword": "Forget Password",
+    "signUpQuestion": "Don't have an account yet?",
+    "signUp": "Sign Up",
+    "continueWithGoogle": "Continue with Google"
+  },
+  "register": {
+    "signUp": "Sign Up",
+    "userName": "User Name",
+    "userEmail": "User Email",
+    "password": "Password",
+    "rePassword": "RePassword",
+    "signInQuestion": "Already have an account?",
+    "signIn": "Sign In",
+    "continueWithGoogle": "Continue with Google"
+  },
+
+  "universityCard": {
+    "faculties": "Faculties",
+    "departments": "Departments",
+    "location": "Location",
+    "address": "Address",
+    "contact": "Contact"
+  },
+  "departments": {
+    "title": "Departments",
+    "selectCity": "Select City",
+    "selectUniversity": "Select University",
+    "selectDepartment": "Select Department",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "submitSearch": "Submit Search",
+    "compare": "Compare"
+  },
+  "departmentsCard": {
+    "compare": "Compare"
+  },
+  "detail": {
+    "other": "Other",
+    "language": "Language",
+    "english": "English",
+    "year": "Year",
+    "quota": "Quota",
+    "internships": "Internships",
+    "yes": "Yes",
+    "aboutDepartment": "About Department",
+    "basicDetail": "Basic Detail",
+    "name": "Name",
+    "email": "Email",
+    "phoneNo": "Phone No.",
+    "yourMessage": "Your Message",
+    "submitReview": "Submit Review",
+    "addFavorite": "Add Favorite",
+    "removeFavorite": "Remove Favorite",
+    "callUs": "Call Us",
+    "website": "Website",
+    "sendMessage": "Send Message"
+  }
+}
