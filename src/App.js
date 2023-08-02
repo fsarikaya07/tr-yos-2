@@ -55,7 +55,7 @@ function App() {
         email: "info@itu.edu.tr",
       },
     },
-    // Diğer üniversiteler...
+ 
   ];
 
   return (
@@ -69,7 +69,7 @@ function App() {
       
   );
 }
-//Hocam 1
+
 export default App;
 
 

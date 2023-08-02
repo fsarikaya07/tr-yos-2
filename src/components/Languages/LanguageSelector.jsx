@@ -1,32 +1,44 @@
-// LanguageSelector.js
-import React, { useContext, useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
-// import { LanguageContext } from './LanguageContext';
-import "./LanguageSelector.css"
+import React, { useState } from "react";
+import { Dropdown } from "react-bootstrap";
+import { useTranslation } from "react-i18next"; // hook'u içe aktarın
+import "./LanguageSelector.css";
 
 const LanguageSelector = () => {
-//   const { language, setLanguage } = useContext(LanguageContext);
-const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState("EN");
+  const { i18n } = useTranslation(); // i18n örneğini alın
 
-  const handleLanguageChange = (selectedLanguage) => {
-    setLanguage(selectedLanguage);
+  const languageMap = {
+    "EN": "English",
+    "TR": "Turkish",
+    "FR": "French",
+    "ES": "Spanish",
+    "DE": "German",
+    "AR": "Arabic",
+    "RU": "Russian",  
+    "CN": "Chinese", 
+    "PT": "Portuguese", 
+    "IT": "Italian" 
   };
+
+
+  const handleLanguageChange = (selectedLanguageCode) => {
+    const lowerCaseLanguageCode = selectedLanguageCode.toLowerCase();
+    setLanguage(selectedLanguageCode);
+    i18n.changeLanguage(lowerCaseLanguageCode);
+  };
+
 
   return (
     <Dropdown>
       <Dropdown.Toggle variant="success" id="language-dropdown">
-        TR
+        {language}
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item onClick={() => handleLanguageChange('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('tr')}>Türkçe</Dropdown.Item>
-        {/* Diğer diller burada eklenebilir */}
-        <Dropdown.Item onClick={() => handleLanguageChange('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('tr')}>Türkçe</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('tr')}>Türkçe</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleLanguageChange('tr')}>Türkçe</Dropdown.Item>
+        {Object.entries(languageMap).map(([code, name]) => (
+          <Dropdown.Item key={code} onClick={() => handleLanguageChange(code)}>
+            {name}
+          </Dropdown.Item>
+        ))}
       </Dropdown.Menu>
     </Dropdown>
   );

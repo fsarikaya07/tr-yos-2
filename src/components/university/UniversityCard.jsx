@@ -1,16 +1,22 @@
 import { useYosContext } from "../../context/Context";
 import "../Style/University.css";
+import { useTranslation } from "react-i18next";
 import { Container } from "react-bootstrap";
 
 
 
 const UniversityCard = ({ logo, city, tr, data }) => {
+
   const { cities } = useYosContext();
   const citi = cities?.map((e) => {
     if (e.id == city) {
       return e.tr;
     }
   });
+
+  const { t } = useTranslation();
+
+
   console.log(data);
   return (
     <Container className="container p-2">
@@ -29,9 +35,16 @@ const UniversityCard = ({ logo, city, tr, data }) => {
             <div className="uni-info">
               <div className="">
                 <div className="info d-flex p-2 gap-2">
-                  <span className="uni-faculties rounded-1">1 Faculties</span>
-                  <span className="uni-departments rounded-1">2 Departments</span>
+                  <span className="uni-faculties rounded-1">
+                    {" "}
+                    {t("universityCard.faculties")}
+                  </span>
+                  <span className="uni-departments rounded-1">
+                    {" "}
+                    {t("universityCard.departments")}
+                  </span>
                 </div>
+                {/* //! Api ye bağlanmamiş yerler var. Bunlar tamamlandiktan sonra multi lanuages için "location": "Location","address": ddress", "contact":"Contact" kisimlari eklenecek... */}
 
                 <h5 className="university-title">{tr}</h5>
                 <div className="location">
@@ -39,10 +52,14 @@ const UniversityCard = ({ logo, city, tr, data }) => {
                   <span className="location-name">{citi} </span>
                 </div>
 
+
                 <p className="university-address ">
                   {data?.adress}
-                </p>
 
+                <p className="university-address">
+                  Afyon Kocatepe Üniversitesi Rektörlüğü ANS Kampusü Gazlıgöl
+                  Yolu Üzeri AFYONKARAHİSAR
+                </p>
                 <div className="contact">
                   <div className="uni-contact p-2 border border-warning-subtle rounded-1">
                     <i className="fa-solid fa-phone"></i>

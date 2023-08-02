@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import "../Style/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
+import { useTranslation } from 'react-i18next';
 import { FaGoogle } from 'react-icons/fa';
 
 const LogIn = ({ setShowModal,onFormSwitch}) => {
+
+  const { t } = useTranslation();
 
   const { loginPerson } = useAuthContext();
   const [email, setEmail] = useState("");
@@ -44,14 +47,14 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
         className="   p-3 w-100 h-100 login-form "
         onSubmit={(e) => handleSubmit(e)}
       >
-        <h2>Sing In</h2>
+      <h2>{t('logIn.signIn')}</h2>
         <div className="form-group w-100 mt-3 inputBox">
           <input
             type="text"
             className="form-control"
             id="UserEmail"
             aria-describedby="emailHelp"
-            placeholder="User Email"
+          placeholder={t('logIn.userEmail')}
 
             value={email}
             onChange={(e) => setEmail(e.target.value)} // Input alanı değiştiğinde eposta değerini güncelliyoruz.
@@ -63,7 +66,7 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
-            placeholder="Password"
+          placeholder={t('logIn.password')}
             value={password}
             onChange={(e) => setPassword(e.target.value)} // Input alanı değiştiğinde şifre değerini güncelliyoruz.
           />
@@ -73,7 +76,7 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
     
         
         >
-          Log In
+        {t('logIn.logIn')}
         </button>
 
         <div className="d-flex justify-content-around  mt-5 ">
@@ -84,13 +87,13 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
               id="exampleCheck1"
             />
             <label className="form-check-label" htmlFor="exampleCheck1">
-              Save Password
+            {t('logIn.savePassword')}
             </label>
           </div>
           <Link
             style={{ textDecoration: "none" }} //   onClick={() => forgotPassword(email)}
           >
-            Forget Password
+          {t('logIn.forgetPassword')}
           </Link>
         </div>
 
@@ -98,14 +101,14 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
           <hr />
          
           <p>
-            Don't have an account yet?
+          {t('logIn.signUpQuestion')}
             <button 
               className="text-primary mx-2"
               style={{ textDecoration: "none" }}
               onClick={() => onFormSwitch('register')}
             >
             
-              Sign Up
+            {t('logIn.signUp')}
             </button>
  
           </p>
@@ -120,7 +123,7 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
 
 <FaGoogle size={20} color="red" />
 <span className="mx-1 "></span>
-            Continue with Google
+          {t('logIn.continueWithGoogle')}
             {/* <GoogleIcon color="currentColor" /> */}
           </button>
         </div>

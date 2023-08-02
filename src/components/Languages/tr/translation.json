@@ -1,0 +1,147 @@
+{
+  "homepage": {
+    "home": "Ana Sayfa",
+    "universities": "Üniversiteler",
+    "departments": "Bölümler",
+    "signIn": "Giriş Yap",
+    "signUp": "Kayıt Ol"
+  },
+  "footer": {
+    "address": "Adres",
+    "phone": "Telefon",
+    "email": "Email",
+    "navigations": "Navigasyonlar",
+    "aboutUs": "Hakkımızda",
+    "faqsPage": "SSS Sayfası",
+    "checkout": "Ödeme",
+    "contact": "İletişim",
+    "blog": "Blog",
+    "myAccount": "Hesabım",
+    "myProfile": "Profilim",
+    "favorites": "Favoriler",
+    "allRightsReserved": "Tüm hakları saklıdır."
+  },
+  "emailSearch": {
+    "workingWithUs": "Zaten Bizimle Çalışıyor musunuz?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "E-postanızı girin",
+    "subscribe": "Abone ol"
+  },
+  "account": {
+    "myAccount": "Hesabım",
+    "yourName": "İsminiz",
+    "email": "E-posta",
+    "country": "Ülke",
+    "phone": "Telefon",
+    "about": "Hakkında",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "selectCountry": "Ülke Seç",
+    "selectCity": "Şehir Seç",
+    "dashboard": "Kontrol Paneli",
+    "myProfile": "Profilim",
+    "message": "Mesaj",
+    "changePassword": "Şifreyi Değiştir",
+    "noUserLoggedIn": "Şu anda giriş yapmış bir kullanıcı yok.",
+    "successfullyUpdated": "Kullanıcı bilgileri başarıyla güncellendi.",
+    "errorUpdating": "Kullanıcı bilgileri güncellenirken bir hata oluştu."
+  },
+  "compare": {
+    "title": "Karşılaştır",
+    "compareUniversities": "Üniversiteleri Karşılaştır",
+    "universityName": "Üniversite Adı",
+    "country": "Ülke",
+    "city": "Şehir",
+    "compare": "Karşılaştır"
+  },
+  "favorites": {
+    "title": "Favoriler",
+    "yourFavorites": "Favorileriniz",
+    "universityName": "Üniversite Adı",
+    "country": "Ülke",
+    "city": "Şehir",
+    "remove": "Kaldır"
+  },
+
+  "homeDepartments": {
+    "title": "Bölümlerimiz",
+    "subTitle": "Bölümlerimiz Bölümlerimiz Bölümlerimiz"
+  },
+  "homeSearch": {
+    "title": "Eğitim",
+    "selectCity": "Şehir Seç",
+    "selectUniversity": "Üniversite Seç",
+    "selectDepartment": "Bölüm Seç",
+    "search": "Ara"
+  },
+  "myAccount": {
+    "myAccount": "Hesabım",
+    "userDashboard": "Kullanıcı Paneli",
+    "favoriteDepartment": "Favori Bölüm",
+    "compareDepartment": "Bölüm Karşılaştır",
+    "logout": "Çıkış Yap"
+  },
+  "logIn": {
+    "signIn": "Giriş Yap",
+    "userEmail": "Kullanıcı E-posta",
+    "password": "Parola",
+    "logIn": "Giriş Yap",
+    "savePassword": "Parolayı Kaydet",
+    "forgetPassword": "Parolamı Unuttum",
+    "signUpQuestion": "Hesabınız yok mu?",
+    "signUp": "Kayıt Ol",
+    "continueWithGoogle": "Google ile Devam Et"
+  },
+  "register": {
+    "signUp": "Kayıt Ol",
+    "userName": "Kullanıcı Adı",
+    "userEmail": "Kullanıcı E-posta",
+    "password": "Parola",
+    "rePassword": "Parolayı Tekrar Gir",
+    "signInQuestion": "Zaten bir hesabınız mı var?",
+    "signIn": "Giriş Yap",
+    "continueWithGoogle": "Google ile Devam Et"
+  },
+
+  "universityCard": {
+    "faculties": "Fakülteler",
+    "departments": "Bölümler",
+    "location": "Konum",
+    "address": "Adres",
+    "contact": "İletişim"
+  },
+  "departments": {
+    "title": "Bölümler",
+    "selectCity": "Şehir Seç",
+    "selectUniversity": "Üniversite Seç",
+    "selectDepartment": "Bölüm Seç",
+    "minPrice": "Min Fiyat",
+    "maxPrice": "Maks Fiyat",
+    "submitSearch": "Aramayı Gönder",
+    "compare": "Karşılaştır"
+  },
+  "departmentsCard": {
+    "compare": "Karşılaştır"
+  },
+  "detail": {
+    "other": "Diğer",
+    "language": "Dil",
+    "english": "İngilizce",
+    "year": "Yıl",
+    "quota": "Kota",
+    "internships": "Stajlar",
+    "yes": "Evet",
+    "aboutDepartment": "Bölüm Hakkında",
+    "basicDetail": "Temel Detay",
+    "name": "İsim",
+    "email": "E-Posta",
+    "phoneNo": "Telefon No.",
+    "yourMessage": "Mesajınız",
+    "submitReview": "İncelemeyi Gönder",
+    "addFavorite": "Favorilere Ekle",
+    "removeFavorite": "Favorilerden Çıkar",
+    "callUs": "Bizi Arayın",
+    "email": "E-Posta",
+    "website": "Web Sitesi",
+    "sendMessage": "Mesaj Gönder"
+  }
+}
