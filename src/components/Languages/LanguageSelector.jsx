@@ -12,8 +12,14 @@ const LanguageSelector = () => {
     "TR": "Turkish",
     "FR": "French",
     "ES": "Spanish",
-    "DE": "German"
+    "DE": "German",
+    "AR": "Arabic",
+    "RU": "Russian",  
+    "CN": "Chinese", 
+    "PT": "Portuguese", 
+    "IT": "Italian" 
   };
+
 
   const handleLanguageChange = (selectedLanguageCode) => {
     const lowerCaseLanguageCode = selectedLanguageCode.toLowerCase();

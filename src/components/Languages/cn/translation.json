@@ -1,0 +1,144 @@
+{
+  "homepage": {
+    "home": "主页",
+    "universities": "大学",
+    "departments": "部门",
+    "signIn": "登录",
+    "signUp": "注册"
+  },
+  "footer": {
+    "address": "地址",
+    "phone": "电话",
+    "email": "电子邮件",
+    "navigations": "导航",
+    "aboutUs": "关于我们",
+    "faqsPage": "常见问题页面",
+    "checkout": "结账",
+    "contact": "联系",
+    "blog": "博客",
+    "myAccount": "我的帐户",
+    "myProfile": "我的简介",
+    "favorites": "最爱",
+    "allRightsReserved": "版权所有"
+  },
+  "emailSearch": {
+    "workingWithUs": "您已经在和我们一起工作了吗？",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "输入您的电子邮件",
+    "subscribe": "订阅"
+  },
+  "account": {
+    "myAccount": "我的帐户",
+    "yourName": "你的名字",
+    "email": "电子邮件",
+    "country": "国家",
+    "phone": "电话",
+    "about": "关于",
+    "saveChanges": "保存更改",
+    "selectCountry": "选择国家",
+    "selectCity": "选择城市",
+    "dashboard": "仪表盘",
+    "myProfile": "我的简介",
+    "message": "信息",
+    "changePassword": "更改密码",
+    "noUserLoggedIn": "当前没有用户登录。",
+    "successfullyUpdated": "用户数据更新成功。",
+    "errorUpdating": "更新用户数据时出错。"
+  },
+  "compare": {
+    "title": "比较",
+    "compareUniversities": "比较大学",
+    "universityName": "大学名称",
+    "country": "国家",
+    "city": "城市",
+    "compare": "比较"
+  },
+  "favorites": {
+    "title": "最爱",
+    "yourFavorites": "您的最爱",
+    "universityName": "大学名称",
+    "country": "国家",
+    "city": "城市",
+    "remove": "删除"
+  },
+  "homeDepartments": {
+    "title": "我们的部门",
+    "subTitle": "我们的部门我们的部门我们的部门"
+  },
+  "homeSearch": {
+    "title": "教育",
+    "selectCity": "选择城市",
+    "selectUniversity": "选择大学",
+    "selectDepartment": "选择部门",
+    "search": "搜索"
+  },
+  "myAccount": {
+    "myAccount": "我的帐户",
+    "userDashboard": "用户面板",
+    "favoriteDepartment": "最喜欢的部门",
+    "compareDepartment": "比较部门",
+    "logout": "登出"
+  },
+  "logIn": {
+    "signIn": "登录",
+    "userEmail": "用户邮箱",
+    "password": "密码",
+    "logIn": "登录",
+    "savePassword": "保存密码",
+    "forgetPassword": "忘记密码",
+    "signUpQuestion": "还没有帐户？",
+    "signUp": "注册",
+    "continueWithGoogle": "使用 Google 继续"
+  },
+  "register": {
+    "signUp": "注册",
+    "userName": "用户名",
+    "userEmail": "用户邮箱",
+    "password": "密码",
+    "rePassword": "重新输入密码",
+    "signInQuestion": "已经有帐户了？",
+    "signIn": "登录",
+    "continueWithGoogle": "使用 Google 继续"
+  },
+  "universityCard": {
+    "faculties": "学院",
+    "departments": "部门",
+    "location": "位置",
+    "address": "地址",
+    "contact": "联系"
+  },
+  "departments": {
+    "title": "部门",
+    "selectCity": "选择城市",
+    "selectUniversity": "选择大学",
+    "selectDepartment": "选择部门",
+    "minPrice": "最低价格",
+    "maxPrice": "最高价格",
+    "submitSearch": "提交搜索",
+    "compare": "比较"
+  },
+  "departmentsCard": {
+    "compare": "比较"
+  },
+  "detail": {
+    "other": "其他",
+    "language": "语言",
+    "english": "英语",
+    "year": "年份",
+    "quota": "配额",
+    "internships": "实习",
+    "yes": "是",
+    "aboutDepartment": "关于部门",
+    "basicDetail": "基本细节",
+    "name": "姓名",
+    "email": "电子邮件",
+    "phoneNo": "电话号码",
+    "yourMessage": "你的信息",
+    "submitReview": "提交评论",
+    "addFavorite": "添加到最爱",
+    "removeFavorite": "从最爱中删除",
+    "callUs": "给我们打电话",
+    "website": "网站",
+    "sendMessage": "发送信息"
+  }
+}
