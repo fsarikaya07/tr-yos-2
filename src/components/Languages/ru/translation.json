@@ -1,0 +1,145 @@
+{
+  "homepage": {
+    "home": "Главная",
+    "universities": "Университеты",
+    "departments": "Департаменты",
+    "signIn": "Войти в систему",
+    "signUp": "Зарегистрироваться"
+  },
+  "footer": {
+    "address": "Адрес",
+    "phone": "Телефон",
+    "email": "Электронное письмо",
+    "navigations": "Навигация",
+    "aboutUs": "О нас",
+    "faqsPage": "Страница FAQ",
+    "checkout": "Оформить заказ",
+    "contact": "Контакт",
+    "blog": "Блог",
+    "myAccount": "Мой аккаунт",
+    "myProfile": "Мой профиль",
+    "favorites": "Избранное",
+    "allRightsReserved": "Все права защищены."
+  },
+  "emailSearch": {
+    "workingWithUs": "Вы уже работаете с нами?",
+    "message": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "Введите ваш адрес электронной почты",
+    "subscribe": "Подписаться"
+  },
+  "account": {
+    "myAccount": "Мой аккаунт",
+    "yourName": "Ваше имя",
+    "email": "Электронное письмо",
+    "country": "Страна",
+    "phone": "Телефон",
+    "about": "Около",
+    "saveChanges": "Сохранить изменения",
+    "selectCountry": "Выбрать страну",
+    "selectCity": "Выбрать город",
+    "dashboard": "Панель приборов",
+    "myProfile": "Мой профиль",
+    "message": "Сообщение",
+    "changePassword": "Сменить пароль",
+    "noUserLoggedIn": "В настоящее время пользователь не вошел в систему.",
+    "successfullyUpdated": "Данные пользователя успешно обновлены.",
+    "errorUpdating": "Произошла ошибка при обновлении данных пользователя."
+  },
+  "compare": {
+    "title": "Сравнить",
+    "compareUniversities": "Сравнить университеты",
+    "universityName": "Название университета",
+    "country": "Страна",
+    "city": "Город",
+    "compare": "Сравнить"
+  },
+  "favorites": {
+    "title": "Избранное",
+    "yourFavorites": "Ваши избранные",
+    "universityName": "Название университета",
+    "country": "Страна",
+    "city": "Город",
+    "remove": "Удалить"
+  },
+  "homeDepartments": {
+    "title": "Наши департаменты",
+    "subTitle": "Наши департаменты наши департаменты наши департаменты"
+  },
+  "homeSearch": {
+    "title": "Образование",
+    "selectCity": "Выбрать город",
+    "selectUniversity": "Выбрать университет",
+    "selectDepartment": "Выберите департамент",
+    "search": "Поиск"
+  },
+  "myAccount": {
+    "myAccount": "Мой аккаунт",
+    "userDashboard": "Панель пользователя",
+    "favoriteDepartment": "Любимый департамент",
+    "compareDepartment": "Сравнить департамент",
+    "logout": "Выйти"
+  },
+  "logIn": {
+    "signIn": "Войти в систему",
+    "userEmail": "Электронное письмо пользователя",
+    "password": "Пароль",
+    "logIn": "Войти",
+    "savePassword": "Сохранить пароль",
+    "forgetPassword": "Забыли пароль",
+    "signUpQuestion": "Еще нет аккаунта?",
+    "signUp": "Зарегистрироваться",
+    "continueWithGoogle": "Продолжить с Google"
+  },
+  "register": {
+    "signUp": "Зарегистрироваться",
+    "userName": "Имя пользователя",
+    "userEmail": "Электронное письмо пользователя",
+    "password": "Пароль",
+    "rePassword": "Повторный пароль",
+    "signInQuestion": "Уже есть аккаунт?",
+    "signIn": "Войти в систему",
+    "continueWithGoogle": "Продолжить с Google"
+  },
+  "universityCard": {
+    "faculties": "Факультеты",
+    "departments": "Департаменты",
+    "location": "Местоположение",
+    "address": "Адрес",
+    "contact": "Контакт"
+  },
+  "departments": {
+    "title": "Департаменты",
+    "selectCity": "Выбрать город",
+    "selectUniversity": "Выбрать университет",
+    "selectDepartment": "Выберите департамент",
+    "minPrice": "Минимальная цена",
+    "maxPrice": "Максимальная цена",
+    "submitSearch": "Подать заявку",
+    "compare": "Сравнить"
+  },
+  "departmentsCard": {
+    "compare": "Сравнить"
+  },
+  "detail": {
+    "other": "Другой",
+    "language": "Язык",
+    "english": "Английский",
+    "year": "Год",
+    "quota": "Квота",
+    "internships": "Стажировки",
+    "yes": "Да",
+    "aboutDepartment": "О департаменте",
+    "basicDetail": "Основная информация",
+    "name": "Имя",
+    "email": "Электронное письмо",
+    "phoneNo": "Номер телефона",
+    "yourMessage": "Ваше сообщение",
+    "submitReview": "Отправить отзыв",
+    "addFavorite": "Добавить в избранное",
+    "removeFavorite": "Удалить из избранного",
+    "callUs": "Позвоните нам",
+    "website": "Вебсайт",
+    "sendMessage": "Отправить сообщение"
+  }
+}
+

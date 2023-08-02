@@ -6,6 +6,12 @@ import translationTR from './components/Languages/tr/translation.json';
 import translationFR from './components/Languages/fr/translation.json';
 import translationDE from './components/Languages/de/translation.json';
 import translationES from './components/Languages/es/translation.json';
+import translationAR from './components/Languages/ar/translation.json';
+import translationRU from './components/Languages/ru/translation.json'; // Russian translations
+import translationCN from './components/Languages/cn/translation.json'; // Chinese translations
+import translationPT from './components/Languages/pt/translation.json'; // Portuguese translations
+import translationIT from './components/Languages/it/translation.json'; // Italian translations
+
 const resources = {
     en: {
         translation: translationEN,
@@ -22,6 +28,21 @@ const resources = {
     es: {
         translation: translationES,
     },
+    ar: {
+        translation: translationAR,
+    },
+    ru: {
+        translation: translationRU, // Russian translations
+    },
+    cn: {
+        translation: translationCN, // Chinese translations
+    },
+    pt: {
+        translation: translationPT, // Portuguese translations
+    },
+    it: {
+        translation: translationIT, // Italian translations
+    },
 };
 
 i18n
@@ -37,6 +58,7 @@ i18n
     });
 
 export default i18n;
+
 
 
 // import i18n from "i18next";

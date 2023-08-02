@@ -1,0 +1,144 @@
+{
+  "homepage": {
+    "home": "الصفحة الرئيسية",
+    "universities": "الجامعات",
+    "departments": "الأقسام",
+    "signIn": "تسجيل الدخول",
+    "signUp": "سجل"
+  },
+  "footer": {
+    "address": "العنوان",
+    "phone": "الهاتف",
+    "email": "البريد الإلكتروني",
+    "navigations": "التنقلات",
+    "aboutUs": "معلومات عنا",
+    "faqsPage": "صفحة الأسئلة الشائعة",
+    "checkout": "الدفع",
+    "contact": "اتصل",
+    "blog": "مدونة",
+    "myAccount": "حسابي",
+    "myProfile": "ملفي الشخصي",
+    "favorites": "المفضلة",
+    "allRightsReserved": "كل الحقوق محفوظة."
+  },
+  "emailSearch": {
+    "workingWithUs": "هل تعمل بالفعل معنا؟",
+    "message": "في vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias",
+    "enterEmail": "أدخل بريدك الإلكتروني",
+    "subscribe": "اشترك"
+  },
+  "account": {
+    "myAccount": "حسابي",
+    "yourName": "اسمك",
+    "email": "البريد الإلكتروني",
+    "country": "البلد",
+    "phone": "الهاتف",
+    "about": "حول",
+    "saveChanges": "حفظ التغييرات",
+    "selectCountry": "اختر البلد",
+    "selectCity": "اختر المدينة",
+    "dashboard": "لوحة القيادة",
+    "myProfile": "ملفي الشخصي",
+    "message": "الرسالة",
+    "changePassword": "تغيير كلمة المرور",
+    "noUserLoggedIn": "لا يوجد مستخدم مسجل الدخول حاليا.",
+    "successfullyUpdated": "تم تحديث بيانات المستخدم بنجاح.",
+    "errorUpdating": "حدث خطأ أثناء تحديث بيانات المستخدم."
+  },
+  "compare": {
+    "title": "قارن",
+    "compareUniversities": "قارن الجامعات",
+    "universityName": "اسم الجامعة",
+    "country": "البلد",
+    "city": "المدينة",
+    "compare": "قارن"
+  },
+  "favorites": {
+    "title": "المفضلة",
+    "yourFavorites": "مفضلتك",
+    "universityName": "اسم الجامعة",
+    "country": "البلد",
+    "city": "المدينة",
+    "remove": "إزالة"
+  },
+  "homeDepartments": {
+    "title": "أقسامنا",
+    "subTitle": "أقسامنا أقسامنا أقسامنا"
+  },
+  "homeSearch": {
+    "title": "التعليم",
+    "selectCity": "اختر المدينة",
+    "selectUniversity": "اختر الجامعة",
+    "selectDepartment": "اختر القسم",
+    "search": "بحث"
+  },
+  "myAccount": {
+    "myAccount": "حسابي",
+    "userDashboard": "لوحة تحكم المستخدم",
+    "favoriteDepartment": "القسم المفضل",
+    "compareDepartment": "قارن القسم",
+    "logout": "تسجيل خروج"
+  },
+  "logIn": {
+    "signIn": "تسجيل الدخول",
+    "userEmail": "البريد الإلكتروني للمستخدم",
+    "password": "كلمه السر",
+    "logIn": "تسجيل الدخول",
+    "savePassword": "حفظ كلمة المرور",
+    "forgetPassword": "نسيت كلمة المرور",
+    "signUpQuestion": "ليس لديك حساب بعد؟",
+    "signUp": "سجل",
+    "continueWithGoogle": "استمر مع جوجل"
+  },
+  "register": {
+    "signUp": "سجل",
+    "userName": "اسم المستخدم",
+    "userEmail": "البريد الإلكتروني للمستخدم",
+    "password": "كلمه السر",
+    "rePassword": "إعادة كلمة السر",
+    "signInQuestion": "هل لديك حساب بالفعل؟",
+    "signIn": "تسجيل الدخول",
+    "continueWithGoogle": "استمر مع جوجل"
+  },
+  "universityCard": {
+    "faculties": "الكليات",
+    "departments": "الأقسام",
+    "location": "الموقع",
+    "address": "العنوان",
+    "contact": "اتصل"
+  },
+  "departments": {
+    "title": "الأقسام",
+    "selectCity": "اختر المدينة",
+    "selectUniversity": "اختر الجامعة",
+    "selectDepartment": "اختر القسم",
+    "minPrice": "السعر الأدنى",
+    "maxPrice": "اقصى سعر",
+    "submitSearch": "تقديم البحث",
+    "compare": "قارن"
+  },
+  "departmentsCard": {
+    "compare": "قارن"
+  },
+  "detail": {
+    "other": "آخر",
+    "language": "اللغة",
+    "english": "الإنجليزية",
+    "year": "السنة",
+    "quota": "حصة",
+    "internships": "التدريبات",
+    "yes": "نعم",
+    "aboutDepartment": "حول القسم",
+    "basicDetail": "التفاصيل الأساسية",
+    "name": "اسم",
+    "email": "البريد الإلكتروني",
+    "phoneNo": "رقم الهاتف",
+    "yourMessage": "رسالتك",
+    "submitReview": "إرسال المراجعة",
+    "addFavorite": "إضافة إلى المفضلة",
+    "removeFavorite": "إزالة من المفضلة",
+    "callUs": "اتصل بنا",
+    "website": "موقع الكتروني",
+    "sendMessage": "إرسال رسالة"
+  }
+}
