@@ -30,6 +30,17 @@ const SideBarScrollNavbar = () => {
   const [scrollBackground, setScrollBackground] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const [currentForm, setCurrentForm] = useState('login');
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+    setShowModal(true);
+  };
+  
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -69,15 +80,7 @@ const SideBarScrollNavbar = () => {
   // const openModal = () => setShowSignInModal(true);
   // const closeModal = () => setShowSignInModal(false);
 
-  const [currentForm, setCurrentForm] = useState('login');
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-    setShowModal(true);
-  };
-  
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+
 
 
   return (
@@ -177,7 +180,8 @@ const SideBarScrollNavbar = () => {
         fixed="top"
         className="homeNavbar text-dark fs-5"
       >
-        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleSidebar}>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" 
+        onClick={toggleSidebar}>
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">

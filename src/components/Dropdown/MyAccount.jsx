@@ -5,7 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { useAuthContext } from "../../context/AuthContext";
 import "./MyAccount.css"
 const MyAccount = () => {
-  const { logout } = useAuthContext();
+  const { logoutPerson } = useAuthContext();
   const [open, setOpen] = useState(false);
 
   const handleMouseEnter = () => {
@@ -19,7 +19,7 @@ const MyAccount = () => {
   const handleLogout = async () => {
     setOpen(false);
     try {
-      await logout();
+      await logoutPerson();
     } catch (error) {
       console.error(error);
     }
@@ -70,7 +70,8 @@ const MyAccount = () => {
           className="titbtn btn btn-outline-light m-4 text-center  w-75 "
           style={{ backgroundColor:" #34b3b3" , width:"80px"}}
         >
-          <div className="titbtn py-1 text-center" onClick={handleLogout}>
+          <div className="titbtn py-1 text-center" 
+          onClick={handleLogout}>
             Logout
           </div>
         </NavLink>
