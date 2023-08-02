@@ -22,21 +22,28 @@ import LanguageSelector from "../Languages/LanguageSelector";
 
 const SideBarScrollNavbar = () => {
 
+
   const { t } = useTranslation();
 
   const [isSignInVisible, setIsSignInVisible] = useState(true);
 
   const { currentUser } = useAuthContext();
-
-  const [showSignInModal, setShowSignInModal] = useState(false);
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
-
-  const toggleShowSignInModal = () => setShowSignInModal(!showSignInModal);
-  const toggleShowSignUpModal = () => setShowSignUpModal(!showSignUpModal);
-
+  const [showModal, setShowModal] = useState(false);
+ 
   const location = useLocation();
   const [scrollBackground, setScrollBackground] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const [currentForm, setCurrentForm] = useState('login');
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+    setShowModal(true);
+  };
+  
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,16 +84,7 @@ const SideBarScrollNavbar = () => {
   // const openModal = () => setShowSignInModal(true);
   // const closeModal = () => setShowSignInModal(false);
 
-  const handleSignInClick = () => {
-    setIsSignInVisible(true);
 
-
-  }
-
-
-  const handleRegisterClick = () => {
-    setIsSignInVisible(false);
-  }
 
 
   return (
@@ -161,7 +159,7 @@ const SideBarScrollNavbar = () => {
                             className="signIn btn btn-outline-light my-1 m-3 flex-wrap"
                             type="submit"
                             variant="info"
-                            onClick={toggleShowSignInModal}
+                            onClick={() => toggleForm('login')}
                           >
                             <i className="fas fa-sign-in-alt me-2"></i>
                             {/* <FaSignInAlt /> */}
@@ -186,7 +184,8 @@ const SideBarScrollNavbar = () => {
         fixed="top"
         className="homeNavbar text-dark fs-5"
       >
-        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleSidebar}>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" 
+        onClick={toggleSidebar}>
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
@@ -247,7 +246,7 @@ const SideBarScrollNavbar = () => {
                           className="signIn btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
                           type="submit"
                           variant="info"
-                          onClick={toggleShowSignInModal}
+                          onClick={() => toggleForm('login')}
                         >
                           <i className="fas fa-sign-in-alt me-2"></i>
                           {/* <FaSignInAlt /> */}
@@ -258,7 +257,7 @@ const SideBarScrollNavbar = () => {
                           className="signUp btn btn-outline-light my-4 py-2 px-4 m-1 flex-wrap"
                           type="submit"
                           variant="primary"
-                          onClick={toggleShowSignUpModal}
+                          onClick={() => toggleForm('register')}
                         >
                           <i className="fas fa-user-alt me-2"></i>
                           {/* <FaUserPlus className="me-2" />  */}
@@ -286,38 +285,24 @@ const SideBarScrollNavbar = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      {isSignInVisible ?   
-      <Modal show={showSignInModal} 
-      onHide={() => setShowSignInModal(false)} 
-      centered>
-        <Modal.Header closeButton  style={{ border: "none" }}>
-        
-        </Modal.Header>
-        <Modal.Body>
-          <LogIn setShowSignInModal={setShowSignInModal}
-          // handleSignInClick={handleSignInClick}
-          handleRegisterClick={handleRegisterClick}
-
-          />
-        </Modal.Body>
-      </Modal>
-      : 
-      
-      
-      <Modal show={showSignUpModal} 
-      onHide={() => setShowSignUpModal(false)} 
-      centered>
-        <Modal.Header closeButton  style={{ border: "none" }}>
-        
-        </Modal.Header>
-        <Modal.Body>
-        <Register setShowSignUpModal={setShowSignUpModal} 
-        showSignUpModal={showSignUpModal}
-handleSignInClick={handleSignInClick}
-        // handleRegisterClick={handleRegisterClick}
-        />
-        </Modal.Body>
-      </Modal>}
+      <Modal
+  show={showModal}
+  onHide={handleCloseModal}
+  centered
+>
+  <Modal.Header closeButton style={{ border: "none" }}></Modal.Header>
+  <Modal.Body>
+    {currentForm === "login" ? (
+      <LogIn setShowModal={handleCloseModal} onFormSwitch={toggleForm} />
+    ) : (
+      <Register
+        setShowModal={handleCloseModal}
+        // showSignUpModal={showSignUpModal}
+        onFormSwitch={toggleForm}
+      />
+    )}
+  </Modal.Body>
+</Modal>
     </>
   );
 };

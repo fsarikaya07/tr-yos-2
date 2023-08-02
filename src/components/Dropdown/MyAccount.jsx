@@ -6,8 +6,12 @@ import { useAuthContext } from "../../context/AuthContext";
 import { useTranslation } from 'react-i18next';
 import "./MyAccount.css"
 const MyAccount = () => {
+
+  const { logoutPerson } = useAuthContext();
+
   const { t } = useTranslation();
   const { logout } = useAuthContext();
+
   const [open, setOpen] = useState(false);
 
   const handleMouseEnter = () => {
@@ -21,7 +25,7 @@ const MyAccount = () => {
   const handleLogout = async () => {
     setOpen(false);
     try {
-      await logout();
+      await logoutPerson();
     } catch (error) {
       console.error(error);
     }
@@ -72,8 +76,13 @@ const MyAccount = () => {
           className="titbtn btn btn-outline-light m-4 text-center  w-75 "
           style={{ backgroundColor:" #34b3b3" , width:"80px"}}
         >
+          <div className="titbtn py-1 text-center" 
+          onClick={handleLogout}>
+            Logout
+
           <div className="titbtn py-1 text-center" onClick={handleLogout}>
             {t('myAccount.logout')}
+
           </div>
         </NavLink>
       </Dropdown.Menu>

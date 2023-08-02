@@ -7,8 +7,12 @@ import { useTranslation } from 'react-i18next';
 import { Modal } from "react-bootstrap";
 import { FaGoogle } from 'react-icons/fa';
 
+
+const Register = ({setShowModal,onFormSwitch}) => {
+
 const Register = ({setShowSignUpModal,handleSignInClick}) => {
   const { t } = useTranslation();
+
   const { registerPerson } = useAuthContext();
 
   const [name, setName] = useState("");
@@ -36,7 +40,7 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
       setPassword1("");
       setPassword2("");
       navigate("/"); // İlgili sayfaya yönlendir
-      setShowSignUpModal(false); 
+      setShowModal(false); 
     } else {
       // Hata mesajını göster
       console.log("Registration failed!")
@@ -111,7 +115,7 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
           <div>
             {t('register.signInQuestion')}{" "}
               <button
-              onClick={handleSignInClick}
+             onClick={() => onFormSwitch('login')}
               className="text-primary mx-2" style={{ textDecoration: "none" }}>
               {t('register.signIn')}
                 
