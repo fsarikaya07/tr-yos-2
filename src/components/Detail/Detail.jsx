@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../Style/Detail.css";
@@ -8,6 +9,9 @@ import { useYosContext } from "../../context/Context";
 import axios from "axios";
 
 const Detail = () => {
+
+  const { t } = useTranslation();
+
   const [isDetail, setIsDetail] = useState(false);
   const [isButton, setIsButton] = useState(true);
   const { id } = useParams();
@@ -50,34 +54,34 @@ const Detail = () => {
                 <p className="fs-3 text-primary font-weight-bold">
                   ${cardApi?.price}
                 </p>
-                <p className="year text-center ">Year</p>
+                <p className="year text-center ">{t('detail.year')}</p>
               </div>
             </div>
 
             <div className="bg-white p-3 mt-4 rounded">
-              <h4 className="text-start fs-6 font-weight-bold">Other</h4>
+              <h4 className="text-start fs-6 font-weight-bold">{t('detail.other')}</h4>
               <div className="bg-success bg-opacity-10 d-flex justify-content-around rounded border border-success">
                 <div className="dashed text-center p-2 w-25 align-middle">
-                  <p className="">Language</p>
-                  <p className="fs-2 text-success ">English</p>
+                  <p className="">{t('detail.language')}</p>
+                  <p className="fs-2 text-success ">{t('detail.english')}</p>
                 </div>
                 <div className="dashed text-center w-25">
-                  <p>Year</p>
+                  <p>{t('detail.year')}</p>
                   <p className="fs-2 text-success ">4</p>
                 </div>
                 <div className="dashed text-center w-25">
-                  <p>Quota</p>
+                  <p>{t('detail.quota')}</p>
                   {/* <p className="fs-2 text-success "> {cardApi.quota}</p> */}
                 </div>
                 <div className="w-25 text-center">
-                  <p>Internships</p>
-                  <p className="fs-2 text-success ">Yes</p>
+                  <p>{t('detail.internships')}</p>
+                  <p className="fs-2 text-success ">{t('detail.yes')}</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded mt-4 p-2">
-              <h6 className="text-start font-weight-bold">About Department</h6>
+              <h6 className="text-start font-weight-bold">{t('detail.aboutDepartment')}</h6>
               <p className="text-muted text-start fs-7 font-weight-light">
                 {/* {cardApi.history} */}
               </p>
@@ -87,7 +91,7 @@ const Detail = () => {
               <div className="d-flex justify-content-between p-4">
                 <div className="  ">
                   <a className="text-start  text-decoration-none">
-                    <h4 className="fs-5">Basic Detail</h4>
+                    <h4 className="fs-5">{t('detail.basicDetail')}</h4>
                   </a>
                 </div>
                 <div onClick={() => setIsDetail(!isDetail)}>
@@ -140,12 +144,12 @@ const Detail = () => {
               <div className="text-start ">
                 <form className="">
                   <h5 className="text-start  font-weight-bold">
-                    Submit Review
+                    {t('detail.submitReview')}
                   </h5>
                   <div className="row ">
                     <div className="col-lg-6 col-md-6 col-sm-12 p-2">
                       <div className="form-group">
-                        <label>Name</label>
+                        <label>{t('detail.name')}</label>
                         <input
                           type="text"
                           className="form-control"
@@ -156,18 +160,18 @@ const Detail = () => {
 
                     <div className="col-lg-6 col-md-6 col-sm-12 p-2">
                       <div className="form-group">
-                        <label>Email</label>
+                        <label>{t('detail.email')}</label>
                         <input
                           type="email"
                           className="form-control"
-                          placeholder="Your eMail"
+                          placeholder="Your e-Mail"
                         />
                       </div>
                     </div>
 
                     <div className="col-lg-6 col-md-6 col-sm-12 p-2">
                       <div className="form-group">
-                        <label>Phone No.</label>
+                        <label>{t('detail.phoneNo')}</label>
                         <input
                           type="text"
                           className="form-control"
@@ -191,7 +195,7 @@ const Detail = () => {
 
                     <div className="col-lg-12 col-md-12 col-sm-12 p-2">
                       <div className="form-group">
-                        <label>Your Message</label>
+                        <label>{t('detail.yourMessage')}</label>
                         <textarea
                           className="form-control"
                           placeholder="Messages"
@@ -206,7 +210,7 @@ const Detail = () => {
                           className="btn btn-primary p-3 m-2"
                           type="submit"
                         >
-                          Submit Review
+                          {t('detail.submitReview')}
                         </button>
                       </div>
                     </div>
@@ -227,7 +231,7 @@ const Detail = () => {
                   className="btn btn-danger  bg-opacity-10  border  border-danger p-2 rounded w-50"
                   onClick={() => setIsButton(!isButton)}
                 >
-                  Add Favorite
+                  {t('detail.addFavorite')}
                 </button>
               ) : (
                 <button
@@ -235,7 +239,7 @@ const Detail = () => {
                   className="btn btn-success  bg-opacity-10  border  border-success p-2 rounded w-50"
                   onClick={() => setIsButton(!isButton)}
                 >
-                  Remove Favorite
+                    {t('detail.removeFavorite')}
                 </button>
               )}
             </div>
@@ -265,7 +269,7 @@ const Detail = () => {
                         <i className="fa-solid fa-phone-volume fa-xl  "></i>
                       </div>
                       <div className="text-start ps-4">
-                        <h6>Call Us</h6>
+                        <h6>{t('detail.callUs')}</h6>
                         <p>
                           <a
                             className="text-decoration-none"
@@ -281,7 +285,7 @@ const Detail = () => {
                         <i className="fa-regular fa-envelope fa-xl"></i>
                       </div>
                       <div className="text-start ps-4">
-                        <h6>E-Mail</h6>
+                        <h6>{t('detail.email')}</h6>
                         <p>
                           <a
                             className="text-decoration-none"
@@ -297,7 +301,7 @@ const Detail = () => {
                         <i className="fa-solid fa-globe fa-xl"></i>
                       </div>
                       <div className="text-start ps-4">
-                        <h6>Website</h6>
+                        <h6>{t('detail.website')}</h6>
                         <p>
                           <a
                             className="text-decoration-none"
@@ -317,7 +321,7 @@ const Detail = () => {
                         className="btn btn-outline-success w-75 bg-success bg-opacity-10 "
                       >
                         <i class="fa-regular fa-paper-plane fa-beat p-1"></i>
-                        Send Message
+                        {t('detail.sendMessage')}
                       </button>
                     </div>
                   </div>

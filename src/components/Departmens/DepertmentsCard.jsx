@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { useYosContext } from "../../context/Context";
+import { useTranslation } from 'react-i18next';
 import "../Style/Departmants.css";
 import { Button, Card, Carousel, Col, Container, ListGroup, Row } from "react-bootstrap";
 // import defaultImg from "../../assets/uni.jpg";
 
 
 const DepartmentsCard = ({
+
+  
   // selectedCities,
   // selectedUniversities,
   // selectedDepartments,
@@ -17,8 +20,9 @@ const DepartmentsCard = ({
   // handleDepartmentChange,
   item
 }) => {
+ 
   const { universities, departments,card } = useYosContext();
-
+  const { t } = useTranslation();
 
 
 
@@ -91,7 +95,7 @@ const DepartmentsCard = ({
             >
               <i className="fa-solid fa-rotate-right fa-md p-1" style={{ color: "#017EFA"  }}></i>
               <span className="mx-1"></span>
-              Compare
+          {t('departmentsCard.compare')}
             </button>
             <Card.Body className="cardBody d-flex w-100 justify-content-between" style={{ height: "33%" }}>
               <div className="left ">

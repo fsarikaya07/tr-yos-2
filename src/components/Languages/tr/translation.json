@@ -61,7 +61,7 @@
     "city": "Şehir",
     "remove": "Kaldır"
   },
-  
+
   "homeDepartments": {
     "title": "Bölümlerimiz",
     "subTitle": "Bölümlerimiz Bölümlerimiz Bölümlerimiz"
@@ -100,7 +100,48 @@
     "signInQuestion": "Zaten bir hesabınız mı var?",
     "signIn": "Giriş Yap",
     "continueWithGoogle": "Google ile Devam Et"
+  },
+
+  "universityCard": {
+    "faculties": "Fakülteler",
+    "departments": "Bölümler",
+    "location": "Konum",
+    "address": "Adres",
+    "contact": "İletişim"
+  },
+  "departments": {
+    "title": "Bölümler",
+    "selectCity": "Şehir Seç",
+    "selectUniversity": "Üniversite Seç",
+    "selectDepartment": "Bölüm Seç",
+    "minPrice": "Min Fiyat",
+    "maxPrice": "Maks Fiyat",
+    "submitSearch": "Aramayı Gönder",
+    "compare": "Karşılaştır"
+  },
+  "departmentsCard": {
+    "compare": "Karşılaştır"
+  },
+  "detail": {
+    "other": "Diğer",
+    "language": "Dil",
+    "english": "İngilizce",
+    "year": "Yıl",
+    "quota": "Kota",
+    "internships": "Stajlar",
+    "yes": "Evet",
+    "aboutDepartment": "Bölüm Hakkında",
+    "basicDetail": "Temel Detay",
+    "name": "İsim",
+    "email": "E-Posta",
+    "phoneNo": "Telefon No.",
+    "yourMessage": "Mesajınız",
+    "submitReview": "İncelemeyi Gönder",
+    "addFavorite": "Favorilere Ekle",
+    "removeFavorite": "Favorilerden Çıkar",
+    "callUs": "Bizi Arayın",
+    "email": "E-Posta",
+    "website": "Web Sitesi",
+    "sendMessage": "Mesaj Gönder"
   }
-
-
 }
