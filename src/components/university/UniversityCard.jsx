@@ -55,7 +55,7 @@ const UniversityCard = ({ logo, city, tr, data }) => {
 
                 <p className="university-address ">
                   {data?.adress}
-
+</p>
                 <p className="university-address">
                   Afyon Kocatepe Üniversitesi Rektörlüğü ANS Kampusü Gazlıgöl
                   Yolu Üzeri AFYONKARAHİSAR

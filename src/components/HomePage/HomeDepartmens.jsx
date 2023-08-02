@@ -25,9 +25,7 @@ const HomeDepartmens = () => {
   };
 
   return (
-    // <div>
-    //   {data.map((item)=> <HomeCard{...item}/>)}
-    // </div>
+ 
 
     <Container className="rounded-4 mt-4  ">
       <h1 className="my-2 text-center" style={{ color: "#16193B" }}>

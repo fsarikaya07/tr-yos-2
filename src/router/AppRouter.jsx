@@ -10,36 +10,26 @@ import MyAccount from "../components/Dropdown/MyAccount";
 import Compare from "../components/Account/Compare";
 import Favori from "../components/Account/Favori";
 import University from "../pages/University";
-// import LogIn from "../components/Login/Logİn";
-// import SignUp from "../components/Login/Signup";
-
 
 const AppRouter = () => {
   return (
-   <>
-          <Navbar className="" />
-        
+    <>
+      <Navbar className="" />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/account" element={<Account />} />
-        <Route
-          path="/universities/:id"
-          element={<Detail  />}
-        />
-        <Route path="/favorite-department" element={<Favori/>}/>
+        <Route path="/universities/:id" element={<Detail />} />
+        <Route path="/favorite-department" element={<Favori />} />
         <Route path="/departmants" element={<Departments />} />
         <Route path="universites" element={<University />} />
-        <Route path="/compare" element={<Compare />}/>
-        {/* <Route path="/login" element={<LogIn/>}/>
-        <Route path="/logout" element={<SignUp/>}/> */}
+        <Route path="/compare" element={<Compare />} />
 
-       <Route path="/MyAccount" element={<MyAccount/>} />
-
+        <Route path="/MyAccount" element={<MyAccount />} />
       </Routes>
 
-
       <Footer />
-   </>
+    </>
   );
 };
 
