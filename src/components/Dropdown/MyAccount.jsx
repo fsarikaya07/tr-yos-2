@@ -44,7 +44,7 @@ const MyAccount = () => {
       <Dropdown.Menu>
         <NavLink
           to="/account"
-          activeClassName="text-danger"
+          // activeClassName="text-danger"
           className=" tit btn  border-none my-2 py-2 m-1 flex-wrap "
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
@@ -53,7 +53,7 @@ const MyAccount = () => {
         </NavLink>
         <NavLink
           to="/favorite-department"
-          activeClassName="text-danger"
+          // activeClassName="text-danger"
           className="tit btn  my-1 py-2 m-1 flex-wrap "
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
@@ -62,7 +62,7 @@ const MyAccount = () => {
         </NavLink>
         <NavLink
           to="/compare"
-          activeClassName="text-danger"
+          // activeClassName="text-danger"
           className="tit btn  my-2 py-2 m-1 flex-wrap "
           onClick={() => setOpen(false)}
           style={{ border:"1px solid #FFFFFF"}}
@@ -72,13 +72,14 @@ const MyAccount = () => {
 
         <NavLink
           to="/"
-          activeClassName="text-danger"
+          // activeClassName="text-danger"
           className="titbtn btn btn-outline-light m-4 text-center  w-75 "
           style={{ backgroundColor:" #34b3b3" , width:"80px"}}
         >
-          <div className="titbtn py-1 text-center" 
+          {/* <div className="titbtn py-1 text-center" 
           onClick={handleLogout}>
             Logout
+            </div> */}
 
           <div className="titbtn py-1 text-center" onClick={handleLogout}>
             {t('myAccount.logout')}

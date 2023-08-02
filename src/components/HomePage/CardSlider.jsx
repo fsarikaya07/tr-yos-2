@@ -3,7 +3,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import "../Style/CardSlider.css";
 
-const Slider = ({images}) => {
+const Slider = ({ images }) => {
   // const slideImages = [
   //   "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   //   "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -21,19 +21,19 @@ const Slider = ({images}) => {
         slidesToShow={1}
         slidesToScroll={1}
         prevArrow={
-            <div className="">
-              <div className="icon-container">
-                <i className="icon fas fa-chevron-left"></i>
-              </div>
+          <div className="">
+            <div className="icon-container">
+              <i className="icon fas fa-chevron-left"></i>
             </div>
-          }
-          nextArrow={
-            <div className="">
-              <div className="icon-container">
-                <i className="icon fas fa-chevron-right"></i>
-              </div>
+          </div>
+        }
+        nextArrow={
+          <div className="">
+            <div className="icon-container">
+              <i className="icon fas fa-chevron-right"></i>
             </div>
-          }
+          </div>
+        }
       >
         {images.map((image, index) => (
           <div key={index} className="each-slide">
@@ -44,7 +44,6 @@ const Slider = ({images}) => {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
-               
               }}
             ></div>
           </div>
@@ -55,4 +54,3 @@ const Slider = ({images}) => {
 };
 
 export default Slider;
-

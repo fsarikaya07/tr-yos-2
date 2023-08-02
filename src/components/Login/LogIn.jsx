@@ -41,8 +41,7 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
   // const location =useLocation()
 
   return (
-    // <div className="container box d-flex flex-column align-items-center mt-3   col-4 h-75  login-container center">
-      
+   
       <form
         className="   p-3 w-100 h-100 login-form "
         onSubmit={(e) => handleSubmit(e)}
@@ -118,13 +117,13 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
           <button
             className=" btn btn-primary mt-3 py-1"
             type="button"
-            // onClick={() => signUpProvider()}
+            
           >
 
 <FaGoogle size={20} color="red" />
 <span className="mx-1 "></span>
           {t('logIn.continueWithGoogle')}
-            {/* <GoogleIcon color="currentColor" /> */}
+            
           </button>
         </div>
       </form>

@@ -6,7 +6,7 @@ import ScrollNavbar from "./SideBarScrollNavbar";
 const Navbar = () => {
   return (
     <>
-      {/* <MainPage/> */}
+      
       <ScrollNavbar />
     </>
   );
