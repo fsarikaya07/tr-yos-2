@@ -18,8 +18,10 @@ const HomeCard = ({ item , universityImage}) => {
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
   const toggleShowSignInHeartModal = () =>
     setShowSignInHeartModal(!showSignInHeartModal);
-    const departmentName = item?.university?.en;
+    const departmentName = item?.university?.tr;
     const departmentImages = universityImage[departmentName] || [];
+
+
 
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
