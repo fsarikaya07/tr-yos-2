@@ -6,7 +6,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import { Modal } from "react-bootstrap";
 import { FaGoogle } from 'react-icons/fa';
 
-const Register = ({setShowSignUpModal,handleSignInClick}) => {
+const Register = ({setShowModal,onFormSwitch}) => {
   const { registerPerson } = useAuthContext();
 
   const [name, setName] = useState("");
@@ -34,7 +34,7 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
       setPassword1("");
       setPassword2("");
       navigate("/"); // İlgili sayfaya yönlendir
-      setShowSignUpModal(false); 
+      setShowModal(false); 
     } else {
       // Hata mesajını göster
       console.log("Registration failed!")
@@ -109,7 +109,7 @@ const Register = ({setShowSignUpModal,handleSignInClick}) => {
           <div>
               Already have an account?{" "}
               <button
-              onClick={handleSignInClick}
+             onClick={() => onFormSwitch('login')}
               className="text-primary mx-2" style={{ textDecoration: "none" }}>
                 Sign In
                 
