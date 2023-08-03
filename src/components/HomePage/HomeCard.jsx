@@ -11,11 +11,13 @@ import LogIn from "../Login/LogIn";
 import { useYosContext } from "../../context/Context";
 import axios from "axios";
 import { useAuthContext } from "../../context/AuthContext";
+import ToastComponent from "../toastComponent/ToastComponent";
 
 const HomeCard = ({ item, universityImage }) => {
   // State değerleri ve toggle fonksiyonları tanımlanıyor
   const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
-
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [showFavoriToast, setShowFavoriToast] = useState(false);
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
 
   const {
@@ -56,6 +58,7 @@ const HomeCard = ({ item, universityImage }) => {
           
           setCompareId(newCompareId);
           setIsBoolen(!isBoolen);
+          setShowSuccessToast(true)
         }
  
       } else if (!isBoolen) {
@@ -111,8 +114,9 @@ const toggleShowSignInHeartModal = async () => {
       if (!newFavoriId.includes(responseFavori.data)) {
         newFavoriId.push(responseFavori.data);
         sessionStorage.setItem("favoriID", JSON.stringify(newFavoriId));
-        
+        setShowFavoriToast(true)
         setCompareId(newFavoriId);
+        console.log("success");
         setIsBoolen(!isBoolen);
       }
       // if (!favoriId.includes(responseFavori.data)) {
@@ -275,6 +279,27 @@ const toggleShowSignInHeartModal = async () => {
         {/* LogIn componenti modalin içine yerleştiriliyor */}
         <LogIn />
       </Modal>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        style={{ position: "fixed", minHeight: "200px" }}
+      >
+        {/* Success Toast */}
+        <ToastComponent
+          show={showSuccessToast}
+          onClose={() => setShowSuccessToast(false)}
+          type="success"
+          message="Compare added successfully."
+        />
+         <ToastComponent
+          show={showFavoriToast}
+          onClose={() => setShowFavoriToast(false)}
+          type="success"
+          message="Favori added successfully."
+        />
+
+     
+      </div>
     </Container>
   );
 };
