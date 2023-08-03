@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useYosContext } from "../../context/Context";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
 
 const Compare = () => {
   const { compareId, setCompareId, card } = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
-
+  const { currentUser } = useAuthContext();
   useEffect(() => {
     const matchedCards = compareId.map((compareItem) => {
       const matchingCard = card.find(
@@ -27,9 +28,8 @@ const Compare = () => {
         {
           params: {
             id: `${prop}`,
-            // id: "1686156639697",
-            // user_id: user?.userID,
-            user_id: "16900415273259",
+
+            user_id: currentUser,
             token:
               "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
           },
@@ -67,11 +67,7 @@ const Compare = () => {
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">{item["faculty"]["tr"]}</li>
                 <li className="list-group-item">
-                  <Link
-                    key={item?.id}
-                    to={`/universities/${item.id}`}
-                  
-                  >
+                  <Link key={item?.id} to={`/universities/${item.id}`}>
                     {item["department"]["tr"]}
                   </Link>
                 </li>

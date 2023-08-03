@@ -4,6 +4,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import { useTranslation } from 'react-i18next';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Account.css";
+import Passaword from "./Passaword";
 
 const Account = () => {
   const { t } = useTranslation();
@@ -102,8 +103,8 @@ const Account = () => {
 
   return (
     <div className="">
-      <div className="infoDiv  p-5 mb- bg-primary text-white">
-        <h2 className=" fw-bold mx-5 pt-5">{t('account.myAccount')}</h2>
+      <div className="infoDiv  p-5 mb- bg-primary text-white ">
+        <h2 className=" fw-bold mt-5  mx-5 pt-5 text-start">{t('account.myAccount')}</h2>
       </div>
      
            <div className="">
@@ -240,12 +241,15 @@ const Account = () => {
               </button>
             </div>
           </form>
+        {/* <----------------------Form Area End Hakan Bilgi----------------------> */}
+        <hr/>
+         {/* <---------------------- Password Area--------------------> */}
+         <Passaword/>
+      </div>
         </div>
 
-        {/* <----------------------Form Area End Hakan Bilgi----------------------> */}
-      </div>
     </div>
-  );
+        );
 };
 
 export default Account;
