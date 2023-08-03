@@ -30,7 +30,7 @@ const LanguageSelector = () => {
 
   return (
     <Dropdown>
-      <Dropdown.Toggle variant="success" id="language-dropdown">
+      <Dropdown.Toggle className="lang-dropdown" variant="success" id="language-dropdown">
         {language}
       </Dropdown.Toggle>
       <Dropdown.Menu>
