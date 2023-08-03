@@ -9,8 +9,8 @@ const Compare = () => {
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
   const { currentUser } = useAuthContext();
-  const veri= JSON.parse(sessionStorage.getItem("compareId"))   
-  const matchedCards = veri?.map((compareItem) => {
+  const sessionCompare= JSON.parse(sessionStorage.getItem("compareId"))   
+  const matchedCards = sessionCompare?.map((compareItem) => {
     const matchingCard = card.find(
       (cardItem) => cardItem.id === compareItem.id
     );
@@ -37,9 +37,12 @@ const Compare = () => {
           },
         }
       );
-      setCompareId((prevCompareId) =>
-        prevCompareId.filter((id) => id.id !== prop)
-      );
+      // setCompareId((prevCompareId) =>
+      //   prevCompareId.filter((id) => id.id !== prop)
+      // );
+      const updatedFavori = sessionCompare.filter((item) => item.id !== prop);
+      setCompareId(updatedFavori);
+      sessionStorage.setItem("compareId", JSON.stringify(updatedFavori));
       console.log("delete", responseCompareDelete.data);
     } catch (error) {
       console.log("delete Hatasi", error);
@@ -47,14 +50,14 @@ const Compare = () => {
   };
 
   return (
-    <div>
-      <div className="p-5 mb-2 bg-primary text-white">
+    <div className="container-fluid">
+      <div className="p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
         <h2 className="p-title fw-bold mx-5">Compare</h2>
       </div>
-      <div className="d-grid gap-3">
-        {cardCompare.map((item) => {
+      <div className="row gap-3">
+        {cardCompare?.map((item) => {
           return (
-            <div className="card" key={item?.id} style={{ width: "18rem" }}>
+            <div className="card col-6" key={item?.id} style={{ width: "18rem" }}>
               <button onClick={() => deleteCompare(item.id)}>
                 <strong>X sil</strong>
               </button>
@@ -75,14 +78,7 @@ const Compare = () => {
                 </li>
                 <li className="list-group-item">{item?.city.tr}</li>
               </ul>
-              <div className="card-body">
-                {/* <a href="#" className="card-link">
-                  Card link
-                </a>
-                <a href="#" className="card-link">
-                  Another link
-                </a> */}
-              </div>
+             
             </div>
           );
         })}
