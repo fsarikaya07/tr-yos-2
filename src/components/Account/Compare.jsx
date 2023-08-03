@@ -9,17 +9,19 @@ const Compare = () => {
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
   const { currentUser } = useAuthContext();
+  const veri= JSON.parse(sessionStorage.getItem("compareId"))   
+  const matchedCards = veri?.map((compareItem) => {
+    const matchingCard = card.find(
+      (cardItem) => cardItem.id === compareItem.id
+    );
+    return matchingCard;
+  });
   useEffect(() => {
-    const matchedCards = compareId.map((compareItem) => {
-      const matchingCard = card.find(
-        (cardItem) => cardItem.id === compareItem.id
-      );
-      return matchingCard;
-    });
 
     setCardCompare(matchedCards);
-  }, [compareId, card, deleteProps]);
-
+   
+  }, [ card, deleteProps]);
+  
   const deleteCompare = async (prop) => {
     setDeleteProps(!deleteProps);
     try {
@@ -52,7 +54,7 @@ const Compare = () => {
       <div className="d-grid gap-3">
         {cardCompare.map((item) => {
           return (
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" key={item?.id} style={{ width: "18rem" }}>
               <button onClick={() => deleteCompare(item.id)}>
                 <strong>X sil</strong>
               </button>
@@ -62,16 +64,16 @@ const Compare = () => {
                 alt="Card image cap"
               />
               <div className="card-body">
-                <h5 className="card-title">{item["university"]["tr"]}</h5>
+                <h5 className="card-title">{item?.university.tr}</h5>
               </div>
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">{item["faculty"]["tr"]}</li>
+                <li className="list-group-item">{item?.faculty.tr}</li>
                 <li className="list-group-item">
-                  <Link key={item?.id} to={`/universities/${item.id}`}>
-                    {item["department"]["tr"]}
+                  <Link key={item?.id} to={`/universities/${item?.id}`}>
+                    {item?.department.tr}
                   </Link>
                 </li>
-                <li className="list-group-item">{item["city"]["tr"]}</li>
+                <li className="list-group-item">{item?.city.tr}</li>
               </ul>
               <div className="card-body">
                 {/* <a href="#" className="card-link">
