@@ -17,12 +17,7 @@ const HomeDepartmens = () => {
     return map;
   }, {});
 
-  // Tıklanan kartın verilerini işleyecek işlev
-  const handleCardClick = (clickedCardData) => {
 
-   
-    return  setCompare((prevCompare) => [...prevCompare, clickedCardData]);
-  };
 
   return (
  
@@ -44,7 +39,7 @@ const HomeDepartmens = () => {
               <HomeCard
                 item={item}
                 universityImage={universityImages}
-                onCardClick={handleCardClick}
+               
               />
             </Col>
           );
