@@ -27,14 +27,22 @@ const HomeCard = ({ item, universityImage }) => {
     favori,
     setFavori,
   } = useYosContext();
-  const {currentUser}=useAuthContext()
+
+  const {currentUser,setShowModal,showModal}=useAuthContext()
   const [isBoolen, setIsBoolen] = useState(true)
 
  ///<-----------------------------------COMPARE START---------------------------------------------->
-  const toggleShowSignInCompareModal = async () =>{
-    setShowSignInCompareModal(!showSignInCompareModal);
+  const toggleShowSignInCompareModal = async (e) =>{
+    e.preventDefault()
+  
+  if (currentUser) {
+
+    console.log("Kullanıcı giriş yaptı. Karşılaştırma sayfasına yönlendiriliyor...");
+  } else {
+    // Kullanıcı giriş yapmamışsa, oturum açma formunu aç
+    setShowModal(!showModal);
     
-    
+  }  
     try {
       if (isBoolen) {
         const responseCompare = await axios.get(
@@ -89,9 +97,16 @@ const HomeCard = ({ item, universityImage }) => {
   }
  ///<-----------------------------------COMPARE END---------------------------------------------->
  ///<-----------------------------------FAVORİ START---------------------------------------------->
-const toggleShowSignInHeartModal = async () => {
+const toggleShowSignInHeartModal = async (e) => {
   //https://tr-yös.com/api/v1/users/addfavorite.php
-  setShowSignInHeartModal(!showSignInHeartModal);
+  e.preventDefault()
+  if (currentUser) {
+
+    console.log("Kullanıcı giriş yaptı. Karşılaştırma sayfasına yönlendiriliyor...");
+  } else {
+    // Kullanıcı giriş yapmamışsa, oturum açma formunu aç
+    setShowModal(!showModal);
+  }
 
   try {
     if (isBoolen) {
@@ -185,7 +200,7 @@ const toggleShowSignInHeartModal = async () => {
             right: "10px",
             color: "#0B3660",
           }}
-          type="submit"
+          type="button"
           onClick={toggleShowSignInCompareModal}
         >
           <i
@@ -233,7 +248,7 @@ const toggleShowSignInHeartModal = async () => {
               size="lg"
               style={{ position: "absolute", top: "190px", right: "10px" }}
               className="btn btn-outline-light  my-5 py-1 px-1 m-1 rounded-circle border-1  d-flex flex-nowrap"
-              type="submit"
+              type="button"
               onClick={toggleShowSignInHeartModal}
             >
               <i class="heart fa-solid fa-heart-circle-check"></i>
@@ -262,17 +277,26 @@ const toggleShowSignInHeartModal = async () => {
         show={showSignInCompareModal}
         onHide={toggleShowSignInCompareModal}
         centered
-      >
-        {/* LogIn componenti modalin içine yerleştiriliyor */}
-        <LogIn />
+        >
+
+        
+            <LogIn />
+     
+  
       </Modal>
+
+
+
+
+
+      
       {/* Modal componentleri tanımlanıyor */}
       <Modal
         show={showSignInHeartModal}
         onHide={toggleShowSignInHeartModal}
         centered
       >
-        {/* LogIn componenti modalin içine yerleştiriliyor */}
+   
         <LogIn />
       </Modal>
     </Container>
