@@ -3,11 +3,16 @@ import { useYosContext } from "../../context/Context";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
+import ToastComponent from "../toastComponent/ToastComponent";
 
 const Compare = () => {
   const { compareId, setCompareId, card } = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+
+
+
   const { currentUser } = useAuthContext();
   const sessionCompare= JSON.parse(sessionStorage.getItem("compareId"))   
   const matchedCards = sessionCompare?.map((compareItem) => {
@@ -43,6 +48,7 @@ const Compare = () => {
       const updatedFavori = sessionCompare.filter((item) => item.id !== prop);
       setCompareId(updatedFavori);
       sessionStorage.setItem("compareId", JSON.stringify(updatedFavori));
+      setShowSuccessToast(true)
       console.log("delete", responseCompareDelete.data);
     } catch (error) {
       console.log("delete Hatasi", error);
@@ -82,6 +88,21 @@ const Compare = () => {
             </div>
           );
         })}
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        style={{ position: "fixed", minHeight: "200px" }}
+      >
+        {/* Success Toast */}
+        <ToastComponent
+          show={showSuccessToast}
+          onClose={() => setShowSuccessToast(false)}
+          type="success"
+          message="Compare delete successfully."
+        />
+
+
       </div>
     </div>
   );

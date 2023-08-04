@@ -7,8 +7,14 @@ import { useYosContext } from "../../context/Context";
 const HomeDepartmens = () => {
   const { t } = useTranslation();
   const { universities, card, setCompare, compare, user } = useYosContext();
+
+
   // const shuffledCards = card.sort(() => 0.5 - Math.random());
   // const random12Cards = shuffledCards.slice(0, 12);
+
+  // const shuffledCards = card.sort(() => 0.5 - Math.random());
+  // const random12Cards = shuffledCards.slice(0, 12);
+
 
 
   const [random12Cards, setRandom12Cards] = useState([]); // State to store random cards
@@ -18,8 +24,6 @@ const HomeDepartmens = () => {
     const selectedCards = shuffledCards.slice(0, 12);
     setRandom12Cards(selectedCards);
   }, [card]);
-
-
 
   const universityImages = universities.reduce((map, university) => {
     if (university && university.images && university.images.length > 0) {
