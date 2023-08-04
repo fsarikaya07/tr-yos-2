@@ -254,7 +254,7 @@ const Detail = () => {
                       src={uniApi?.logo}
                       alt="logo"
                     />
-                    <div className="ps-4">
+                    <div className="ps-4 text-start">
                       <h4 className="">{cardApi?.university.tr}</h4>
                       <p className="fs-7 text-start">
                         <i class="fa-solid fa-location-dot fa-sm "></i>

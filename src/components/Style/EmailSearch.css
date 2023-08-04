@@ -10,7 +10,7 @@ main {
   margin-top: 50px;
   margin-bottom:50px;
 }
-h1 {
+/* h1 {
   font-weight: 700;
   padding:15px;
   color:#003364;
@@ -32,7 +32,7 @@ button {
 }
 button {
   cursor: pointer;
-}
+} */
 .SearchBox-input::placeholder {
   /* No es un seudoelemento estandar */
   color: #FFFFFF;
