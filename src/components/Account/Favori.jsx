@@ -12,7 +12,7 @@ const Favori = () => {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const { currentUser } = useAuthContext();
   const sessionData = JSON.parse(sessionStorage.getItem("favoriID"));
- console.log(sessionData,"id");
+  console.log(sessionData, "id");
   const matchedCards = sessionData.map((compareItem) => {
     const matchingCard = card.find(
       (cardItem) => cardItem.id === compareItem.id
@@ -38,14 +38,12 @@ const Favori = () => {
           },
         }
       );
-      const updatedFavori = sessionData.filter((item) => item.id !== prop);
+
+      const updatedFavori = sessionData.filter((item) => item.id != prop);
       setFavoriId(updatedFavori);
       sessionStorage.setItem("favoriID", JSON.stringify(updatedFavori));
-      // favoriId((prevCompareId) =>
-      //   prevCompareId.filter((id) => id?.id !== prop)
-      // );
-      // sessionData.filter((item)=> item.id !== prop)
-      setShowSuccessToast(true)
+
+      setShowSuccessToast(true);
       console.log("delete", responseCompareDelete.data);
     } catch (error) {
       console.log("delete Hatasi", error);
@@ -86,7 +84,6 @@ const Favori = () => {
                 <li className="list-group-item">{item?.department.tr}</li>
                 <li className="list-group-item">{item?.city.tr}</li>
               </ul>
-        
             </div>
           );
         })}
@@ -103,8 +100,6 @@ const Favori = () => {
           type="success"
           message="Favori delete successfully."
         />
-
-
       </div>
     </div>
   );
