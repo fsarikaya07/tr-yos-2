@@ -5,11 +5,12 @@ import { useAuthContext } from "../../context/AuthContext";
 import { useTranslation } from 'react-i18next';
 import { FaGoogle } from 'react-icons/fa';
 
-const LogIn = ({ setShowModal,onFormSwitch}) => {
+const LogIn = () => {
 
   const { t } = useTranslation();
 
-  const { loginPerson } = useAuthContext();
+  const { loginPerson,toggleForm,handleCloseModal } = useAuthContext();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,7 +26,7 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
       setEmail("");
       setPassword("");
       navigate("/"); // İlgili sayfaya 
-      setShowModal(false)
+      handleCloseModal(false)
     } else {
       // Hata mesajını göster
       console.log("Login failed!");
@@ -104,7 +105,7 @@ const LogIn = ({ setShowModal,onFormSwitch}) => {
             <button 
               className="text-primary mx-2"
               style={{ textDecoration: "none" }}
-              onClick={() => onFormSwitch('register')}
+              onClick={() => toggleForm('register')}
             >
             
             {t('logIn.signUp')}
