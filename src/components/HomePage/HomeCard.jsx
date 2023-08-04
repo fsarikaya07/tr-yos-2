@@ -19,15 +19,14 @@ const HomeCard = ({ item, universityImage }) => {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [showFavoriToast, setShowFavoriToast] = useState(false);
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
+  const [showDeleteToast, setShowDeleteToast] = useState(false)
 
   const {
-    compareId,
+    
     setCompareId,
-    user,
-    favoriId,
+    
     setFavoriId,
-    favori,
-    setFavori,
+    
   } = useYosContext();
 
   const { currentUser, setShowModal, showModal } = useAuthContext();
@@ -36,7 +35,7 @@ const HomeCard = ({ item, universityImage }) => {
   ///<-----------------------------------COMPARE START---------------------------------------------->
   const toggleShowSignInCompareModal = async (e) => {
     e.preventDefault();
-
+    const newCompareId = JSON.parse(sessionStorage.getItem("compareId")) || [];
     if (currentUser) {
       console.log(
         "Kullanıcı giriş yaptı. Karşılaştırma sayfasına yönlendiriliyor..."
@@ -58,17 +57,16 @@ const HomeCard = ({ item, universityImage }) => {
             },
           }
         );
-        const newCompareId =
-          JSON.parse(sessionStorage.getItem("compareId")) || [];
 
-        if (!newCompareId.includes(responseCompare.data)) {
+       
           newCompareId.push(responseCompare.data);
           sessionStorage.setItem("compareId", JSON.stringify(newCompareId));
 
           setCompareId(newCompareId);
           setIsBoolen(!isBoolen);
           setShowSuccessToast(true);
-        }
+        //   if (!newCompareId.includes(responseCompare.data)) {
+        // }
       } else if (!isBoolen) {
         const responseCompareDelete = await axios.get(
           `https://tr-yös.com/api/v1/users/deletecompare.php`,
@@ -82,30 +80,18 @@ const HomeCard = ({ item, universityImage }) => {
           }
         );
         console.log("id:", item.id);
-        const updatedCompare = compareId.filter(
+        const updatedCompare = newCompareId.filter(
           (compareItem) => compareItem.id != item.id
         );
         console.log("update:", updatedCompare);
 
         sessionStorage.setItem("compareId", JSON.stringify(updatedCompare));
         setCompareId(updatedCompare);
-        setShowSuccessToast(true);
+        setShowDeleteToast(true);
         setIsBoolen(!isBoolen);
 
         console.log("delete", responseCompareDelete.data);
 
-        // if (compareId.includes(item.id)) {
-        //   setCompareId((prevIds) =>
-        //     prevIds.filter((id) => id !== responseCompareDelete.data)
-        //   );
-
-        // }
-        sessionStorage.setItem(
-          "compareId",
-          JSON.stringify(
-            compareId.filter((id) => id !== responseCompareDelete.data)
-          )
-        );
       }
     } catch (error) {
       console.log(error);
@@ -161,26 +147,22 @@ const HomeCard = ({ item, universityImage }) => {
           {
             params: {
               id: item.id,
-              // user_id: user?.userID,
               user_id: currentUser,
               token:
                 "SX2qL5O3ivipPSMIWN8nXnaLWOiy4cEq7UdgZk448T5ZDpT1qbgMIrXVNquP1CWyNAH3JvoEVqnjiyg20a17549275a86d0e835660e56847e87a",
             },
           }
         );
-        console.log("Favorideletye", responseFavoriDelete.data);
+        console.log("Favorideletye", newFavoriId);
+        const newFavoriDelete = newFavoriId.filter(
+          (favoriItem) => favoriItem.id != item.id
+        );
 
-        if (newFavoriId.includes(item.id)) {
-          // newFavoriId.push(responseFavoriDelete.data);
-          const newFavoriDelete = newFavoriId.filter(
-            (favoriItem) => favoriItem.id !== item.id
-          );
-          sessionStorage.setItem("favoriID", JSON.stringify(newFavoriDelete));
-          setShowFavoriToast(true);
-          setFavoriId(newFavoriDelete);
-          console.log("success");
-          
-        }
+        sessionStorage.setItem("favoriID", JSON.stringify(newFavoriDelete));
+        setShowDeleteToast(true);
+        setFavoriId(newFavoriDelete);
+        console.log("success2", newFavoriDelete);
+
         setIsBoolenFavori(!isBoolenFavori);
       }
     } catch (error) {
@@ -334,6 +316,12 @@ const HomeCard = ({ item, universityImage }) => {
           onClose={() => setShowFavoriToast(false)}
           type="success"
           message="Favori added successfully."
+        />
+         <ToastComponent
+          show={showDeleteToast}
+          onClose={() => setShowDeleteToast(false)}
+          type="success"
+          message="Delete  successfully."
         />
       </div>
     </Container>
