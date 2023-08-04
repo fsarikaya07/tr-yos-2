@@ -42,13 +42,13 @@ const Detail = () => {
           {/* <---------------------LEFT-CONTAİNER START ---------------------> */}
           <div id="left-container" className="col-8 ">
             <div className="d-flex justify-content-between mt-4 p-2 bg-white">
-              <div className="w-75">
+              <div className="w-75 ">
                 <h4 className="text-start">{cardApi?.faculty.tr}</h4>
-                <p></p>
-                <p>
+                
+                <div>
                   <i class="fa-solid fa-location-dot fa-sm"></i>{" "}
-                  {cardApi?.data?.adress}
-                </p>
+                 <span>{cardApi?.data?.adress}</span> 
+                </div>
               </div>
               <div>
                 <p className="fs-3 text-primary font-weight-bold">
@@ -82,9 +82,10 @@ const Detail = () => {
 
             <div className="bg-white rounded mt-4 p-2">
               <h6 className="text-start font-weight-bold">{t('detail.aboutDepartment')}</h6>
-              <p className="text-muted text-start fs-7 font-weight-light">
+              {/* <p className="text-muted text-start fs-7 font-weight-light">
+              </p> */}
                 {/* {cardApi.history} */}
-              </p>
+                {uniApi?.content.tr}
             </div>
 
             <div className="bg-white mt-4 ">
@@ -253,11 +254,11 @@ const Detail = () => {
                       src={uniApi?.logo}
                       alt="logo"
                     />
-                    <div className="text-start ps-4">
+                    <div className="ps-4 text-start">
                       <h4 className="">{cardApi?.university.tr}</h4>
-                      <p className="fs-7">
-                        <i class="fa-solid fa-location-dot fa-sm"></i>
-                        {cityApi?.tr}
+                      <p className="fs-7 text-start">
+                        <i class="fa-solid fa-location-dot fa-sm "></i>
+                       <span>{cityApi?.tr}</span> 
                       </p>
                     </div>
                   </div>

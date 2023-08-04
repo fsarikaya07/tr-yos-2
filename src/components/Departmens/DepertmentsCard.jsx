@@ -11,6 +11,7 @@ import {
   ListGroup,
   Row,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const DepartmentsCard = ({ item }) => {
@@ -79,14 +80,14 @@ const DepartmentsCard = ({ item }) => {
         >
           <div className="left ">
             <Card.Title className="text-start  fs-6">
-              <a
-                href="http://"
+              <Link
+                to={`/universities/${item.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dep text-decoration-none text-bold"
               >
                 {item.department.en}
-              </a>
+              </Link>
             </Card.Title>
             <Card.Title className="facul text-start  fs-6">
               <a

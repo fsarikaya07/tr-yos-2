@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useAuthContext } from "../../context/AuthContext";
+import ToastComponent from "../toastComponent/ToastComponent";
 
 const Passaword = () => {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [showErrorToast, setShowErrorToast] = useState(false);
     const {currentUser}=useAuthContext()
     console.log("pasas",currentUser);
   const MY_TOKEN =
@@ -30,11 +32,13 @@ const Passaword = () => {
       });
 
       if (response.data.status === "success") {
-        console.log("Password changed successfully");
-      } else {
-        console.log("An error occurred while changing password");
-      }
+        setShowSuccessToast(true);
+        setCurrentPassword("");
+        setNewPassword("");
+        setRepeatPassword("");
+      } 
     } catch (error) {
+      setShowErrorToast(true);
       console.error("Error:", error);
     }
   };
@@ -92,7 +96,29 @@ const Passaword = () => {
           </button>
         </div>
       </form>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        style={{ position: "relative", minHeight: "200px" }}
+      >
+        {/* Success Toast */}
+        <ToastComponent
+          show={showSuccessToast}
+          onClose={() => setShowSuccessToast(false)}
+          type="success"
+          message="Password changed successfully."
+        />
+
+        {/* Error Toast */}
+        <ToastComponent
+          show={showErrorToast}
+          onClose={() => setShowErrorToast(false)}
+          type="error"
+          message="An error occurred while changing password."
+        />
+      </div>
     </div>
+    
   );
 };
 
