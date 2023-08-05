@@ -33,23 +33,24 @@ try {
   return (
     <main className="cont">
       <div className="d-flex align-items-center justify-content-center flex-column">
-        <h1>{t("emailSearch.workingWithUs")}</h1>
-        <p className="m-5 d-block">
+        <h1 className="email-h1">{t("emailSearch.workingWithUs")}</h1>
+        <p className="email-p m-5 d-block">
           {t("emailSearch.message")}
           <span className="m-2 d-block"></span>
         </p>
       </div>
 
       <div className="SearchBox">
-      <form  onSubmit={(e)=>handleSubmit(e)}>
+      <form  className="d-flex" onSubmit={(e)=>handleSubmit(e)}>
         <input
           type="text"
-          className="SearchBox-input"
+          className="SearchBox-input email-input"
           placeholder={t("emailSearch.enterEmail")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button type="submit" className="SearchBox-button">
+        <button type="submit" className="SearchBox-button email-button">
+        
           <i className="SearchBox-icon  material-icons">
             {t("emailSearch.subscribe")}
           </i>
