@@ -21,7 +21,7 @@ const Favori = () => {
 
   const { currentUser } = useAuthContext();
   const sessionData = JSON.parse(sessionStorage.getItem("favoriID"));
- console.log(sessionData,"id");
+  console.log(sessionData, "id");
   const matchedCards = sessionData.map((compareItem) => {
     const matchingCard = card.find(
       (cardItem) => cardItem.id === compareItem.id
@@ -47,14 +47,12 @@ const Favori = () => {
           },
         }
       );
-      const updatedFavori = sessionData.filter((item) => item.id !== prop);
+
+      const updatedFavori = sessionData.filter((item) => item.id != prop);
       setFavoriId(updatedFavori);
       sessionStorage.setItem("favoriID", JSON.stringify(updatedFavori));
-      // favoriId((prevCompareId) =>
-      //   prevCompareId.filter((id) => id?.id !== prop)
-      // );
-      // sessionData.filter((item)=> item.id !== prop)
-      setShowSuccessToast(true)
+
+      setShowSuccessToast(true);
       console.log("delete", responseCompareDelete.data);
     } catch (error) {
       console.log("delete Hatasi", error);
@@ -115,6 +113,13 @@ const Favori = () => {
                     {" "}
                     {item?.faculty.tr}
                   </Link>{" "}
+
+                </li>
+                <li className="list-group-item">{item?.department.tr}</li>
+                <li className="list-group-item">{item?.city.tr}</li>
+              </ul>
+            </div>
+
                 </Card.Title>
                 <Card.Title className="list-group-item text-start  fs-6"  >{item?.department.tr}</Card.Title>
                 <Card.Title className="list-group-item text-start  fs-6"  >{item?.city.tr}</Card.Title>
@@ -122,6 +127,7 @@ const Favori = () => {
               </Card.Body>
             </Card>
             </Col>
+
           );
         })} </Row>
       </div>
@@ -137,8 +143,6 @@ const Favori = () => {
           type="success"
           message="Favori delete successfully."
         />
-
-
       </div>
     </div>
   );
