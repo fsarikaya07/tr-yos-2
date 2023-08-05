@@ -4,14 +4,21 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import ToastComponent from "../toastComponent/ToastComponent";
+import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
+
 
 const Compare = () => {
-  const { compareId, setCompareId, card } = useYosContext();
+  const { compareId, setCompareId, card ,universities} = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
 
-
+  const universityImagesMap = universities.reduce((map, university) => {
+    if (university && university.images && university.images.length > 0) {
+      map[university?.en] = university.images.slice(0, 12);
+    }
+    return map;
+  }, {});
 
   const { currentUser } = useAuthContext();
   const sessionCompare= JSON.parse(sessionStorage.getItem("compareId"))   
@@ -57,38 +64,65 @@ const Compare = () => {
 
   return (
     <div className="container-fluid">
-      <div className="p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
-        <h2 className="p-title fw-bold mx-5">Compare</h2>
+      <div className=" infoDiv p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
+        <h3 className="p-title fw-bold mt-5 mx-5">Compare</h3>
       </div>
-      <div className="row gap-3">
+      <Container className="mt-5">
+      <Row className="g-3 d-flex flex-wrap">
         {cardCompare?.map((item) => {
+            const university = item?.university;
+            const departmentImages = universityImagesMap[university?.en] || [];
           return (
-            <div className="card col-6" key={item?.id} style={{ width: "18rem" }}>
-              <button onClick={() => deleteCompare(item.id)}>
+            <Col xs={12} s={6} md={6} lg={4} xl={3}> 
+            <Card className="card " key={item?.id} style={{ width: "100%", height: "30rem" }}>
+              {/* <button onClick={() => deleteCompare(item.id)}>
                 <strong>X sil</strong>
-              </button>
-              <img
-                className="card-img-top"
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
-                alt="Card image cap"
-              />
-              <div className="card-body">
+              </button> */}
+                 <div className="img " style={{ width: "100%", height: "45%" }}>
+          <Carousel
+            showStatus={false}
+            showIndicators={false}
+            dynamicHeight={true}
+            infiniteLoop={true}
+            className="slide-image"
+          >
+            {departmentImages.map((image, index) => (
+              <Carousel.Item key={index}>
+                <Card.Img
+                  className="defaultimg"
+                  variant="top"
+                  style={{
+                    width: "100%",
+                    height: "229.609px",
+                    position: "relative",
+                    borderRadius: "5px",
+                  }}
+                  src={image ||"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+              <Card.Body className="card-body d-flex w-100 justify-content-between" style={{ height: "8%" }}>
                 <h5 className="card-title">{item?.university.tr}</h5>
-              </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">{item?.faculty.tr}</li>
-                <li className="list-group-item">
+              </Card.Body>
+              <Card.Body className="w-100  " style={{ height: "33%" }}> 
+              <Card.Title  className="list-group list-group-flush text-start  fs-6">
+                <Card.Title  className="list-group-item text-start  fs-6">{item?.faculty.tr}</Card.Title>
+                <Card.Title  className="list-group-item text-start  fs-6">
                   <Link key={item?.id} to={`/universities/${item?.id}`}>
                     {item?.department.tr}
                   </Link>
-                </li>
-                <li className="list-group-item">{item?.city.tr}</li>
-              </ul>
-             
-            </div>
+                </Card.Title>
+                <Card.Title  className="list-group-item text-start  fs-6">{item?.city.tr}</Card.Title>
+              </Card.Title>
+              </Card.Body>
+            </Card>
+            </Col>
           );
         })}
-      </div>
+        </Row>
+      </Container>
       <div
         aria-live="polite"
         aria-atomic="true"
