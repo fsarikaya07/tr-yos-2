@@ -121,6 +121,7 @@ const Favori = () => {
               </ul>
             </div> */}
 
+
                 </Card.Title>
                 <Card.Title className="list-group-item text-start  fs-6"  >{item?.department.tr}</Card.Title>
                 <Card.Title className="list-group-item text-start  fs-6"  >{item?.city.tr}</Card.Title>
