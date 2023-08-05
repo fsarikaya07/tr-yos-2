@@ -114,6 +114,7 @@ const Favori = () => {
                     {item?.faculty.tr}
                   </Link>{" "}
 
+
                 </li>
                 <li className="list-group-item">{item?.department.tr}</li>
                 <li className="list-group-item">{item?.city.tr}</li>
