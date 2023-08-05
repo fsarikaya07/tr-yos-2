@@ -81,12 +81,12 @@ export function AuthProvider({ children }) {
       sessionStorage.setItem("user", data.userID);
       // sessionStorage.setItem("user", JSON.stringify(data.userID));
 
-      navigate("/");
+      // navigate("/");
       return true;
     } catch (error) {
       console.error(error);
       setShowErrorToast(true)
-      navigate("/");
+      // navigate("/");
       return false;
     }
   };

@@ -16,9 +16,9 @@ main {
   color:#003364;
 }
 .email-p{
-  padding: auto;
-  
+  padding: auto;  
   display: flex;
+  
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -58,7 +58,7 @@ color: #FFFFFF;
 .SearchBox {
   --height: 4em;
   display: flex;
-  
+
   border-radius: 5px;
   background-color:#34b3b3;
   height: 50px;
