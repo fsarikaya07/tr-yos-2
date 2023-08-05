@@ -39,7 +39,7 @@ const University = () => {
       </div>
 
       {/* Üniversite kartları */}
-      <div>
+      <div className="uni-container ">
         {getVisibleUniversities().map((item) => (
           <UniversityCard {...item} key={item.id} />
         ))}
@@ -47,14 +47,16 @@ const University = () => {
 
       {/* Sayfa numaralarının butonları */}
       <div className="pagination p-4">
+      <div className="">
         <button
-          className="back"
+          className="back "
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
           <i className="bi bi-caret-left-fill"></i>
           back
-        </button>
+        </button></div>
+        <div className="col">
         {pageNumbers.map((number) => (
           <button
             key={number}
@@ -63,15 +65,16 @@ const University = () => {
           >
             {number}
           </button>
-        ))}
+        ))}</div>
+        <div className="">
         <button
-          className="next"
+          className="next "
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           next
           <i className="bi bi-caret-right-fill"></i>
-        </button>
+        </button></div>
       </div>
     </div>
   );

@@ -93,11 +93,26 @@
 }
 
 
-
-@media (max-width: 375px) {
+@media (max-width: 425px) {
  
   .logo {   
     width: 140px; 
     margin: 0 auto; 
   }
+  /* .uni-container{
+    display: flex;
+    ju
+  } */
+  .uni-dep{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    padding-left: 20px !important;
+    margin: auto;
+  }
+  .uni-log{
+    margin: auto;
+  }
+  
 }

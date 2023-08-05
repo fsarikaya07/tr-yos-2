@@ -115,12 +115,6 @@ const Favori = () => {
                   </Link>{" "}
 
 
-                </li>
-                <li className="list-group-item">{item?.department.tr}</li>
-                <li className="list-group-item">{item?.city.tr}</li>
-              </ul>
-            </div>
-
                 </Card.Title>
                 <Card.Title className="list-group-item text-start  fs-6"  >{item?.department.tr}</Card.Title>
                 <Card.Title className="list-group-item text-start  fs-6"  >{item?.city.tr}</Card.Title>
