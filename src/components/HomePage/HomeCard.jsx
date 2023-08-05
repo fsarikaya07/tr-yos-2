@@ -203,14 +203,14 @@ const HomeCard = ({ item, universityImage }) => {
             position: "absolute",
             top: "195px",
             right: "10px",
-            background: isBoolen ? "#E6EBF1" : "#017EFA",
+            background: isBoolen ? "#E6EBF1" : "#26e3a7",
           }}
           type="button"
           onClick={toggleShowSignInCompareModal}
         >
           <i
             className="fa-solid p-1 fa-rotate-right fa-md"
-            style={{ color: isBoolen ? "  #017EFA" : "  #E6EBF1",}}
+          
           ></i>
           <span className="mx-1"></span>
           Compare
@@ -255,14 +255,14 @@ const HomeCard = ({ item, universityImage }) => {
                 position: "absolute",
                 top: "190px",
                 right: "10px",
-                background: isBoolenFavori ?"#E6EBF1" : "#017EFA",
+               
               }}
               className="btn btn-outline-light  my-5 py-1 px-1 m-1 rounded-circle border-1  d-flex flex-nowrap"
               type="button"
               onClick={toggleShowSignInHeartModal}
             >
               <i class="heart fa-solid fa-heart-circle-check"
-               style={{ color: isBoolenFavori ? "  #017EFA" : "  #E6EBF1",}}
+               style={{ color: isBoolenFavori ? "  #017EFA" : "  #00724e",}}
               ></i>
             </Button>
           </div>
