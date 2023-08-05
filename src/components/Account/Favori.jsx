@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import ToastComponent from "../toastComponent/ToastComponent";
-import { Card, Carousel, Col, Row } from "react-bootstrap";
+import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
 
 
 const Favori = () => {
@@ -62,9 +62,9 @@ const Favori = () => {
   return (
     <div className="container-fluid">
       <div className=" infoDiv p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
-        <h3 className="p-title fw-bold mx-5 mt-5">Favori</h3>
+        <h3 className="p-title fw-bold mx-5 mt-5">FAVORİ</h3>
       </div>
-      <div className="container mt-5">
+      <Container className="container mt-5" style={{ position: "relative" }}>
       <Row className="g-4 d-flex flex-wrap">  
         {cardCompare?.map((item) => {
             const university = item?.university;
@@ -75,9 +75,18 @@ const Favori = () => {
               className="card "
               key={item?.id}
               style={{ width: "100%", height: "30rem" }}>
-              {/* <button onClick={() => deleteCompare(item?.id)}>
+              <button 
+               className="comp h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
+               style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                color: "#0B3660",
+                zIndex: 1000,
+              }}
+              onClick={() => deleteCompare(item?.id)}>
                 <strong>X sil</strong>
-              </button> */}
+              </button>
                      <div className="img " style={{ width: "100%", height: "45%" }}>
           <Carousel
             showStatus={false}
@@ -104,12 +113,12 @@ const Favori = () => {
           </Carousel>
         </div>
               <Card.Body className="card-body d-flex w-100 justify-content-between"  style={{ height: "8%" }}>
-                <h5 className="card-title">{item?.university.tr}</h5>
+                <h5 className="card-title mt-3" style={{color:"#022F5D"}}>{item?.university.tr}</h5>
               </Card.Body>
               <Card.Body className="w-100  " style={{ height: "33%" }}> 
-              <Card.Title className="list-group list-group-flush text-start  fs-6">
-                <Card.Title className="list-group-item text-start  fs-6" >
-                  <Link key={item?.id} to={`/universities/${item?.id}`}>
+              <Card.Title className="list-group list-group-flush text-start  ">
+                <Card.Title className="list-group-item text-start  " style={{color:"#4F5E64",fontSize:"small"}} >
+                  <Link  className="dep text-decoration-none" key={item?.id} to={`/universities/${item?.id}`}>
                     {" "}
                     {item?.faculty.tr}
                   </Link>{" "}
@@ -123,8 +132,8 @@ const Favori = () => {
 
 
                 </Card.Title>
-                <Card.Title className="list-group-item text-start  fs-6"  >{item?.department.tr}</Card.Title>
-                <Card.Title className="list-group-item text-start  fs-6"  >{item?.city.tr}</Card.Title>
+                <Card.Title className="list-group-item text-start  "  style={{color:"#4F5E64" ,fontSize:"small"}} >{item?.department.tr}</Card.Title>
+                <Card.Title className="list-group-item text-start  "  style={{color:"#4F5E64" ,fontSize:"small"}} >{item?.city.tr}</Card.Title>
               </Card.Title>
               </Card.Body>
             </Card>
@@ -132,7 +141,7 @@ const Favori = () => {
 
           );
         })} </Row>
-      </div>
+      </Container>
       <div
         aria-live="polite"
         aria-atomic="true"
