@@ -242,14 +242,15 @@ const DepartmentsCard = ({ item }) => {
               </Link>
             </Card.Title>
             <Card.Title className="facul text-start  fs-6">
-              <a
-                href="http://"
+            <Link
+                key={item.id}
+                to={`/universities/${item.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="dep text-decoration-none text-bold"
+                className="dep text-decoration-none"
               >
                 {item.faculty.en}
-              </a>
+              </Link>
             </Card.Title>
             <Card.Text className="uni text-start text-muted">
               {item.university?.en}
