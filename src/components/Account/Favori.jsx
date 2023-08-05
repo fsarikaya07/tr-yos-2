@@ -62,7 +62,7 @@ const Favori = () => {
   return (
     <div className="container-fluid">
       <div className=" infoDiv p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
-        <h3 className="p-title fw-bold mx-5 mt-5">FAVORİ</h3>
+        <h3 className="p-title fw-bold mx-5 mt-5">My Favorite Departments</h3>
       </div>
       <Container className="container mt-5" style={{ position: "relative" }}>
       <Row className="g-4 d-flex flex-wrap">  
@@ -76,7 +76,7 @@ const Favori = () => {
               key={item?.id}
               style={{ width: "100%", height: "30rem" }}>
               <button 
-               className="comp h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
+               className="comp  h-20 p-1 px-2 rounded-circle border-0 d-flex justify-content-center align-items-center"
                style={{
                 position: "absolute",
                 top: "10px",
@@ -85,7 +85,7 @@ const Favori = () => {
                 zIndex: 1000,
               }}
               onClick={() => deleteCompare(item?.id)}>
-                <strong>X sil</strong>
+                <strong>X </strong>
               </button>
                      <div className="img " style={{ width: "100%", height: "45%" }}>
           <Carousel

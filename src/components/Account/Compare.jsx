@@ -65,7 +65,7 @@ const Compare = () => {
   return (
     <div className="container-fluid">
       <div className=" infoDiv p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
-        <h3 className="p-title fw-bold mt-5 mx-5">COMPARE</h3>
+        <h3 className="p-title fw-bold mt-5 mx-5">Compare Departments</h3>
       </div>
       <Container className="mt-5" style={{ position: "relative" }}>
       <Row className="g-3 d-flex flex-wrap">
@@ -76,7 +76,7 @@ const Compare = () => {
             <Col xs={12} s={6} md={6} lg={4} xl={3}> 
             <Card className="card " key={item?.id} style={{ width: "100%", height: "30rem" }}>
               <button
-               className="comp h-20 p-1 px-2 rounded-1 border-0 d-flex flex-nowrap"
+               className="comp h-20 p-1 px-2 rounded-circle border-0 d-flex justify-content-center align-items-center"
                style={{
                 position: "absolute",
                 top: "10px",
@@ -85,7 +85,7 @@ const Compare = () => {
                 zIndex: 1000,
               }}
                onClick={() => deleteCompare(item.id)}>
-                <strong>X sil</strong>
+                <strong>X </strong>
               </button>
                  <div className="img " style={{ width: "100%", height: "45%" }}>
           <Carousel
