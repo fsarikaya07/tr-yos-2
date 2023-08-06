@@ -103,7 +103,7 @@ const Register = () => {
             {t("register.signInQuestion")}{" "}
             <button
                onClick={() => toggleForm("login")}
-              className="text-primary mx-2"
+              className=" btnRgs text-primary mx-2"
               style={{ textDecoration: "none" }}
             >
               {t("register.signIn")}
