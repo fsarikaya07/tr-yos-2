@@ -103,7 +103,7 @@ const Compare = () => {
                       showIndicators={false}
                       dynamicHeight={true}
                       infiniteLoop={true}
-                      className="slide-image"
+                      interval={null} 
                     >
                       {departmentImages.map((image, index) => (
                         <Carousel.Item key={index}>

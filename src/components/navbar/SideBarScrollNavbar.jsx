@@ -234,7 +234,7 @@ const SideBarScrollNavbar = () => {
                     <MyAccount />
                   )}
 
-                  <div className="languageDropdown">
+                  <div >
                     <LanguageSelector />
                   </div>
                 </Col>

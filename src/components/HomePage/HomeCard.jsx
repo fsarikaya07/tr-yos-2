@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Button, Container, Modal } from "react-bootstrap";
+import { Button, Carousel, Container, Modal } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import uniDefault from "../../assets/uni.jpg";
@@ -12,23 +12,19 @@ import { useYosContext } from "../../context/Context";
 import axios from "axios";
 import { useAuthContext } from "../../context/AuthContext";
 import ToastComponent from "../toastComponent/ToastComponent";
-
+import { useTranslation } from 'react-i18next';
 const HomeCard = ({ item, universityImage }) => {
+  const { t } = useTranslation();
   // State değerleri ve toggle fonksiyonları tanımlanıyor
   const [showSignInCompareModal, setShowSignInCompareModal] = useState(false);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [showFavoriToast, setShowFavoriToast] = useState(false);
   const [showSignInHeartModal, setShowSignInHeartModal] = useState(false);
   const [showDeleteToast, setShowDeleteToast] = useState(false)
-
   const {
-    
     setCompareId,
-    
     setFavoriId,
-    
   } = useYosContext();
-
   const { currentUser, setShowModal, showModal } = useAuthContext();
   const [isBoolen, setIsBoolen] = useState(true);
   const [isBoolenFavori, setIsBoolenFavori] = useState(true);
@@ -57,11 +53,8 @@ const HomeCard = ({ item, universityImage }) => {
             },
           }
         );
-
-       
           newCompareId.push(responseCompare.data);
           sessionStorage.setItem("compareId", JSON.stringify(newCompareId));
-
           setCompareId(newCompareId);
           setIsBoolen(!isBoolen);
           setShowSuccessToast(true);
@@ -84,21 +77,17 @@ const HomeCard = ({ item, universityImage }) => {
           (compareItem) => compareItem.id != item.id
         );
         console.log("update:", updatedCompare);
-
         sessionStorage.setItem("compareId", JSON.stringify(updatedCompare));
         setCompareId(updatedCompare);
         setShowDeleteToast(true);
         setIsBoolen(!isBoolen);
-
         console.log("delete", responseCompareDelete.data);
-
       }
     } catch (error) {
       console.log(error);
     }
     console.log("mnd", item.id);
   };
-
   ///<-----------------------------------COMPARE END---------------------------------------------->
   ///<-----------------------------------FAVORİ START---------------------------------------------->
   const toggleShowSignInHeartModal = async (e) => {
@@ -113,7 +102,6 @@ const HomeCard = ({ item, universityImage }) => {
       // Kullanıcı giriş yapmamışsa, oturum açma formunu aç
       setShowModal(!showModal);
     }
-
     try {
       if (isBoolenFavori) {
         const responseFavori = await axios.get(
@@ -127,7 +115,6 @@ const HomeCard = ({ item, universityImage }) => {
             },
           }
         );
-
         if (!newFavoriId.includes(responseFavori.data)) {
           newFavoriId.push(responseFavori.data);
           sessionStorage.setItem("favoriID", JSON.stringify(newFavoriId));
@@ -157,44 +144,52 @@ const HomeCard = ({ item, universityImage }) => {
         const newFavoriDelete = newFavoriId.filter(
           (favoriItem) => favoriItem.id != item.id
         );
-
         sessionStorage.setItem("favoriID", JSON.stringify(newFavoriDelete));
         setShowDeleteToast(true);
         setFavoriId(newFavoriDelete);
         console.log("success2", newFavoriDelete);
-
         setIsBoolenFavori(!isBoolenFavori);
       }
     } catch (error) {
       console.log(error);
     }
-
     // setCompareId(responseCompare.data);
     console.log("mnd", item.id);
   };
   ///<-----------------------------------FAVORİ END---------------------------------------------->
-
   const departmentName = item?.university?.tr;
   const departmentImages = universityImage[departmentName] || [];
-
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
       <Card
         className="cardBody rounded-2 "
         style={{ width: "100%", height: "25rem" }}
       >
-        {departmentImages.length > 0 ? (
-          <div style={{ width: "100%", height: "60%" }}>
-            <HomeCardSlider images={departmentImages} />
-          </div>
-        ) : (
-          <Card.Img
-            variant="top"
-            style={{ width: "100%", borderRadius: "5px" }}
-            src={uniDefault}
-            className="relative defaultimg "
-          />
-        )}
+      <div className="img" style={{ width: "100%", height: "60%" }}>
+          <Carousel
+            showStatus={false}
+            showIndicators={false}
+            dynamicHeight={true}
+            infiniteLoop={true}
+            interval={null} 
+          >
+            {departmentImages.map((image, index) => (
+              <Carousel.Item key={index}>
+                <Card.Img
+                  className="defaultimg"
+                  variant="top"
+                  style={{
+                    width: "100%",
+                    height: "229.609px",
+                    position: "relative",
+                    borderRadius: "5px",
+                  }}
+                  src={image}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
         <Button
           variant="light"
           size="lg"
@@ -203,14 +198,13 @@ const HomeCard = ({ item, universityImage }) => {
             position: "absolute",
             top: "195px",
             right: "10px",
-            background: isBoolen ? "#E6EBF1" : "#26e3a7",
+            background: isBoolen ? "#E6EBF1" : "#26E3A7",
           }}
           type="button"
           onClick={toggleShowSignInCompareModal}
         >
           <i
             className="fa-solid p-1 fa-rotate-right fa-md"
-          
           ></i>
           <span className="mx-1"></span>
           Compare
@@ -234,14 +228,13 @@ const HomeCard = ({ item, universityImage }) => {
               <Link
                 key={item.id}
                 to={`/universities/${item.id}`}
-            
+                target="_blank"
                 rel="noopener noreferrer"
                 className="dep text-decoration-none"
               >
                 {item?.faculty?.en}
               </Link>
             </Card.Title>
-
             <Card.Text className="uni text-start text-muted">
               {item?.university?.en}
             </Card.Text>
@@ -255,14 +248,13 @@ const HomeCard = ({ item, universityImage }) => {
                 position: "absolute",
                 top: "190px",
                 right: "10px",
-               
               }}
               className="btn btn-outline-light  my-5 py-1 px-1 m-1 rounded-circle border-1  d-flex flex-nowrap"
               type="button"
               onClick={toggleShowSignInHeartModal}
             >
               <i class="heart fa-solid fa-heart-circle-check"
-               style={{ color: isBoolenFavori ? "  #017EFA" : "  #00724e",}}
+               style={{ color: isBoolenFavori ? "  #017EFA" : "  #00724E",}}
               ></i>
             </Button>
           </div>
@@ -292,7 +284,6 @@ const HomeCard = ({ item, universityImage }) => {
       >
         <LogIn />
       </Modal>
-
       {/* Modal componentleri tanımlanıyor */}
       <Modal
         show={showSignInHeartModal}
@@ -311,19 +302,19 @@ const HomeCard = ({ item, universityImage }) => {
           show={showSuccessToast}
           onClose={() => setShowSuccessToast(false)}
           type="success"
-          message="Compare added successfully."
+          message={t("toasts.compareAdded")}
         />
         <ToastComponent
           show={showFavoriToast}
           onClose={() => setShowFavoriToast(false)}
           type="success"
-          message="Favori added successfully."
+          message={t("toasts.favoriteAdded")}
         />
          <ToastComponent
           show={showDeleteToast}
           onClose={() => setShowDeleteToast(false)}
           type="success"
-          message="Delete  successfully."
+          message={t("toasts.deleteSuccess")}
         />
       </div>
     </Container>
