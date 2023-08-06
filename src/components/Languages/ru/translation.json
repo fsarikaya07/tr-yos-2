@@ -32,6 +32,7 @@
     "yourName": "Ваше имя",
     "email": "Электронное письмо",
     "country": "Страна",
+    "city": "Город",
     "phone": "Телефон",
     "about": "Около",
     "saveChanges": "Сохранить изменения",
@@ -51,7 +52,8 @@
     "universityName": "Название университета",
     "country": "Страна",
     "city": "Город",
-    "compare": "Сравнить"
+    "compare": "Сравнить",
+    "delete": "Удалить"
   },
   "favorites": {
     "title": "Избранное",
@@ -59,7 +61,8 @@
     "universityName": "Название университета",
     "country": "Страна",
     "city": "Город",
-    "remove": "Удалить"
+    "remove": "Удалить",
+    "delete": "Удалить"
   },
   "homeDepartments": {
     "title": "Наши департаменты",
@@ -139,7 +142,25 @@
     "removeFavorite": "Удалить из избранного",
     "callUs": "Позвоните нам",
     "website": "Вебсайт",
-    "sendMessage": "Отправить сообщение"
+    "sendMessage": "Отправить сообщение",
+    "veryPoor": "Очень плохо",
+    "poor": "Плохо",
+    "good": "Хорошо",
+    "veryGood": "Очень хорошо",
+    "superb": "Отлично",
+    "rating": "Рейтинг"
+  },
+  "password": {
+    "currentPassword": "Текущий пароль",
+    "newPassword": "Новый пароль",
+    "repeatNewPassword": "Повторите новый пароль",
+    "saveChange": "Сохранить изменения"
+  },
+  "universityPage": {
+    "title": "Университеты",
+    "description": "Вы можете проверить все университеты",
+    "back": "назад",
+    "next": "вперед"
   }
 }
 

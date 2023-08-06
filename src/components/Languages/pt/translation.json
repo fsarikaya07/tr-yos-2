@@ -32,6 +32,7 @@
     "yourName": "Seu nome",
     "email": "Email",
     "country": "País",
+    "city": "Cidade",
     "phone": "Telefone",
     "about": "Sobre",
     "saveChanges": "Salvar alterações",
@@ -51,7 +52,8 @@
     "universityName": "Nome da universidade",
     "country": "País",
     "city": "Cidade",
-    "compare": "Comparar"
+    "compare": "Comparar",
+    "delete": "Excluir"
   },
   "favorites": {
     "title": "Favoritos",
@@ -59,7 +61,8 @@
     "universityName": "Nome da universidade",
     "country": "País",
     "city": "Cidade",
-    "remove": "Remover"
+    "remove": "Remover",
+    "delete": "Excluir"
   },
   "homeDepartments": {
     "title": "Nossos Departamentos",
@@ -139,6 +142,24 @@
     "removeFavorite": "Remover dos favoritos",
     "callUs": "Ligue para nós",
     "website": "Local na rede Internet",
-    "sendMessage": "Enviar mensagem"
+    "sendMessage": "Enviar mensagem",
+    "veryPoor": "Muito Ruim",
+    "poor": "Ruim",
+    "good": "Bom",
+    "veryGood": "Muito Bom",
+    "superb": "Excelente",
+    "rating": "Classificação"
+  },
+  "password": {
+    "currentPassword": "Senha atual",
+    "newPassword": "Nova senha",
+    "repeatNewPassword": "Repita a nova senha",
+    "saveChange": "Salvar alterações"
+  },
+  "universityPage": {
+    "title": "Universidades",
+    "description": "Você pode verificar todas as universidades",
+    "back": "atrás",
+    "next": "próximo"
   }
 }

@@ -32,6 +32,7 @@
     "yourName": "İsminiz",
     "email": "E-posta",
     "country": "Ülke",
+    "city": "Şehir",
     "phone": "Telefon",
     "about": "Hakkında",
     "saveChanges": "Değişiklikleri Kaydet",
@@ -51,7 +52,8 @@
     "universityName": "Üniversite Adı",
     "country": "Ülke",
     "city": "Şehir",
-    "compare": "Karşılaştır"
+    "compare": "Karşılaştır",
+    "delete": "Sil"
   },
   "favorites": {
     "title": "Favoriler",
@@ -59,7 +61,8 @@
     "universityName": "Üniversite Adı",
     "country": "Ülke",
     "city": "Şehir",
-    "remove": "Kaldır"
+    "remove": "Kaldır",
+    "delete": "Sil"
   },
 
   "homeDepartments": {
@@ -142,6 +145,24 @@
     "callUs": "Bizi Arayın",
     "email": "E-Posta",
     "website": "Web Sitesi",
-    "sendMessage": "Mesaj Gönder"
+    "sendMessage": "Mesaj Gönder",
+    "veryPoor": "Çok Kötü",
+    "poor": "Kötü",
+    "good": "İyi",
+    "veryGood": "Çok İyi",
+    "superb": "Mükemmel",
+    "rating": "Derecelendirme"
+  },
+  "password": {
+    "currentPassword": "Mevcut Şifre",
+    "newPassword": "Yeni Şifre",
+    "repeatNewPassword": "Yeni Şifreyi Tekrarla",
+    "saveChange": "Değişikliği Kaydet"
+  },
+  "universityPage": {
+    "title": "Üniversiteler",
+    "description": "Tüm Üniversiteleri Kontrol Edebilirsiniz",
+    "back": "geri",
+    "next": "ileri"
   }
 }
