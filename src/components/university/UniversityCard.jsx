@@ -56,8 +56,7 @@ const UniversityCard = ({ logo, city, tr, data }) => {
                     {t("universityCard.departments")}
                   </span>
                 </div>
-                {/* //! Api ye bağlanmamiş yerler var. Bunlar tamamlandiktan sonra multi lanuages için "location": "Location","address": ddress", "contact":"Contact" kisimlari eklenecek... */}
-
+         
                 <h5 className="university-title">{tr}</h5>
                 <div className="location">
                   <i className="fa-solid fa-location-dot"></i>

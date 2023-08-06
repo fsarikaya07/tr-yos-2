@@ -32,6 +32,7 @@
     "yourName": "你的名字",
     "email": "电子邮件",
     "country": "国家",
+    "city": "城市",
     "phone": "电话",
     "about": "关于",
     "saveChanges": "保存更改",
@@ -51,7 +52,8 @@
     "universityName": "大学名称",
     "country": "国家",
     "city": "城市",
-    "compare": "比较"
+    "compare": "比较",
+    "delete": "删除"
   },
   "favorites": {
     "title": "最爱",
@@ -59,7 +61,8 @@
     "universityName": "大学名称",
     "country": "国家",
     "city": "城市",
-    "remove": "删除"
+    "remove": "删除",
+    "delete": "删除"
   },
   "homeDepartments": {
     "title": "我们的部门",
@@ -139,6 +142,24 @@
     "removeFavorite": "从最爱中删除",
     "callUs": "给我们打电话",
     "website": "网站",
-    "sendMessage": "发送信息"
+    "sendMessage": "发送信息",
+    "veryPoor": "非常差",
+    "poor": "差",
+    "good": "好",
+    "veryGood": "非常好",
+    "superb": "极好",
+    "rating": "评级"
+  },
+  "password": {
+    "currentPassword": "当前密码",
+    "newPassword": "新密码",
+    "repeatNewPassword": "重复新密码",
+    "saveChange": "保存更改"
+  },
+  "universityPage": {
+    "title": "大学",
+    "description": "您可以查看所有大学",
+    "back": "返回",
+    "next": "下一个"
   }
 }

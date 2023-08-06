@@ -32,6 +32,7 @@
     "yourName": "اسمك",
     "email": "البريد الإلكتروني",
     "country": "البلد",
+    "city": "المدينة",
     "phone": "الهاتف",
     "about": "حول",
     "saveChanges": "حفظ التغييرات",
@@ -51,7 +52,8 @@
     "universityName": "اسم الجامعة",
     "country": "البلد",
     "city": "المدينة",
-    "compare": "قارن"
+    "compare": "قارن",
+    "delete": "حذف"
   },
   "favorites": {
     "title": "المفضلة",
@@ -59,7 +61,8 @@
     "universityName": "اسم الجامعة",
     "country": "البلد",
     "city": "المدينة",
-    "remove": "إزالة"
+    "remove": "إزالة",
+    "delete": "حذف"
   },
   "homeDepartments": {
     "title": "أقسامنا",
@@ -139,6 +142,24 @@
     "removeFavorite": "إزالة من المفضلة",
     "callUs": "اتصل بنا",
     "website": "موقع الكتروني",
-    "sendMessage": "إرسال رسالة"
+    "sendMessage": "إرسال رسالة",
+    "veryPoor": "سيئ جدا",
+    "poor": "سيء",
+    "good": "جيد",
+    "veryGood": "جيد جدا",
+    "superb": "ممتاز",
+    "rating": "تقييم"
+  },
+  "password": {
+    "currentPassword": "كلمة السر الحالية",
+    "newPassword": "كلمة السر الجديدة",
+    "repeatNewPassword": "أعد كلمة السر الجديدة",
+    "saveChange": "حفظ التغيير"
+  },
+  "universityPage": {
+    "title": "الجامعات",
+    "description": "يمكنك التحقق من جميع الجامعات",
+    "back": "الى الخلف",
+    "next": "التالى"
   }
 }

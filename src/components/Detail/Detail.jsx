@@ -147,14 +147,14 @@ const Detail = () => {
                   <h5 className="text-start  font-weight-bold">
                     {t('detail.submitReview')}
                   </h5>
-                  <div className="row ">
+                  <div className="row">
                     <div className="col-lg-6 col-md-6 col-sm-12 p-2">
                       <div className="form-group">
                         <label>{t('detail.name')}</label>
                         <input
                           type="text"
                           className="form-control"
-                          placeholder="Your Name"
+                          placeholder={t('detail.name')}
                         />
                       </div>
                     </div>
@@ -165,7 +165,7 @@ const Detail = () => {
                         <input
                           type="email"
                           className="form-control"
-                          placeholder="Your e-Mail"
+                          placeholder={t('detail.email')}
                         />
                       </div>
                     </div>
@@ -176,20 +176,20 @@ const Detail = () => {
                         <input
                           type="text"
                           className="form-control"
-                          placeholder="Your Contact"
+                          placeholder={t('detail.phoneNo')}
                         />
                       </div>
                     </div>
 
                     <div className="col-lg-6 col-md-6 col-sm-12 p-2">
                       <div className="form-group">
-                        <label>Rating</label>
+                        <label>{t('detail.rating')}</label>
                         <select className="form-control">
-                          <option value="1">1 : Very Poor</option>
-                          <option value="2">2 : Poor</option>
-                          <option value="3">3 : Good</option>
-                          <option value="4">4 : Very Good</option>
-                          <option value="5">5 : Superb</option>
+                          <option value="1">1 : {t('detail.veryPoor')}</option>
+                          <option value="2">2 : {t('detail.poor')}</option>
+                          <option value="3">3 : {t('detail.good')}</option>
+                          <option value="4">4 : {t('detail.veryGood')}</option>
+                          <option value="5">5 : {t('detail.superb')}</option>
                         </select>
                       </div>
                     </div>
@@ -199,14 +199,14 @@ const Detail = () => {
                         <label>{t('detail.yourMessage')}</label>
                         <textarea
                           className="form-control"
-                          placeholder="Messages"
+                          placeholder={t('detail.yourMessage')}
                           style={{ height: 200 }}
                         ></textarea>
                       </div>
                     </div>
 
                     <div className="col-lg-12 col-md-12 col-sm-12">
-                      <div className="form-group ">
+                      <div className="form-group">
                         <button
                           className="btn btn-primary p-3 m-2"
                           type="submit"

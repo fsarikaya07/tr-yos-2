@@ -2,8 +2,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useAuthContext } from "../../context/AuthContext";
 import ToastComponent from "../toastComponent/ToastComponent";
+import { useTranslation } from 'react-i18next';
+
 
 const Passaword = () => {
+  const { t } = useTranslation();
+
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -56,7 +60,7 @@ const Passaword = () => {
       <form className="row g-4" onSubmit={handleSubmit}>
         <div className="col-8">
           <label htmlFor="inputText" className="form-label">
-            Current Password*
+            {t('password.currentPassword')}*
           </label>
           <input
             type="password"
@@ -68,7 +72,7 @@ const Passaword = () => {
         </div>
         <div className="col-8">
           <label htmlFor="inputEmail" className="form-label">
-            New Password*
+            {t('password.newPassword')}*
           </label>
           <input
             type="password"
@@ -80,7 +84,7 @@ const Passaword = () => {
         </div>
         <div className="col-8">
           <label htmlFor="inputEmail" className="form-label">
-            Repeat New Password*
+            {t('password.repeatNewPassword')}*
           </label>
           <input
             type="password"
@@ -92,7 +96,7 @@ const Passaword = () => {
         </div>
         <div className="col-12">
           <button type="submit" className="btn btn-primary p-3">
-            Save Changes
+            {t('password.saveChange')}
           </button>
         </div>
       </form>

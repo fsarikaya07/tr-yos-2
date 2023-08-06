@@ -32,6 +32,7 @@
     "yourName": "Il tuo nome",
     "email": "E-mail",
     "country": "Nazione",
+    "city": "Città",
     "phone": "Telefono",
     "about": "Circa",
     "saveChanges": "Salva le modifiche",
@@ -51,7 +52,8 @@
     "universityName": "Nome dell'università",
     "country": "Nazione",
     "city": "Città",
-    "compare": "Confrontare"
+    "compare": "Confrontare",
+    "delete": "Elimina"
   },
   "favorites": {
     "title": "Preferiti",
@@ -59,7 +61,8 @@
     "universityName": "Nome dell'università",
     "country": "Nazione",
     "city": "Città",
-    "remove": "Rimuovere"
+    "remove": "Rimuovere",
+    "delete": "Elimina"
   },
   "homeDepartments": {
     "title": "I nostri dipartimenti",
@@ -139,7 +142,25 @@
     "removeFavorite": "Rimuovi dai preferiti",
     "callUs": "Chiamaci",
     "website": "Sito web",
-    "sendMessage": "Invia messaggio"
+    "sendMessage": "Invia messaggio",
+    "veryPoor": "Molto scarso",
+    "poor": "Scarso",
+    "good": "Buono",
+    "veryGood": "Molto buono",
+    "superb": "Superbo",
+    "rating": "Valutazione"
+  },
+  "password": {
+    "currentPassword": "Password attuale",
+    "newPassword": "Nuova password",
+    "repeatNewPassword": "Ripeti nuova password",
+    "saveChange": "Salva le modifiche"
+  },
+  "universityPage": {
+    "title": "Università",
+    "description": "Puoi controllare tutte le università",
+    "back": "indietro",
+    "next": "avanti"
   }
 }
 
