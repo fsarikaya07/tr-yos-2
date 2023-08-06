@@ -9,6 +9,9 @@ import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
 const Favori = () => {
 
   
+
+
+  
   const { t } = useTranslation();
   const { favoriId, setFavoriId, favori, setFavori, card,universities } = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
