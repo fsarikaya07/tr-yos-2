@@ -3,25 +3,27 @@
   background-color: #34b3b3 !important;
   opacity: 0%;
   border: none !important;
-  color: red !important;
+
   width: 2rem !important;
   height: 5rem !important;
 }
 
 .dropdown-toggle.en-text {
-  color: red; /* veya istediğiniz renk kodunu belirtebilirsiniz */
+ 
 }
 
 #language-dropdown {
   /* Örnek boyutlar ve boşluklar */
-  height: 2rem;
+  height: 1rem;
   width: 4.5rem;
   padding: 8px 16px;
   margin: 4px;
 
   /* Örnek yazı rengi ve arka plan rengi */
-  color: white;
-  background-color: #003364;
+  /* color: white; */
+  /* background-color: #003364; */
+  background: none;
+  border: none;
 
   flex-direction: column;
   justify-content: center;

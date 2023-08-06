@@ -5,7 +5,7 @@ import "./LanguageSelector.css";
 import { useLocation } from "react-router";
 
 const LanguageSelector = () => {
-  const [language, setLanguage] = useState("EN");
+  const [language, setLanguage] = useState("En");
   const { i18n } = useTranslation(); // i18n örneğini alın
 
   const languageMap = {
@@ -30,8 +30,8 @@ const LanguageSelector = () => {
   return (
     <Dropdown>
       <Dropdown.Toggle
-        // className=
-        className={`nav-link ${location.pathname === "/" ? "text-danger" : "#34b3b3"}`}
+       
+        className={`nav-link ${location.pathname === "/" ? "black" : "#34b3b3"}`}
         variant="success"
         id="language-dropdown"
       >
