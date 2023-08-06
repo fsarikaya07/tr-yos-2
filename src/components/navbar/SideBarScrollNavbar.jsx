@@ -70,29 +70,21 @@ const SideBarScrollNavbar = () => {
         placement="start"
         className="text-dark"
       >
-        <Offcanvas.Header closeButton className="">
-        <Link to="/" href="/" aria-current="page" className="logoImage"  >
-                    <div className="logoImage navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
-                      {/* Logo eklemek için aşağıdaki satırı ekleyin */}
-                      <img src={logoImage} alt="logo" />{" "}
-                      {/* Logo dosyasının yolu kullanılıyor */}
-                      {/* Diğer menü bağlantıları */}
-                    </div>
-                  </Link>
+        <Offcanvas.Header closeButton className=""></Offcanvas.Header>
 
-        </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="homeNavbar d-flex flex-column align-items-start fw-bold fs-6">
             <Row fluid id="navbarCollapse">
+              <Link to="/" href="/" aria-current="page">
+                <div className="logoImageSideBar navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
+                  {/* Logo eklemek için aşağıdaki satırı ekleyin */}
+                  <img src={logoImage} alt="logo" />{" "}
+                  {/* Logo dosyasının yolu kullanılıyor */}
+                  {/* Diğer menü bağlantıları */}
+                </div>
+              </Link>
+
               <Col fluid>
-                      <Link to="/" href="/" aria-current="page">
-                    <div className="logoImage navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
-                      {/* Logo eklemek için aşağıdaki satırı ekleyin */}
-                      <img src={logoImage} alt="logo" />{" "}
-                      {/* Logo dosyasının yolu kullanılıyor */}
-                      {/* Diğer menü bağlantıları */}
-                    </div>
-                  </Link>
                 <Link
                   to="/"
                   className={`nav-link ${
@@ -113,7 +105,6 @@ const SideBarScrollNavbar = () => {
                 >
                   {t("homepage.universities")}
                 </Link>
-
                 <Link
                   to="/departmants"
                   className={`nav-link ${
@@ -124,7 +115,6 @@ const SideBarScrollNavbar = () => {
                 >
                   {t("homepage.departments")}
                 </Link>
-
                 {currentUser ? (
                   <>
                     <MyAccount />
@@ -142,7 +132,7 @@ const SideBarScrollNavbar = () => {
                           <i className="fas fa-sign-in-alt me-2"></i>
 
                           {t("singIn")}
-                        </Button>{" "}
+                        </Button>
                       </div>
                     </Col>
                   </Row>
