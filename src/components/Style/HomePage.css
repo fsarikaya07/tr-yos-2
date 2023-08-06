@@ -1,11 +1,47 @@
 .boxNavbar {
   height: px !important;
 }
-.logoImage,
-.navbarCollapse {
-  display: flex;
-  align-items: center;
+.logoImageSideBar{
+  display: flex !important;
+  align-items: center !important;
+  max-width: 15vw; /* İstediğiniz genişlik değerine göre ayarlayın */
+  max-height: 15vh; /* İstediğiniz yükseklik değerine göre ayarlayın */
+  /* background-image: url("../../assets/OIG.jpeg"); */
+  /* background-size: cover; /* Resmi arka plana sığdırır */
+  /* background-repeat: no-repeat; Resmi yinelemeyi engeller */
+  /* background-position: center center; Resmi ortalar */ 
+  /* Diğer stil ayarlarınızı burada belirleyebilirsiniz */
+  border-radius: 50%;
+  margin-right: 10px;
+  overflow: hidden;
+  transition: width 0.3s ease, height 0.3s ease;
+ 
+
 }
+
+
+
+.logoImageSideBar img {
+  width: 12vw; /* İstediğiniz genişlik değerine göre ayarlayın */
+  height: 13vh;
+  max-width: 50vw; /* İstediğiniz genişlik değerine göre ayarlayın */
+  max-height: 50vh; /* İstediğiniz yükseklik değerine göre ayarlayın */
+  /* background-image: url("../../assets/OIG.jpeg"); Resmin dosya yolunu belirtin */
+  background-size: cover; /* Resmi arka plana sığdırır */
+  background-repeat: no-repeat; /* Resmi yinelemeyi engeller */
+  background-position: center center; /* Resmi ortalar */
+  /* Diğer stil ayarlarınızı burada belirleyebilirsiniz */
+  border-radius: 50%;
+  margin-right: 10px;
+  overflow: hidden;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+
+
+
+
+
 
 .logoImage {
   display: flex;
@@ -13,11 +49,11 @@
 }
 
 .logoImage img {
-  width: 5vw; /* İstediğiniz genişlik değerine göre ayarlayın */
-  height: 8vh;
+  width: 6vw; /* İstediğiniz genişlik değerine göre ayarlayın */
+  height: 6vh;
   max-width: 4vw; /* İstediğiniz genişlik değerine göre ayarlayın */
   max-height: 10vh; /* İstediğiniz yükseklik değerine göre ayarlayın */
-  background-image: url("../../assets/OIG.jpeg"); /* Resmin dosya yolunu belirtin */
+  /* background-image: url("../../assets/OIG.jpeg"); Resmin dosya yolunu belirtin */
   background-size: cover; /* Resmi arka plana sığdırır */
   background-repeat: no-repeat; /* Resmi yinelemeyi engeller */
   background-position: center center; /* Resmi ortalar */
@@ -38,10 +74,6 @@
 
 }
 */
- 
-
-
-
 
 .homeNavbar {
   align-items: center;
@@ -54,7 +86,6 @@
   background-color: #017efa;
   border: 5px solid#017EFA;
   height: 2rem;
-
 
   flex-direction: column;
   justify-content: center;
