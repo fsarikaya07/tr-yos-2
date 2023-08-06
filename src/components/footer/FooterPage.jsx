@@ -3,6 +3,9 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import "../Style/Footer.css"
 import { animateScroll as scroll } from "react-scroll";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+
 
 const FooterPage = () => {
   const { t } = useTranslation();
@@ -126,6 +129,7 @@ const FooterPage = () => {
         onClick={scrollToTop}
       >
         <i className="fa fa-chevron-up"></i>
+        {/* <FontAwesomeIcon icon={faArrowUp} /> */}
       </div>
       <div className="text-center py-3">
         &copy; {new Date().getFullYear()} {t("footer.allRightsReserved")}
