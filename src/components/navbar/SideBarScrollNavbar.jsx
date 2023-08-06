@@ -13,22 +13,21 @@ import { Link, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
 import LogIn from "../Login/LogIn";
 import Register from "../Login/Register";
-import "./HomePage.css";
+import "../Style/HomePage.css";
 import { useAuthContext } from "../../context/AuthContext"; // AuthContext'u kullanmak için import edin.
 import MyAccount from "../Dropdown/MyAccount";
 import LanguageSelector from "../Languages/LanguageSelector";
+import logoImage from "../../assets/OIG.jpeg";
 
 const SideBarScrollNavbar = () => {
   const { t } = useTranslation();
 
-  const { currentUser,toggleForm,handleCloseModal,showModal,currentForm  } = useAuthContext();
-  
+  const { currentUser, toggleForm, handleCloseModal, showModal, currentForm } =
+    useAuthContext();
 
   const location = useLocation();
   const [scrollBackground, setScrollBackground] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,11 +70,29 @@ const SideBarScrollNavbar = () => {
         placement="start"
         className="text-dark"
       >
-        <Offcanvas.Header closeButton className=""></Offcanvas.Header>
+        <Offcanvas.Header closeButton className="">
+        <Link to="/" href="/" aria-current="page" className="logoImage"  >
+                    <div className="logoImage navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
+                      {/* Logo eklemek için aşağıdaki satırı ekleyin */}
+                      <img src={logoImage} alt="logo" />{" "}
+                      {/* Logo dosyasının yolu kullanılıyor */}
+                      {/* Diğer menü bağlantıları */}
+                    </div>
+                  </Link>
+
+        </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="homeNavbar d-flex flex-column align-items-start fw-bold fs-6">
             <Row fluid id="navbarCollapse">
               <Col fluid>
+                      <Link to="/" href="/" aria-current="page">
+                    <div className="logoImage navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
+                      {/* Logo eklemek için aşağıdaki satırı ekleyin */}
+                      <img src={logoImage} alt="logo" />{" "}
+                      {/* Logo dosyasının yolu kullanılıyor */}
+                      {/* Diğer menü bağlantıları */}
+                    </div>
+                  </Link>
                 <Link
                   to="/"
                   className={`nav-link ${
@@ -115,22 +132,18 @@ const SideBarScrollNavbar = () => {
                 ) : (
                   <Row fluid id="navbarCollapse">
                     <Col fluid>
-                      <IconContext.Provider
-                        value={{ size: "1.5em", color: "white" }}
-                      >
-                        <div className="navbarCollapse">
-                          <Button
-                            className="signIn btn btn-outline-light my-1 m-3 flex-wrap"
-                            type="submit"
-                            variant="info"
-                            onClick={() => toggleForm("login")}
-                          >
-                            <i className="fas fa-sign-in-alt me-2"></i>
+                      <div className="navbarCollapse">
+                        <Button
+                          className="signIn btn btn-outline-light my-1 m-3 flex-wrap"
+                          type="submit"
+                          variant="info"
+                          onClick={() => toggleForm("login")}
+                        >
+                          <i className="fas fa-sign-in-alt me-2"></i>
 
-                            {t("homepage.singIn")}
-                          </Button>{" "}
-                        </div>
-                      </IconContext.Provider>
+                          {t("singIn")}
+                        </Button>{" "}
+                      </div>
                     </Col>
                   </Row>
                 )}
@@ -155,6 +168,14 @@ const SideBarScrollNavbar = () => {
             <Row fluid id="navbarCollapse">
               <Col fluid>
                 <div className="navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
+                  <Link to="/" href="/" aria-current="page">
+                    <div className="logoImage navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around">
+                      {/* Logo eklemek için aşağıdaki satırı ekleyin */}
+                      <img src={logoImage} alt="logo" />{" "}
+                      {/* Logo dosyasının yolu kullanılıyor */}
+                      {/* Diğer menü bağlantıları */}
+                    </div>
+                  </Link>
                   <Link
                     to="/"
                     className={`nav-link ${
@@ -191,8 +212,11 @@ const SideBarScrollNavbar = () => {
             </Row>
 
             <Row fluid id="navbarCollapse">
-              <Col fluid>
-                <div className="navbarCollapse">
+              <div className="navbarCollapse">
+                <Col
+                  fluid
+                  className="navbarCollapse d-none d-lg-flex w-100 d-flex w-100 flex-wrap align-items-center justify-content-around"
+                >
                   {!currentUser ? (
                     <>
                       <Button
@@ -219,17 +243,19 @@ const SideBarScrollNavbar = () => {
                   ) : (
                     <MyAccount />
                   )}
-                </div>
-              </Col>
+
+                  <div className="languageDropdown">
+                    <LanguageSelector />
+                  </div>
+                </Col>
+              </div>
             </Row>
 
-            <Row fluid id="navbarCollapse">
+            {/* <Row fluid id="navbarCollapse">
               <Col fluid>
-                <div className="languageDropdown">
-                  <LanguageSelector />
-                </div>
+               
               </Col>
-            </Row>
+            </Row> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -237,13 +263,7 @@ const SideBarScrollNavbar = () => {
       <Modal show={showModal} onHide={handleCloseModal} centered>
         <Modal.Header closeButton style={{ border: "none" }}></Modal.Header>
         <Modal.Body>
-          {currentForm === "login" ? (
-            <LogIn />
-          ) : (
-            <Register
-         
-            />
-          )}
+          {currentForm === "login" ? <LogIn /> : <Register />}
         </Modal.Body>
       </Modal>
     </>
