@@ -1,5 +1,5 @@
 //! Çagırma Şekli 
-// <div
+// {/* <div
 // aria-live="polite"
 // aria-atomic="true"
 // style={{ position: "relative", minHeight: "200px" }}
@@ -19,7 +19,7 @@
 //   type="error"
 //   message="An error occurred while changing password."
 // />
-// </div>
+// </div> */}
 
 //! ---------------------------------
 import React, { useState, useEffect } from "react";

@@ -19,7 +19,8 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user")) || false
   );
-
+  const [showSuccessToast, setShowSuccessToast] = useState(false)
+  const [showErrorToast, setShowErrorToast] = useState(false)
   // Sayfalar arası gezinme için `useNavigate` hook'unu kullanıyoruz
   const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ export function AuthProvider({ children }) {
     createData.append("email", signUser.email);
     createData.append("password1", signUser.password1);
     createData.append("password2", signUser.password2);
-
+   
     
     try {
       const { data } = await axios.post(REGISTER_API_URL, createData, {
@@ -75,15 +76,17 @@ export function AuthProvider({ children }) {
       // setCurrentUser(data);
       // sessionStorage.setItem("user", JSON.stringify(data));
       // Giriş başarılı olduğunda ana sayfaya yönlendiriyoruz
+      setShowSuccessToast(true)
       setCurrentUser(data.userID);
       sessionStorage.setItem("user", data.userID);
       // sessionStorage.setItem("user", JSON.stringify(data.userID));
 
-      navigate("/");
+      // navigate("/");
       return true;
     } catch (error) {
       console.error(error);
-      navigate("/");
+      setShowErrorToast(true)
+      // navigate("/");
       return false;
     }
   };
@@ -145,6 +148,10 @@ export function AuthProvider({ children }) {
     setShowModal,
     currentForm,
     setCurrentForm,
+    showSuccessToast,
+    showErrorToast,
+    setShowErrorToast,
+    setShowSuccessToast,
   };
    
   return (
