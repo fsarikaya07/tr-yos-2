@@ -26,7 +26,7 @@ const Favori = () => {
   const { currentUser } = useAuthContext();
   const sessionData = JSON.parse(sessionStorage.getItem("favoriID"));
   console.log(sessionData, "id");
-  const matchedCards = sessionData.map((compareItem) => {
+  const matchedCards = sessionData?.map((compareItem) => {
     const matchingCard = card.find(
       (cardItem) => cardItem.id === compareItem.id
     );
@@ -99,7 +99,7 @@ const Favori = () => {
             infiniteLoop={true}
             className="slide-image"
           >
-            {departmentImages.map((image, index) => (
+            {departmentImages?.map((image, index) => (
               <Carousel.Item key={index}>
                 <Card.Img
                   className="defaultimg"

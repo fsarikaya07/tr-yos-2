@@ -105,7 +105,7 @@ const Compare = () => {
                       infiniteLoop={true}
                       className="slide-image"
                     >
-                      {departmentImages.map((image, index) => (
+                      {departmentImages?.map((image, index) => (
                         <Carousel.Item key={index}>
                           <Card.Img
                             className="defaultimg"
