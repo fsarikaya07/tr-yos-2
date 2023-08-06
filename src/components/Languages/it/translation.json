@@ -161,6 +161,15 @@
     "description": "Puoi controllare tutte le università",
     "back": "indietro",
     "next": "avanti"
+  },
+  "toasts": {
+    "compareDelete": "Confronto eliminato con successo.",
+    "favoriteDelete": "Preferito eliminato con successo.",
+    "passwordChanged": "Password modificata con successo.",
+    "passwordChangeError": "Si è verificato un errore durante la modifica della password.",
+    "compareAdded": "Confronto aggiunto con successo.",
+    "favoriteAdded": "Preferito aggiunto con successo.",
+    "deleteSuccess": "Eliminato con successo."
   }
 }
 

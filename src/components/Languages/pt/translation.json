@@ -161,5 +161,14 @@
     "description": "Você pode verificar todas as universidades",
     "back": "atrás",
     "next": "próximo"
+  },
+  "toasts": {
+    "compareDelete": "Comparação excluída com sucesso.",
+    "favoriteDelete": "Favorito excluído com sucesso.",
+    "passwordChanged": "Senha alterada com sucesso.",
+    "passwordChangeError": "Ocorreu um erro ao alterar a senha.",
+    "compareAdded": "Comparação adicionada com sucesso.",
+    "favoriteAdded": "Favorito adicionado com sucesso.",
+    "deleteSuccess": "Excluído com sucesso."
   }
 }

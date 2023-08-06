@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/Account.css";
 import { useAuthContext } from "../../context/AuthContext";
 import { useTranslation } from "react-i18next";
+import ToastComponent from "../toastComponent/ToastComponent";
 
 const AccountForm = () => {
   const { t } = useTranslation();
@@ -16,6 +17,9 @@ const AccountForm = () => {
   const [accountCities, setAccountCities] = useState([]);
   const [countries, setCountries] = useState([]);
   const [selectedCountryId, setSelectedCountryId] = useState(null);
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [showErrorToast, setShowErrorToast] = useState(false);
+  const [showError2Toast, setShowError2Toast] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -109,12 +113,16 @@ const AccountForm = () => {
     if (userId) {
       const result = await updateUser(userId, updateData);
       if (result) {
-        alert(t("account.successfullyUpdated"));
+
+        setShowSuccessToast(true)
       } else {
-        alert(t("account.errorUpdating"));
+
+        setShowErrorToast(true)
       }
     } else {
       alert(t("account.noUserLoggedIn"));
+      setShowError2Toast(true)
+
     }
   };
   return (
@@ -152,7 +160,8 @@ const AccountForm = () => {
           className="form-select p-3"
           required
           onChange={handleCountryChange}
-          value={selectedCountryId}>
+          value={selectedCountryId}
+        >
           <option disabled value="">
             {t("account.selectCountry")}
           </option>
@@ -171,7 +180,8 @@ const AccountForm = () => {
           id="inputCity"
           className="form-select p-3"
           required
-          value={currentUser.city}>
+          value={currentUser.city}
+        >
           <option disabled value="">
             {t("account.selectCity")}
           </option>
@@ -201,13 +211,41 @@ const AccountForm = () => {
           class="form-control"
           id="aboutTextarea"
           rows="5"
-          defaultValue={currentUser.about}></textarea>
+          defaultValue={currentUser.about}
+        ></textarea>
       </div>
 
       <div className="col-12">
         <button type="submit" className="btn btn-primary p-3">
           {t("account.saveChanges")}
         </button>
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        style={{ position: "relative", minHeight: "200px" }}
+      >
+        {/* Success Toast */}
+        <ToastComponent
+          show={showSuccessToast}
+          onClose={() => setShowSuccessToast(false)}
+          type="success"
+          message={t("account.successfullyUpdated")}
+        />
+
+        {/* Error Toast */}
+        <ToastComponent
+          show={showErrorToast}
+          onClose={() => setShowErrorToast(false)}
+          type="error"
+          message={t("account.errorUpdating")}
+        />
+        <ToastComponent
+          show={showError2Toast}
+          onClose={() => setShowError2Toast(false)}
+          type="error"
+          message={t("account.noUserLoggedIn")}
+        />
       </div>
     </form>
   );

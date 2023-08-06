@@ -161,5 +161,14 @@
     "description": "您可以查看所有大学",
     "back": "返回",
     "next": "下一个"
+  },
+  "toasts": {
+    "compareDelete": "比较删除成功。",
+    "favoriteDelete": "收藏删除成功。",
+    "passwordChanged": "密码修改成功。",
+    "passwordChangeError": "更改密码时出错。",
+    "compareAdded": "比较添加成功。",
+    "favoriteAdded": "收藏添加成功。",
+    "deleteSuccess": "删除成功。"
   }
 }
