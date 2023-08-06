@@ -4,15 +4,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import { useTranslation } from 'react-i18next';
 import { FaGoogle } from 'react-icons/fa';
+import ToastComponent from "../toastComponent/ToastComponent";
 
 const LogIn = () => {
 
   const { t } = useTranslation();
 
-  const { loginPerson,toggleForm,handleCloseModal } = useAuthContext();
+  const { loginPerson,toggleForm,handleCloseModal ,showErrorToast,showSuccessToast,setShowSuccessToast,setShowErrorToast } = useAuthContext();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+ 
+
 
   const navigate = useNavigate();
 
@@ -26,9 +29,11 @@ const LogIn = () => {
       setEmail("");
       setPassword("");
       navigate("/"); // İlgili sayfaya 
+    
       handleCloseModal(false)
     } else {
       // Hata mesajını göster
+     
       console.log("Login failed!");
     }
   };
@@ -127,6 +132,27 @@ const LogIn = () => {
             
           </button>
         </div>
+        <div
+aria-live="polite"
+aria-atomic="true"
+style={{ position: "relative", minHeight: "200px" }}
+>
+{/* Success Toast */}
+<ToastComponent
+  show={showSuccessToast}
+  onClose={() => setShowSuccessToast(false)}
+  type="success"
+  message="Login successfully."
+/>
+
+{/* Error Toast */}
+<ToastComponent
+  show={showErrorToast}
+  onClose={() => setShowErrorToast(false)}
+  type="error"
+  message="An error occurred while changing password."
+/>
+</div>
       </form>
 
       

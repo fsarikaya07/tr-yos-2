@@ -10,29 +10,29 @@ main {
   margin-top: 50px;
   margin-bottom:50px;
 }
-/* h1 {
+.email-h1 {
   font-weight: 700;
   padding:15px;
   color:#003364;
 }
-p{
-  padding: auto;
-  
+.email-p{
+  padding: auto;  
   display: flex;
+  
   justify-content: center;
   text-align: center;
   align-items: center;
 }
-input,
-button {
+.email-input,
+.email-button {
   border: none;
   background: none;
   outline: 0;
   
 }
-button {
+.email-button {
   cursor: pointer;
-} */
+}
 .SearchBox-input::placeholder {
   /* No es un seudoelemento estandar */
   color: #FFFFFF;
