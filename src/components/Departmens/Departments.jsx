@@ -145,6 +145,9 @@ selectedDepartmentIds?.includes(item.department.code)
     <div>
       <div className="infoDiv  p-5 mb-2 bg-primary text-white" >
         <h3 className=" page-title mt-5 fw-bold mx-5">{t('departments.title')}</h3>
+        <span className="fw-small mx-5">
+        
+        </span>
       </div>
       <Container>
         <Row className="d-flex ">
