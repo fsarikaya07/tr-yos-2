@@ -8,7 +8,6 @@ import ToastComponent from "../toastComponent/ToastComponent";
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
 const Favori = () => {
 
-  // multilanguages
   
   const { t } = useTranslation();
   const { favoriId, setFavoriId, favori, setFavori, card,universities } = useYosContext();
