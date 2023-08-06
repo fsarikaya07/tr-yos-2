@@ -62,15 +62,12 @@ const Compare = () => {
   };
 
   return (
-    <div className="">
+    <div className="container-fluid">
       <div
         className=" infoDiv p-5 mb-2 bg-primary text-white"
         style={{ width: "100%" }}
       >
-        <h3 className="page-title fw-bold mt-5 mx-5"> {t("compare.compareUniversities")}</h3>
-        <span className="fw-small mx-5">
-        
-        </span>
+        <h3 className="p-title fw-bold mt-5 mx-5"> {t("compare.compareUniversities")}</h3>
       </div>
       <Container className="mt-5" style={{ position: "relative" }}>
         <Row className="g-3 d-flex flex-wrap">
@@ -183,7 +180,7 @@ const Compare = () => {
           show={showSuccessToast}
           onClose={() => setShowSuccessToast(false)}
           type="success"
-          message="Compare delete successfully."
+          message={t("toasts.compareDelete")}
         />
       </div>
     </div>

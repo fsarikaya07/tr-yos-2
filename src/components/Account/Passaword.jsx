@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useAuthContext } from "../../context/AuthContext";
 import ToastComponent from "../toastComponent/ToastComponent";
-import { useTranslation } from 'react-i18next';
-
 
 const Passaword = () => {
   const { t } = useTranslation();
@@ -110,7 +109,7 @@ const Passaword = () => {
           show={showSuccessToast}
           onClose={() => setShowSuccessToast(false)}
           type="success"
-          message="Password changed successfully."
+          message={t("toasts.passwordChanged")}
         />
 
         {/* Error Toast */}
@@ -118,7 +117,7 @@ const Passaword = () => {
           show={showErrorToast}
           onClose={() => setShowErrorToast(false)}
           type="error"
-          message="An error occurred while changing password."
+          message={t("toasts.passwordChangeError")}
         />
       </div>
     </div>
