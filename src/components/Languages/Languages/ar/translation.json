@@ -161,5 +161,14 @@
     "description": "يمكنك التحقق من جميع الجامعات",
     "back": "الى الخلف",
     "next": "التالى"
+  },
+  "toasts": {
+    "compareDelete": "تم حذف المقارنة بنجاح.",
+    "favoriteDelete": "تم حذف المفضلة بنجاح.",
+    "passwordChanged": "تم تغيير كلمة المرور بنجاح.",
+    "passwordChangeError": "حدث خطأ أثناء تغيير كلمة المرور.",
+    "compareAdded": "تمت إضافة المقارنة بنجاح.",
+    "favoriteAdded": "تمت إضافة المفضلة بنجاح.",
+    "deleteSuccess": "تم الحذف بنجاح."
   }
 }

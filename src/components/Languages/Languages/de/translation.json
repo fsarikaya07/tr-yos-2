@@ -164,5 +164,14 @@
     "description": "Sie können alle Universitäten überprüfen",
     "back": "zurück",
     "next": "weiter"
+  },
+  "toasts": {
+    "compareDelete": "Vergleich erfolgreich gelöscht.",
+    "favoriteDelete": "Favorit erfolgreich gelöscht.",
+    "passwordChanged": "Passwort erfolgreich geändert.",
+    "passwordChangeError": "Fehler beim Ändern des Passworts.",
+    "compareAdded": "Vergleich erfolgreich hinzugefügt.",
+    "favoriteAdded": "Favorit erfolgreich hinzugefügt.",
+    "deleteSuccess": "Erfolgreich gelöscht."
   }
 }

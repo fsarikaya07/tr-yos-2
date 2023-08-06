@@ -164,5 +164,14 @@
     "description": "Tüm Üniversiteleri Kontrol Edebilirsiniz",
     "back": "geri",
     "next": "ileri"
+  },
+  "toasts": {
+    "compareDelete": "Karşılaştırma başarıyla silindi.",
+    "favoriteDelete": "Favori başarıyla silindi.",
+    "passwordChanged": "Şifre başarıyla değiştirildi.",
+    "passwordChangeError": "Şifre değiştirilirken bir hata oluştu.",
+    "compareAdded": "Karşılaştırma başarıyla eklendi.",
+    "favoriteAdded": "Favori başarıyla eklendi.",
+    "deleteSuccess": "Başarıyla silindi."
   }
 }
