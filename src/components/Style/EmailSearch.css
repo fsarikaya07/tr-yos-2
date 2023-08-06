@@ -94,3 +94,38 @@ color: #FFFFFF;
     width: 500px;
   }
 }
+
+/* Yukarı yönlü okun stilini belirleyin */
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: #003364;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b5c9dd;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+/* Yukarı yönlü ok üzerine gelince büyüme animasyonu ekleyin */
+.scroll-to-top-button:hover {
+  transform: scale(1.2);
+}
+
+/* Yukarı yönlü oku gizleyin ve sayfanın en altına ekranın dışında başlangıçta yerleştirin */
+.scroll-to-top-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Yukarı yönlü oku sayfanın en altına getirin ve görünür hale getirin */
+.scroll-to-top-button.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
