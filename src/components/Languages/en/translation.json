@@ -32,6 +32,7 @@
     "yourName": "Your Name",
     "email": "E-mail",
     "country": "Country",
+    "city": "City",
     "phone": "Phone",
     "about": "About",
     "saveChanges": "Save Changes",
@@ -51,7 +52,8 @@
     "universityName": "University Name",
     "country": "Country",
     "city": "City",
-    "compare": "Compare"
+    "compare": "Compare",
+    "delete": "Delete"
   },
   "favorites": {
     "title": "Favorites",
@@ -59,7 +61,8 @@
     "universityName": "University Name",
     "country": "Country",
     "city": "City",
-    "remove": "Remove"
+    "remove": "Remove",
+    "delete": "Delete"
   },
 
   "homeDepartments": {
@@ -141,6 +144,24 @@
     "removeFavorite": "Remove Favorite",
     "callUs": "Call Us",
     "website": "Website",
-    "sendMessage": "Send Message"
+    "sendMessage": "Send Message",
+    "veryPoor": "Very Poor",
+    "poor": "Poor",
+    "good": "Good",
+    "veryGood": "Very Good",
+    "superb": "Superb",
+    "rating": "Rating"
+  },
+  "password": {
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "repeatNewPassword": "Repeat New Password",
+    "saveChange": "Save Change"
+  },
+  "universityPage": {
+    "title": "Universities",
+    "description": "You Can Check All Universities",
+    "back": "back",
+    "next": "next"
   }
 }

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useYosContext } from "../../context/Context";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import { useAuthContext } from "../../context/AuthContext";
 import ToastComponent from "../toastComponent/ToastComponent";
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
 
 const Compare = () => {
+  const { t } = useTranslation();
   const { compareId, setCompareId, card, universities } = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
@@ -65,7 +67,7 @@ const Compare = () => {
         className=" infoDiv p-5 mb-2 bg-primary text-white"
         style={{ width: "100%" }}
       >
-        <h3 className="p-title fw-bold mt-5 mx-5">Compare Departments</h3>
+        <h3 className="p-title fw-bold mt-5 mx-5"> {t("compare.compareUniversities")}</h3>
       </div>
       <Container className="mt-5" style={{ position: "relative" }}>
         <Row className="g-3 d-flex flex-wrap">

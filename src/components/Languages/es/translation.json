@@ -32,6 +32,7 @@
     "yourName": "Tu nombre",
     "email": "Correo electrónico",
     "country": "País",
+    "city": "Ciudad",
     "phone": "Teléfono",
     "about": "Acerca de",
     "saveChanges": "Guardar cambios",
@@ -51,7 +52,8 @@
     "universityName": "Nombre de la universidad",
     "country": "País",
     "city": "Ciudad",
-    "compare": "Comparar"
+    "compare": "Comparar",
+    "delete": "Eliminar"
   },
   "favorites": {
     "title": "Favoritos",
@@ -59,9 +61,10 @@
     "universityName": "Nombre de la universidad",
     "country": "País",
     "city": "Ciudad",
-    "remove": "Eliminar"
+    "remove": "Eliminar",
+    "delete": "Eliminar"
   },
-  
+
   "homeDepartments": {
     "title": "Nuestros Departamentos",
     "subTitle": "Nuestros Departamentos Nuestros Departamentos Nuestros Departamentos"
@@ -101,7 +104,7 @@
     "signIn": "Iniciar Sesión",
     "continueWithGoogle": "Continuar con Google"
   },
-  
+
   "universityCard": {
     "faculties": "Facultades",
     "departments": "Departamentos",
@@ -142,10 +145,24 @@
     "callUs": "Llámanos",
     "email": "Correo electrónico",
     "website": "Sitio web",
-    "sendMessage": "Enviar mensaje"
+    "sendMessage": "Enviar mensaje",
+    "veryPoor": "Muy pobre",
+    "poor": "Pobre",
+    "good": "Bueno",
+    "veryGood": "Muy bueno",
+    "superb": "Excelente",
+    "rating": "Clasificación"
+  },
+  "password": {
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Nueva contraseña",
+    "repeatNewPassword": "Repite la nueva contraseña",
+    "saveChange": "Guardar cambio"
+  },
+  "universityPage": {
+    "title": "Universidades",
+    "description": "Puede verificar todas las universidades",
+    "back": "atrás",
+    "next": "siguiente"
   }
-
-
-
-
 }

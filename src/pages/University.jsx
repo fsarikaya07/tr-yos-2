@@ -1,9 +1,13 @@
 import "../components/Style/University.css";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import { useYosContext } from "../context/Context";
 import UniversityCard from "../components/university/UniversityCard";
 
 const University = () => {
+  const { t } = useTranslation();
+
   const { universities } = useYosContext();
   const itemsPerPage = 10; // Her sayfada gösterilecek üniversite sayısı
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,9 +36,9 @@ const University = () => {
   return (
     <div className="">
       <div className="info-div p-5 mb-2 bg-primary text-white ">
-        <h2 className=" page-title mt-5 fw-bold mx-5">Universites</h2>
+        <h2 className=" page-title mt-5 fw-bold mx-5">{t("universityPage.title")}</h2>
         <span className="fw-small mx-5">
-          You Can Check All Universities
+          {t("universityPage.description")}
         </span>
       </div>
 
@@ -54,7 +58,7 @@ const University = () => {
           disabled={currentPage === 1}
         >
           <i className="bi bi-caret-left-fill"></i>
-          back
+            {t("universityPage.back")}
         </button></div>
         <div className="col">
         {pageNumbers.map((number) => (
@@ -72,7 +76,7 @@ const University = () => {
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
-          next
+            {t("universityPage.next")}
           <i className="bi bi-caret-right-fill"></i>
         </button></div>
       </div>
