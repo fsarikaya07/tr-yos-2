@@ -163,5 +163,14 @@
     "description": "You Can Check All Universities",
     "back": "back",
     "next": "next"
+  },
+  "toasts": {
+    "compareDelete": "Compare delete successfully.",
+    "favoriteDelete": "Favorite delete successfully.",
+    "passwordChanged": "Password changed successfully.",
+    "passwordChangeError": "An error occurred while changing password.",
+    "compareAdded": "Compare added successfully.",
+    "favoriteAdded": "Favorite added successfully.",
+    "deleteSuccess": "Delete successfully."
   }
 }

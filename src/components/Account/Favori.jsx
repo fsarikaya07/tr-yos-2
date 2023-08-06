@@ -7,11 +7,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import ToastComponent from "../toastComponent/ToastComponent";
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
 const Favori = () => {
-
-  
-
-
-  
+ 
   const { t } = useTranslation();
   const { favoriId, setFavoriId, favori, setFavori, card,universities } = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
@@ -27,7 +23,7 @@ const Favori = () => {
   const { currentUser } = useAuthContext();
   const sessionData = JSON.parse(sessionStorage.getItem("favoriID"));
   console.log(sessionData, "id");
-  const matchedCards = sessionData?.map((compareItem) => {
+  const matchedCards = sessionData.map((compareItem) => {
     const matchingCard = card.find(
       (cardItem) => cardItem.id === compareItem.id
     );
@@ -65,12 +61,9 @@ const Favori = () => {
   };
 
   return (
-    <div className="">
+    <div className="container-fluid">
       <div className=" infoDiv p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
-        <h3 className="page-title fw-bold mx-5 mt-5">{t("favorites.yourFavorites")}</h3>
-        <span className="fw-small mx-5">
-        
-        </span>
+        <h3 className="p-title fw-bold mx-5 mt-5">{t("favorites.yourFavorites")}</h3>
       </div>
       <Container className="container mt-5" style={{ position: "relative" }}>
       <Row className="g-4 d-flex flex-wrap">  
@@ -160,7 +153,7 @@ const Favori = () => {
           show={showSuccessToast}
           onClose={() => setShowSuccessToast(false)}
           type="success"
-          message="Favori delete successfully."
+          message={t("toasts.favoriteDelete")}
         />
       </div>
     </div>
