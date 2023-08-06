@@ -62,12 +62,15 @@ const Compare = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="">
       <div
         className=" infoDiv p-5 mb-2 bg-primary text-white"
         style={{ width: "100%" }}
       >
-        <h3 className="p-title fw-bold mt-5 mx-5"> {t("compare.compareUniversities")}</h3>
+        <h3 className="page-title fw-bold mt-5 mx-5"> {t("compare.compareUniversities")}</h3>
+        <span className="fw-small mx-5">
+        
+        </span>
       </div>
       <Container className="mt-5" style={{ position: "relative" }}>
         <Row className="g-3 d-flex flex-wrap">

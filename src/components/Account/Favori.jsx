@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import ToastComponent from "../toastComponent/ToastComponent";
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
-
-
-
-
 const Favori = () => {
+
+  
+
+
+  
   const { t } = useTranslation();
   const { favoriId, setFavoriId, favori, setFavori, card,universities } = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
@@ -64,9 +65,12 @@ const Favori = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="">
       <div className=" infoDiv p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
-        <h3 className="p-title fw-bold mx-5 mt-5">{t("favorites.yourFavorites")}</h3>
+        <h3 className="page-title fw-bold mx-5 mt-5">{t("favorites.yourFavorites")}</h3>
+        <span className="fw-small mx-5">
+        
+        </span>
       </div>
       <Container className="container mt-5" style={{ position: "relative" }}>
       <Row className="g-4 d-flex flex-wrap">  
