@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import HomeSearch from "../components/HomePage/HomeSearch";
 
@@ -10,10 +10,11 @@ import { useYosContext } from "../context/Context";
 
 
 const Home = () => {
-
+ 
   const {card}=useYosContext()
   return (
-    <div>      
+    <div> 
+          
       <HomeSearch/>
       <HomeDepartmens/>
     </div>
