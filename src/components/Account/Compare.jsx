@@ -13,7 +13,7 @@ const Compare = () => {
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
-
+  const [loading, setLoading] = useState(true);
   const universityImagesMap = universities.reduce((map, university) => {
     if (university && university.images && university.images.length > 0) {
       map[university?.en] = university.images.slice(0, 12);
@@ -31,6 +31,9 @@ const Compare = () => {
   });
   useEffect(() => {
     setCardCompare(matchedCards);
+    setTimeout(() => {
+      setLoading(false); // After the async operation, set loading to false
+    }, 1000)
   }, [card, deleteProps]);
 
   const deleteCompare = async (prop) => {
@@ -62,11 +65,19 @@ const Compare = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="">
       <div
         className=" infoDiv p-5 mb-2 bg-primary text-white"
         style={{ width: "100%" }}
       >
+          {loading && (
+        <div className="loading-indicator">
+          <i class="fa-solid fa-arrows-rotate fa-spin fa-2xl"></i>
+          <span  className="mx-1"></span>
+          <p>Loading...</p>
+        </div>
+        
+      )}
         <h3 className="p-title fw-bold mt-5 mx-5"> {t("compare.compareUniversities")}</h3>
       </div>
       <Container className="mt-5" style={{ position: "relative" }}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import Select from "react-select";
 import { useYosContext } from "../../context/Context";
@@ -20,6 +20,7 @@ function HomeSearch() {
   const [filteredDepartments, setFilteredDepartments] = useState([]);
 
   const [selectedDepartments, setSelectedDepartments] = useState([]);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,6 +68,7 @@ function HomeSearch() {
 
   return (
     <div className="main  bg-image text-center p-3  shadow-1-strong">
+      
       <div className="Sliderdiv" >
         <HomeSlider/>
       </div>
