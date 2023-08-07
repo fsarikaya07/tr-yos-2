@@ -22,6 +22,8 @@ const Departments = () => {
     location.state || {};
 
   const { card, cities, universities, departments } = useYosContext();
+  const [loading, setLoading] = useState(true);
+
 
   // const shuffledCards = card.sort(() => 0.5 - Math.random());
   // const random12Cards = shuffledCards.slice(0, 12);
@@ -32,6 +34,9 @@ const Departments = () => {
     const shuffledCards = card.sort(() => 0.5 - Math.random());
     const selectedCards = shuffledCards.slice(0, 12);
     setRandom12Cards(selectedCards);
+    setTimeout(() => {
+      setLoading(false); // After the async operation, set loading to false
+    }, 1000)
   }, [card]);
   const universityImages = universities.reduce((map, university) => {
     if (university && university.images && university.images.length > 0) {
@@ -150,6 +155,13 @@ selectedDepartmentIds?.includes(item.department.code)
         </span>
       </div>
       <Container>
+
+      {loading && (
+        <div className="loading-indicator">
+          <p>Loading...</p>
+        </div>
+        
+      )}
         <Row className="d-flex ">
           <div className="d-flex ">
             <Col xs={0} md={0} lg={4} xl={3}>
