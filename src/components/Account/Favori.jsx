@@ -12,6 +12,7 @@ const Favori = () => {
   const { favoriId, setFavoriId, favori, setFavori, card,universities } = useYosContext();
   const [cardCompare, setCardCompare] = useState([]);
   const [deleteProps, setDeleteProps] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const universityImagesMap = universities.reduce((map, university) => {
     if (university && university.images && university.images.length > 0) {
@@ -23,7 +24,7 @@ const Favori = () => {
   const { currentUser } = useAuthContext();
   const sessionData = JSON.parse(sessionStorage.getItem("favoriID"));
   console.log(sessionData, "id");
-  const matchedCards = sessionData.map((compareItem) => {
+  const matchedCards = sessionData?.map((compareItem) => {
     const matchingCard = card.find(
       (cardItem) => cardItem.id === compareItem.id
     );
@@ -32,6 +33,9 @@ const Favori = () => {
 
   useEffect(() => {
     setCardCompare(matchedCards);
+    setTimeout(() => {
+      setLoading(false); // After the async operation, set loading to false
+    }, 1000)
   }, [card, deleteProps]);
 
   const deleteCompare = async (prop) => {
@@ -61,11 +65,20 @@ const Favori = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="">
       <div className=" infoDiv p-5 mb-2 bg-primary text-white" style={{ width: "100%" }}>
         <h3 className="p-title fw-bold mx-5 mt-5">{t("favorites.yourFavorites")}</h3>
       </div>
       <Container className="container mt-5" style={{ position: "relative" }}>
+        
+  {loading && (
+        <div className="loading-indicator">
+          <i class="fa-solid fa-arrows-rotate fa-spin fa-2xl"></i>
+          <span  className="mx-1"></span>
+          <p>Loading...</p>
+        </div>
+        
+      )}
       <Row className="g-4 d-flex flex-wrap">  
         {cardCompare?.map((item) => {
             const university = item?.university;

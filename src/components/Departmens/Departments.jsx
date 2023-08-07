@@ -158,6 +158,8 @@ selectedDepartmentIds?.includes(item.department.code)
 
       {loading && (
         <div className="loading-indicator">
+          <i class="fa-solid fa-arrows-rotate fa-spin fa-2xl"></i>
+          <span  className="mx-1"></span>
           <p>Loading...</p>
         </div>
         

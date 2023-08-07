@@ -28,6 +28,7 @@ const HomeCard = ({ item, universityImage }) => {
   const { currentUser, setShowModal, showModal } = useAuthContext();
   const [isBoolen, setIsBoolen] = useState(true);
   const [isBoolenFavori, setIsBoolenFavori] = useState(true);
+  
   ///<-----------------------------------COMPARE START---------------------------------------------->
   const toggleShowSignInCompareModal = async (e) => {
     e.preventDefault();
@@ -161,6 +162,7 @@ const HomeCard = ({ item, universityImage }) => {
   const departmentImages = universityImage[departmentName] || [];
   return (
     <Container className="p-3  rounded-2 " style={{ position: "relative" }}>
+    
       <Card
         className="cardBody rounded-2 "
         style={{ width: "100%", height: "25rem" }}
@@ -207,7 +209,7 @@ const HomeCard = ({ item, universityImage }) => {
             className="fa-solid p-1 fa-rotate-right fa-md"
           ></i>
           <span className="mx-1"></span>
-          Compare
+          {t("compare.title")}
         </Button>
         <Card.Body
           className="cardBody d-flex justify-content-between w-100 "

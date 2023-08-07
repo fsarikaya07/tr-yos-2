@@ -1,5 +1,5 @@
 import "../components/Style/University.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useYosContext } from "../context/Context";
@@ -11,6 +11,13 @@ const University = () => {
   const { universities } = useYosContext();
   const itemsPerPage = 10; // Her sayfada gösterilecek üniversite sayısı
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+  
+    setTimeout(() => {
+      setLoading(false); // After the async operation, set loading to false
+    }, 1000)
+  }, []);
 
   // Aktif sayfada gösterilecek üniversiteleri hesaplayan fonksiyon
   const getVisibleUniversities = () => {
@@ -35,6 +42,15 @@ const University = () => {
 
   return (
     <div className="">
+        {loading && (
+        <div className="loading-indicator">
+          <i class="fa-solid fa-arrows-rotate fa-spin fa-2xl"></i>
+          <span  className="mx-1"></span>
+          <p>Loading...</p>
+          
+        </div>
+        
+      )}
       <div className="info-div p-5 mb-2 bg-primary text-white ">
         <h2 className=" page-title mt-5 fw-bold mx-5">{t("universityPage.title")}</h2>
         <span className="fw-small mx-5">

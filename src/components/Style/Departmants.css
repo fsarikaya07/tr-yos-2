@@ -11,7 +11,9 @@ background-image: url(https://www.tr-yös.com/test/6984215678913/breadcrumb/2.pn
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
+
 }
+
 .dep{
 color: #022F5D;
 flex-wrap: wrap;
@@ -82,7 +84,8 @@ h3 {
   width: 100%;
   z-index: 9999;
   font-size: xx-large;
-  color :red;
+  font-weight: 800;
+  color : #022F5D;
 }
 
 @media  (min-width: 1024px) {
