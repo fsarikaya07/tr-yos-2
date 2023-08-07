@@ -9,7 +9,7 @@ const HomeDepartmens = () => {
   const { universities, card, setCompare, compare, user } = useYosContext();
 
 
-
+  const [loading, setLoading] = useState(true);
 
   const [random12Cards, setRandom12Cards] = useState([]); // State to store random cards
 
@@ -17,6 +17,10 @@ const HomeDepartmens = () => {
     const shuffledCards = card.sort(() => 0.5 - Math.random());
     const selectedCards = shuffledCards.slice(0, 12);
     setRandom12Cards(selectedCards);
+    setTimeout(() => {
+      setLoading(false); // After the async operation, set loading to false
+    }, 1000)
+
   }, [card]);
 
   const universityImages = universities.reduce((map, university) => {
@@ -32,6 +36,15 @@ const HomeDepartmens = () => {
  
 
     <Container className="rounded-4 mt-4  ">
+      {loading && (
+        <div className="loading-indicator"
+        
+        
+        >
+          <p>Loading...</p>
+        </div>
+        
+      )}
       <h1 className="my-2 text-center" style={{ color: "#16193B" }}>
         {" "}
         <strong> {t('homeDepartments.title')}</strong>
