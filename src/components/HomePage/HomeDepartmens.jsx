@@ -37,9 +37,9 @@ const HomeDepartmens = () => {
         <strong> {t('homeDepartments.title')}</strong>
       </h1>
 
-      <h6 className="text-center" style={{ color: "#B2BEBF" }}>
+      <marquee className="text-center" style={{ color: "#B2BEBF",fontSize:"30px" }}>
         {t('homeDepartments.subTitle')}
-      </h6>
+      </marquee>
 
       <Row className="g-1 d-flex flex-wrap">
         {random12Cards?.map((item, index) => {
