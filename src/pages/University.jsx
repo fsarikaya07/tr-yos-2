@@ -1,5 +1,5 @@
 import "../components/Style/University.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useYosContext } from "../context/Context";
@@ -51,35 +51,54 @@ const University = () => {
 
       {/* Sayfa numaralarının butonları */}
       <div className="pagination p-4">
-      <div className="">
-        <button
-          className="back "
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          <i className="bi bi-caret-left-fill"></i>
-            {t("universityPage.back")}
-        </button></div>
-        <div className="col">
-        {pageNumbers.map((number) => (
-          <button
-            key={number}
-            onClick={() => handlePageChange(number)}
-            className={currentPage === number ? "active" : ""}
-          >
-            {number}
-          </button>
-        ))}</div>
-        <div className="">
-        <button
-          className="next "
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-            {t("universityPage.next")}
-          <i className="bi bi-caret-right-fill"></i>
-        </button></div>
-      </div>
+  <div className="">
+    <button
+      className="back "
+      onClick={() => handlePageChange(currentPage - 1)}
+      disabled={currentPage === 1}
+    >
+      <i className="bi bi-caret-left-fill"></i>
+      {t("universityPage.back")}
+    </button>
+  </div>
+  
+  <div className="numbercol">
+    {pageNumbers.map((number, index) => {
+      if (number === 1 || number === 2 || number === 3 ||  number >= currentPage - 1 && number <= currentPage + 1 || number === totalPages - 1 || number === totalPages) {
+        return (
+          <React.Fragment key={number}>
+            {index > 0 && " "} {/* Boşluk eklemek için */}
+            <button
+              onClick={() => handlePageChange(number)}
+              className={`page-button ${currentPage === number ? "active" : ""}`}
+            >
+              {number}
+            </button>
+          </React.Fragment>
+        );
+      } else if (index === 3 || index === pageNumbers.length - 4) {
+        return (
+          <span key={number} className="page-ellipsis">
+            ...
+          </span>
+        );
+      }
+      
+      return null;
+    })}
+  </div>
+  
+  <div className="pagination-buttons">
+    <button
+      className="next"
+      onClick={() => handlePageChange(currentPage + 1)}
+      disabled={currentPage === totalPages}
+    >
+      {t("universityPage.next")}
+      <i className="bi bi-caret-right-fill"></i>
+    </button>
+  </div>
+</div>
     </div>
   );
 };
